@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Enthalpy Calculator</title>
+    <meta name="description" content="Calculate enthalpy of moist air for HVAC design and psychrometric analysis. Essential for air conditioning and ventilation system design.">
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/icon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/icon-16x16.png">
+</head>
+<body>
+<div id="headerout">
+    <div id="header">
+        <div id="logo">
+            <a href="index.html">
+                <img src="images/dry-calculator-logo.svg" width="208" height="22" alt="Dry Calculator">
+            </a>
+        </div>
+        <div id="login">
+            <!-- Login removed -->
+        </div>
+    </div>
+</div>
+<div id="clear"></div>
+
+<div id="contentout">
+    <div id="content">
+        <div id="breadcrumbs">
+            <a href="index.html">home</a> / 
+            <a href="humidity-calculators.html">humidity calculators</a> / 
+            <a href="enthalpy-calculator.html">enthalpy calculator</a>
+        </div>
+        
+        <h1>Enthalpy Calculator</h1>
+        <p>The <i>Enthalpy Calculator</i> determines the total heat content of moist air, combining sensible and latent heat components. Essential for HVAC design, energy analysis, and psychrometric calculations.</p>
+
+        <div id="insmdc">
+            <img src="images/insm.svg" width="630" height="35" alt="Modify the values and click the calculate button to use">
+        </div>
+        
+        <form name="calform">
+            <div class="panel">
+                <table id="calinputtable">
+                    <tbody>
+                        <tr>
+                            <td>Input Method</td>
+                            <td>
+                                <select name="cinputmethod" id="cinputmethod" class="infull">
+                                    <option value="temp_rh">Temperature + Relative Humidity</option>
+                                    <option value="temp_humidity_ratio">Temperature + Humidity Ratio</option>
+                                    <option value="temp_dewpoint">Temperature + Dew Point</option>
+                                    <option value="temp_wetbulb">Temperature + Wet Bulb</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Dry Bulb Temperature</td>
+                            <td>
+                                <input type="text" name="cdrytemp" id="cdrytemp" value="25" class="infull">
+                                <span class="temp-unit">°C</span>
+                            </td>
+                        </tr>
+                        <tr id="rh-input">
+                            <td>Relative Humidity</td>
+                            <td>
+                                <input type="text" name="crelhumidity" id="crelhumidity" value="60" class="infull">
+                                <span style="margin-left: 5px; color: rgb(136, 136, 136);">%</span>
+                            </td>
+                        </tr>
+                        <tr id="humidity-ratio-input" style="display: none;">
+                            <td>Humidity Ratio</td>
+                            <td>
+                                <input type="text" name="chumidityratio" id="chumidityratio" value="0.012" class="infull">
+                                <span style="margin-left: 5px; color: rgb(136, 136, 136);">kg/kg</span>
+                            </td>
+                        </tr>
+                        <tr id="dewpoint-input" style="display: none;">
+                            <td>Dew Point Temperature</td>
+                            <td>
+                                <input type="text" name="cdewpoint" id="cdewpoint" value="16.7" class="infull">
+                                <span class="temp-unit">°C</span>
+                            </td>
+                        </tr>
+                        <tr id="wetbulb-input" style="display: none;">
+                            <td>Wet Bulb Temperature</td>
+                            <td>
+                                <input type="text" name="cwetbulb" id="cwetbulb" value="19.1" class="infull">
+                                <span class="temp-unit">°C</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Atmospheric Pressure</td>
+                            <td>
+                                <input type="text" name="cpressure" id="cpressure" value="101.325" class="infull">
+                                <span style="margin-left: 5px; color: rgb(136, 136, 136);">kPa</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Temperature Unit</td>
+                            <td>
+                                <label for="cunit1" class="cbcontainer">
+                                    <input type="radio" name="cunit" id="cunit1" value="celsius" checked="">
+                                    <span class="rbmark"></span>Celsius (°C)
+                                </label> &nbsp;
+                                <label for="cunit2" class="cbcontainer">
+                                    <input type="radio" name="cunit" id="cunit2" value="fahrenheit">
+                                    <span class="rbmark"></span>Fahrenheit (°F)
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Output Units</td>
+                            <td>
+                                <select name="coutputunit" id="coutputunit" class="infull">
+                                    <option value="kj_kg">kJ/kg (Kilojoules per kilogram)</option>
+                                    <option value="btu_lb">Btu/lb (British thermal units per pound)</option>
+                                    <option value="kcal_kg">kcal/kg (Kilocalories per kilogram)</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" align="left" style="padding-top: 8px;padding-left: 70px;">
+                                <input type="submit" name="x" value="Calculate">
+                                <input type="button" value="Clear">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </form>
+
+        <div id="result-section" style="margin-top: 20px; padding: 15px; background: #f0f8ff; border: 1px solid #ccc; border-radius: 5px; display: none;">
+            <h3>Enthalpy Calculation Results</h3>
+            <div id="results-content"></div>
+        </div>
+
+        <br>
+        <p></p>
+        <fieldset>
+            <legend>Related</legend>
+            <a href="psychrometric-calculator.html">Psychrometric Calculator</a> | 
+            <a href="relative-humidity-calculator.html">Relative Humidity Calculator</a> | 
+            <a href="dew-point-calculator.html">Dew Point Calculator</a>
+        </fieldset>
+        <p></p>
+        
+        <h2>Understanding Enthalpy</h2>
+        <p>Enthalpy is the total heat content of moist air, representing the sum of sensible heat (temperature-related) and latent heat (moisture-related) components. It's a fundamental property in HVAC design and energy analysis.</p>
+        
+        <h3>Enthalpy Components</h3>
+        
+        <h4>Sensible Heat</h4>
+        <div style="background: #f8f8f8; padding: 15px; border-radius: 5px; margin: 15px 0;">
+            <p><strong>Definition:</strong> Heat associated with temperature change</p>
+            <p><strong>Formula:</strong> h<sub>sensible</sub> = c<sub>p</sub> × T</p>
+            <p><strong>Where:</strong></p>
+            <ul>
+                <li>c<sub>p</sub> = specific heat of dry air (≈ 1.006 kJ/kg·°C)</li>
+                <li>T = dry bulb temperature (°C)</li>
+            </ul>
+        </div>
+        
+        <h4>Latent Heat</h4>
+        <div style="background: #f8f8f8; padding: 15px; border-radius: 5px; margin: 15px 0;">
+            <p><strong>Definition:</strong> Heat associated with moisture content</p>
+            <p><strong>Formula:</strong> h<sub>latent</sub> = W × h<sub>fg</sub></p>
+            <p><strong>Where:</strong></p>
+            <ul>
+                <li>W = humidity ratio (kg water/kg dry air)</li>
+                <li>h<sub>fg</sub> = latent heat of vaporization (≈ 2501 kJ/kg at 0°C)</li>
+            </ul>
+        </div>
+        
+        <h3>Total Enthalpy Formula</h3>
+        
+        <div style="background: #f8f8f8; padding: 15px; border-radius: 5px; margin: 15px 0;">
+            <h4>Complete Formula</h4>
+            <p><strong>h = c<sub>p</sub> × T + W × (h<sub>fg</sub> + c<sub>pw</sub> × T)</strong></p>
+            <p><strong>Simplified (at standard conditions):</strong></p>
+            <p><strong>h = 1.006 × T + W × (2501 + 1.86 × T)</strong></p>
+            <p><strong>Where:</strong></p>
+            <ul>
+                <li>h = specific enthalpy (kJ/kg dry air)</li>
+                <li>T = dry bulb temperature (°C)</li>
+                <li>W = humidity ratio (kg/kg)</li>
+                <li>c<sub>pw</sub> = specific heat of water vapor (≈ 1.86 kJ/kg·°C)</li>
+            </ul>
+        </div>
+        
+        <h3>HVAC Applications</h3>
+        
+        <h4>Cooling Load Calculations</h4>
+        <ul>
+            <li><strong>Sensible Load:</strong> Temperature difference × air flow rate</li>
+            <li><strong>Latent Load:</strong> Moisture difference × air flow rate</li>
+            <li><strong>Total Load:</strong> Enthalpy difference × air flow rate</li>
+            <li><strong>Equipment Sizing:</strong> Determine cooling capacity requirements</li>
+        </ul>
+        
+        <h4>Air Mixing Calculations</h4>
+        <ul>
+            <li><strong>Mixed Air Enthalpy:</strong> Weighted average of supply streams</li>
+            <li><strong>Energy Balance:</strong> Conservation of energy in mixing</li>
+            <li><strong>Economizer Analysis:</strong> Optimize outdoor air usage</li>
+            <li><strong>Heat Recovery:</strong> Calculate energy recovery potential</li>
+        </ul>
+        
+        <h4>System Performance</h4>
+        <ul>
+            <li><strong>Efficiency Analysis:</strong> Compare actual vs. theoretical performance</li>
+            <li><strong>Energy Consumption:</strong> Calculate operating costs</li>
+            <li><strong>Optimization:</strong> Minimize energy use while maintaining comfort</li>
+            <li><strong>Troubleshooting:</strong> Identify system problems</li>
+        </ul>
+        
+        <h3>Typical Enthalpy Values</h3>
+        
+        <table style="width: 100%; border-collapse: collapse; margin: 15px 0;">
+            <tr style="background: #f0f0f0;">
+                <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">Condition</th>
+                <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">Temperature (°C)</th>
+                <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">RH (%)</th>
+                <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">Enthalpy (kJ/kg)</th>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">Winter Indoor</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">20</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">40</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">35.6</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">Summer Indoor</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">24</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">50</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">47.7</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">Hot Humid Outdoor</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">35</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">70</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">100.8</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">Cold Dry Outdoor</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">-10</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">80</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">-7.2</td>
+            </tr>
+        </table>
+        
+        <h3>Psychrometric Processes</h3>
+        
+        <h4>Sensible Heating</h4>
+        <ul>
+            <li><strong>Process:</strong> Temperature increases, humidity ratio constant</li>
+            <li><strong>Enthalpy Change:</strong> Δh = c<sub>p</sub> × ΔT</li>
+            <li><strong>Applications:</strong> Heating coils, furnaces</li>
+            <li><strong>Energy:</strong> Sensible heat only</li>
+        </ul>
+        
+        <h4>Sensible Cooling</h4>
+        <ul>
+            <li><strong>Process:</strong> Temperature decreases, humidity ratio constant</li>
+            <li><strong>Enthalpy Change:</strong> Δh = c<sub>p</sub> × ΔT</li>
+            <li><strong>Applications:</strong> Sensible cooling coils</li>
+            <li><strong>Energy:</strong> Sensible heat removal only</li>
+        </ul>
+        
+        <h4>Cooling and Dehumidification</h4>
+        <ul>
+            <li><strong>Process:</strong> Temperature and humidity ratio both decrease</li>
+            <li><strong>Enthalpy Change:</strong> Both sensible and latent components</li>
+            <li><strong>Applications:</strong> Cooling coils below dew point</li>
+            <li><strong>Energy:</strong> Total cooling load</li>
+        </ul>
+        
+        <h4>Humidification</h4>
+        <ul>
+            <li><strong>Adiabatic:</strong> Enthalpy constant, temperature decreases</li>
+            <li><strong>Steam:</strong> Both enthalpy and humidity ratio increase</li>
+            <li><strong>Applications:</strong> Evaporative coolers, steam humidifiers</li>
+            <li><strong>Energy:</strong> Depends on humidification method</li>
+        </ul>
+        
+        <h3>Energy Analysis</h3>
+        
+        <h4>Cooling Energy Calculation</h4>
+        <div style="background: #f8f8f8; padding: 15px; border-radius: 5px; margin: 15px 0;">
+            <p><strong>Cooling Load = ṁ × (h<sub>entering</sub> - h<sub>leaving</sub>)</strong></p>
+            <p><strong>Where:</strong></p>
+            <ul>
+                <li>ṁ = mass flow rate of air (kg/s)</li>
+                <li>h<sub>entering</sub> = enthalpy of air entering coil (kJ/kg)</li>
+                <li>h<sub>leaving</sub> = enthalpy of air leaving coil (kJ/kg)</li>
+            </ul>
+        </div>
+        
+        <h4>Heating Energy Calculation</h4>
+        <div style="background: #f8f8f8; padding: 15px; border-radius: 5px; margin: 15px 0;">
+            <p><strong>Heating Load = ṁ × (h<sub>leaving</sub> - h<sub>entering</sub>)</strong></p>
+            <p><strong>For sensible heating:</strong></p>
+            <p><strong>Heating Load = ṁ × c<sub>p</sub> × (T<sub>leaving</sub> - T<sub>entering</sub>)</strong></p>
+        </div>
+        
+        <h3>Unit Conversions</h3>
+        
+        <table style="width: 100%; border-collapse: collapse; margin: 15px 0;">
+            <tr style="background: #f0f0f0;">
+                <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">From</th>
+                <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">To</th>
+                <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">Multiply by</th>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">kJ/kg</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">Btu/lb</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">0.4299</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">Btu/lb</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">kJ/kg</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">2.326</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">kJ/kg</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">kcal/kg</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">0.2388</td>
+            </tr>
+        </table>
+        
+        <h3>Measurement and Instrumentation</h3>
+        
+        <h4>Direct Measurement</h4>
+        <ul>
+            <li><strong>Calorimetry:</strong> Direct heat content measurement</li>
+            <li><strong>Enthalpy Sensors:</strong> Combined temperature and humidity sensors</li>
+            <li><strong>Psychrometric Instruments:</strong> Sling psychrometer, aspirated psychrometer</li>
+        </ul>
+        
+        <h4>Calculated Values</h4>
+        <ul>
+            <li><strong>From Temperature and RH:</strong> Most common method</li>
+            <li><strong>From Dew Point:</strong> High accuracy for low humidity</li>
+            <li><strong>From Wet Bulb:</strong> Traditional psychrometric method</li>
+            <li><strong>From Humidity Ratio:</strong> Direct calculation</li>
+        </ul>
+        
+        <h3>Accuracy Considerations</h3>
+        
+        <h4>Measurement Errors</h4>
+        <ul>
+            <li><strong>Temperature Accuracy:</strong> ±0.1°C can cause ±0.1 kJ/kg error</li>
+            <li><strong>Humidity Accuracy:</strong> ±2% RH can cause ±1-3 kJ/kg error</li>
+            <li><strong>Pressure Effects:</strong> Altitude corrections needed</li>
+            <li><strong>Calibration:</strong> Regular instrument calibration required</li>
+        </ul>
+        
+        <h4>Calculation Precision</h4>
+        <ul>
+            <li><strong>Formula Accuracy:</strong> Use appropriate psychrometric equations</li>
+            <li><strong>Property Correlations:</strong> Temperature-dependent properties</li>
+            <li><strong>Pressure Corrections:</strong> Non-standard pressure effects</li>
+            <li><strong>Significant Figures:</strong> Match measurement precision</li>
+        </ul>
+        
+        <h3>Software and Tools</h3>
+        
+        <h4>Psychrometric Software</h4>
+        <ul>
+            <li><strong>ASHRAE Psychrometric Chart:</strong> Standard reference</li>
+            <li><strong>Engineering Software:</strong> HAP, TRACE, eQUEST</li>
+            <li><strong>Online Calculators:</strong> Web-based tools</li>
+            <li><strong>Mobile Apps:</strong> Field calculation tools</li>
+        </ul>
+        
+        <h4>Design Applications</h4>
+        <ul>
+            <li><strong>Load Calculations:</strong> Cooling and heating loads</li>
+            <li><strong>Equipment Selection:</strong> Size HVAC equipment</li>
+            <li><strong>Energy Modeling:</strong> Building energy simulation</li>
+            <li><strong>Control Strategies:</strong> Optimize system operation</li>
+        </ul>
+        
+        <p><strong>Note:</strong> Enthalpy calculations assume ideal gas behavior and standard atmospheric composition. For high-precision applications or extreme conditions, consider using more detailed psychrometric equations and property correlations.</p>
+    </div>
+    
+    <div id="right">
+        <div style="padding-top:10px; min-height:280px; text-align:center;">
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2205593928173688"
+                 crossorigin="anonymous"></script>
+            <!-- zishiying -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-2205593928173688"
+                 data-ad-slot="8971293106"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+        
+        <form name="calcSearchForm" autocomplete="off">
+            <table align="center" id="searchbox">
+                <tbody>
+                    <tr>
+                        <td>
+                            <input type="text" name="calcSearchTerm" id="calcSearchTerm" class="inlongest" placeholder="Search calculators...">
+                        </td>
+                        <td>
+                            <span id="bluebtn">Search</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div id="calcSearchOut"></div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+        
+        <div id="othercalc">
+            <div id="octitle">
+                <a href="humidity-calculators.html">Humidity Calculators</a>
+            </div>
+            <div id="occontent">
+                <a href="relative-humidity-calculator.html">Relative Humidity</a>
+                <a href="absolute-humidity-calculator.html">Absolute Humidity</a>
+                <a href="dew-point-calculator.html">Dew Point</a>
+                <a href="wet-bulb-calculator.html">Wet Bulb</a>
+                <a href="psychrometric-calculator.html">Psychrometric</a>
+                <a href="enthalpy-calculator.html">Enthalpy</a>
+            </div>
+            <div id="ocother">
+                <a href="moisture-calculators.html">Moisture</a> | 
+                <a href="humidity-calculators.html">Humidity</a> | 
+                <a href="drying-calculators.html">Drying</a> | 
+                <a href="other-calculators.html">Other</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="clear"></div>
+
+<div id="footer">
+    <div id="footerin">
+        <div id="footernav">
+            <a href="about-us.html">about us</a> | 
+            <a href="sitemap.html">sitemap</a> | 
+            <a href="terms.html">terms of use</a> | 
+            <a href="privacy.html">privacy policy</a> 
+            &nbsp; © 2025 <a href="index.html">drycalculator.net</a>
+        </div>
+    </div>
+</div>
+
+<script src="js/mobile-optimization.js"></script>
+<script src="js/calculator-mobile-enhancer.js"></script>
+<script src="js/mobile-calculator-fix.js"></script>
+<script src="js/enthalpy-calculator.js"></script>
+</body>
+</html>

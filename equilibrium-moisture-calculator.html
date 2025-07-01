@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Equilibrium Moisture Calculator</title>
+    <meta name="description" content="Calculate equilibrium moisture content (EMC) for various materials based on temperature and relative humidity. Essential for wood processing, grain storage, and material science.">
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/icon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/icon-16x16.png">
+</head>
+<body>
+<div id="headerout">
+    <div id="header">
+        <div id="logo">
+            <a href="index.html">
+                <img src="images/dry-calculator-logo.svg" width="208" height="22" alt="Dry Calculator">
+            </a>
+        </div>
+        <div id="login">
+            <a href="sign-in.html">sign in</a>
+        </div>
+    </div>
+</div>
+<div id="clear"></div>
+
+<div id="contentout">
+    <div id="content">
+        <div id="breadcrumbs">
+            <a href="index.html">home</a> / 
+            <a href="moisture-calculators.html">moisture calculators</a> / 
+            <a href="equilibrium-moisture-calculator.html">equilibrium moisture calculator</a>
+        </div>
+        
+        <h1>Equilibrium Moisture Calculator</h1>
+        <p>The <i>Equilibrium Moisture Calculator</i> determines the equilibrium moisture content (EMC) that materials will reach when exposed to specific temperature and humidity conditions. This is essential for predicting material behavior, storage conditions, and processing requirements.</p>
+
+        <div id="insmdc">
+            <img src="images/insm.svg" width="630" height="35" alt="Modify the values and click the calculate button to use">
+        </div>
+        
+        <form name="calform">
+            <div class="panel">
+                <table id="calinputtable">
+                    <tbody>
+                        <tr>
+                            <td>Material Type</td>
+                            <td>
+                                <select name="cmaterial" id="cmaterial" class="infull">
+                                    <option value="wood_general">Wood (General)</option>
+                                    <option value="wood_hardwood">Hardwood</option>
+                                    <option value="wood_softwood">Softwood</option>
+                                    <option value="paper">Paper</option>
+                                    <option value="textile_cotton">Cotton Textile</option>
+                                    <option value="textile_wool">Wool Textile</option>
+                                    <option value="grain_wheat">Wheat</option>
+                                    <option value="grain_corn">Corn</option>
+                                    <option value="grain_rice">Rice</option>
+                                    <option value="leather">Leather</option>
+                                    <option value="bamboo">Bamboo</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Temperature</td>
+                            <td>
+                                <input type="text" name="ctemperature" id="ctemperature" value="20" class="infull">
+                                <span class="temp-unit">°C</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Relative Humidity</td>
+                            <td>
+                                <input type="text" name="chumidity" id="chumidity" value="65" class="infull">
+                                <span style="margin-left: 5px; color: rgb(136, 136, 136);">%</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Temperature Unit</td>
+                            <td>
+                                <label for="cunit1" class="cbcontainer">
+                                    <input type="radio" name="cunit" id="cunit1" value="celsius" checked="">
+                                    <span class="rbmark"></span>Celsius (°C)
+                                </label> &nbsp;
+                                <label for="cunit2" class="cbcontainer">
+                                    <input type="radio" name="cunit" id="cunit2" value="fahrenheit">
+                                    <span class="rbmark"></span>Fahrenheit (°F)
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" align="left" style="padding-top: 8px;padding-left: 70px;">
+                                <input type="submit" name="x" value="Calculate">
+                                <input type="button" value="Clear">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </form>
+
+        <div id="result-section" style="margin-top: 20px; padding: 15px; background: #f0f8ff; border: 1px solid #ccc; border-radius: 5px; display: none;">
+            <h3>Equilibrium Moisture Content Results</h3>
+            <div id="results-content"></div>
+        </div>
+
+        <br>
+        <p></p>
+        <fieldset>
+            <legend>Related</legend>
+            <a href="moisture-content-calculator.html">Moisture Content Calculator</a> | 
+            <a href="wood-moisture-calculator.html">Wood Moisture Calculator</a> | 
+            <a href="relative-humidity-calculator.html">Relative Humidity Calculator</a>
+        </fieldset>
+        <p></p>
+        
+        <h2>Understanding Equilibrium Moisture Content</h2>
+        <p>Equilibrium Moisture Content (EMC) is the moisture content at which a material neither gains nor loses moisture when exposed to specific environmental conditions. It represents the balance point between the material's moisture and the surrounding air.</p>
+        
+        <h3>Key Principles</h3>
+        
+        <h4>Sorption Isotherms</h4>
+        <p>The relationship between EMC and relative humidity at constant temperature follows sorption isotherms:</p>
+        <ul>
+            <li><strong>Adsorption:</strong> Moisture uptake from dry conditions</li>
+            <li><strong>Desorption:</strong> Moisture release from wet conditions</li>
+            <li><strong>Hysteresis:</strong> Different curves for adsorption and desorption</li>
+            <li><strong>Temperature Effect:</strong> Higher temperatures generally reduce EMC</li>
+        </ul>
+        
+        <h4>Factors Affecting EMC</h4>
+        <ul>
+            <li><strong>Relative Humidity:</strong> Primary factor - higher RH increases EMC</li>
+            <li><strong>Temperature:</strong> Higher temperatures decrease EMC at same RH</li>
+            <li><strong>Material Structure:</strong> Porosity, surface area, and chemical composition</li>
+            <li><strong>Previous History:</strong> Drying/wetting cycles affect sorption behavior</li>
+        </ul>
+        
+        <h3>Calculation Models</h3>
+        
+        <div style="background: #f8f8f8; padding: 15px; border-radius: 5px; margin: 15px 0;">
+            <h4>Henderson Model</h4>
+            <p>Commonly used for wood and agricultural products:</p>
+            <p><strong>EMC = [-ln(1-RH) / A]^(1/B)</strong></p>
+            <p>Where A and B are material-specific constants</p>
+            
+            <h4>GAB Model (Guggenheim-Anderson-de Boer)</h4>
+            <p>More accurate for wider humidity ranges:</p>
+            <p><strong>EMC = (M₀ × C × K × RH) / [(1-K×RH) × (1-K×RH+C×K×RH)]</strong></p>
+            <p>Where M₀, C, and K are material constants</p>
+            
+            <h4>Modified Henderson Model</h4>
+            <p>Includes temperature correction:</p>
+            <p><strong>EMC = [(-ln(1-RH)) / (A × exp(B/T))]^(1/C)</strong></p>
+            <p>Where T is absolute temperature</p>
+        </div>
+        
+        <h3>Material-Specific EMC Values</h3>
+        
+        <h4>Wood Products</h4>
+        <table style="width: 100%; border-collapse: collapse; margin: 15px 0;">
+            <tr style="background: #f0f0f0;">
+                <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">RH (%)</th>
+                <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">20°C</th>
+                <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">30°C</th>
+                <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">40°C</th>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">30</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">6.0%</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">5.5%</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">5.0%</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">50</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">9.0%</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">8.5%</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">8.0%</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">65</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">12.0%</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">11.5%</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">11.0%</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">80</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">16.0%</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">15.5%</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">15.0%</td>
+            </tr>
+        </table>
+        
+        <h3>Applications</h3>
+        
+        <h4>Wood Industry</h4>
+        <ul>
+            <li><strong>Kiln Drying:</strong> Set target moisture content for different climates</li>
+            <li><strong>Storage:</strong> Predict moisture changes during storage</li>
+            <li><strong>Quality Control:</strong> Ensure products match service environment</li>
+            <li><strong>Packaging:</strong> Design moisture barriers and packaging</li>
+        </ul>
+        
+        <h4>Agriculture and Food</h4>
+        <ul>
+            <li><strong>Grain Storage:</strong> Determine safe storage moisture levels</li>
+            <li><strong>Food Processing:</strong> Control texture and shelf life</li>
+            <li><strong>Packaging Design:</strong> Prevent moisture migration</li>
+            <li><strong>Quality Maintenance:</strong> Preserve nutritional and sensory properties</li>
+        </ul>
+        
+        <h4>Textiles and Paper</h4>
+        <ul>
+            <li><strong>Manufacturing:</strong> Control dimensional stability</li>
+            <li><strong>Storage Conditions:</strong> Prevent degradation</li>
+            <li><strong>Quality Control:</strong> Maintain product specifications</li>
+            <li><strong>Processing:</strong> Optimize manufacturing conditions</li>
+        </ul>
+        
+        <h3>Practical Considerations</h3>
+        
+        <h4>Time to Equilibrium</h4>
+        <ul>
+            <li><strong>Thin Materials:</strong> Hours to days (paper, thin wood)</li>
+            <li><strong>Thick Materials:</strong> Weeks to months (lumber, thick boards)</li>
+            <li><strong>Dense Materials:</strong> Longer equilibration times</li>
+            <li><strong>Temperature Effect:</strong> Higher temperatures accelerate equilibration</li>
+        </ul>
+        
+        <h4>Hysteresis Effects</h4>
+        <ul>
+            <li><strong>Adsorption EMC:</strong> Lower than desorption EMC</li>
+            <li><strong>Typical Difference:</strong> 1-3% moisture content</li>
+            <li><strong>Practical Impact:</strong> Consider moisture history</li>
+            <li><strong>Design Implications:</strong> Use conservative values</li>
+        </ul>
+        
+        <h3>Environmental Control</h3>
+        
+        <h4>HVAC Design</h4>
+        <ul>
+            <li>Maintain stable temperature and humidity</li>
+            <li>Minimize seasonal variations</li>
+            <li>Consider thermal mass effects</li>
+            <li>Design for material-specific requirements</li>
+        </ul>
+        
+        <h4>Storage Facilities</h4>
+        <ul>
+            <li>Monitor and control environmental conditions</li>
+            <li>Use vapor barriers where appropriate</li>
+            <li>Provide adequate air circulation</li>
+            <li>Consider geographic and seasonal variations</li>
+        </ul>
+        
+        <h3>Quality Control Applications</h3>
+        
+        <h4>Manufacturing</h4>
+        <ul>
+            <li>Set moisture specifications for raw materials</li>
+            <li>Control processing environment</li>
+            <li>Predict product behavior in service</li>
+            <li>Optimize drying schedules</li>
+        </ul>
+        
+        <h4>Testing and Validation</h4>
+        <ul>
+            <li>Verify EMC models with actual measurements</li>
+            <li>Account for material variability</li>
+            <li>Consider aging and degradation effects</li>
+            <li>Document environmental conditions</li>
+        </ul>
+        
+        <h3>Limitations and Considerations</h3>
+        
+        <ul>
+            <li><strong>Model Accuracy:</strong> EMC models are approximations</li>
+            <li><strong>Material Variability:</strong> Natural materials show variation</li>
+            <li><strong>Time Dependency:</strong> Equilibrium takes time to achieve</li>
+            <li><strong>Hysteresis:</strong> Path-dependent behavior</li>
+            <li><strong>Temperature Effects:</strong> Models may not cover all ranges</li>
+        </ul>
+        
+        <p><strong>Note:</strong> EMC calculations provide estimates based on established models. Actual values may vary due to material variability, measurement conditions, and environmental factors. For critical applications, verify with experimental measurements.</p>
+    </div>
+    
+    <div id="right">
+        <div style="padding-top:10px; min-height:280px; text-align:center;">
+            <!-- Advertisement space -->
+        </div>
+        
+        <form name="calcSearchForm" autocomplete="off">
+            <table align="center" id="searchbox">
+                <tbody>
+                    <tr>
+                        <td>
+                            <input type="text" name="calcSearchTerm" id="calcSearchTerm" class="inlongest" placeholder="Search calculators...">
+                        </td>
+                        <td>
+                            <span id="bluebtn">Search</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div id="calcSearchOut"></div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+        
+        <div id="othercalc">
+            <div id="octitle">
+                <a href="moisture-calculators.html">Moisture Calculators</a>
+            </div>
+            <div id="occontent">
+                <a href="moisture-content-calculator.html">Moisture Content</a>
+                <a href="equilibrium-moisture-calculator.html">Equilibrium Moisture</a>
+                <a href="wood-moisture-calculator.html">Wood Moisture</a>
+                <a href="grain-moisture-calculator.html">Grain Moisture</a>
+                <a href="soil-moisture-calculator.html">Soil Moisture</a>
+            </div>
+            <div id="ocother">
+                <a href="moisture-calculators.html">Moisture</a> | 
+                <a href="humidity-calculators.html">Humidity</a> | 
+                <a href="drying-calculators.html">Drying</a> | 
+                <a href="other-calculators.html">Other</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="clear"></div>
+
+<div id="footer">
+    <div id="footerin">
+        <div id="footernav">
+            <a href="about-us.html">about us</a> | 
+            <a href="sitemap.html">sitemap</a> | 
+            <a href="terms.html">terms of use</a> | 
+            <a href="privacy.html">privacy policy</a> 
+            &nbsp; © 2025 <a href="index.html">drycalculator.net</a>
+        </div>
+    </div>
+</div>
+
+<script src="js/mobile-optimization.js"></script>
+<script src="js/calculator-mobile-enhancer.js"></script>
+<script src="js/mobile-calculator-fix.js"></script>
+<script src="js/equilibrium-moisture-calculator.js"></script>
+</body>
+</html>

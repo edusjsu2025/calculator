@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Heat Requirement Calculator</title>
+    <meta name="description" content="Calculate heat energy requirements for drying processes. Essential for kiln design, energy planning, and process optimization.">
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/icon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/icon-16x16.png">
+</head>
+<body>
+<div id="headerout">
+    <div id="header">
+        <div id="logo">
+            <a href="index.html">
+                <img src="images/dry-calculator-logo.svg" width="208" height="22" alt="Dry Calculator">
+            </a>
+        </div>
+        <div id="login">
+            <a href="sign-in.html">sign in</a>
+        </div>
+    </div>
+</div>
+<div id="clear"></div>
+
+<div id="contentout">
+    <div id="content">
+        <div id="breadcrumbs">
+            <a href="index.html">home</a> / 
+            <a href="drying-calculators.html">drying calculators</a> / 
+            <a href="heat-requirement-calculator.html">heat requirement calculator</a>
+        </div>
+        
+        <h1>Heat Requirement Calculator</h1>
+        <p>The <i>Heat Requirement Calculator</i> determines the energy needed for drying processes including sensible heat, latent heat, and total energy requirements. Essential for kiln design, energy planning, and process optimization.</p>
+
+        <div id="insmdc">
+            <img src="images/insm.svg" width="630" height="35" alt="Modify the values and click the calculate button to use">
+        </div>
+        
+        <form name="calform">
+            <div class="panel">
+                <table id="calinputtable">
+                    <tbody>
+                        <tr>
+                            <td>Material Type</td>
+                            <td>
+                                <select name="cmaterialtype" id="cmaterialtype" class="infull">
+                                    <option value="wood">Wood/Lumber</option>
+                                    <option value="grain">Grain/Cereal</option>
+                                    <option value="food">Food Products</option>
+                                    <option value="textile">Textiles</option>
+                                    <option value="paper">Paper/Pulp</option>
+                                    <option value="concrete">Concrete</option>
+                                    <option value="general">General Material</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Material Weight (Dry Basis)</td>
+                            <td>
+                                <input type="text" name="cmaterialweight" id="cmaterialweight" value="1000" class="infull">
+                                <span style="margin-left: 5px; color: rgb(136, 136, 136);">kg</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Initial Moisture Content</td>
+                            <td>
+                                <input type="text" name="cinitialmc" id="cinitialmc" value="50" class="infull">
+                                <span style="margin-left: 5px; color: rgb(136, 136, 136);">% (wet basis)</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Final Moisture Content</td>
+                            <td>
+                                <input type="text" name="cfinalmc" id="cfinalmc" value="8" class="infull">
+                                <span style="margin-left: 5px; color: rgb(136, 136, 136);">% (wet basis)</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Initial Temperature</td>
+                            <td>
+                                <input type="text" name="cinitialtemp" id="cinitialtemp" value="20" class="infull">
+                                <span style="margin-left: 5px; color: rgb(136, 136, 136);">°C</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Drying Temperature</td>
+                            <td>
+                                <input type="text" name="cdryingtemp" id="cdryingtemp" value="60" class="infull">
+                                <span style="margin-left: 5px; color: rgb(136, 136, 136);">°C</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Specific Heat of Material</td>
+                            <td>
+                                <input type="text" name="cspecificheat" id="cspecificheat" value="1.5" class="infull">
+                                <span style="margin-left: 5px; color: rgb(136, 136, 136);">kJ/kg·°C</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Process Efficiency</td>
+                            <td>
+                                <input type="text" name="cefficiency" id="cefficiency" value="70" class="infull">
+                                <span style="margin-left: 5px; color: rgb(136, 136, 136);">%</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Heat Loss Factor</td>
+                            <td>
+                                <input type="text" name="cheatloss" id="cheatloss" value="20" class="infull">
+                                <span style="margin-left: 5px; color: rgb(136, 136, 136);">%</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" align="left" style="padding-top: 8px;padding-left: 70px;">
+                                <input type="submit" name="x" value="Calculate">
+                                <input type="button" value="Clear">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </form>
+
+        <div id="result-section" style="margin-top: 20px; padding: 15px; background: #f0f8ff; border: 1px solid #ccc; border-radius: 5px; display: none;">
+            <h3>Heat Requirement Analysis</h3>
+            <div id="results-content"></div>
+        </div>
+
+        <br>
+        <p></p>
+        <fieldset>
+            <legend>Related</legend>
+            <a href="drying-time-calculator.html">Drying Time Calculator</a> | 
+            <a href="kiln-drying-calculator.html">Kiln Drying Calculator</a> | 
+            <a href="evaporation-rate-calculator.html">Evaporation Rate Calculator</a>
+        </fieldset>
+        <p></p>
+        
+        <h2>Understanding Heat Requirements for Drying</h2>
+        <p>Drying processes require energy to heat the material and evaporate moisture. Understanding heat requirements is essential for equipment sizing, energy planning, and cost estimation.</p>
+        
+        <h3>Types of Heat in Drying</h3>
+        
+        <h4>Sensible Heat</h4>
+        <div style="background: #f8f8f8; padding: 15px; border-radius: 5px; margin: 15px 0;">
+            <p><strong>Definition:</strong> Heat required to raise temperature of material and water</p>
+            <p><strong>Formula:</strong> Q<sub>sensible</sub> = m × c<sub>p</sub> × ΔT</p>
+            <p><strong>Components:</strong></p>
+            <ul>
+                <li>Heat material from initial to drying temperature</li>
+                <li>Heat water from initial to evaporation temperature</li>
+                <li>Heat air for drying process</li>
+            </ul>
+        </div>
+        
+        <h4>Latent Heat</h4>
+        <div style="background: #f8f8f8; padding: 15px; border-radius: 5px; margin: 15px 0;">
+            <p><strong>Definition:</strong> Heat required to evaporate water</p>
+            <p><strong>Formula:</strong> Q<sub>latent</sub> = m<sub>water</sub> × h<sub>fg</sub></p>
+            <p><strong>Values:</strong></p>
+            <ul>
+                <li>At 100°C: 2257 kJ/kg</li>
+                <li>At 60°C: 2358 kJ/kg</li>
+                <li>At 20°C: 2454 kJ/kg</li>
+            </ul>
+        </div>
+        
+        <h3>Heat Requirement Components</h3>
+        
+        <h4>Primary Heat Requirements</h4>
+        <ul>
+            <li><strong>Material Heating:</strong> Raise material temperature</li>
+            <li><strong>Water Heating:</strong> Heat water to evaporation temperature</li>
+            <li><strong>Evaporation:</strong> Phase change from liquid to vapor</li>
+            <li><strong>Vapor Heating:</strong> Heat vapor to exit temperature</li>
+        </ul>
+        
+        <h4>Secondary Heat Requirements</h4>
+        <ul>
+            <li><strong>Air Heating:</strong> Heat drying air</li>
+            <li><strong>Equipment Heating:</strong> Heat kiln structure and equipment</li>
+            <li><strong>Heat Losses:</strong> Conduction, convection, radiation losses</li>
+            <li><strong>Infiltration:</strong> Heat loss through air leakage</li>
+        </ul>
+        
+        <h3>Calculation Methods</h3>
+        
+        <h4>Basic Heat Balance</h4>
+        <div style="background: #f8f8f8; padding: 15px; border-radius: 5px; margin: 15px 0;">
+            <p><strong>Total Heat = Sensible Heat + Latent Heat + Losses</strong></p>
+            <p><strong>Q<sub>total</sub> = Q<sub>sensible</sub> + Q<sub>latent</sub> + Q<sub>losses</sub></strong></p>
+            <p><strong>Practical Formula:</strong></p>
+            <p>Q<sub>total</sub> = (Q<sub>sensible</sub> + Q<sub>latent</sub>) / η</p>
+            <p>Where η = process efficiency</p>
+        </div>
+        
+        <h4>Detailed Calculations</h4>
+        <ol>
+            <li><strong>Calculate water to be removed:</strong> m<sub>water</sub> = m<sub>initial</sub> - m<sub>final</sub></li>
+            <li><strong>Calculate sensible heat:</strong> Q<sub>s</sub> = (m<sub>material</sub> × c<sub>p,mat</sub> + m<sub>water</sub> × c<sub>p,water</sub>) × ΔT</li>
+            <li><strong>Calculate latent heat:</strong> Q<sub>l</sub> = m<sub>water</sub> × h<sub>fg</sub></li>
+            <li><strong>Add heat losses:</strong> Q<sub>losses</sub> = (Q<sub>s</sub> + Q<sub>l</sub>) × loss factor</li>
+            <li><strong>Calculate total:</strong> Q<sub>total</sub> = Q<sub>s</sub> + Q<sub>l</sub> + Q<sub>losses</sub></li>
+        </ol>
+        
+        <h3>Material Properties</h3>
+        
+        <table style="width: 100%; border-collapse: collapse; margin: 15px 0;">
+            <tr style="background: #f0f0f0;">
+                <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">Material</th>
+                <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">Specific Heat (kJ/kg·°C)</th>
+                <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">Typical Drying Temp (°C)</th>
+                <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">Energy Factor</th>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">Wood (Oak)</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">1.5-2.0</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">60-80</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">3000-4000 kJ/kg water</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">Grain (Corn)</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">1.8-2.2</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">40-60</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">2800-3500 kJ/kg water</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">Paper</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">1.3-1.7</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">150-200</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">2500-3000 kJ/kg water</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">Textiles</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">1.2-1.8</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">80-120</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">2700-3200 kJ/kg water</td>
+            </tr>
+        </table>
+        
+        <h3>Energy Efficiency Factors</h3>
+        
+        <h4>Process Efficiency</h4>
+        <ul>
+            <li><strong>Conventional Kilns:</strong> 60-75%</li>
+            <li><strong>Dehumidification Kilns:</strong> 75-85%</li>
+            <li><strong>Vacuum Kilns:</strong> 70-80%</li>
+            <li><strong>Solar Kilns:</strong> 40-60%</li>
+        </ul>
+        
+        <h4>Heat Loss Sources</h4>
+        <ul>
+            <li><strong>Wall Losses:</strong> 10-20% of total heat</li>
+            <li><strong>Air Leakage:</strong> 5-15% of total heat</li>
+            <li><strong>Exhaust Losses:</strong> 15-25% of total heat</li>
+            <li><strong>Equipment Losses:</strong> 5-10% of total heat</li>
+        </ul>
+        
+        <h3>Energy Sources and Costs</h3>
+        
+        <h4>Common Energy Sources</h4>
+        <table style="width: 100%; border-collapse: collapse; margin: 15px 0;">
+            <tr style="background: #f0f0f0;">
+                <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">Energy Source</th>
+                <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">Energy Content</th>
+                <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">Efficiency</th>
+                <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">Applications</th>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">Natural Gas</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">37 MJ/m³</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">80-90%</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">Most kilns</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">Electricity</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">3.6 MJ/kWh</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">95-98%</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">Dehumidification</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">Wood Waste</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">15-20 MJ/kg</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">70-80%</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">Sawmill kilns</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">Steam</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">2.3 MJ/kg</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">85-95%</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">Industrial plants</td>
+            </tr>
+        </table>
+        
+        <h3>Optimization Strategies</h3>
+        
+        <h4>Heat Recovery</h4>
+        <ul>
+            <li><strong>Exhaust Heat Recovery:</strong> Preheat incoming air</li>
+            <li><strong>Condensate Recovery:</strong> Recover latent heat</li>
+            <li><strong>Thermal Mass:</strong> Store and reuse heat</li>
+            <li><strong>Heat Pumps:</strong> Upgrade low-grade heat</li>
+        </ul>
+        
+        <h4>Process Improvements</h4>
+        <ul>
+            <li><strong>Insulation:</strong> Reduce heat losses</li>
+            <li><strong>Air Sealing:</strong> Minimize infiltration</li>
+            <li><strong>Control Systems:</strong> Optimize temperature profiles</li>
+            <li><strong>Load Management:</strong> Maximize kiln utilization</li>
+        </ul>
+        
+        <h3>Economic Analysis</h3>
+        
+        <h4>Energy Cost Calculation</h4>
+        <div style="background: #f8f8f8; padding: 15px; border-radius: 5px; margin: 15px 0;">
+            <p><strong>Energy Cost = (Total Heat Required / Fuel Heating Value / Efficiency) × Fuel Cost</strong></p>
+            <p><strong>Example:</strong></p>
+            <ul>
+                <li>Total heat required: 10,000 MJ</li>
+                <li>Natural gas: 37 MJ/m³, 80% efficiency</li>
+                <li>Gas cost: $0.30/m³</li>
+                <li>Energy cost = (10,000 / 37 / 0.8) × $0.30 = $101</li>
+            </ul>
+        </div>
+        
+        <h4>Cost Factors</h4>
+        <ul>
+            <li><strong>Fuel Costs:</strong> Primary operating expense</li>
+            <li><strong>Equipment Costs:</strong> Capital investment</li>
+            <li><strong>Maintenance:</strong> Ongoing equipment upkeep</li>
+            <li><strong>Labor:</strong> Operation and monitoring</li>
+        </ul>
+        
+        <h3>Environmental Considerations</h3>
+        
+        <h4>Emissions</h4>
+        <ul>
+            <li><strong>CO₂ Emissions:</strong> Fuel combustion products</li>
+            <li><strong>VOC Emissions:</strong> Volatile organic compounds from materials</li>
+            <li><strong>Particulate Matter:</strong> Dust and particles</li>
+            <li><strong>Noise:</strong> Fan and equipment noise</li>
+        </ul>
+        
+        <h4>Sustainability</h4>
+        <ul>
+            <li><strong>Renewable Energy:</strong> Solar, biomass, geothermal</li>
+            <li><strong>Energy Efficiency:</strong> Reduce overall consumption</li>
+            <li><strong>Waste Heat Utilization:</strong> Use for other processes</li>
+            <li><strong>Carbon Footprint:</strong> Minimize environmental impact</li>
+        </ul>
+        
+        <p><strong>Note:</strong> Heat requirement calculations provide estimates based on theoretical models. Actual energy consumption may vary due to material properties, equipment efficiency, operating conditions, and heat losses. Use safety factors and validate with actual measurements for critical applications.</p>
+    </div>
+    
+    <div id="right">
+        <div style="padding-top:10px; min-height:280px; text-align:center;">
+            <!-- Advertisement space -->
+        </div>
+        
+        <form name="calcSearchForm" autocomplete="off">
+            <table align="center" id="searchbox">
+                <tbody>
+                    <tr>
+                        <td>
+                            <input type="text" name="calcSearchTerm" id="calcSearchTerm" class="inlongest" placeholder="Search calculators...">
+                        </td>
+                        <td>
+                            <span id="bluebtn">Search</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div id="calcSearchOut"></div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+        
+        <div id="othercalc">
+            <div id="octitle">
+                <a href="drying-calculators.html">Drying Calculators</a>
+            </div>
+            <div id="occontent">
+                <a href="drying-time-calculator.html">Drying Time</a>
+                <a href="evaporation-rate-calculator.html">Evaporation Rate</a>
+                <a href="kiln-drying-calculator.html">Kiln Drying</a>
+                <a href="air-drying-calculator.html">Air Drying</a>
+                <a href="heat-requirement-calculator.html">Heat Requirement</a>
+            </div>
+            <div id="ocother">
+                <a href="moisture-calculators.html">Moisture</a> | 
+                <a href="humidity-calculators.html">Humidity</a> | 
+                <a href="drying-calculators.html">Drying</a> | 
+                <a href="other-calculators.html">Other</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="clear"></div>
+
+<div id="footer">
+    <div id="footerin">
+        <div id="footernav">
+            <a href="about-us.html">about us</a> | 
+            <a href="sitemap.html">sitemap</a> | 
+            <a href="terms.html">terms of use</a> | 
+            <a href="privacy.html">privacy policy</a> 
+            &nbsp; © 2025 <a href="index.html">drycalculator.net</a>
+        </div>
+    </div>
+</div>
+
+<script src="js/mobile-optimization.js"></script>
+<script src="js/calculator-mobile-enhancer.js"></script>
+<script src="js/mobile-calculator-fix.js"></script>
+<script src="js/heat-requirement-calculator.js"></script>
+</body>
+</html>

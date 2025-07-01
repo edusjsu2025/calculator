@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Pressure Calculator</title>
+    <meta name="description" content="Convert between different pressure units including kPa, psi, bar, mmHg, and atm. Essential for engineering and scientific applications.">
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/icon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/icon-16x16.png">
+</head>
+<body>
+<div id="headerout">
+    <div id="header">
+        <div id="logo">
+            <a href="index.html">
+                <img src="images/dry-calculator-logo.svg" width="208" height="22" alt="Dry Calculator">
+            </a>
+        </div>
+        <div id="login">
+            <!-- Login removed -->
+        </div>
+    </div>
+</div>
+<div id="clear"></div>
+
+<div id="contentout">
+    <div id="content">
+        <div id="breadcrumbs">
+            <a href="index.html">home</a> / 
+            <a href="other-calculators.html">other calculators</a> / 
+            <a href="pressure-calculator.html">pressure calculator</a>
+        </div>
+        
+        <h1>Pressure Calculator</h1>
+        <p>The <i>Pressure Calculator</i> converts between different pressure units including kPa, psi, bar, mmHg, and atmospheres. Essential for engineering, scientific, and HVAC applications.</p>
+
+        <div id="insmdc">
+            <img src="images/insm.svg" width="630" height="35" alt="Modify the values and click the calculate button to use">
+        </div>
+        
+        <form name="calform">
+            <div class="panel">
+                <table id="calinputtable">
+                    <tbody>
+                        <tr>
+                            <td>Input Pressure</td>
+                            <td>
+                                <input type="text" name="cinputpressure" id="cinputpressure" value="101.325" class="infull">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>From Unit</td>
+                            <td>
+                                <select name="cfromunit" id="cfromunit" class="infull">
+                                    <option value="kpa">kPa (Kilopascals)</option>
+                                    <option value="pa">Pa (Pascals)</option>
+                                    <option value="psi">psi (Pounds per Square Inch)</option>
+                                    <option value="bar">bar</option>
+                                    <option value="mbar">mbar (Millibars)</option>
+                                    <option value="atm">atm (Atmospheres)</option>
+                                    <option value="mmhg">mmHg (Millimeters of Mercury)</option>
+                                    <option value="inhg">inHg (Inches of Mercury)</option>
+                                    <option value="torr">Torr</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Convert To</td>
+                            <td>
+                                <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
+                                    <label class="cbcontainer">
+                                        <input type="checkbox" name="ctokpa" id="ctokpa" checked>
+                                        <span class="checkmark"></span>kPa
+                                    </label>
+                                    <label class="cbcontainer">
+                                        <input type="checkbox" name="ctopsi" id="ctopsi" checked>
+                                        <span class="checkmark"></span>psi
+                                    </label>
+                                    <label class="cbcontainer">
+                                        <input type="checkbox" name="ctobar" id="ctobar" checked>
+                                        <span class="checkmark"></span>bar
+                                    </label>
+                                    <label class="cbcontainer">
+                                        <input type="checkbox" name="ctoatm" id="ctoatm">
+                                        <span class="checkmark"></span>atm
+                                    </label>
+                                    <label class="cbcontainer">
+                                        <input type="checkbox" name="ctommhg" id="ctommhg">
+                                        <span class="checkmark"></span>mmHg
+                                    </label>
+                                    <label class="cbcontainer">
+                                        <input type="checkbox" name="ctoinhg" id="ctoinhg">
+                                        <span class="checkmark"></span>inHg
+                                    </label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Precision</td>
+                            <td>
+                                <select name="cprecision" id="cprecision" class="infull">
+                                    <option value="2">2 decimal places</option>
+                                    <option value="3" selected>3 decimal places</option>
+                                    <option value="4">4 decimal places</option>
+                                    <option value="5">5 decimal places</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" align="left" style="padding-top: 8px;padding-left: 70px;">
+                                <input type="submit" name="x" value="Calculate">
+                                <input type="button" value="Clear">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </form>
+
+        <div id="result-section" style="margin-top: 20px; padding: 15px; background: #f0f8ff; border: 1px solid #ccc; border-radius: 5px; display: none;">
+            <h3>Pressure Conversion Results</h3>
+            <div id="results-content"></div>
+        </div>
+
+        <br>
+        <p></p>
+        <fieldset>
+            <legend>Related</legend>
+            <a href="temperature-calculator.html">Temperature Calculator</a> | 
+            <a href="density-calculator.html">Density Calculator</a> | 
+            <a href="vapor-pressure-calculator.html">Vapor Pressure Calculator</a>
+        </fieldset>
+        <p></p>
+        
+        <h2>Understanding Pressure Units</h2>
+        <p>Pressure is force per unit area and is measured in various units depending on the application and region. Understanding pressure conversions is essential for engineering, scientific, and HVAC applications.</p>
+        
+        <h3>Common Pressure Units</h3>
+        
+        <h4>Pascal (Pa) and Kilopascal (kPa)</h4>
+        <ul>
+            <li><strong>Definition:</strong> SI base unit, 1 Pa = 1 N/m²</li>
+            <li><strong>Usage:</strong> Scientific calculations, international standards</li>
+            <li><strong>Scale:</strong> 1 kPa = 1000 Pa</li>
+            <li><strong>Typical Values:</strong> Atmospheric pressure ≈ 101.325 kPa</li>
+        </ul>
+        
+        <h4>Pounds per Square Inch (psi)</h4>
+        <ul>
+            <li><strong>Definition:</strong> Force in pounds applied over one square inch</li>
+            <li><strong>Usage:</strong> United States, automotive, industrial</li>
+            <li><strong>Variants:</strong> psig (gauge), psia (absolute)</li>
+            <li><strong>Typical Values:</strong> Atmospheric pressure ≈ 14.7 psi</li>
+        </ul>
+        
+        <h4>Bar and Millibar</h4>
+        <ul>
+            <li><strong>Definition:</strong> 1 bar = 100,000 Pa = 100 kPa</li>
+            <li><strong>Usage:</strong> Meteorology, European industry</li>
+            <li><strong>Scale:</strong> 1 bar = 1000 mbar</li>
+            <li><strong>Typical Values:</strong> Atmospheric pressure ≈ 1.013 bar</li>
+        </ul>
+        
+        <h4>Atmosphere (atm)</h4>
+        <ul>
+            <li><strong>Definition:</strong> Standard atmospheric pressure at sea level</li>
+            <li><strong>Value:</strong> 1 atm = 101.325 kPa exactly</li>
+            <li><strong>Usage:</strong> Chemistry, physics, diving</li>
+            <li><strong>Reference:</strong> Historical standard pressure</li>
+        </ul>
+        
+        <h3>Conversion Factors</h3>
+        
+        <table style="width: 100%; border-collapse: collapse; margin: 15px 0;">
+            <tr style="background: #f0f0f0;">
+                <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">From</th>
+                <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">To</th>
+                <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">Multiply by</th>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">kPa</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">psi</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">0.145038</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">kPa</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">bar</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">0.01</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">kPa</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">atm</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">0.00986923</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">kPa</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">mmHg</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">7.50062</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">psi</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">kPa</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">6.89476</td>
+            </tr>
+        </table>
+        
+        <h3>Applications by Field</h3>
+        
+        <h4>HVAC and Building Systems</h4>
+        <ul>
+            <li><strong>Static Pressure:</strong> Fan and duct system design</li>
+            <li><strong>Refrigeration:</strong> System pressures and safety</li>
+            <li><strong>Boilers:</strong> Steam pressure monitoring</li>
+            <li><strong>Pneumatic Controls:</strong> Control system pressures</li>
+        </ul>
+        
+        <h4>Industrial Applications</h4>
+        <ul>
+            <li><strong>Process Control:</strong> Reactor and vessel pressures</li>
+            <li><strong>Hydraulics:</strong> Fluid power systems</li>
+            <li><strong>Pneumatics:</strong> Compressed air systems</li>
+            <li><strong>Safety Systems:</strong> Pressure relief and monitoring</li>
+        </ul>
+        
+        <h4>Scientific and Laboratory</h4>
+        <ul>
+            <li><strong>Vacuum Systems:</strong> Low pressure measurements</li>
+            <li><strong>Gas Analysis:</strong> Partial pressure calculations</li>
+            <li><strong>Material Testing:</strong> Pressure testing protocols</li>
+            <li><strong>Calibration:</strong> Pressure standard references</li>
+        </ul>
+        
+        <h3>Reference Pressures</h3>
+        
+        <table style="width: 100%; border-collapse: collapse; margin: 15px 0;">
+            <tr style="background: #f0f0f0;">
+                <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">Condition</th>
+                <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">kPa</th>
+                <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">psi</th>
+                <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">bar</th>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">Perfect Vacuum</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">0</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">0</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">0</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">Standard Atmosphere</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">101.325</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">14.696</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">1.013</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">Typical Car Tire</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">220</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">32</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">2.2</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">Scuba Tank</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">20,700</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">3,000</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">207</td>
+            </tr>
+        </table>
+        
+        <p><strong>Note:</strong> Pressure conversions are exact mathematical relationships. Always verify the pressure type (absolute vs. gauge) and consider measurement uncertainty for critical applications.</p>
+    </div>
+    
+    <div id="right">
+        <div style="padding-top:10px; min-height:280px; text-align:center;">
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2205593928173688"
+                 crossorigin="anonymous"></script>
+            <!-- zishiying -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-2205593928173688"
+                 data-ad-slot="8971293106"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+        
+        <form name="calcSearchForm" autocomplete="off">
+            <table align="center" id="searchbox">
+                <tbody>
+                    <tr>
+                        <td>
+                            <input type="text" name="calcSearchTerm" id="calcSearchTerm" class="inlongest" placeholder="Search calculators...">
+                        </td>
+                        <td>
+                            <span id="bluebtn">Search</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div id="calcSearchOut"></div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+        
+        <div id="othercalc">
+            <div id="octitle">
+                <a href="other-calculators.html">Other Calculators</a>
+            </div>
+            <div id="occontent">
+                <a href="temperature-calculator.html">Temperature</a>
+                <a href="pressure-calculator.html">Pressure</a>
+                <a href="density-calculator.html">Density</a>
+                <a href="volume-calculator.html">Volume</a>
+                <a href="energy-conversion-calculator.html">Energy Conversion</a>
+            </div>
+            <div id="ocother">
+                <a href="moisture-calculators.html">Moisture</a> | 
+                <a href="humidity-calculators.html">Humidity</a> | 
+                <a href="drying-calculators.html">Drying</a> | 
+                <a href="other-calculators.html">Other</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="clear"></div>
+
+<div id="footer">
+    <div id="footerin">
+        <div id="footernav">
+            <a href="about-us.html">about us</a> | 
+            <a href="sitemap.html">sitemap</a> | 
+            <a href="terms.html">terms of use</a> | 
+            <a href="privacy.html">privacy policy</a> 
+            &nbsp; © 2025 <a href="index.html">drycalculator.net</a>
+        </div>
+    </div>
+</div>
+
+<script src="js/mobile-optimization.js"></script>
+<script src="js/calculator-mobile-enhancer.js"></script>
+    <script src="js/mobile-calculator-fix.js"></script>
+<script src="js/pressure-calculator.js"></script>
+</body>
+</html>

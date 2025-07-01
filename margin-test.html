@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Mobile Margin Test - Dry Calculator</title>
+    <meta name="description" content="Test page for mobile margin fixes on Dry Calculator website.">
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/icon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/icon-16x16.png">
+    <style>
+        /* Visual indicators for margin testing */
+        .margin-indicator {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: red;
+            z-index: 9999;
+            opacity: 0.7;
+        }
+        .margin-left {
+            left: 2.5%;
+        }
+        .margin-right {
+            right: 2.5%;
+        }
+        .test-info {
+            background: #e8f5e8;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border-left: 4px solid #4caf50;
+        }
+        .test-warning {
+            background: #fff3cd;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border-left: 4px solid #ffc107;
+        }
+    </style>
+</head>
+<body>
+<!-- Margin indicators -->
+<div class="margin-indicator margin-left"></div>
+<div class="margin-indicator margin-right"></div>
+
+<div id="headerout">
+    <div id="header">
+        <div id="logo">
+            <a href="index.html">
+                <img src="images/dry-calculator-logo.svg" width="208" height="22" alt="Dry Calculator">
+            </a>
+        </div>
+        <div id="login">
+            <!-- Login removed -->
+        </div>
+    </div>
+</div>
+<div id="clear"></div>
+
+<div id="contentout">
+    <div id="content">
+        <div id="breadcrumbs">
+            <a href="index.html">home</a> / 
+            <a href="margin-test.html">margin test</a>
+        </div>
+        
+        <h1>Mobile Margin Test</h1>
+        
+        <div class="test-info">
+            <h3>✓ Margin Test Instructions</h3>
+            <p>This page tests the mobile margin fixes. The red lines show where the 2.5% margins should be on each side.</p>
+            <ul>
+                <li>Content should not touch the red lines</li>
+                <li>There should be equal spacing on both left and right sides</li>
+                <li>All content should be properly contained within the margins</li>
+            </ul>
+        </div>
+
+        <div class="test-warning">
+            <h4>⚠ What to Check</h4>
+            <p>Resize your browser window or use mobile device simulation to test different screen sizes:</p>
+            <ul>
+                <li>768px and below</li>
+                <li>600px and below</li>
+                <li>480px and below</li>
+            </ul>
+        </div>
+
+        <div id="insmdc">
+            <img src="images/insm.svg" width="630" height="35" alt="Modify the values and click the calculate button to use">
+        </div>
+        
+        <form name="calform">
+            <div class="panel">
+                <table id="calinputtable">
+                    <tbody>
+                        <tr>
+                            <td>Test Input 1</td>
+                            <td>
+                                <input type="text" name="cvalue1" id="cvalue1" value="100" class="infull">
+                                <span style="margin-left: 5px; color: rgb(136, 136, 136);">units</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Test Input 2</td>
+                            <td>
+                                <input type="text" name="cvalue2" id="cvalue2" value="50" class="infull">
+                                <span style="margin-left: 5px; color: rgb(136, 136, 136);">units</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Long Label to Test Text Wrapping and Margin Behavior</td>
+                            <td>
+                                <select name="coptions" id="coptions" class="infull">
+                                    <option value="basic">Basic Option</option>
+                                    <option value="advanced">Advanced Option with Long Text</option>
+                                    <option value="scientific">Scientific Calculation Method</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" align="left" style="padding-top: 8px;padding-left: 70px;">
+                                <input type="submit" name="x" value="Calculate">
+                                <input type="button" value="Clear">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </form>
+
+        <div id="result-section" style="margin-top: 20px; padding: 15px; background: #f0f8ff; border: 1px solid #ccc; border-radius: 5px;">
+            <h3>Margin Test Results</h3>
+            <div id="results-content">
+                <h4>Container Measurements</h4>
+                <div id="measurements">
+                    <p>Loading measurements...</p>
+                </div>
+                
+                <h4>Visual Test</h4>
+                <p>This content should have proper margins on both sides. The text should not extend to the red margin indicators.</p>
+                
+                <div style="background: #f5f5f5; padding: 15px; margin: 10px 0; border-radius: 5px;">
+                    <h5>Long Content Test</h5>
+                    <p>This is a longer paragraph to test how content wraps and whether it respects the margin boundaries. The text should wrap properly and maintain consistent spacing from both the left and right edges of the screen. This helps verify that the margin fixes are working correctly across different content types and lengths.</p>
+                </div>
+                
+                <table style="width: 100%; border-collapse: collapse; margin: 15px 0;">
+                    <tr>
+                        <th style="border: 1px solid #ddd; padding: 8px; background: #f8f9fa;">Property</th>
+                        <th style="border: 1px solid #ddd; padding: 8px; background: #f8f9fa;">Expected</th>
+                        <th style="border: 1px solid #ddd; padding: 8px; background: #f8f9fa;">Actual</th>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 8px;">Container Width</td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">95%</td>
+                        <td style="border: 1px solid #ddd; padding: 8px;" id="container-width">-</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 8px;">Container Padding</td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">0 2.5%</td>
+                        <td style="border: 1px solid #ddd; padding: 8px;" id="container-padding">-</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 8px;">Content Width</td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">100%</td>
+                        <td style="border: 1px solid #ddd; padding: 8px;" id="content-width">-</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <br>
+        <fieldset>
+            <legend>Test Links</legend>
+            <a href="moisture-content-calculator.html">Moisture Content Calculator</a> | 
+            <a href="temperature-calculator.html">Temperature Calculator</a> | 
+            <a href="mobile-fix-test.html">Mobile Fix Test</a>
+        </fieldset>
+        
+        <div class="test-info">
+            <h4>✓ Expected Behavior</h4>
+            <ul>
+                <li>All content should be contained within the red margin lines</li>
+                <li>Equal spacing on left and right sides</li>
+                <li>No horizontal scrolling</li>
+                <li>Consistent margins across all screen sizes</li>
+                <li>Buttons and form elements should not extend beyond margins</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div id="right">
+        <div style="padding-top:10px; min-height:280px; text-align:center;">
+            <h3>Sidebar Test</h3>
+            <p>This sidebar content should also respect the margin boundaries and not extend beyond the red lines.</p>
+            
+            <div style="background: #e9ecef; padding: 10px; margin: 10px 0; border-radius: 5px;">
+                <h4>Sidebar Widget</h4>
+                <p>Widget content that should stay within margins.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="clear"></div>
+
+<div id="footer">
+    <div id="footerin">
+        <div id="footernav">
+            <a href="about-us.html">about us</a> | 
+            <a href="sitemap.html">sitemap</a> | 
+            <a href="terms.html">terms of use</a> | 
+            <a href="privacy.html">privacy policy</a> 
+            &nbsp; © 2025 <a href="index.html">drycalculator.net</a>
+        </div>
+    </div>
+</div>
+
+<script src="js/mobile-optimization.js"></script>
+<script src="js/calculator-mobile-enhancer.js"></script>
+<script src="js/mobile-calculator-fix.js"></script>
+
+<script>
+// Margin measurement script
+function measureMargins() {
+    const contentOut = document.getElementById('contentout');
+    const content = document.getElementById('content');
+    const measurements = document.getElementById('measurements');
+    
+    if (contentOut && content && measurements) {
+        const contentOutStyle = window.getComputedStyle(contentOut);
+        const contentStyle = window.getComputedStyle(content);
+        
+        const containerWidth = contentOutStyle.width;
+        const containerPadding = `${contentOutStyle.paddingLeft} ${contentOutStyle.paddingRight}`;
+        const contentWidth = contentStyle.width;
+        
+        document.getElementById('container-width').textContent = containerWidth;
+        document.getElementById('container-padding').textContent = containerPadding;
+        document.getElementById('content-width').textContent = contentWidth;
+        
+        measurements.innerHTML = `
+            <p><strong>Container (#contentout):</strong></p>
+            <ul>
+                <li>Width: ${containerWidth}</li>
+                <li>Padding: ${containerPadding}</li>
+                <li>Margin: ${contentOutStyle.marginLeft} ${contentOutStyle.marginRight}</li>
+            </ul>
+            <p><strong>Content (#content):</strong></p>
+            <ul>
+                <li>Width: ${contentWidth}</li>
+                <li>Padding: ${contentStyle.paddingLeft} ${contentStyle.paddingRight}</li>
+            </ul>
+            <p><strong>Screen Width:</strong> ${window.innerWidth}px</p>
+        `;
+    }
+}
+
+// Run measurements on load and resize
+document.addEventListener('DOMContentLoaded', measureMargins);
+window.addEventListener('resize', measureMargins);
+
+// Simple form handler
+document.querySelector('form[name="calform"]').addEventListener('submit', (e) => {
+    e.preventDefault();
+    alert('Form submitted! Check that this alert doesn\'t cause layout shifts.');
+});
+
+document.querySelector('input[type="button"]').addEventListener('click', () => {
+    document.getElementById('cvalue1').value = '';
+    document.getElementById('cvalue2').value = '';
+    document.getElementById('coptions').selectedIndex = 0;
+});
+</script>
+</body>
+</html>

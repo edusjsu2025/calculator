@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Air Drying Calculator</title>
+    <meta name="description" content="Calculate air drying time and conditions for lumber and wood products. Essential for natural drying operations and outdoor lumber storage.">
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/icon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/icon-16x16.png">
+</head>
+<body>
+<div id="headerout">
+    <div id="header">
+        <div id="logo">
+            <a href="index.html">
+                <img src="images/dry-calculator-logo.svg" width="208" height="22" alt="Dry Calculator">
+            </a>
+        </div>
+        <div id="login">
+            <a href="sign-in.html">sign in</a>
+        </div>
+    </div>
+</div>
+<div id="clear"></div>
+
+<div id="contentout">
+    <div id="content">
+        <div id="breadcrumbs">
+            <a href="index.html">home</a> / 
+            <a href="drying-calculators.html">drying calculators</a> / 
+            <a href="air-drying-calculator.html">air drying calculator</a>
+        </div>
+        
+        <h1>Air Drying Calculator</h1>
+        <p>The <i>Air Drying Calculator</i> estimates drying time and final moisture content for lumber dried naturally using ambient air conditions. Essential for planning outdoor lumber storage and natural drying operations.</p>
+
+        <div id="insmdc">
+            <img src="images/insm.svg" width="630" height="35" alt="Modify the values and click the calculate button to use">
+        </div>
+        
+        <form name="calform">
+            <div class="panel">
+                <table id="calinputtable">
+                    <tbody>
+                        <tr>
+                            <td>Wood Species</td>
+                            <td>
+                                <select name="cspecies" id="cspecies" class="infull">
+                                    <option value="oak">Oak (Red/White)</option>
+                                    <option value="maple">Maple (Hard)</option>
+                                    <option value="pine">Pine (Southern Yellow)</option>
+                                    <option value="douglas_fir">Douglas Fir</option>
+                                    <option value="poplar">Poplar</option>
+                                    <option value="cherry">Cherry</option>
+                                    <option value="walnut">Walnut</option>
+                                    <option value="ash">Ash</option>
+                                    <option value="birch">Birch</option>
+                                    <option value="cedar">Cedar</option>
+                                    <option value="general_hardwood">General Hardwood</option>
+                                    <option value="general_softwood">General Softwood</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Lumber Thickness</td>
+                            <td>
+                                <select name="cthickness" id="cthickness" class="infull">
+                                    <option value="25">1 inch (25mm)</option>
+                                    <option value="38">1.5 inch (38mm)</option>
+                                    <option value="50">2 inch (50mm)</option>
+                                    <option value="75">3 inch (75mm)</option>
+                                    <option value="100">4 inch (100mm)</option>
+                                    <option value="150">6 inch (150mm)</option>
+                                    <option value="200">8 inch (200mm)</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Initial Moisture Content</td>
+                            <td>
+                                <input type="text" name="cinitialmc" id="cinitialmc" value="60" class="infull">
+                                <span style="margin-left: 5px; color: rgb(136, 136, 136);">%</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Climate Zone</td>
+                            <td>
+                                <select name="cclimate" id="cclimate" class="infull">
+                                    <option value="temperate_humid">Temperate Humid</option>
+                                    <option value="temperate_dry">Temperate Dry</option>
+                                    <option value="subtropical">Subtropical</option>
+                                    <option value="continental">Continental</option>
+                                    <option value="mediterranean">Mediterranean</option>
+                                    <option value="tropical">Tropical</option>
+                                    <option value="arid">Arid/Desert</option>
+                                    <option value="custom">Custom Conditions</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr id="custom-conditions" style="display: none;">
+                            <td colspan="2">
+                                <table width="100%">
+                                    <tr>
+                                        <td>Average Temperature</td>
+                                        <td>
+                                            <input type="text" name="cavgtemp" id="cavgtemp" value="20" class="infull">
+                                            <span>°C</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Average Humidity</td>
+                                        <td>
+                                            <input type="text" name="cavghumidity" id="cavghumidity" value="65" class="infull">
+                                            <span>%</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Average Wind Speed</td>
+                                        <td>
+                                            <input type="text" name="cavgwind" id="cavgwind" value="2.0" class="infull">
+                                            <span>m/s</span>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Drying Season</td>
+                            <td>
+                                <select name="cseason" id="cseason" class="infull">
+                                    <option value="spring">Spring</option>
+                                    <option value="summer">Summer</option>
+                                    <option value="fall">Fall/Autumn</option>
+                                    <option value="winter">Winter</option>
+                                    <option value="year_round">Year Round</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Stacking Method</td>
+                            <td>
+                                <select name="cstacking" id="cstacking" class="infull">
+                                    <option value="standard">Standard Stickered</option>
+                                    <option value="close_piled">Close Piled</option>
+                                    <option value="open_sided">Open Sided Shed</option>
+                                    <option value="covered">Covered Outdoor</option>
+                                    <option value="uncovered">Uncovered Outdoor</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" align="left" style="padding-top: 8px;padding-left: 70px;">
+                                <input type="submit" name="x" value="Calculate">
+                                <input type="button" value="Clear">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </form>
+
+        <div id="result-section" style="margin-top: 20px; padding: 15px; background: #f0f8ff; border: 1px solid #ccc; border-radius: 5px; display: none;">
+            <h3>Air Drying Estimates</h3>
+            <div id="results-content"></div>
+        </div>
+
+        <br>
+        <p></p>
+        <fieldset>
+            <legend>Related</legend>
+            <a href="wood-moisture-calculator.html">Wood Moisture Calculator</a> | 
+            <a href="kiln-drying-calculator.html">Kiln Drying Calculator</a> | 
+            <a href="equilibrium-moisture-calculator.html">Equilibrium Moisture Calculator</a>
+        </fieldset>
+        <p></p>
+        
+        <h2>Understanding Air Drying</h2>
+        <p>Air drying is the natural process of removing moisture from lumber using ambient air conditions. While slower than kiln drying, it's economical and produces high-quality lumber when properly managed.</p>
+        
+        <h3>Air Drying Process</h3>
+        
+        <h4>Drying Mechanism</h4>
+        <ul>
+            <li><strong>Surface Evaporation:</strong> Moisture evaporates from lumber surfaces</li>
+            <li><strong>Internal Migration:</strong> Moisture moves from interior to surface</li>
+            <li><strong>Air Movement:</strong> Wind removes moisture-laden air</li>
+            <li><strong>Equilibrium:</strong> Drying stops when wood reaches EMC</li>
+        </ul>
+        
+        <h4>Factors Affecting Drying Rate</h4>
+        <ul>
+            <li><strong>Temperature:</strong> Higher temperatures increase drying rate</li>
+            <li><strong>Relative Humidity:</strong> Lower humidity increases drying potential</li>
+            <li><strong>Air Movement:</strong> Wind speed affects surface evaporation</li>
+            <li><strong>Wood Species:</strong> Permeability varies significantly</li>
+            <li><strong>Lumber Thickness:</strong> Thicker lumber dries much slower</li>
+            <li><strong>Stacking Method:</strong> Air circulation around lumber</li>
+        </ul>
+        
+        <h3>Drying Time Estimates</h3>
+        
+        <h4>General Rules of Thumb</h4>
+        <div style="background: #f8f8f8; padding: 15px; border-radius: 5px; margin: 15px 0;">
+            <p><strong>Hardwoods:</strong> 1 year per inch of thickness (minimum)</p>
+            <p><strong>Softwoods:</strong> 6 months per inch of thickness</p>
+            <p><strong>Dense Species:</strong> Add 50-100% to base time</p>
+            <p><strong>Refractory Species:</strong> May require 2-3 years for thick lumber</p>
+        </div>
+        
+        <h4>Thickness Effects</h4>
+        <table style="width: 100%; border-collapse: collapse; margin: 15px 0;">
+            <tr style="background: #f0f0f0;">
+                <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">Thickness</th>
+                <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">Hardwood Time</th>
+                <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">Softwood Time</th>
+                <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">Final MC</th>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">1 inch (25mm)</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">6-12 months</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">3-6 months</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">12-18%</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">2 inch (50mm)</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">12-24 months</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">6-12 months</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">15-20%</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">4 inch (100mm)</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">2-4 years</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">1-2 years</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">18-25%</td>
+            </tr>
+        </table>
+        
+        <h3>Climate Effects</h3>
+        
+        <h4>Temperate Climates</h4>
+        <ul>
+            <li><strong>Advantages:</strong> Moderate temperatures, seasonal variation</li>
+            <li><strong>Challenges:</strong> High humidity periods, winter freezing</li>
+            <li><strong>Best Season:</strong> Spring through fall</li>
+            <li><strong>Typical EMC:</strong> 12-18% depending on season</li>
+        </ul>
+        
+        <h4>Arid Climates</h4>
+        <ul>
+            <li><strong>Advantages:</strong> Low humidity, consistent conditions</li>
+            <li><strong>Challenges:</strong> Rapid drying, checking potential</li>
+            <li><strong>Drying Rate:</strong> 2-3 times faster than humid climates</li>
+            <li><strong>Typical EMC:</strong> 6-12%</li>
+        </ul>
+        
+        <h4>Tropical Climates</h4>
+        <ul>
+            <li><strong>Advantages:</strong> High temperatures year-round</li>
+            <li><strong>Challenges:</strong> High humidity, fungal growth risk</li>
+            <li><strong>Special Needs:</strong> Fungicide treatment, covered storage</li>
+            <li><strong>Typical EMC:</strong> 15-25%</li>
+        </ul>
+        
+        <h3>Stacking and Storage</h3>
+        
+        <h4>Proper Stacking Techniques</h4>
+        <ul>
+            <li><strong>Foundation:</strong> Raise stack 18+ inches off ground</li>
+            <li><strong>Stickers:</strong> Use dry, uniform stickers every 16-24 inches</li>
+            <li><strong>Alignment:</strong> Align stickers vertically for weight distribution</li>
+            <li><strong>Top Weight:</strong> Weight top of stack to prevent warping</li>
+            <li><strong>End Sealing:</strong> Seal lumber ends to prevent checking</li>
+        </ul>
+        
+        <h4>Site Selection</h4>
+        <ul>
+            <li><strong>Air Circulation:</strong> Open area with good air movement</li>
+            <li><strong>Drainage:</strong> Well-drained site, avoid low areas</li>
+            <li><strong>Sun Exposure:</strong> Partial shade preferred over full sun</li>
+            <li><strong>Wind Protection:</strong> Some shelter from strong winds</li>
+        </ul>
+        
+        <h3>Quality Considerations</h3>
+        
+        <h4>Advantages of Air Drying</h4>
+        <ul>
+            <li><strong>Low Cost:</strong> No energy costs for heating</li>
+            <li><strong>Natural Process:</strong> Gentle drying reduces stress</li>
+            <li><strong>Color Preservation:</strong> Less color change than kiln drying</li>
+            <li><strong>Large Capacity:</strong> Can dry large quantities</li>
+        </ul>
+        
+        <h4>Potential Problems</h4>
+        <ul>
+            <li><strong>Surface Checking:</strong> Rapid surface drying</li>
+            <li><strong>End Checking:</strong> Faster end grain drying</li>
+            <li><strong>Stain and Mold:</strong> Fungal growth in humid conditions</li>
+            <li><strong>Insect Damage:</strong> Beetle and borer attacks</li>
+            <li><strong>Weather Damage:</strong> Rain, snow, and UV exposure</li>
+        </ul>
+        
+        <h3>Species-Specific Considerations</h3>
+        
+        <h4>Easy-to-Dry Species</h4>
+        <ul>
+            <li><strong>Poplar:</strong> Fast drying, minimal defects</li>
+            <li><strong>Pine:</strong> Relatively fast, watch for resin</li>
+            <li><strong>Cedar:</strong> Fast drying, naturally resistant</li>
+            <li><strong>Basswood:</strong> Fast, uniform drying</li>
+        </ul>
+        
+        <h4>Difficult-to-Dry Species</h4>
+        <ul>
+            <li><strong>Oak:</strong> Slow drying, checking prone</li>
+            <li><strong>Hickory:</strong> Very slow, high shrinkage</li>
+            <li><strong>Beech:</strong> Difficult, prone to defects</li>
+            <li><strong>Maple (Hard):</strong> Slow, careful stacking needed</li>
+        </ul>
+        
+        <h3>Seasonal Planning</h3>
+        
+        <h4>Spring Cutting</h4>
+        <ul>
+            <li><strong>Advantages:</strong> Full growing season for drying</li>
+            <li><strong>Sap Considerations:</strong> High sap content in some species</li>
+            <li><strong>Staining Risk:</strong> Higher in warm, humid conditions</li>
+        </ul>
+        
+        <h4>Winter Cutting</h4>
+        <ul>
+            <li><strong>Advantages:</strong> Lower sap content, reduced staining</li>
+            <li><strong>Challenges:</strong> Slower initial drying</li>
+            <li><strong>Planning:</strong> Stack for spring/summer drying</li>
+        </ul>
+        
+        <h3>Economic Considerations</h3>
+        
+        <h4>Cost Advantages</h4>
+        <ul>
+            <li><strong>No Energy Costs:</strong> Uses natural air movement</li>
+            <li><strong>Low Labor:</strong> Minimal handling after stacking</li>
+            <li><strong>Simple Equipment:</strong> Basic stacking materials</li>
+            <li><strong>Large Scale:</strong> Can handle large volumes</li>
+        </ul>
+        
+        <h4>Cost Considerations</h4>
+        <ul>
+            <li><strong>Land Requirements:</strong> Large area needed for stacking</li>
+            <li><strong>Inventory Costs:</strong> Long drying times tie up capital</li>
+            <li><strong>Quality Losses:</strong> Potential defects and degradation</li>
+            <li><strong>Weather Risk:</strong> Damage from storms or extreme weather</li>
+        </ul>
+        
+        <h3>Monitoring and Management</h3>
+        
+        <h4>Moisture Content Monitoring</h4>
+        <ul>
+            <li><strong>Sample Boards:</strong> Representative pieces for testing</li>
+            <li><strong>Regular Checks:</strong> Monthly moisture content readings</li>
+            <li><strong>Multiple Locations:</strong> Test different positions in stack</li>
+            <li><strong>Record Keeping:</strong> Track drying progress over time</li>
+        </ul>
+        
+        <h4>Stack Management</h4>
+        <ul>
+            <li><strong>Restacking:</strong> May be needed for uniform drying</li>
+            <li><strong>Sticker Replacement:</strong> Replace damaged or moldy stickers</li>
+            <li><strong>Top Protection:</strong> Adjust covers for weather protection</li>
+            <li><strong>Pest Control:</strong> Monitor for insect activity</li>
+        </ul>
+        
+        <p><strong>Note:</strong> Air drying times are estimates based on average conditions. Actual drying times can vary significantly due to weather patterns, wood characteristics, and stacking methods. Monitor moisture content regularly and adjust expectations based on local conditions.</p>
+    </div>
+    
+    <div id="right">
+        <div style="padding-top:10px; min-height:280px; text-align:center;">
+            <!-- Advertisement space -->
+        </div>
+        
+        <form name="calcSearchForm" autocomplete="off">
+            <table align="center" id="searchbox">
+                <tbody>
+                    <tr>
+                        <td>
+                            <input type="text" name="calcSearchTerm" id="calcSearchTerm" class="inlongest" placeholder="Search calculators...">
+                        </td>
+                        <td>
+                            <span id="bluebtn">Search</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div id="calcSearchOut"></div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+        
+        <div id="othercalc">
+            <div id="octitle">
+                <a href="drying-calculators.html">Drying Calculators</a>
+            </div>
+            <div id="occontent">
+                <a href="drying-time-calculator.html">Drying Time</a>
+                <a href="evaporation-rate-calculator.html">Evaporation Rate</a>
+                <a href="kiln-drying-calculator.html">Kiln Drying</a>
+                <a href="air-drying-calculator.html">Air Drying</a>
+                <a href="heat-requirement-calculator.html">Heat Requirement</a>
+            </div>
+            <div id="ocother">
+                <a href="moisture-calculators.html">Moisture</a> | 
+                <a href="humidity-calculators.html">Humidity</a> | 
+                <a href="drying-calculators.html">Drying</a> | 
+                <a href="other-calculators.html">Other</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="clear"></div>
+
+<div id="footer">
+    <div id="footerin">
+        <div id="footernav">
+            <a href="about-us.html">about us</a> | 
+            <a href="sitemap.html">sitemap</a> | 
+            <a href="terms.html">terms of use</a> | 
+            <a href="privacy.html">privacy policy</a> 
+            &nbsp; © 2025 <a href="index.html">drycalculator.net</a>
+        </div>
+    </div>
+</div>
+
+<script src="js/mobile-optimization.js"></script>
+<script src="js/calculator-mobile-enhancer.js"></script>
+<script src="js/mobile-calculator-fix.js"></script>
+<script src="js/air-drying-calculator.js"></script>
+</body>
+</html>

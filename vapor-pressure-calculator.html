@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Vapor Pressure Calculator</title>
+    <meta name="description" content="Calculate vapor pressure of water at different temperatures. Essential for HVAC design, meteorology, and chemical engineering applications.">
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/icon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/icon-16x16.png">
+</head>
+<body>
+<div id="headerout">
+    <div id="header">
+        <div id="logo">
+            <a href="index.html">
+                <img src="images/dry-calculator-logo.svg" width="208" height="22" alt="Dry Calculator">
+            </a>
+        </div>
+        <div id="login">
+            <a href="sign-in.html">sign in</a>
+        </div>
+    </div>
+</div>
+<div id="clear"></div>
+
+<div id="contentout">
+    <div id="content">
+        <div id="breadcrumbs">
+            <a href="index.html">home</a> / 
+            <a href="humidity-calculators.html">humidity calculators</a> / 
+            <a href="vapor-pressure-calculator.html">vapor pressure calculator</a>
+        </div>
+        
+        <h1>Vapor Pressure Calculator</h1>
+        <p>The <i>Vapor Pressure Calculator</i> determines the vapor pressure of water at different temperatures using established thermodynamic relationships. This tool is essential for HVAC design, meteorology, and chemical engineering applications.</p>
+
+        <div id="insmdc">
+            <img src="images/insm.svg" width="630" height="35" alt="Modify the values and click the calculate button to use">
+        </div>
+        
+        <form name="calform">
+            <div class="panel">
+                <table id="calinputtable">
+                    <tbody>
+                        <tr>
+                            <td>Temperature</td>
+                            <td>
+                                <input type="text" name="ctemperature" id="ctemperature" value="25" class="infull">
+                                <span class="temp-unit">°C</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Temperature Unit</td>
+                            <td>
+                                <label for="cunit1" class="cbcontainer">
+                                    <input type="radio" name="cunit" id="cunit1" value="celsius" checked="">
+                                    <span class="rbmark"></span>Celsius (°C)
+                                </label> &nbsp;
+                                <label for="cunit2" class="cbcontainer">
+                                    <input type="radio" name="cunit" id="cunit2" value="fahrenheit">
+                                    <span class="rbmark"></span>Fahrenheit (°F)
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Calculation Method</td>
+                            <td>
+                                <select name="cmethod" id="cmethod" class="infull">
+                                    <option value="magnus">Magnus Formula (Recommended)</option>
+                                    <option value="antoine">Antoine Equation</option>
+                                    <option value="clausius">Clausius-Clapeyron</option>
+                                    <option value="goff">Goff-Gratch Equation</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Pressure Units</td>
+                            <td>
+                                <select name="cpressureunit" id="cpressureunit" class="infull">
+                                    <option value="kpa">kPa (Kilopascals)</option>
+                                    <option value="pa">Pa (Pascals)</option>
+                                    <option value="mmhg">mmHg (Millimeters of Mercury)</option>
+                                    <option value="inhg">inHg (Inches of Mercury)</option>
+                                    <option value="psi">psi (Pounds per Square Inch)</option>
+                                    <option value="bar">bar</option>
+                                    <option value="atm">atm (Atmospheres)</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" align="left" style="padding-top: 8px;padding-left: 70px;">
+                                <input type="submit" name="x" value="Calculate">
+                                <input type="button" value="Clear">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </form>
+
+        <div id="result-section" style="margin-top: 20px; padding: 15px; background: #f0f8ff; border: 1px solid #ccc; border-radius: 5px; display: none;">
+            <h3>Vapor Pressure Results</h3>
+            <div id="results-content"></div>
+        </div>
+
+        <br>
+        <p></p>
+        <fieldset>
+            <legend>Related</legend>
+            <a href="relative-humidity-calculator.html">Relative Humidity Calculator</a> | 
+            <a href="dew-point-calculator.html">Dew Point Calculator</a> | 
+            <a href="psychrometric-calculator.html">Psychrometric Calculator</a>
+        </fieldset>
+        <p></p>
+        
+        <h2>Understanding Vapor Pressure</h2>
+        <p>Vapor pressure is the pressure exerted by water vapor in equilibrium with liquid water at a given temperature. It represents the tendency of water molecules to escape from the liquid phase into the vapor phase.</p>
+        
+        <h3>Key Concepts</h3>
+        
+        <h4>Physical Meaning</h4>
+        <ul>
+            <li><strong>Equilibrium Pressure:</strong> Pressure at which evaporation and condensation rates are equal</li>
+            <li><strong>Temperature Dependence:</strong> Vapor pressure increases exponentially with temperature</li>
+            <li><strong>Saturation Point:</strong> Maximum vapor pressure possible at a given temperature</li>
+            <li><strong>Phase Transition:</strong> Critical parameter for evaporation and condensation processes</li>
+        </ul>
+        
+        <h4>Relationship to Other Properties</h4>
+        <ul>
+            <li><strong>Relative Humidity:</strong> RH = (Actual VP / Saturated VP) × 100%</li>
+            <li><strong>Dew Point:</strong> Temperature at which current vapor pressure equals saturation</li>
+            <li><strong>Boiling Point:</strong> Temperature at which vapor pressure equals atmospheric pressure</li>
+            <li><strong>Humidity Ratio:</strong> Directly proportional to vapor pressure</li>
+        </ul>
+        
+        <h3>Calculation Methods</h3>
+        
+        <h4>Magnus Formula (Recommended)</h4>
+        <div style="background: #f8f8f8; padding: 15px; border-radius: 5px; margin: 15px 0;">
+            <p><strong>Formula:</strong> e = 6.112 × exp[(17.67 × T) / (T + 243.5)]</p>
+            <p><strong>Range:</strong> -45°C to +60°C</p>
+            <p><strong>Accuracy:</strong> ±0.1% over normal range</p>
+            <p><strong>Units:</strong> e in kPa, T in °C</p>
+        </div>
+        
+        <h4>Antoine Equation</h4>
+        <div style="background: #f8f8f8; padding: 15px; border-radius: 5px; margin: 15px 0;">
+            <p><strong>Formula:</strong> log₁₀(P) = A - B/(C + T)</p>
+            <p><strong>Constants for Water:</strong> A = 8.07131, B = 1730.63, C = 233.426</p>
+            <p><strong>Range:</strong> 1°C to 100°C</p>
+            <p><strong>Accuracy:</strong> Very high for specified range</p>
+        </div>
+        
+        <h4>Goff-Gratch Equation</h4>
+        <div style="background: #f8f8f8; padding: 15px; border-radius: 5px; margin: 15px 0;">
+            <p><strong>Application:</strong> Meteorological standard</p>
+            <p><strong>Range:</strong> -100°C to +100°C</p>
+            <p><strong>Accuracy:</strong> Highest precision available</p>
+            <p><strong>Complexity:</strong> Most complex but most accurate</p>
+        </div>
+        
+        <h3>Applications</h3>
+        
+        <h4>HVAC and Building Systems</h4>
+        <ul>
+            <li><strong>Humidity Control:</strong> Design dehumidification systems</li>
+            <li><strong>Condensation Prevention:</strong> Predict surface condensation</li>
+            <li><strong>Energy Calculations:</strong> Determine latent heat loads</li>
+            <li><strong>Air Quality:</strong> Control moisture-related problems</li>
+        </ul>
+        
+        <h4>Industrial Processes</h4>
+        <ul>
+            <li><strong>Drying Operations:</strong> Optimize drying conditions</li>
+            <li><strong>Chemical Processing:</strong> Control reaction environments</li>
+            <li><strong>Food Industry:</strong> Preserve product quality</li>
+            <li><strong>Pharmaceutical:</strong> Maintain storage conditions</li>
+        </ul>
+        
+        <h4>Meteorology and Climate</h4>
+        <ul>
+            <li><strong>Weather Prediction:</strong> Calculate humidity parameters</li>
+            <li><strong>Climate Modeling:</strong> Atmospheric moisture content</li>
+            <li><strong>Agriculture:</strong> Irrigation and crop management</li>
+            <li><strong>Aviation:</strong> Flight planning and safety</li>
+        </ul>
+        
+        <h3>Temperature Effects</h3>
+        
+        <h4>Exponential Relationship</h4>
+        <p>Vapor pressure increases exponentially with temperature:</p>
+        <ul>
+            <li><strong>0°C:</strong> 0.611 kPa</li>
+            <li><strong>20°C:</strong> 2.337 kPa</li>
+            <li><strong>40°C:</strong> 7.375 kPa</li>
+            <li><strong>60°C:</strong> 19.92 kPa</li>
+            <li><strong>80°C:</strong> 47.36 kPa</li>
+            <li><strong>100°C:</strong> 101.325 kPa (1 atm)</li>
+        </ul>
+        
+        <h4>Practical Implications</h4>
+        <ul>
+            <li><strong>Small Temperature Changes:</strong> Large vapor pressure changes</li>
+            <li><strong>Cooling Effect:</strong> Rapid condensation with slight cooling</li>
+            <li><strong>Heating Effect:</strong> Rapid evaporation with slight heating</li>
+            <li><strong>Control Sensitivity:</strong> Precise temperature control needed</li>
+        </ul>
+        
+        <h3>Unit Conversions</h3>
+        
+        <table style="width: 100%; border-collapse: collapse; margin: 15px 0;">
+            <tr style="background: #f0f0f0;">
+                <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">From</th>
+                <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">To</th>
+                <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">Multiply by</th>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">kPa</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">Pa</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">1000</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">kPa</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">mmHg</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">7.50062</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">kPa</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">inHg</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">0.295300</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">kPa</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">psi</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">0.145038</td>
+            </tr>
+        </table>
+        
+        <h3>Accuracy Considerations</h3>
+        
+        <h4>Method Selection</h4>
+        <ul>
+            <li><strong>General Use:</strong> Magnus formula recommended</li>
+            <li><strong>High Precision:</strong> Goff-Gratch equation</li>
+            <li><strong>Chemical Engineering:</strong> Antoine equation</li>
+            <li><strong>Meteorology:</strong> Goff-Gratch or Magnus</li>
+        </ul>
+        
+        <h4>Error Sources</h4>
+        <ul>
+            <li><strong>Temperature Measurement:</strong> ±0.1°C can cause ±1% error</li>
+            <li><strong>Formula Limitations:</strong> Each has specific valid ranges</li>
+            <li><strong>Pressure Effects:</strong> Minor influence of atmospheric pressure</li>
+            <li><strong>Impurities:</strong> Dissolved substances affect vapor pressure</li>
+        </ul>
+        
+        <h3>Practical Applications</h3>
+        
+        <h4>Design Calculations</h4>
+        <ul>
+            <li>Size dehumidification equipment</li>
+            <li>Predict condensation on surfaces</li>
+            <li>Calculate moisture loads</li>
+            <li>Design vapor barriers</li>
+        </ul>
+        
+        <h4>Process Control</h4>
+        <ul>
+            <li>Monitor drying processes</li>
+            <li>Control humidity in manufacturing</li>
+            <li>Optimize energy consumption</li>
+            <li>Prevent moisture damage</li>
+        </ul>
+        
+        <p><strong>Note:</strong> Vapor pressure calculations assume pure water. Real-world conditions may include dissolved substances that affect vapor pressure. For critical applications, consider these factors and use appropriate correction methods.</p>
+    </div>
+    
+    <div id="right">
+        <div style="padding-top:10px; min-height:280px; text-align:center;">
+            <!-- Advertisement space -->
+        </div>
+        
+        <form name="calcSearchForm" autocomplete="off">
+            <table align="center" id="searchbox">
+                <tbody>
+                    <tr>
+                        <td>
+                            <input type="text" name="calcSearchTerm" id="calcSearchTerm" class="inlongest" placeholder="Search calculators...">
+                        </td>
+                        <td>
+                            <span id="bluebtn">Search</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div id="calcSearchOut"></div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+        
+        <div id="othercalc">
+            <div id="octitle">
+                <a href="humidity-calculators.html">Humidity Calculators</a>
+            </div>
+            <div id="occontent">
+                <a href="relative-humidity-calculator.html">Relative Humidity</a>
+                <a href="absolute-humidity-calculator.html">Absolute Humidity</a>
+                <a href="dew-point-calculator.html">Dew Point</a>
+                <a href="wet-bulb-calculator.html">Wet Bulb</a>
+                <a href="psychrometric-calculator.html">Psychrometric</a>
+                <a href="vapor-pressure-calculator.html">Vapor Pressure</a>
+            </div>
+            <div id="ocother">
+                <a href="moisture-calculators.html">Moisture</a> | 
+                <a href="humidity-calculators.html">Humidity</a> | 
+                <a href="drying-calculators.html">Drying</a> | 
+                <a href="other-calculators.html">Other</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="clear"></div>
+
+<div id="footer">
+    <div id="footerin">
+        <div id="footernav">
+            <a href="about-us.html">about us</a> | 
+            <a href="sitemap.html">sitemap</a> | 
+            <a href="terms.html">terms of use</a> | 
+            <a href="privacy.html">privacy policy</a> 
+            &nbsp; © 2025 <a href="index.html">drycalculator.net</a>
+        </div>
+    </div>
+</div>
+
+<script src="js/mobile-optimization.js"></script>
+<script src="js/calculator-mobile-enhancer.js"></script>
+<script src="js/mobile-calculator-fix.js"></script>
+<script src="js/vapor-pressure-calculator.js"></script>
+</body>
+</html>

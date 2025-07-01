@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Density Calculator</title>
+    <meta name="description" content="Calculate density, mass, and volume relationships for various materials. Essential for engineering, construction, and scientific applications.">
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/icon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/icon-16x16.png">
+</head>
+<body>
+<div id="headerout">
+    <div id="header">
+        <div id="logo">
+            <a href="index.html">
+                <img src="images/dry-calculator-logo.svg" width="208" height="22" alt="Dry Calculator">
+            </a>
+        </div>
+        <div id="login">
+            <!-- Login removed -->
+        </div>
+    </div>
+</div>
+<div id="clear"></div>
+
+<div id="contentout">
+    <div id="content">
+        <div id="breadcrumbs">
+            <a href="index.html">home</a> / 
+            <a href="other-calculators.html">other calculators</a> / 
+            <a href="density-calculator.html">density calculator</a>
+        </div>
+        
+        <h1>Density Calculator</h1>
+        <p>The <i>Density Calculator</i> determines density, mass, and volume relationships for various materials. Essential for engineering calculations, material selection, and scientific applications.</p>
+
+        <div id="insmdc">
+            <img src="images/insm.svg" width="630" height="35" alt="Modify the values and click the calculate button to use">
+        </div>
+        
+        <form name="calform">
+            <div class="panel">
+                <table id="calinputtable">
+                    <tbody>
+                        <tr>
+                            <td>Calculation Type</td>
+                            <td>
+                                <select name="ccalctype" id="ccalctype" class="infull">
+                                    <option value="density">Calculate Density (ρ = m/V)</option>
+                                    <option value="mass">Calculate Mass (m = ρ×V)</option>
+                                    <option value="volume">Calculate Volume (V = m/ρ)</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr id="mass-input">
+                            <td>Mass</td>
+                            <td>
+                                <input type="text" name="cmass" id="cmass" value="1000" class="infull">
+                                <select name="cmassunit" id="cmassunit" style="width: 80px; margin-left: 5px;">
+                                    <option value="kg">kg</option>
+                                    <option value="g">g</option>
+                                    <option value="lb">lb</option>
+                                    <option value="oz">oz</option>
+                                    <option value="ton">ton</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr id="volume-input">
+                            <td>Volume</td>
+                            <td>
+                                <input type="text" name="cvolume" id="cvolume" value="1" class="infull">
+                                <select name="cvolumeunit" id="cvolumeunit" style="width: 80px; margin-left: 5px;">
+                                    <option value="m3">m³</option>
+                                    <option value="cm3">cm³</option>
+                                    <option value="l">L</option>
+                                    <option value="ml">mL</option>
+                                    <option value="ft3">ft³</option>
+                                    <option value="in3">in³</option>
+                                    <option value="gal">gal</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr id="density-input" style="display: none;">
+                            <td>Density</td>
+                            <td>
+                                <input type="text" name="cdensity" id="cdensity" value="1000" class="infull">
+                                <select name="cdensityunit" id="cdensityunit" style="width: 100px; margin-left: 5px;">
+                                    <option value="kg_m3">kg/m³</option>
+                                    <option value="g_cm3">g/cm³</option>
+                                    <option value="lb_ft3">lb/ft³</option>
+                                    <option value="g_ml">g/mL</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Material Reference</td>
+                            <td>
+                                <select name="cmaterial" id="cmaterial" class="infull">
+                                    <option value="">Select material for reference...</option>
+                                    <option value="water">Water (1000 kg/m³)</option>
+                                    <option value="concrete">Concrete (2400 kg/m³)</option>
+                                    <option value="steel">Steel (7850 kg/m³)</option>
+                                    <option value="aluminum">Aluminum (2700 kg/m³)</option>
+                                    <option value="wood_oak">Oak Wood (750 kg/m³)</option>
+                                    <option value="wood_pine">Pine Wood (500 kg/m³)</option>
+                                    <option value="air">Air (1.2 kg/m³)</option>
+                                    <option value="soil">Soil (1600 kg/m³)</option>
+                                    <option value="sand">Sand (1600 kg/m³)</option>
+                                    <option value="gravel">Gravel (1800 kg/m³)</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" align="left" style="padding-top: 8px;padding-left: 70px;">
+                                <input type="submit" name="x" value="Calculate">
+                                <input type="button" value="Clear">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </form>
+
+        <div id="result-section" style="margin-top: 20px; padding: 15px; background: #f0f8ff; border: 1px solid #ccc; border-radius: 5px; display: none;">
+            <h3>Density Calculation Results</h3>
+            <div id="results-content"></div>
+        </div>
+
+        <br>
+        <p></p>
+        <fieldset>
+            <legend>Related</legend>
+            <a href="temperature-calculator.html">Temperature Calculator</a> | 
+            <a href="pressure-calculator.html">Pressure Calculator</a> | 
+            <a href="soil-moisture-calculator.html">Soil Moisture Calculator</a>
+        </fieldset>
+        <p></p>
+        
+        <h2>Understanding Density</h2>
+        <p>Density is the mass per unit volume of a material, expressed as ρ = m/V. It's a fundamental property that affects material behavior, structural design, and process calculations.</p>
+        
+        <h3>Density Formula and Units</h3>
+        
+        <div style="background: #f8f8f8; padding: 15px; border-radius: 5px; margin: 15px 0;">
+            <h4>Basic Formula</h4>
+            <p><strong>Density (ρ) = Mass (m) / Volume (V)</strong></p>
+            <p><strong>Mass (m) = Density (ρ) × Volume (V)</strong></p>
+            <p><strong>Volume (V) = Mass (m) / Density (ρ)</strong></p>
+        </div>
+        
+        <h4>Common Units</h4>
+        <ul>
+            <li><strong>SI Units:</strong> kg/m³ (kilograms per cubic meter)</li>
+            <li><strong>CGS Units:</strong> g/cm³ (grams per cubic centimeter)</li>
+            <li><strong>Imperial Units:</strong> lb/ft³ (pounds per cubic foot)</li>
+            <li><strong>Liquid Density:</strong> g/mL (grams per milliliter)</li>
+        </ul>
+        
+        <h3>Material Densities</h3>
+        
+        <table style="width: 100%; border-collapse: collapse; margin: 15px 0;">
+            <tr style="background: #f0f0f0;">
+                <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">Material</th>
+                <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">Density (kg/m³)</th>
+                <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">Density (g/cm³)</th>
+                <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">Applications</th>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">Water</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">1,000</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">1.00</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">Reference standard</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">Concrete</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">2,400</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">2.40</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">Construction</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">Steel</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">7,850</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">7.85</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">Structural, machinery</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">Aluminum</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">2,700</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">2.70</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">Aerospace, automotive</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">Oak Wood</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">750</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">0.75</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">Furniture, flooring</td>
+            </tr>
+        </table>
+        
+        <h3>Applications</h3>
+        
+        <h4>Engineering and Construction</h4>
+        <ul>
+            <li><strong>Structural Design:</strong> Calculate loads and stresses</li>
+            <li><strong>Material Selection:</strong> Choose appropriate materials</li>
+            <li><strong>Foundation Design:</strong> Determine soil bearing capacity</li>
+            <li><strong>Transportation:</strong> Calculate shipping weights</li>
+        </ul>
+        
+        <h4>Manufacturing and Processing</h4>
+        <ul>
+            <li><strong>Quality Control:</strong> Verify material specifications</li>
+            <li><strong>Process Design:</strong> Size equipment and vessels</li>
+            <li><strong>Mixing Calculations:</strong> Determine proportions</li>
+            <li><strong>Separation Processes:</strong> Design density-based separations</li>
+        </ul>
+        
+        <h4>Environmental and Geotechnical</h4>
+        <ul>
+            <li><strong>Soil Analysis:</strong> Determine compaction and porosity</li>
+            <li><strong>Waste Management:</strong> Calculate disposal volumes</li>
+            <li><strong>Fluid Mechanics:</strong> Analyze flow and pressure</li>
+            <li><strong>Contamination Assessment:</strong> Track pollutant migration</li>
+        </ul>
+        
+        <h3>Factors Affecting Density</h3>
+        
+        <h4>Temperature Effects</h4>
+        <ul>
+            <li><strong>Thermal Expansion:</strong> Most materials expand when heated</li>
+            <li><strong>Density Decrease:</strong> Higher temperature = lower density</li>
+            <li><strong>Water Example:</strong> 1000 kg/m³ at 4°C, 958 kg/m³ at 100°C</li>
+            <li><strong>Design Considerations:</strong> Account for operating temperatures</li>
+        </ul>
+        
+        <h4>Pressure Effects</h4>
+        <ul>
+            <li><strong>Compressibility:</strong> Gases highly compressible</li>
+            <li><strong>Liquids:</strong> Slightly compressible under high pressure</li>
+            <li><strong>Solids:</strong> Generally incompressible</li>
+            <li><strong>Applications:</strong> High-pressure systems, deep water</li>
+        </ul>
+        
+        <h4>Composition and Structure</h4>
+        <ul>
+            <li><strong>Porosity:</strong> Voids reduce effective density</li>
+            <li><strong>Moisture Content:</strong> Water content affects density</li>
+            <li><strong>Alloy Composition:</strong> Different elements change density</li>
+            <li><strong>Crystal Structure:</strong> Atomic arrangement affects packing</li>
+        </ul>
+        
+        <h3>Measurement Methods</h3>
+        
+        <h4>Direct Methods</h4>
+        <ul>
+            <li><strong>Mass and Volume:</strong> Weigh sample, measure volume</li>
+            <li><strong>Displacement:</strong> Water displacement for irregular shapes</li>
+            <li><strong>Pycnometer:</strong> Precise volume measurement</li>
+            <li><strong>Graduated Cylinder:</strong> Simple liquid measurements</li>
+        </ul>
+        
+        <h4>Indirect Methods</h4>
+        <ul>
+            <li><strong>Hydrometer:</strong> Float-based density measurement</li>
+            <li><strong>Digital Density Meter:</strong> Electronic measurement</li>
+            <li><strong>Nuclear Density Gauge:</strong> Non-destructive testing</li>
+            <li><strong>Ultrasonic:</strong> Sound velocity correlation</li>
+        </ul>
+        
+        <h3>Specific Gravity</h3>
+        
+        <h4>Definition and Use</h4>
+        <ul>
+            <li><strong>Definition:</strong> Ratio of material density to water density</li>
+            <li><strong>Formula:</strong> SG = ρ_material / ρ_water</li>
+            <li><strong>Dimensionless:</strong> No units, just a ratio</li>
+            <li><strong>Reference:</strong> Water at 4°C (1000 kg/m³)</li>
+        </ul>
+        
+        <h4>Applications</h4>
+        <ul>
+            <li><strong>Material Identification:</strong> Quick material classification</li>
+            <li><strong>Quality Control:</strong> Verify material purity</li>
+            <li><strong>Flotation:</strong> Predict floating behavior</li>
+            <li><strong>Concentration:</strong> Solution strength indication</li>
+        </ul>
+        
+        <h3>Bulk vs. True Density</h3>
+        
+        <h4>Bulk Density</h4>
+        <ul>
+            <li><strong>Definition:</strong> Mass per unit volume including voids</li>
+            <li><strong>Applications:</strong> Granular materials, powders</li>
+            <li><strong>Examples:</strong> Sand, gravel, grain, concrete</li>
+            <li><strong>Variability:</strong> Depends on packing and compaction</li>
+        </ul>
+        
+        <h4>True Density</h4>
+        <ul>
+            <li><strong>Definition:</strong> Mass per unit volume of solid material only</li>
+            <li><strong>Applications:</strong> Material properties, theoretical calculations</li>
+            <li><strong>Measurement:</strong> Requires void elimination</li>
+            <li><strong>Higher Value:</strong> Always greater than bulk density</li>
+        </ul>
+        
+        <p><strong>Note:</strong> Density calculations assume uniform material properties. For heterogeneous materials or varying conditions, consider using average values or multiple measurements. Always verify units and consider temperature effects for accurate results.</p>
+    </div>
+    
+    <div id="right">
+        <div style="padding-top:10px; min-height:280px; text-align:center;">
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2205593928173688"
+                 crossorigin="anonymous"></script>
+            <!-- zishiying -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-2205593928173688"
+                 data-ad-slot="8971293106"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+        
+        <form name="calcSearchForm" autocomplete="off">
+            <table align="center" id="searchbox">
+                <tbody>
+                    <tr>
+                        <td>
+                            <input type="text" name="calcSearchTerm" id="calcSearchTerm" class="inlongest" placeholder="Search calculators...">
+                        </td>
+                        <td>
+                            <span id="bluebtn">Search</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div id="calcSearchOut"></div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+        
+        <div id="othercalc">
+            <div id="octitle">
+                <a href="other-calculators.html">Other Calculators</a>
+            </div>
+            <div id="occontent">
+                <a href="temperature-calculator.html">Temperature</a>
+                <a href="pressure-calculator.html">Pressure</a>
+                <a href="density-calculator.html">Density</a>
+                <a href="volume-calculator.html">Volume</a>
+                <a href="energy-conversion-calculator.html">Energy Conversion</a>
+            </div>
+            <div id="ocother">
+                <a href="moisture-calculators.html">Moisture</a> | 
+                <a href="humidity-calculators.html">Humidity</a> | 
+                <a href="drying-calculators.html">Drying</a> | 
+                <a href="other-calculators.html">Other</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="clear"></div>
+
+<div id="footer">
+    <div id="footerin">
+        <div id="footernav">
+            <a href="about-us.html">about us</a> | 
+            <a href="sitemap.html">sitemap</a> | 
+            <a href="terms.html">terms of use</a> | 
+            <a href="privacy.html">privacy policy</a> 
+            &nbsp; © 2025 <a href="index.html">drycalculator.net</a>
+        </div>
+    </div>
+</div>
+
+<script src="js/mobile-optimization.js"></script>
+<script src="js/calculator-mobile-enhancer.js"></script>
+    <script src="js/mobile-calculator-fix.js"></script>
+<script src="js/density-calculator.js"></script>
+</body>
+</html>

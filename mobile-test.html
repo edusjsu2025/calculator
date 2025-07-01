@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Mobile Test - Dry Calculator</title>
+    <meta name="description" content="Mobile responsiveness test page for Dry Calculator website.">
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/icon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/icon-16x16.png">
+</head>
+<body>
+<div id="headerout">
+    <div id="header">
+        <div id="logo">
+            <a href="index.html">
+                <img src="images/dry-calculator-logo.svg" width="208" height="22" alt="Dry Calculator">
+            </a>
+        </div>
+        <div id="login">
+            <!-- Login removed -->
+        </div>
+    </div>
+</div>
+<div id="clear"></div>
+
+<div id="contentout">
+    <div id="content">
+        <div id="breadcrumbs">
+            <a href="index.html">home</a> / 
+            <a href="mobile-test.html">mobile test</a>
+        </div>
+        
+        <h1>Mobile Responsiveness Test</h1>
+        <p>This page tests the mobile responsiveness of the Dry Calculator website. All elements should display properly on mobile devices.</p>
+
+        <div id="insmdc">
+            <img src="images/insm.svg" width="630" height="35" alt="Modify the values and click the calculate button to use">
+        </div>
+        
+        <form name="calform">
+            <div class="panel">
+                <table id="calinputtable">
+                    <tbody>
+                        <tr>
+                            <td>Test Input Field</td>
+                            <td>
+                                <input type="text" name="ctestinput" id="ctestinput" value="25" class="infull">
+                                <span style="margin-left: 5px; color: rgb(136, 136, 136);">units</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Test Dropdown</td>
+                            <td>
+                                <select name="ctestselect" id="ctestselect" class="infull">
+                                    <option value="option1">Option 1</option>
+                                    <option value="option2">Option 2</option>
+                                    <option value="option3">Option 3</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Test Radio Buttons</td>
+                            <td>
+                                <label for="cradio1" class="cbcontainer">
+                                    <input type="radio" name="cradio" id="cradio1" value="radio1" checked="">
+                                    <span class="rbmark"></span>Radio Option 1
+                                </label> &nbsp;
+                                <label for="cradio2" class="cbcontainer">
+                                    <input type="radio" name="cradio" id="cradio2" value="radio2">
+                                    <span class="rbmark"></span>Radio Option 2
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Test Checkboxes</td>
+                            <td>
+                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                                    <label class="cbcontainer">
+                                        <input type="checkbox" name="ccheck1" id="ccheck1" checked>
+                                        <span class="checkmark"></span>Checkbox 1
+                                    </label>
+                                    <label class="cbcontainer">
+                                        <input type="checkbox" name="ccheck2" id="ccheck2">
+                                        <span class="checkmark"></span>Checkbox 2
+                                    </label>
+                                    <label class="cbcontainer">
+                                        <input type="checkbox" name="ccheck3" id="ccheck3">
+                                        <span class="checkmark"></span>Checkbox 3
+                                    </label>
+                                    <label class="cbcontainer">
+                                        <input type="checkbox" name="ccheck4" id="ccheck4">
+                                        <span class="checkmark"></span>Checkbox 4
+                                    </label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" align="left" style="padding-top: 8px;padding-left: 70px;">
+                                <input type="submit" name="x" value="Calculate">
+                                <input type="button" value="Clear">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </form>
+
+        <div id="result-section" style="margin-top: 20px; padding: 15px; background: #f0f8ff; border: 1px solid #ccc; border-radius: 5px;">
+            <h3>Test Results Section</h3>
+            <div id="results-content">
+                <h4>Sample Results</h4>
+                <p><strong>Input Value:</strong> 25 units</p>
+                <p><strong>Calculated Result:</strong> 50.5 output units</p>
+                
+                <table style="width: 100%; border-collapse: collapse; margin: 15px 0;">
+                    <tr style="background: #f0f0f0;">
+                        <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">Parameter</th>
+                        <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">Value</th>
+                        <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">Unit</th>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ccc; padding: 8px;">Temperature</td>
+                        <td style="border: 1px solid #ccc; padding: 8px;">25.0</td>
+                        <td style="border: 1px solid #ccc; padding: 8px;">°C</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ccc; padding: 8px;">Humidity</td>
+                        <td style="border: 1px solid #ccc; padding: 8px;">60.0</td>
+                        <td style="border: 1px solid #ccc; padding: 8px;">%</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ccc; padding: 8px;">Pressure</td>
+                        <td style="border: 1px solid #ccc; padding: 8px;">101.325</td>
+                        <td style="border: 1px solid #ccc; padding: 8px;">kPa</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <br>
+        <p></p>
+        <fieldset>
+            <legend>Related</legend>
+            <a href="temperature-calculator.html">Temperature Calculator</a> | 
+            <a href="pressure-calculator.html">Pressure Calculator</a> | 
+            <a href="density-calculator.html">Density Calculator</a>
+        </fieldset>
+        <p></p>
+        
+        <h2>Mobile Layout Test</h2>
+        <p>This section tests various layout elements on mobile devices:</p>
+        
+        <h3>Typography Test</h3>
+        <h4>Heading Level 4</h4>
+        <p>This is a paragraph with <strong>bold text</strong> and <em>italic text</em>. The text should be readable and properly sized on mobile devices.</p>
+        
+        <h3>List Test</h3>
+        <ul>
+            <li>First list item with some longer text to test wrapping</li>
+            <li>Second list item</li>
+            <li>Third list item with <a href="#">a link</a> inside</li>
+        </ul>
+        
+        <h3>Grid Layout Test</h3>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 15px 0;">
+            <div style="background: #f8f9fa; padding: 10px; border-radius: 5px;">
+                <h4>Column 1</h4>
+                <p>This should stack vertically on mobile.</p>
+            </div>
+            <div style="background: #f8f9fa; padding: 10px; border-radius: 5px;">
+                <h4>Column 2</h4>
+                <p>This should also stack vertically on mobile.</p>
+            </div>
+        </div>
+        
+        <h3>Code Block Test</h3>
+        <div style="background: #f8f8f8; padding: 15px; border-radius: 5px; margin: 15px 0;">
+            <p><strong>Formula:</strong> MC = (W<sub>w</sub> - W<sub>d</sub>) / W<sub>d</sub> × 100%</p>
+            <p><strong>Where:</strong></p>
+            <ul>
+                <li>MC = Moisture Content (%)</li>
+                <li>W<sub>w</sub> = Wet weight</li>
+                <li>W<sub>d</sub> = Dry weight</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div id="right">
+        <div style="padding-top:10px; min-height:280px; text-align:center;">
+            <script src="js/mobile-optimization.js"></script>
+<script src="js/calculator-mobile-enhancer.js"></script>
+<script src="js/mobile-calculator-fix.js"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2205593928173688"
+                 crossorigin="anonymous"></script>
+            <!-- zishiying -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-2205593928173688"
+                 data-ad-slot="8971293106"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+        
+        <form name="calcSearchForm" autocomplete="off">
+            <table align="center" id="searchbox">
+                <tbody>
+                    <tr>
+                        <td>
+                            <input type="text" name="calcSearchTerm" id="calcSearchTerm" class="inlongest" placeholder="Search calculators...">
+                        </td>
+                        <td>
+                            <span id="bluebtn">Search</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div id="calcSearchOut"></div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+        
+        <div id="othercalc">
+            <div id="octitle">
+                <a href="other-calculators.html">Other Calculators</a>
+            </div>
+            <div id="occontent">
+                <a href="temperature-calculator.html">Temperature</a>
+                <a href="pressure-calculator.html">Pressure</a>
+                <a href="density-calculator.html">Density</a>
+                <a href="volume-calculator.html">Volume</a>
+                <a href="conversion-calculator.html">Unit Conversion</a>
+            </div>
+            <div id="ocother">
+                <a href="moisture-calculators.html">Moisture</a> | 
+                <a href="humidity-calculators.html">Humidity</a> | 
+                <a href="drying-calculators.html">Drying</a> | 
+                <a href="other-calculators.html">Other</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="clear"></div>
+
+<div id="footer">
+    <div id="footerin">
+        <div id="footernav">
+            <a href="about-us.html">about us</a> | 
+            <a href="sitemap.html">sitemap</a> | 
+            <a href="terms.html">terms of use</a> | 
+            <a href="privacy.html">privacy policy</a> 
+            &nbsp; © 2025 <a href="index.html">drycalculator.net</a>
+        </div>
+    </div>
+</div>
+
+<script>
+// Simple test script
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('Mobile test page loaded');
+    
+    // Test form submission
+    document.querySelector('form[name="calform"]').addEventListener('submit', function(e) {
+        e.preventDefault();
+        alert('Form submitted successfully! (This is just a test)');
+    });
+    
+    // Test clear button
+    document.querySelector('input[type="button"]').addEventListener('click', function() {
+        document.getElementById('ctestinput').value = '';
+        alert('Form cleared! (This is just a test)');
+    });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Moisture Removal Calculator</title>
+    <meta name="description" content="Calculate the amount of moisture to be removed during drying processes. Essential for process design and energy calculations.">
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/icon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/icon-16x16.png">
+</head>
+<body>
+<div id="headerout">
+    <div id="header">
+        <div id="logo">
+            <a href="index.html">
+                <img src="images/dry-calculator-logo.svg" width="208" height="22" alt="Dry Calculator">
+            </a>
+        </div>
+        <div id="login">
+            <a href="sign-in.html">sign in</a>
+        </div>
+    </div>
+</div>
+<div id="clear"></div>
+
+<div id="contentout">
+    <div id="content">
+        <div id="breadcrumbs">
+            <a href="index.html">home</a> / 
+            <a href="drying-calculators.html">drying calculators</a> / 
+            <a href="moisture-removal-calculator.html">moisture removal calculator</a>
+        </div>
+        
+        <h1>Moisture Removal Calculator</h1>
+        <p>The <i>Moisture Removal Calculator</i> determines the amount of moisture to be removed during drying processes. Essential for process design, energy calculations, and equipment sizing.</p>
+
+        <div id="insmdc">
+            <img src="images/insm.svg" width="630" height="35" alt="Modify the values and click the calculate button to use">
+        </div>
+        
+        <form name="calform">
+            <div class="panel">
+                <table id="calinputtable">
+                    <tbody>
+                        <tr>
+                            <td>Material Weight (Initial)</td>
+                            <td>
+                                <input type="text" name="cinitialweight" id="cinitialweight" value="1000" class="infull">
+                                <span style="margin-left: 5px; color: rgb(136, 136, 136);">kg</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Initial Moisture Content</td>
+                            <td>
+                                <input type="text" name="cinitialmc" id="cinitialmc" value="50" class="infull">
+                                <span style="margin-left: 5px; color: rgb(136, 136, 136);">% (wet basis)</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Final Moisture Content</td>
+                            <td>
+                                <input type="text" name="cfinalmc" id="cfinalmc" value="8" class="infull">
+                                <span style="margin-left: 5px; color: rgb(136, 136, 136);">% (wet basis)</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Moisture Basis</td>
+                            <td>
+                                <label for="cbasis1" class="cbcontainer">
+                                    <input type="radio" name="cbasis" id="cbasis1" value="wet" checked="">
+                                    <span class="rbmark"></span>Wet Basis
+                                </label> &nbsp;
+                                <label for="cbasis2" class="cbcontainer">
+                                    <input type="radio" name="cbasis" id="cbasis2" value="dry">
+                                    <span class="rbmark"></span>Dry Basis
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Material Type</td>
+                            <td>
+                                <select name="cmaterialtype" id="cmaterialtype" class="infull">
+                                    <option value="general">General Material</option>
+                                    <option value="wood">Wood/Lumber</option>
+                                    <option value="grain">Grain/Cereal</option>
+                                    <option value="food">Food Products</option>
+                                    <option value="textile">Textiles</option>
+                                    <option value="paper">Paper/Pulp</option>
+                                    <option value="concrete">Concrete</option>
+                                    <option value="soil">Soil/Aggregate</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Calculate Additional</td>
+                            <td>
+                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                                    <label class="cbcontainer">
+                                        <input type="checkbox" name="ccalcenergy" id="ccalcenergy" checked>
+                                        <span class="checkmark"></span>Energy Required
+                                    </label>
+                                    <label class="cbcontainer">
+                                        <input type="checkbox" name="ccalctime" id="ccalctime">
+                                        <span class="checkmark"></span>Drying Time
+                                    </label>
+                                    <label class="cbcontainer">
+                                        <input type="checkbox" name="ccalcrate" id="ccalcrate">
+                                        <span class="checkmark"></span>Removal Rate
+                                    </label>
+                                    <label class="cbcontainer">
+                                        <input type="checkbox" name="ccalccost" id="ccalccost">
+                                        <span class="checkmark"></span>Energy Cost
+                                    </label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" align="left" style="padding-top: 8px;padding-left: 70px;">
+                                <input type="submit" name="x" value="Calculate">
+                                <input type="button" value="Clear">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </form>
+
+        <div id="result-section" style="margin-top: 20px; padding: 15px; background: #f0f8ff; border: 1px solid #ccc; border-radius: 5px; display: none;">
+            <h3>Moisture Removal Analysis</h3>
+            <div id="results-content"></div>
+        </div>
+
+        <br>
+        <p></p>
+        <fieldset>
+            <legend>Related</legend>
+            <a href="drying-time-calculator.html">Drying Time Calculator</a> | 
+            <a href="heat-requirement-calculator.html">Heat Requirement Calculator</a> | 
+            <a href="energy-efficiency-calculator.html">Energy Efficiency Calculator</a>
+        </fieldset>
+        <p></p>
+        
+        <h2>Understanding Moisture Removal</h2>
+        <p>Moisture removal is the process of extracting water from materials through various drying methods. Understanding the amount of moisture to be removed is crucial for process design, energy calculations, and equipment sizing.</p>
+        
+        <h3>Moisture Removal Calculations</h3>
+        
+        <h4>Basic Formula (Wet Basis)</h4>
+        <div style="background: #f8f8f8; padding: 15px; border-radius: 5px; margin: 15px 0;">
+            <p><strong>Water to Remove = Initial Weight × (MC<sub>initial</sub> - MC<sub>final</sub>) / (100 - MC<sub>final</sub>)</strong></p>
+            <p><strong>Where:</strong></p>
+            <ul>
+                <li>MC = Moisture Content (%)</li>
+                <li>Initial Weight = Total weight before drying</li>
+                <li>Final Weight = Initial Weight - Water Removed</li>
+            </ul>
+        </div>
+        
+        <h4>Dry Basis Calculations</h4>
+        <div style="background: #f8f8f8; padding: 15px; border-radius: 5px; margin: 15px 0;">
+            <p><strong>Dry Weight = Initial Weight / (1 + MC<sub>initial</sub>/100)</strong></p>
+            <p><strong>Water to Remove = Dry Weight × (MC<sub>initial</sub> - MC<sub>final</sub>) / 100</strong></p>
+        </div>
+        
+        <h3>Applications</h3>
+        
+        <h4>Process Design</h4>
+        <ul>
+            <li><strong>Equipment Sizing:</strong> Determine dryer capacity requirements</li>
+            <li><strong>Energy Planning:</strong> Calculate heat and power needs</li>
+            <li><strong>Time Estimation:</strong> Predict drying cycle duration</li>
+            <li><strong>Cost Analysis:</strong> Estimate operating expenses</li>
+        </ul>
+        
+        <h4>Quality Control</h4>
+        <ul>
+            <li><strong>Process Monitoring:</strong> Track moisture removal progress</li>
+            <li><strong>Batch Control:</strong> Ensure consistent product quality</li>
+            <li><strong>Efficiency Analysis:</strong> Optimize drying parameters</li>
+            <li><strong>Troubleshooting:</strong> Identify process problems</li>
+        </ul>
+        
+        <h3>Energy Requirements</h3>
+        
+        <h4>Heat Components</h4>
+        <ul>
+            <li><strong>Sensible Heat:</strong> Heat material to drying temperature</li>
+            <li><strong>Latent Heat:</strong> Evaporate water (≈2300 kJ/kg)</li>
+            <li><strong>Heat Losses:</strong> Equipment and environmental losses</li>
+            <li><strong>Total Energy:</strong> Sum of all heat requirements</li>
+        </ul>
+        
+        <h4>Typical Energy Values</h4>
+        <table style="width: 100%; border-collapse: collapse; margin: 15px 0;">
+            <tr style="background: #f0f0f0;">
+                <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">Material</th>
+                <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">Energy (kJ/kg water)</th>
+                <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">Efficiency</th>
+                <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">Notes</th>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">Wood</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">3000-4000</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">60-75%</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">Conventional kiln</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">Grain</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">2800-3500</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">70-80%</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">Heated air drying</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">Food</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">2500-4000</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">50-70%</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">Varies by product</td>
+            </tr>
+        </table>
+        
+        <h3>Drying Methods</h3>
+        
+        <h4>Convective Drying</h4>
+        <ul>
+            <li><strong>Hot Air:</strong> Most common method</li>
+            <li><strong>Energy:</strong> 2500-4000 kJ/kg water</li>
+            <li><strong>Applications:</strong> Wood, grain, food</li>
+            <li><strong>Efficiency:</strong> 50-80%</li>
+        </ul>
+        
+        <h4>Conductive Drying</h4>
+        <ul>
+            <li><strong>Contact Heating:</strong> Direct heat transfer</li>
+            <li><strong>Energy:</strong> 2300-3000 kJ/kg water</li>
+            <li><strong>Applications:</strong> Thin materials, pastes</li>
+            <li><strong>Efficiency:</strong> 70-90%</li>
+        </ul>
+        
+        <h4>Radiation Drying</h4>
+        <ul>
+            <li><strong>Infrared/Microwave:</strong> Electromagnetic heating</li>
+            <li><strong>Energy:</strong> 2400-3500 kJ/kg water</li>
+            <li><strong>Applications:</strong> Specialty products</li>
+            <li><strong>Efficiency:</strong> 60-85%</li>
+        </ul>
+        
+        <h3>Economic Considerations</h3>
+        
+        <h4>Operating Costs</h4>
+        <ul>
+            <li><strong>Energy Costs:</strong> Fuel or electricity for heating</li>
+            <li><strong>Labor Costs:</strong> Operation and monitoring</li>
+            <li><strong>Maintenance:</strong> Equipment upkeep</li>
+            <li><strong>Material Handling:</strong> Loading and unloading</li>
+        </ul>
+        
+        <h4>Cost Optimization</h4>
+        <ul>
+            <li><strong>Energy Efficiency:</strong> Improve heat recovery</li>
+            <li><strong>Process Control:</strong> Optimize drying conditions</li>
+            <li><strong>Batch Size:</strong> Maximize equipment utilization</li>
+            <li><strong>Scheduling:</strong> Use off-peak energy rates</li>
+        </ul>
+        
+        <p><strong>Note:</strong> Moisture removal calculations provide estimates based on theoretical models. Actual values may vary due to material properties, drying conditions, and equipment efficiency. Use safety factors and validate with measurements for critical applications.</p>
+    </div>
+    
+    <div id="right">
+        <div style="padding-top:10px; min-height:280px; text-align:center;">
+            <!-- Advertisement space -->
+        </div>
+        
+        <form name="calcSearchForm" autocomplete="off">
+            <table align="center" id="searchbox">
+                <tbody>
+                    <tr>
+                        <td>
+                            <input type="text" name="calcSearchTerm" id="calcSearchTerm" class="inlongest" placeholder="Search calculators...">
+                        </td>
+                        <td>
+                            <span id="bluebtn">Search</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div id="calcSearchOut"></div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+        
+        <div id="othercalc">
+            <div id="octitle">
+                <a href="drying-calculators.html">Drying Calculators</a>
+            </div>
+            <div id="occontent">
+                <a href="drying-time-calculator.html">Drying Time</a>
+                <a href="evaporation-rate-calculator.html">Evaporation Rate</a>
+                <a href="moisture-removal-calculator.html">Moisture Removal</a>
+                <a href="heat-requirement-calculator.html">Heat Requirement</a>
+                <a href="energy-efficiency-calculator.html">Energy Efficiency</a>
+            </div>
+            <div id="ocother">
+                <a href="moisture-calculators.html">Moisture</a> | 
+                <a href="humidity-calculators.html">Humidity</a> | 
+                <a href="drying-calculators.html">Drying</a> | 
+                <a href="other-calculators.html">Other</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="clear"></div>
+
+<div id="footer">
+    <div id="footerin">
+        <div id="footernav">
+            <a href="about-us.html">about us</a> | 
+            <a href="sitemap.html">sitemap</a> | 
+            <a href="terms.html">terms of use</a> | 
+            <a href="privacy.html">privacy policy</a> 
+            &nbsp; © 2025 <a href="index.html">drycalculator.net</a>
+        </div>
+    </div>
+</div>
+
+<script src="js/mobile-optimization.js"></script>
+<script src="js/calculator-mobile-enhancer.js"></script>
+<script src="js/mobile-calculator-fix.js"></script>
+<script src="js/moisture-removal-calculator.js"></script>
+</body>
+</html>

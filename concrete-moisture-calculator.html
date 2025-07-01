@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Concrete Moisture Calculator</title>
+    <meta name="description" content="Calculate concrete moisture content, drying time, and readiness for flooring installation. Essential for construction and flooring contractors.">
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/icon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/icon-16x16.png">
+</head>
+<body>
+<div id="headerout">
+    <div id="header">
+        <div id="logo">
+            <a href="index.html">
+                <img src="images/dry-calculator-logo.svg" width="208" height="22" alt="Dry Calculator">
+            </a>
+        </div>
+        <div id="login">
+            <a href="sign-in.html">sign in</a>
+        </div>
+    </div>
+</div>
+<div id="clear"></div>
+
+<div id="contentout">
+    <div id="content">
+        <div id="breadcrumbs">
+            <a href="index.html">home</a> / 
+            <a href="moisture-calculators.html">moisture calculators</a> / 
+            <a href="concrete-moisture-calculator.html">concrete moisture calculator</a>
+        </div>
+        
+        <h1>Concrete Moisture Calculator</h1>
+        <p>The <i>Concrete Moisture Calculator</i> determines concrete moisture content, drying time, and readiness for flooring installation. Essential for construction professionals, flooring contractors, and quality control.</p>
+
+        <div id="insmdc">
+            <img src="images/insm.svg" width="630" height="35" alt="Modify the values and click the calculate button to use">
+        </div>
+        
+        <form name="calform">
+            <div class="panel">
+                <table id="calinputtable">
+                    <tbody>
+                        <tr>
+                            <td>Test Method</td>
+                            <td>
+                                <select name="ctestmethod" id="ctestmethod" class="infull">
+                                    <option value="astm_f2170">ASTM F2170 (In-Situ RH)</option>
+                                    <option value="astm_f1869">ASTM F1869 (Calcium Chloride)</option>
+                                    <option value="astm_f2659">ASTM F2659 (RH Hood)</option>
+                                    <option value="gravimetric">Gravimetric Method</option>
+                                    <option value="electrical">Electrical Resistance</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Concrete Age</td>
+                            <td>
+                                <input type="text" name="cconcreteage" id="cconcreteage" value="28" class="infull">
+                                <span style="margin-left: 5px; color: rgb(136, 136, 136);">days</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Slab Thickness</td>
+                            <td>
+                                <input type="text" name="cslabthickness" id="cslabthickness" value="100" class="infull">
+                                <span style="margin-left: 5px; color: rgb(136, 136, 136);">mm</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Water-Cement Ratio</td>
+                            <td>
+                                <input type="text" name="cwcratio" id="cwcratio" value="0.45" class="infull">
+                                <span style="margin-left: 5px; color: rgb(136, 136, 136);">w/c</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Ambient Temperature</td>
+                            <td>
+                                <input type="text" name="cambienttemp" id="cambienttemp" value="20" class="infull">
+                                <span style="margin-left: 5px; color: rgb(136, 136, 136);">°C</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Relative Humidity</td>
+                            <td>
+                                <input type="text" name="cambientrh" id="cambientrh" value="50" class="infull">
+                                <span style="margin-left: 5px; color: rgb(136, 136, 136);">%</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Flooring Type</td>
+                            <td>
+                                <select name="cflooringtype" id="cflooringtype" class="infull">
+                                    <option value="epoxy">Epoxy Coating</option>
+                                    <option value="vinyl">Vinyl/LVT</option>
+                                    <option value="carpet">Carpet</option>
+                                    <option value="hardwood">Hardwood</option>
+                                    <option value="laminate">Laminate</option>
+                                    <option value="ceramic">Ceramic Tile</option>
+                                    <option value="general">General Application</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" align="left" style="padding-top: 8px;padding-left: 70px;">
+                                <input type="submit" name="x" value="Calculate">
+                                <input type="button" value="Clear">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </form>
+
+        <div id="result-section" style="margin-top: 20px; padding: 15px; background: #f0f8ff; border: 1px solid #ccc; border-radius: 5px; display: none;">
+            <h3>Concrete Moisture Analysis</h3>
+            <div id="results-content"></div>
+        </div>
+
+        <br>
+        <p></p>
+        <fieldset>
+            <legend>Related</legend>
+            <a href="moisture-content-calculator.html">Moisture Content Calculator</a> | 
+            <a href="drying-time-calculator.html">Drying Time Calculator</a> | 
+            <a href="relative-humidity-calculator.html">Relative Humidity Calculator</a>
+        </fieldset>
+        <p></p>
+        
+        <h2>Understanding Concrete Moisture</h2>
+        <p>Concrete moisture content is critical for flooring installation, coating application, and structural integrity. Excess moisture can cause flooring failures, coating delamination, and long-term durability issues.</p>
+        
+        <h3>Moisture Testing Standards</h3>
+        
+        <h4>ASTM F2170 - In-Situ Relative Humidity</h4>
+        <div style="background: #f8f8f8; padding: 15px; border-radius: 5px; margin: 15px 0;">
+            <p><strong>Method:</strong> RH probes inserted into concrete at 40% of slab depth</p>
+            <p><strong>Accuracy:</strong> Most reliable for thick slabs</p>
+            <p><strong>Time:</strong> 72-hour equilibration period</p>
+            <p><strong>Limits:</strong> Typically 75-85% RH maximum for flooring</p>
+        </div>
+        
+        <h4>ASTM F1869 - Calcium Chloride Test</h4>
+        <div style="background: #f8f8f8; padding: 15px; border-radius: 5px; margin: 15px 0;">
+            <p><strong>Method:</strong> Calcium chloride dish sealed to concrete surface</p>
+            <p><strong>Duration:</strong> 60-72 hours</p>
+            <p><strong>Units:</strong> Pounds per 1000 sq ft per 24 hours</p>
+            <p><strong>Limits:</strong> Typically 3-5 lbs/1000 sq ft/24 hrs maximum</p>
+        </div>
+        
+        <h3>Acceptable Moisture Levels</h3>
+        
+        <table style="width: 100%; border-collapse: collapse; margin: 15px 0;">
+            <tr style="background: #f0f0f0;">
+                <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">Flooring Type</th>
+                <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">Max RH (%)</th>
+                <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">Max MVER*</th>
+                <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">Notes</th>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">Epoxy Coating</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">75-80</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">3</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">Vapor barrier properties</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">Vinyl/LVT</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">75-85</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">3-5</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">Check manufacturer specs</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">Carpet</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">90</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">5</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">More tolerant</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">Hardwood</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">75</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">3</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">Very moisture sensitive</td>
+            </tr>
+        </table>
+        <p><em>*MVER = Moisture Vapor Emission Rate (lbs/1000 sq ft/24 hrs)</em></p>
+        
+        <h3>Factors Affecting Concrete Drying</h3>
+        
+        <h4>Mix Design Factors</h4>
+        <ul>
+            <li><strong>Water-Cement Ratio:</strong> Higher w/c = longer drying time</li>
+            <li><strong>Cement Type:</strong> Different cements have varying permeability</li>
+            <li><strong>Admixtures:</strong> Some reduce permeability and slow drying</li>
+            <li><strong>Aggregate:</strong> Type and gradation affect porosity</li>
+        </ul>
+        
+        <h4>Environmental Factors</h4>
+        <ul>
+            <li><strong>Temperature:</strong> Higher temperatures accelerate drying</li>
+            <li><strong>Humidity:</strong> Lower ambient RH increases drying rate</li>
+            <li><strong>Air Movement:</strong> Ventilation removes moisture</li>
+            <li><strong>Vapor Barriers:</strong> Under-slab barriers affect drying</li>
+        </ul>
+        
+        <h4>Structural Factors</h4>
+        <ul>
+            <li><strong>Slab Thickness:</strong> Thicker slabs dry much slower</li>
+            <li><strong>Surface Area:</strong> Exposed surfaces allow moisture escape</li>
+            <li><strong>Curing Method:</strong> Wet curing extends drying time</li>
+            <li><strong>Sealing:</strong> Surface sealers prevent moisture escape</li>
+        </ul>
+        
+        <h3>Drying Time Estimates</h3>
+        
+        <h4>General Guidelines</h4>
+        <div style="background: #f8f8f8; padding: 15px; border-radius: 5px; margin: 15px 0;">
+            <p><strong>Rule of Thumb:</strong> 30 days per inch of thickness (one-sided drying)</p>
+            <p><strong>Two-Sided Drying:</strong> 15 days per inch of thickness</p>
+            <p><strong>High w/c Ratio:</strong> Add 50-100% to base time</p>
+            <p><strong>Low Permeability:</strong> May require 6+ months for thick slabs</p>
+        </div>
+        
+        <h4>Thickness Effects</h4>
+        <table style="width: 100%; border-collapse: collapse; margin: 15px 0;">
+            <tr style="background: #f0f0f0;">
+                <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">Slab Thickness</th>
+                <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">One-Sided Drying</th>
+                <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">Two-Sided Drying</th>
+                <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">Notes</th>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">100mm (4")</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">4 months</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">2 months</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">Typical residential</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">150mm (6")</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">6 months</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">3 months</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">Commercial standard</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">200mm (8")</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">8 months</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">4 months</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">Heavy duty industrial</td>
+            </tr>
+        </table>
+        
+        <h3>Moisture-Related Problems</h3>
+        
+        <h4>Flooring Failures</h4>
+        <ul>
+            <li><strong>Adhesive Failure:</strong> Moisture weakens adhesive bonds</li>
+            <li><strong>Buckling:</strong> Dimensional changes in flooring materials</li>
+            <li><strong>Cupping:</strong> Moisture gradients cause warping</li>
+            <li><strong>Mold Growth:</strong> Trapped moisture supports microbial growth</li>
+        </ul>
+        
+        <h4>Coating Problems</h4>
+        <ul>
+            <li><strong>Delamination:</strong> Coatings separate from substrate</li>
+            <li><strong>Blistering:</strong> Vapor pressure creates bubbles</li>
+            <li><strong>Osmotic Blistering:</strong> Salt contamination worsens problem</li>
+            <li><strong>Reduced Adhesion:</strong> Moisture interferes with bonding</li>
+        </ul>
+        
+        <h3>Accelerated Drying Methods</h3>
+        
+        <h4>Environmental Control</h4>
+        <ul>
+            <li><strong>Dehumidification:</strong> Reduce ambient humidity</li>
+            <li><strong>Heating:</strong> Increase temperature to accelerate evaporation</li>
+            <li><strong>Air Movement:</strong> Fans to remove moisture-laden air</li>
+            <li><strong>Ventilation:</strong> Fresh air exchange</li>
+        </ul>
+        
+        <h4>Surface Preparation</h4>
+        <ul>
+            <li><strong>Grinding:</strong> Open surface pores for moisture escape</li>
+            <li><strong>Shot Blasting:</strong> Create surface texture</li>
+            <li><strong>Scarification:</strong> Mechanical surface opening</li>
+            <li><strong>Remove Sealers:</strong> Eliminate vapor barriers</li>
+        </ul>
+        
+        <h3>Quality Control</h3>
+        
+        <h4>Testing Frequency</h4>
+        <ul>
+            <li><strong>Initial Testing:</strong> Establish baseline conditions</li>
+            <li><strong>Progress Monitoring:</strong> Weekly or bi-weekly tests</li>
+            <li><strong>Pre-Installation:</strong> Final verification before flooring</li>
+            <li><strong>Documentation:</strong> Maintain complete test records</li>
+        </ul>
+        
+        <h4>Test Location Selection</h4>
+        <ul>
+            <li><strong>Representative Areas:</strong> Test typical slab conditions</li>
+            <li><strong>Problem Areas:</strong> Test areas with potential issues</li>
+            <li><strong>Multiple Locations:</strong> Account for variability</li>
+            <li><strong>Avoid Edges:</strong> Edge effects can skew results</li>
+        </ul>
+        
+        <h3>Mitigation Strategies</h3>
+        
+        <h4>Vapor Barriers</h4>
+        <ul>
+            <li><strong>Topical Sealers:</strong> Surface-applied moisture barriers</li>
+            <li><strong>Penetrating Sealers:</strong> Reduce but don't eliminate vapor transmission</li>
+            <li><strong>Epoxy Primers:</strong> Moisture-tolerant primer systems</li>
+            <li><strong>Membrane Systems:</strong> Physical vapor barriers</li>
+        </ul>
+        
+        <h4>Moisture-Tolerant Systems</h4>
+        <ul>
+            <li><strong>Breathable Flooring:</strong> Allow vapor transmission</li>
+            <li><strong>Moisture-Resistant Adhesives:</strong> Perform in high moisture</li>
+            <li><strong>Vapor Transmission Flooring:</strong> Designed for concrete</li>
+            <li><strong>Floating Systems:</strong> Not directly bonded to concrete</li>
+        </ul>
+        
+        <h3>Economic Considerations</h3>
+        
+        <h4>Cost of Delays</h4>
+        <ul>
+            <li><strong>Project Delays:</strong> Extended construction schedules</li>
+            <li><strong>Carrying Costs:</strong> Extended financing and overhead</li>
+            <li><strong>Opportunity Costs:</strong> Delayed occupancy and revenue</li>
+            <li><strong>Remediation Costs:</strong> Fixing moisture-related failures</li>
+        </ul>
+        
+        <h4>Prevention Benefits</h4>
+        <ul>
+            <li><strong>Warranty Protection:</strong> Avoid flooring warranty voids</li>
+            <li><strong>Reduced Callbacks:</strong> Fewer post-installation problems</li>
+            <li><strong>Reputation Protection:</strong> Maintain professional standing</li>
+            <li><strong>Legal Protection:</strong> Reduce liability exposure</li>
+        </ul>
+        
+        <p><strong>Note:</strong> Concrete moisture testing should always follow established standards and manufacturer requirements. This calculator provides estimates - actual testing is required for critical applications. Consult with flooring manufacturers and testing professionals for specific project requirements.</p>
+    </div>
+    
+    <div id="right">
+        <div style="padding-top:10px; min-height:280px; text-align:center;">
+            <!-- Advertisement space -->
+        </div>
+        
+        <form name="calcSearchForm" autocomplete="off">
+            <table align="center" id="searchbox">
+                <tbody>
+                    <tr>
+                        <td>
+                            <input type="text" name="calcSearchTerm" id="calcSearchTerm" class="inlongest" placeholder="Search calculators...">
+                        </td>
+                        <td>
+                            <span id="bluebtn">Search</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div id="calcSearchOut"></div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+        
+        <div id="othercalc">
+            <div id="octitle">
+                <a href="moisture-calculators.html">Moisture Calculators</a>
+            </div>
+            <div id="occontent">
+                <a href="moisture-content-calculator.html">Moisture Content</a>
+                <a href="concrete-moisture-calculator.html">Concrete Moisture</a>
+                <a href="soil-moisture-calculator.html">Soil Moisture</a>
+                <a href="wood-moisture-calculator.html">Wood Moisture</a>
+                <a href="grain-moisture-calculator.html">Grain Moisture</a>
+            </div>
+            <div id="ocother">
+                <a href="moisture-calculators.html">Moisture</a> | 
+                <a href="humidity-calculators.html">Humidity</a> | 
+                <a href="drying-calculators.html">Drying</a> | 
+                <a href="other-calculators.html">Other</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="clear"></div>
+
+<div id="footer">
+    <div id="footerin">
+        <div id="footernav">
+            <a href="about-us.html">about us</a> | 
+            <a href="sitemap.html">sitemap</a> | 
+            <a href="terms.html">terms of use</a> | 
+            <a href="privacy.html">privacy policy</a> 
+            &nbsp; © 2025 <a href="index.html">drycalculator.net</a>
+        </div>
+    </div>
+</div>
+
+<script src="js/mobile-optimization.js"></script>
+<script src="js/calculator-mobile-enhancer.js"></script>
+<script src="js/mobile-calculator-fix.js"></script>
+<script src="js/concrete-moisture-calculator.js"></script>
+</body>
+</html>

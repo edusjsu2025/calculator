@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Wet Bulb Calculator</title>
+    <meta name="description" content="Calculate wet bulb temperature from dry bulb temperature and relative humidity. Essential for HVAC design, cooling tower calculations, and psychrometric analysis.">
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/icon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/icon-16x16.png">
+</head>
+<body>
+<div id="headerout">
+    <div id="header">
+        <div id="logo">
+            <a href="index.html">
+                <img src="images/dry-calculator-logo.svg" width="208" height="22" alt="Dry Calculator">
+            </a>
+        </div>
+        <div id="login">
+            <a href="sign-in.html">sign in</a>
+        </div>
+    </div>
+</div>
+<div id="clear"></div>
+
+<div id="contentout">
+    <div id="content">
+        <div id="breadcrumbs">
+            <a href="index.html">home</a> / 
+            <a href="humidity-calculators.html">humidity calculators</a> / 
+            <a href="wet-bulb-calculator.html">wet bulb calculator</a>
+        </div>
+        
+        <h1>Wet Bulb Calculator</h1>
+        <p>The <i>Wet Bulb Calculator</i> determines wet bulb temperature from dry bulb temperature and relative humidity. Wet bulb temperature is crucial for HVAC design, cooling tower performance, evaporative cooling systems, and human comfort assessment in hot climates.</p>
+
+        <div id="insmdc">
+            <img src="images/insm.svg" width="630" height="35" alt="Modify the values and click the calculate button to use">
+        </div>
+        
+        <form name="calform">
+            <div class="panel">
+                <table id="calinputtable">
+                    <tbody>
+                        <tr>
+                            <td>Dry Bulb Temperature</td>
+                            <td>
+                                <input type="text" name="cdrybulb" id="cdrybulb" value="30" class="infull">
+                                <span class="temp-unit">°C</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Relative Humidity</td>
+                            <td>
+                                <input type="text" name="crelhumidity" id="crelhumidity" value="60" class="infull">
+                                <span style="margin-left: 5px; color: rgb(136, 136, 136);">%</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Temperature Unit</td>
+                            <td>
+                                <label for="cunit1" class="cbcontainer">
+                                    <input type="radio" name="cunit" id="cunit1" value="celsius" checked="">
+                                    <span class="rbmark"></span>Celsius (°C)
+                                </label> &nbsp;
+                                <label for="cunit2" class="cbcontainer">
+                                    <input type="radio" name="cunit" id="cunit2" value="fahrenheit">
+                                    <span class="rbmark"></span>Fahrenheit (°F)
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Atmospheric Pressure</td>
+                            <td>
+                                <input type="text" name="cpressure" id="cpressure" value="101.325" class="infull">
+                                <span style="margin-left: 5px; color: rgb(136, 136, 136);">kPa</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" align="left" style="padding-top: 8px;padding-left: 70px;">
+                                <input type="submit" name="x" value="Calculate">
+                                <input type="button" value="Clear">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </form>
+
+        <div id="result-section" style="margin-top: 20px; padding: 15px; background: #f0f8ff; border: 1px solid #ccc; border-radius: 5px; display: none;">
+            <h3>Wet Bulb Temperature Results</h3>
+            <div id="results-content"></div>
+        </div>
+
+        <br>
+        <p></p>
+        <fieldset>
+            <legend>Related</legend>
+            <a href="relative-humidity-calculator.html">Relative Humidity Calculator</a> | 
+            <a href="dew-point-calculator.html">Dew Point Calculator</a> | 
+            <a href="psychrometric-calculator.html">Psychrometric Calculator</a>
+        </fieldset>
+        <p></p>
+        
+        <h2>Understanding Wet Bulb Temperature</h2>
+        <p>Wet bulb temperature is the lowest temperature that can be reached by evaporative cooling. It represents the temperature of a wet thermometer bulb exposed to moving air, where evaporation cools the bulb until equilibrium is reached between heat and mass transfer.</p>
+        
+        <h3>Key Concepts</h3>
+        
+        <h4>Physical Meaning</h4>
+        <p>Wet bulb temperature indicates:</p>
+        <ul>
+            <li>The cooling potential of evaporation</li>
+            <li>The minimum temperature achievable by evaporative cooling</li>
+            <li>The adiabatic saturation temperature of air</li>
+            <li>A measure of the combined effect of temperature and humidity</li>
+        </ul>
+        
+        <h4>Relationship to Other Parameters</h4>
+        <ul>
+            <li><strong>Always ≤ Dry Bulb Temperature:</strong> Wet bulb is never higher than dry bulb</li>
+            <li><strong>Equals Dry Bulb at 100% RH:</strong> When air is saturated</li>
+            <li><strong>Lower with Lower Humidity:</strong> Greater difference at lower RH</li>
+            <li><strong>Independent of Pressure:</strong> Minimally affected by atmospheric pressure</li>
+        </ul>
+        
+        <h3>Calculation Methods</h3>
+        
+        <div style="background: #f8f8f8; padding: 15px; border-radius: 5px; margin: 15px 0;">
+            <h4>Iterative Psychrometric Method</h4>
+            <p>The most accurate method involves iterative solution of psychrometric equations:</p>
+            <ol>
+                <li>Assume initial wet bulb temperature</li>
+                <li>Calculate saturation vapor pressure at wet bulb temperature</li>
+                <li>Apply psychrometric constant and energy balance</li>
+                <li>Iterate until convergence</li>
+            </ol>
+            
+            <h4>Approximation Formula (Stull 2011)</h4>
+            <p>For quick estimates at standard pressure:</p>
+            <p><strong>Tw = T × atan[0.151977 × (RH% + 8.313659)^0.5] + atan(T + RH%) - atan(RH% - 1.676331) + 0.00391838 × (RH%)^1.5 × atan(0.023101 × RH%) - 4.686035</strong></p>
+        </div>
+        
+        <h3>Applications</h3>
+        
+        <h4>HVAC and Cooling Systems</h4>
+        <ul>
+            <li><strong>Evaporative Cooling:</strong> Determine cooling potential and efficiency</li>
+            <li><strong>Cooling Towers:</strong> Calculate approach temperature and performance</li>
+            <li><strong>Air Conditioning:</strong> Size equipment for latent and sensible loads</li>
+            <li><strong>Natural Ventilation:</strong> Assess passive cooling strategies</li>
+        </ul>
+        
+        <h4>Industrial Processes</h4>
+        <ul>
+            <li><strong>Drying Operations:</strong> Optimize drying conditions</li>
+            <li><strong>Textile Industry:</strong> Control humidity in manufacturing</li>
+            <li><strong>Food Processing:</strong> Maintain product quality during processing</li>
+            <li><strong>Chemical Processes:</strong> Control reaction environments</li>
+        </ul>
+        
+        <h4>Human Comfort and Safety</h4>
+        <ul>
+            <li><strong>Heat Stress Assessment:</strong> Evaluate dangerous conditions</li>
+            <li><strong>Workplace Safety:</strong> Monitor industrial environments</li>
+            <li><strong>Sports and Recreation:</strong> Assess outdoor activity safety</li>
+            <li><strong>Building Design:</strong> Optimize natural cooling strategies</li>
+        </ul>
+        
+        <h3>Wet Bulb Globe Temperature (WBGT)</h3>
+        <p>Related to wet bulb temperature, WBGT is used for heat stress assessment:</p>
+        <ul>
+            <li><strong>Outdoor WBGT:</strong> 0.7 × Tw + 0.2 × Tg + 0.1 × Ta</li>
+            <li><strong>Indoor WBGT:</strong> 0.7 × Tw + 0.3 × Tg</li>
+            <li>Where Tw = wet bulb, Tg = globe temperature, Ta = dry bulb</li>
+        </ul>
+        
+        <h3>Critical Wet Bulb Temperatures</h3>
+        <table style="width: 100%; border-collapse: collapse; margin: 15px 0;">
+            <tr style="background: #f0f0f0;">
+                <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">Wet Bulb (°C)</th>
+                <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">Wet Bulb (°F)</th>
+                <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">Condition</th>
+                <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">Impact</th>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">< 15</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">< 59</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">Comfortable</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">No heat stress concerns</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">15-20</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">59-68</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">Caution</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">Monitor activity levels</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">20-25</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">68-77</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">Warning</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">Limit strenuous activity</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">25-30</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">77-86</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">Danger</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">Heat exhaustion likely</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">> 30</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">> 86</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">Extreme Danger</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">Heat stroke imminent</td>
+            </tr>
+        </table>
+        
+        <h3>Measurement Techniques</h3>
+        
+        <h4>Sling Psychrometer</h4>
+        <ul>
+            <li>Traditional method using wet and dry bulb thermometers</li>
+            <li>Requires manual operation and air movement</li>
+            <li>Accurate when properly used</li>
+        </ul>
+        
+        <h4>Aspirated Psychrometer</h4>
+        <ul>
+            <li>Motorized air movement over thermometers</li>
+            <li>More consistent air velocity</li>
+            <li>Reduced operator error</li>
+        </ul>
+        
+        <h4>Electronic Instruments</h4>
+        <ul>
+            <li>Digital psychrometers with automatic calculation</li>
+            <li>Continuous monitoring capability</li>
+            <li>Data logging and remote monitoring</li>
+        </ul>
+        
+        <h3>Factors Affecting Accuracy</h3>
+        
+        <h4>Measurement Conditions</h4>
+        <ul>
+            <li><strong>Air Velocity:</strong> Minimum 2.5 m/s required for accurate readings</li>
+            <li><strong>Radiation Shield:</strong> Protect from direct sunlight and heat sources</li>
+            <li><strong>Wick Condition:</strong> Clean, properly wetted wick essential</li>
+            <li><strong>Water Quality:</strong> Use distilled water to prevent contamination</li>
+        </ul>
+        
+        <h4>Environmental Factors</h4>
+        <ul>
+            <li><strong>Atmospheric Pressure:</strong> Affects evaporation rate slightly</li>
+            <li><strong>Air Composition:</strong> Pollutants can affect readings</li>
+            <li><strong>Temperature Gradients:</strong> Ensure representative sampling</li>
+        </ul>
+        
+        <h3>Design Applications</h3>
+        
+        <h4>Evaporative Cooling Systems</h4>
+        <ul>
+            <li>Direct evaporative coolers: approach wet bulb by 2-5°C</li>
+            <li>Indirect evaporative coolers: approach wet bulb by 5-8°C</li>
+            <li>Cooling towers: approach wet bulb by 3-6°C</li>
+        </ul>
+        
+        <h4>Natural Ventilation</h4>
+        <ul>
+            <li>Night flush cooling effectiveness</li>
+            <li>Passive downdraft cooling potential</li>
+            <li>Courtyard and atrium cooling strategies</li>
+        </ul>
+        
+        <p><strong>Note:</strong> Wet bulb temperature calculations are most accurate when using iterative psychrometric methods. Simple approximations may have errors of ±1-2°C under extreme conditions.</p>
+    </div>
+    
+    <div id="right">
+        <div style="padding-top:10px; min-height:280px; text-align:center;">
+            <!-- Advertisement space -->
+        </div>
+        
+        <form name="calcSearchForm" autocomplete="off">
+            <table align="center" id="searchbox">
+                <tbody>
+                    <tr>
+                        <td>
+                            <input type="text" name="calcSearchTerm" id="calcSearchTerm" class="inlongest" placeholder="Search calculators...">
+                        </td>
+                        <td>
+                            <span id="bluebtn">Search</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div id="calcSearchOut"></div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+        
+        <div id="othercalc">
+            <div id="octitle">
+                <a href="humidity-calculators.html">Humidity Calculators</a>
+            </div>
+            <div id="occontent">
+                <a href="relative-humidity-calculator.html">Relative Humidity</a>
+                <a href="absolute-humidity-calculator.html">Absolute Humidity</a>
+                <a href="dew-point-calculator.html">Dew Point</a>
+                <a href="wet-bulb-calculator.html">Wet Bulb</a>
+                <a href="psychrometric-calculator.html">Psychrometric</a>
+                <a href="vapor-pressure-calculator.html">Vapor Pressure</a>
+            </div>
+            <div id="ocother">
+                <a href="moisture-calculators.html">Moisture</a> | 
+                <a href="humidity-calculators.html">Humidity</a> | 
+                <a href="drying-calculators.html">Drying</a> | 
+                <a href="other-calculators.html">Other</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="clear"></div>
+
+<div id="footer">
+    <div id="footerin">
+        <div id="footernav">
+            <a href="about-us.html">about us</a> | 
+            <a href="sitemap.html">sitemap</a> | 
+            <a href="terms.html">terms of use</a> | 
+            <a href="privacy.html">privacy policy</a> 
+            &nbsp; © 2025 <a href="index.html">drycalculator.net</a>
+        </div>
+    </div>
+</div>
+
+<script src="js/mobile-optimization.js"></script>
+<script src="js/calculator-mobile-enhancer.js"></script>
+<script src="js/mobile-calculator-fix.js"></script>
+<script src="js/wet-bulb-calculator.js"></script>
+</body>
+</html>

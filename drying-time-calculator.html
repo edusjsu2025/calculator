@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Drying Time Calculator</title>
+    <meta name="description" content="Calculate drying time for various materials based on initial moisture content, target moisture content, temperature, humidity, and material properties.">
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/icon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/icon-16x16.png">
+</head>
+<body>
+<div id="headerout">
+    <div id="header">
+        <div id="logo">
+            <a href="index.html">
+                <img src="images/dry-calculator-logo.svg" width="208" height="22" alt="Dry Calculator">
+            </a>
+        </div>
+        <div id="login">
+            <a href="sign-in.html">sign in</a>
+        </div>
+    </div>
+</div>
+<div id="clear"></div>
+
+<div id="contentout">
+    <div id="content">
+        <div id="breadcrumbs">
+            <a href="index.html">home</a> / 
+            <a href="drying-calculators.html">drying calculators</a> / 
+            <a href="drying-time-calculator.html">drying time calculator</a>
+        </div>
+        
+        <h1>Drying Time Calculator</h1>
+        <p>The <i>Drying Time Calculator</i> estimates the time required to dry materials from initial moisture content to target moisture content under specified environmental conditions. This calculator is essential for industrial drying processes, lumber kiln operations, and agricultural applications.</p>
+
+        <div id="insmdc">
+            <img src="images/insm.svg" width="630" height="35" alt="Modify the values and click the calculate button to use">
+        </div>
+        
+        <form name="calform">
+            <div class="panel">
+                <table id="calinputtable">
+                    <tbody>
+                        <tr>
+                            <td>Material Type</td>
+                            <td>
+                                <select name="cmaterial" id="cmaterial" class="infull">
+                                    <option value="wood">Wood (Lumber)</option>
+                                    <option value="grain">Grain</option>
+                                    <option value="concrete">Concrete</option>
+                                    <option value="textile">Textile</option>
+                                    <option value="paper">Paper</option>
+                                    <option value="food">Food Products</option>
+                                    <option value="general">General Material</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Initial Moisture Content</td>
+                            <td>
+                                <input type="text" name="cinitial" id="cinitial" value="25" class="infull">
+                                <span style="margin-left: 5px; color: rgb(136, 136, 136);">%</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Target Moisture Content</td>
+                            <td>
+                                <input type="text" name="ctarget" id="ctarget" value="12" class="infull">
+                                <span style="margin-left: 5px; color: rgb(136, 136, 136);">%</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Drying Temperature</td>
+                            <td>
+                                <input type="text" name="ctemperature" id="ctemperature" value="60" class="infull">
+                                <span style="margin-left: 5px; color: rgb(136, 136, 136);">°C</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Relative Humidity</td>
+                            <td>
+                                <input type="text" name="chumidity" id="chumidity" value="45" class="infull">
+                                <span style="margin-left: 5px; color: rgb(136, 136, 136);">%</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Air Velocity</td>
+                            <td>
+                                <input type="text" name="cairvelocity" id="cairvelocity" value="2.0" class="infull">
+                                <span style="margin-left: 5px; color: rgb(136, 136, 136);">m/s</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Material Thickness</td>
+                            <td>
+                                <input type="text" name="cthickness" id="cthickness" value="25" class="infull">
+                                <span style="margin-left: 5px; color: rgb(136, 136, 136);">mm</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" align="left" style="padding-top: 8px;padding-left: 70px;">
+                                <input type="submit" name="x" value="Calculate">
+                                <input type="button" value="Clear">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </form>
+
+        <div id="result-section" style="margin-top: 20px; padding: 15px; background: #f0f8ff; border: 1px solid #ccc; border-radius: 5px; display: none;">
+            <h3>Drying Time Estimation</h3>
+            <div id="results-content"></div>
+        </div>
+
+        <br>
+        <p></p>
+        <fieldset>
+            <legend>Related</legend>
+            <a href="evaporation-rate-calculator.html">Evaporation Rate Calculator</a> | 
+            <a href="kiln-drying-calculator.html">Kiln Drying Calculator</a> | 
+            <a href="air-drying-calculator.html">Air Drying Calculator</a>
+        </fieldset>
+        <p></p>
+        
+        <h2>Understanding Drying Time Calculation</h2>
+        <p>Drying time depends on multiple factors including material properties, environmental conditions, and the amount of moisture to be removed. This calculator uses empirical models and industry standards to estimate drying times for various materials.</p>
+        
+        <h3>Key Factors Affecting Drying Time</h3>
+        
+        <h4>Material Properties</h4>
+        <ul>
+            <li><strong>Initial Moisture Content:</strong> Higher initial moisture requires longer drying time</li>
+            <li><strong>Material Density:</strong> Denser materials typically dry more slowly</li>
+            <li><strong>Porosity:</strong> More porous materials allow faster moisture migration</li>
+            <li><strong>Thickness:</strong> Thicker materials require longer drying times</li>
+        </ul>
+        
+        <h4>Environmental Conditions</h4>
+        <ul>
+            <li><strong>Temperature:</strong> Higher temperatures increase drying rate</li>
+            <li><strong>Relative Humidity:</strong> Lower humidity increases drying potential</li>
+            <li><strong>Air Velocity:</strong> Higher air movement improves moisture removal</li>
+            <li><strong>Atmospheric Pressure:</strong> Affects evaporation rate</li>
+        </ul>
+        
+        <h3>Drying Phases</h3>
+        <p>Most drying processes occur in distinct phases:</p>
+        
+        <h4>1. Constant Rate Period</h4>
+        <ul>
+            <li>Surface moisture evaporates at constant rate</li>
+            <li>Material surface remains wet</li>
+            <li>Drying rate controlled by external conditions</li>
+        </ul>
+        
+        <h4>2. Falling Rate Period</h4>
+        <ul>
+            <li>Internal moisture migration becomes limiting factor</li>
+            <li>Drying rate decreases as moisture content drops</li>
+            <li>Material properties become more important</li>
+        </ul>
+        
+        <h3>Material-Specific Considerations</h3>
+        
+        <h4>Wood Drying</h4>
+        <ul>
+            <li>Fiber saturation point around 28-30%</li>
+            <li>Risk of checking and warping at high temperatures</li>
+            <li>Species-specific drying schedules recommended</li>
+        </ul>
+        
+        <h4>Grain Drying</h4>
+        <ul>
+            <li>Temperature limits to preserve quality</li>
+            <li>Continuous or batch drying methods</li>
+            <li>Equilibrium moisture content considerations</li>
+        </ul>
+        
+        <h4>Concrete Drying</h4>
+        <ul>
+            <li>Hydration process affects moisture loss</li>
+            <li>Surface sealing may be required</li>
+            <li>Ambient conditions critical for proper curing</li>
+        </ul>
+        
+        <h3>Optimization Strategies</h3>
+        <ul>
+            <li><strong>Temperature Control:</strong> Gradual temperature increase prevents damage</li>
+            <li><strong>Humidity Management:</strong> Controlled humidity prevents over-drying</li>
+            <li><strong>Air Circulation:</strong> Uniform air distribution ensures even drying</li>
+            <li><strong>Monitoring:</strong> Regular moisture content checks prevent over/under-drying</li>
+        </ul>
+        
+        <p><strong>Note:</strong> This calculator provides estimates based on typical conditions. Actual drying times may vary due to material variations, equipment efficiency, and environmental fluctuations. Always monitor actual moisture content during the drying process.</p>
+    </div>
+    
+    <div id="right">
+        <div style="padding-top:10px; min-height:280px; text-align:center;">
+            <!-- Advertisement space -->
+        </div>
+        
+        <form name="calcSearchForm" autocomplete="off">
+            <table align="center" id="searchbox">
+                <tbody>
+                    <tr>
+                        <td>
+                            <input type="text" name="calcSearchTerm" id="calcSearchTerm" class="inlongest" placeholder="Search calculators...">
+                        </td>
+                        <td>
+                            <span id="bluebtn">Search</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div id="calcSearchOut"></div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+        
+        <div id="othercalc">
+            <div id="octitle">
+                <a href="drying-calculators.html">Drying Calculators</a>
+            </div>
+            <div id="occontent">
+                <a href="drying-time-calculator.html">Drying Time</a>
+                <a href="evaporation-rate-calculator.html">Evaporation Rate</a>
+                <a href="kiln-drying-calculator.html">Kiln Drying</a>
+                <a href="air-drying-calculator.html">Air Drying</a>
+                <a href="heat-requirement-calculator.html">Heat Requirement</a>
+            </div>
+            <div id="ocother">
+                <a href="moisture-calculators.html">Moisture</a> | 
+                <a href="humidity-calculators.html">Humidity</a> | 
+                <a href="drying-calculators.html">Drying</a> | 
+                <a href="other-calculators.html">Other</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="clear"></div>
+
+<div id="footer">
+    <div id="footerin">
+        <div id="footernav">
+            <a href="about-us.html">about us</a> | 
+            <a href="sitemap.html">sitemap</a> | 
+            <a href="terms.html">terms of use</a> | 
+            <a href="privacy.html">privacy policy</a> 
+            &nbsp; © 2025 <a href="index.html">drycalculator.net</a>
+        </div>
+    </div>
+</div>
+
+<script src="js/mobile-calculator-fix.js"></script>
+    <script src="js/mobile-optimization.js"></script>
+<script src="js/calculator-mobile-enhancer.js"></script>
+<script src="js/drying-calculator.js"></script>
+</body>
+</html>

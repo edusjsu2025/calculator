@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Psychrometric Calculator</title>
+    <meta name="description" content="Comprehensive psychrometric calculator for HVAC design. Calculate all air properties from any two known parameters including temperature, humidity, enthalpy, and more.">
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/icon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/icon-16x16.png">
+</head>
+<body>
+<div id="headerout">
+    <div id="header">
+        <div id="logo">
+            <a href="index.html">
+                <img src="images/dry-calculator-logo.svg" width="208" height="22" alt="Dry Calculator">
+            </a>
+        </div>
+        <div id="login">
+            <!-- Login removed -->
+        </div>
+    </div>
+</div>
+<div id="clear"></div>
+
+<div id="contentout">
+    <div id="content">
+        <div id="breadcrumbs">
+            <a href="index.html">home</a> / 
+            <a href="humidity-calculators.html">humidity calculators</a> / 
+            <a href="psychrometric-calculator.html">psychrometric calculator</a>
+        </div>
+        
+        <h1>Psychrometric Calculator</h1>
+        <p>The <i>Psychrometric Calculator</i> determines all air properties from any two known parameters. This comprehensive tool is essential for HVAC design, air conditioning analysis, and building environmental control systems.</p>
+
+        <div id="insmdc">
+            <img src="images/insm.svg" width="630" height="35" alt="Modify the values and click the calculate button to use">
+        </div>
+        
+        <form name="calform">
+            <div class="panel">
+                <table id="calinputtable">
+                    <tbody>
+                        <tr>
+                            <td>Input Method</td>
+                            <td>
+                                <select name="cinputmethod" id="cinputmethod" class="infull">
+                                    <option value="db_rh">Dry Bulb + Relative Humidity</option>
+                                    <option value="db_wb">Dry Bulb + Wet Bulb</option>
+                                    <option value="db_dp">Dry Bulb + Dew Point</option>
+                                    <option value="db_h">Dry Bulb + Enthalpy</option>
+                                    <option value="db_w">Dry Bulb + Humidity Ratio</option>
+                                    <option value="wb_rh">Wet Bulb + Relative Humidity</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr id="input1-row">
+                            <td>Dry Bulb Temperature</td>
+                            <td>
+                                <input type="text" name="cinput1" id="cinput1" value="25" class="infull">
+                                <span id="input1-unit">°C</span>
+                            </td>
+                        </tr>
+                        <tr id="input2-row">
+                            <td>Relative Humidity</td>
+                            <td>
+                                <input type="text" name="cinput2" id="cinput2" value="60" class="infull">
+                                <span id="input2-unit">%</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Temperature Unit</td>
+                            <td>
+                                <label for="cunit1" class="cbcontainer">
+                                    <input type="radio" name="cunit" id="cunit1" value="celsius" checked="">
+                                    <span class="rbmark"></span>Celsius (°C)
+                                </label> &nbsp;
+                                <label for="cunit2" class="cbcontainer">
+                                    <input type="radio" name="cunit" id="cunit2" value="fahrenheit">
+                                    <span class="rbmark"></span>Fahrenheit (°F)
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Atmospheric Pressure</td>
+                            <td>
+                                <input type="text" name="cpressure" id="cpressure" value="101.325" class="infull">
+                                <span style="margin-left: 5px; color: rgb(136, 136, 136);">kPa</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Altitude</td>
+                            <td>
+                                <input type="text" name="caltitude" id="caltitude" value="0" class="infull">
+                                <span style="margin-left: 5px; color: rgb(136, 136, 136);">m</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" align="left" style="padding-top: 8px;padding-left: 70px;">
+                                <input type="submit" name="x" value="Calculate">
+                                <input type="button" value="Clear">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </form>
+
+        <div id="result-section" style="margin-top: 20px; padding: 15px; background: #f0f8ff; border: 1px solid #ccc; border-radius: 5px; display: none;">
+            <h3>Psychrometric Properties</h3>
+            <div id="results-content"></div>
+        </div>
+
+        <br>
+        <p></p>
+        <fieldset>
+            <legend>Related</legend>
+            <a href="relative-humidity-calculator.html">Relative Humidity Calculator</a> | 
+            <a href="dew-point-calculator.html">Dew Point Calculator</a> | 
+            <a href="wet-bulb-calculator.html">Wet Bulb Calculator</a>
+        </fieldset>
+        <p></p>
+        
+        <h2>Understanding Psychrometrics</h2>
+        <p>Psychrometrics is the study of the thermodynamic properties of moist air. It deals with the relationships between temperature, humidity, pressure, and energy content of air-water vapor mixtures.</p>
+        
+        <h3>Key Psychrometric Properties</h3>
+        
+        <h4>Temperature Parameters</h4>
+        <ul>
+            <li><strong>Dry Bulb Temperature (DB):</strong> Actual air temperature measured by standard thermometer</li>
+            <li><strong>Wet Bulb Temperature (WB):</strong> Temperature of adiabatic saturation</li>
+            <li><strong>Dew Point Temperature (DP):</strong> Temperature at which condensation begins</li>
+        </ul>
+        
+        <h4>Humidity Parameters</h4>
+        <ul>
+            <li><strong>Relative Humidity (RH):</strong> Ratio of actual to saturated vapor pressure (%)</li>
+            <li><strong>Humidity Ratio (W):</strong> Mass of water vapor per unit mass of dry air (kg/kg)</li>
+            <li><strong>Specific Humidity:</strong> Mass of water vapor per unit mass of moist air (kg/kg)</li>
+        </ul>
+        
+        <h4>Energy Parameters</h4>
+        <ul>
+            <li><strong>Enthalpy (h):</strong> Total heat content of moist air (kJ/kg)</li>
+            <li><strong>Sensible Heat:</strong> Heat affecting temperature change</li>
+            <li><strong>Latent Heat:</strong> Heat of vaporization/condensation</li>
+        </ul>
+        
+        <h4>Volume Parameters</h4>
+        <ul>
+            <li><strong>Specific Volume:</strong> Volume per unit mass of dry air (m³/kg)</li>
+            <li><strong>Density:</strong> Mass per unit volume (kg/m³)</li>
+        </ul>
+        
+        <h3>Psychrometric Processes</h3>
+        
+        <div style="background: #f8f8f8; padding: 15px; border-radius: 5px; margin: 15px 0;">
+            <h4>Sensible Heating/Cooling</h4>
+            <p>Temperature change with constant humidity ratio (horizontal line on psychrometric chart)</p>
+            
+            <h4>Humidification</h4>
+            <p>Adding moisture at constant dry bulb temperature (vertical line)</p>
+            
+            <h4>Dehumidification</h4>
+            <p>Removing moisture, often with cooling below dew point</p>
+            
+            <h4>Evaporative Cooling</h4>
+            <p>Cooling with moisture addition at constant wet bulb temperature</p>
+            
+            <h4>Mixing</h4>
+            <p>Combining two air streams with different properties</p>
+        </div>
+        
+        <h3>HVAC Applications</h3>
+        
+        <h4>System Design</h4>
+        <ul>
+            <li><strong>Load Calculations:</strong> Determine sensible and latent cooling loads</li>
+            <li><strong>Equipment Sizing:</strong> Size air conditioning and dehumidification equipment</li>
+            <li><strong>Duct Design:</strong> Calculate air flow rates and properties</li>
+            <li><strong>Energy Analysis:</strong> Optimize system efficiency</li>
+        </ul>
+        
+        <h4>Process Analysis</h4>
+        <ul>
+            <li><strong>Cooling Coil Performance:</strong> Analyze coil leaving conditions</li>
+            <li><strong>Mixing Box Calculations:</strong> Determine mixed air properties</li>
+            <li><strong>Economizer Analysis:</strong> Optimize outdoor air usage</li>
+            <li><strong>Heat Recovery:</strong> Calculate energy recovery potential</li>
+        </ul>
+        
+        <h3>Industrial Applications</h3>
+        
+        <h4>Manufacturing Processes</h4>
+        <ul>
+            <li><strong>Textile Industry:</strong> Control humidity for fiber processing</li>
+            <li><strong>Paper Production:</strong> Maintain moisture content</li>
+            <li><strong>Food Processing:</strong> Control drying and storage conditions</li>
+            <li><strong>Pharmaceutical:</strong> Maintain sterile environments</li>
+        </ul>
+        
+        <h4>Environmental Control</h4>
+        <ul>
+            <li><strong>Museums:</strong> Preserve artifacts and artwork</li>
+            <li><strong>Data Centers:</strong> Maintain equipment operating conditions</li>
+            <li><strong>Laboratories:</strong> Control experimental conditions</li>
+            <li><strong>Cleanrooms:</strong> Maintain contamination control</li>
+        </ul>
+        
+        <h3>Calculation Methods</h3>
+        
+        <h4>Fundamental Equations</h4>
+        <div style="background: #f8f8f8; padding: 15px; border-radius: 5px; margin: 15px 0;">
+            <p><strong>Humidity Ratio:</strong> W = 0.622 × (Pv / (P - Pv))</p>
+            <p><strong>Enthalpy:</strong> h = 1.006 × T + W × (2501 + 1.86 × T)</p>
+            <p><strong>Specific Volume:</strong> v = 0.287 × (T + 273.15) × (1 + 1.608 × W) / P</p>
+            <p><strong>Relative Humidity:</strong> RH = (Pv / Pvs) × 100</p>
+        </div>
+        
+        <h3>Psychrometric Chart</h3>
+        <p>The psychrometric chart is a graphical representation of air properties:</p>
+        <ul>
+            <li><strong>X-axis:</strong> Dry bulb temperature</li>
+            <li><strong>Y-axis:</strong> Humidity ratio</li>
+            <li><strong>Curved lines:</strong> Relative humidity</li>
+            <li><strong>Diagonal lines:</strong> Wet bulb temperature and enthalpy</li>
+            <li><strong>Nearly vertical lines:</strong> Specific volume</li>
+        </ul>
+        
+        <h3>Comfort Applications</h3>
+        
+        <h4>Human Comfort Zone</h4>
+        <ul>
+            <li><strong>Temperature:</strong> 20-26°C (68-79°F)</li>
+            <li><strong>Relative Humidity:</strong> 30-60%</li>
+            <li><strong>Air Velocity:</strong> 0.1-0.2 m/s</li>
+            <li><strong>Clothing Insulation:</strong> 0.5-1.0 clo</li>
+        </ul>
+        
+        <h4>Comfort Indices</h4>
+        <ul>
+            <li><strong>Effective Temperature:</strong> Combined effect of temperature and humidity</li>
+            <li><strong>Heat Index:</strong> Apparent temperature considering humidity</li>
+            <li><strong>PMV/PPD:</strong> Predicted Mean Vote and Percentage Dissatisfied</li>
+        </ul>
+        
+        <h3>Energy Considerations</h3>
+        
+        <h4>Cooling Load Components</h4>
+        <ul>
+            <li><strong>Sensible Load:</strong> Heat affecting temperature (kW)</li>
+            <li><strong>Latent Load:</strong> Heat from moisture removal (kW)</li>
+            <li><strong>Total Load:</strong> Sum of sensible and latent loads</li>
+            <li><strong>SHR:</strong> Sensible Heat Ratio = Sensible / Total</li>
+        </ul>
+        
+        <h4>System Efficiency</h4>
+        <ul>
+            <li><strong>COP:</strong> Coefficient of Performance</li>
+            <li><strong>EER:</strong> Energy Efficiency Ratio</li>
+            <li><strong>SEER:</strong> Seasonal Energy Efficiency Ratio</li>
+            <li><strong>Part Load Performance:</strong> Efficiency at reduced loads</li>
+        </ul>
+        
+        <h3>Measurement and Instrumentation</h3>
+        
+        <h4>Temperature Measurement</h4>
+        <ul>
+            <li><strong>Thermocouples:</strong> Wide range, fast response</li>
+            <li><strong>RTDs:</strong> High accuracy, stable</li>
+            <li><strong>Thermistors:</strong> High sensitivity, limited range</li>
+        </ul>
+        
+        <h4>Humidity Measurement</h4>
+        <ul>
+            <li><strong>Capacitive Sensors:</strong> Fast response, wide range</li>
+            <li><strong>Resistive Sensors:</strong> Low cost, moderate accuracy</li>
+            <li><strong>Psychrometers:</strong> Reference standard method</li>
+        </ul>
+        
+        <p><strong>Note:</strong> Psychrometric calculations assume standard atmospheric pressure unless otherwise specified. For high altitude applications, pressure corrections are essential for accuracy.</p>
+    </div>
+    
+    <div id="right">
+        <div style="padding-top:10px; min-height:280px; text-align:center;">
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2205593928173688"
+                 crossorigin="anonymous"></script>
+            <!-- zishiying -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-2205593928173688"
+                 data-ad-slot="8971293106"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+        
+        <form name="calcSearchForm" autocomplete="off">
+            <table align="center" id="searchbox">
+                <tbody>
+                    <tr>
+                        <td>
+                            <input type="text" name="calcSearchTerm" id="calcSearchTerm" class="inlongest" placeholder="Search calculators...">
+                        </td>
+                        <td>
+                            <span id="bluebtn">Search</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div id="calcSearchOut"></div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+        
+        <div id="othercalc">
+            <div id="octitle">
+                <a href="humidity-calculators.html">Humidity Calculators</a>
+            </div>
+            <div id="occontent">
+                <a href="relative-humidity-calculator.html">Relative Humidity</a>
+                <a href="absolute-humidity-calculator.html">Absolute Humidity</a>
+                <a href="dew-point-calculator.html">Dew Point</a>
+                <a href="wet-bulb-calculator.html">Wet Bulb</a>
+                <a href="psychrometric-calculator.html">Psychrometric</a>
+                <a href="vapor-pressure-calculator.html">Vapor Pressure</a>
+            </div>
+            <div id="ocother">
+                <a href="moisture-calculators.html">Moisture</a> | 
+                <a href="humidity-calculators.html">Humidity</a> | 
+                <a href="drying-calculators.html">Drying</a> | 
+                <a href="other-calculators.html">Other</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="clear"></div>
+
+<div id="footer">
+    <div id="footerin">
+        <div id="footernav">
+            <a href="about-us.html">about us</a> | 
+            <a href="sitemap.html">sitemap</a> | 
+            <a href="terms.html">terms of use</a> | 
+            <a href="privacy.html">privacy policy</a> 
+            &nbsp; © 2025 <a href="index.html">drycalculator.net</a>
+        </div>
+    </div>
+</div>
+
+<script src="js/mobile-optimization.js"></script>
+<script src="js/calculator-mobile-enhancer.js"></script>
+    <script src="js/mobile-calculator-fix.js"></script>
+<script src="js/psychrometric-calculator.js"></script>
+</body>
+</html>

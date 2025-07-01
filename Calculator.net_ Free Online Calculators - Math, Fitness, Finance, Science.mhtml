@@ -1,0 +1,1329 @@
+From: <Saved by Blink>
+Snapshot-Content-Location: https://www.calculator.net/
+Subject: Calculator.net: Free Online Calculators - Math, Fitness, Finance, Science
+Date: Tue, 17 Jun 2025 16:34:39 -0700
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----MultipartBoundary--bFuI68kkqKOWx3AK0U5eZSxYJP0MrqGbX6DUoHTs0L----"
+
+
+------MultipartBoundary--bFuI68kkqKOWx3AK0U5eZSxYJP0MrqGbX6DUoHTs0L----
+Content-Type: text/html
+Content-ID: <frame-CBA60FC565C910E32143920DECD5AD24@mhtml.blink>
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://www.calculator.net/
+
+<!DOCTYPE html><html lang=3D"en"><head><meta http-equiv=3D"Content-Type" co=
+ntent=3D"text/html; charset=3DUTF-8"><link rel=3D"stylesheet" type=3D"text/=
+css" href=3D"cid:css-7268c003-8dd1-49f3-aa5c-1e67365aae87@mhtml.blink" /><l=
+ink rel=3D"stylesheet" type=3D"text/css" href=3D"cid:css-d8de425b-b5e7-41b0=
+-a79a-ce7cc254e204@mhtml.blink" />
+	<title>Calculator.net: Free Online Calculators - Math, Fitness, Finance, S=
+cience</title>
+	<meta name=3D"description" content=3D"Online calculator for quick calculat=
+ions, along with a large collection of calculators on math, finance, fitnes=
+s, and more, each with in-depth information.">
+	<link rel=3D"stylesheet" href=3D"https://www.calculator.net/style.css"><me=
+ta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D1.0">=
+	<link rel=3D"apple-touch-icon" sizes=3D"180x180" href=3D"https://d26tpo4cm=
+8sb6k.cloudfront.net/apple-touch-icon.png">
+	<link rel=3D"icon" type=3D"image/png" sizes=3D"32x32" href=3D"https://d26t=
+po4cm8sb6k.cloudfront.net/icon-32x32.png">
+	<link rel=3D"icon" type=3D"image/png" sizes=3D"16x16" href=3D"https://d26t=
+po4cm8sb6k.cloudfront.net/icon-16x16.png">
+	<link rel=3D"manifest" href=3D"https://www.calculator.net/manifest.json"><=
+link rel=3D"stylesheet" href=3D"https://www.calculator.net/css/sci.css">=09
+	<meta name=3D"google-site-verification" content=3D"04Uv2RwlTLFxQszjq7hb0XQ=
+xTEZsl2lLmI5e1-TbcbA">
+</head>
+<body>
+<div id=3D"headerout">
+	<div id=3D"header">
+		<div id=3D"logo"><a href=3D"https://www.calculator.net/"><img src=3D"http=
+s://d26tpo4cm8sb6k.cloudfront.net/img/svg/calculator-white.svg" width=3D"20=
+8" height=3D"22" alt=3D"Calculator.net"></a></div>
+		<div id=3D"login"><a href=3D"https://www.calculator.net/my-account/sign-i=
+n.php">sign in</a></div>	</div>
+</div>
+<div id=3D"clear"></div><div id=3D"homecaldiv">
+
+
+<div id=3D"contentout">
+<table align=3D"center" width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" =
+border=3D"0"><tbody><tr><td>
+	<table align=3D"center" id=3D"sciout" cellpadding=3D"0" cellspacing=3D"2">
+		<tbody><tr><td colspan=3D"2">
+		<div>
+			<div id=3D"sciInPut">&nbsp;</div>
+			<div id=3D"sciOutPut">0</div>
+		</div>
+		</td></tr>
+		<tr><td>
+		<div style=3D"padding-top:3px;width:100%;" id=3D"homefunbtn">
+			<div><span class=3D"scifunc">sin</span><span class=3D"scifunc">cos</span=
+><span class=3D"scifunc">tan</span><span class=3D"scird"><label for=3D"scir=
+dsettingd"><input id=3D"scirdsettingd" type=3D"radio" name=3D"scirdsetting"=
+ value=3D"deg" checked=3D"">Deg</label><label for=3D"scirdsettingr"><input =
+id=3D"scirdsettingr" type=3D"radio" name=3D"scirdsetting" value=3D"rad">Rad=
+</label></span></div>
+			<div><span class=3D"scifunc">sin<sup>-1</sup></span><span class=3D"scifu=
+nc">cos<sup>-1</sup></span><span class=3D"scifunc">tan<sup>-1</sup></span><=
+span class=3D"scifunc">=CF=80</span><span class=3D"scifunc">e</span></div>
+			<div><span class=3D"scifunc">x<sup>y</sup></span><span class=3D"scifunc"=
+>x<sup>3</sup></span><span class=3D"scifunc">x<sup>2</sup></span><span clas=
+s=3D"scifunc">e<sup>x</sup></span><span class=3D"scifunc">10<sup>x</sup></s=
+pan></div>
+			<div><span class=3D"scifunc"><sup>y</sup>=E2=88=9Ax</span><span class=3D=
+"scifunc"><sup>3</sup>=E2=88=9Ax</span><span class=3D"scifunc">=E2=88=9Ax</=
+span><span class=3D"scifunc">ln</span><span class=3D"scifunc">log</span></d=
+iv>
+			<div><span class=3D"scifunc">(</span><span class=3D"scifunc">)</span><sp=
+an class=3D"scifunc">1/x</span><span class=3D"scifunc">%</span><span class=
+=3D"scifunc">n!</span></div>
+		</div>
+		</td><td>
+		<div style=3D"padding-top:3px;">
+			<div><span class=3D"scinm">7</span><span class=3D"scinm">8</span><span c=
+lass=3D"scinm">9</span><span class=3D"sciop">+</span><span class=3D"sciop">=
+Back</span></div>
+			<div><span class=3D"scinm">4</span><span class=3D"scinm">5</span><span c=
+lass=3D"scinm">6</span><span class=3D"sciop">=E2=80=93</span><span class=3D=
+"sciop">Ans</span></div>
+			<div><span class=3D"scinm">1</span><span class=3D"scinm">2</span><span c=
+lass=3D"scinm">3</span><span class=3D"sciop">=C3=97</span><span class=3D"sc=
+iop">M+</span></div>
+			<div><span class=3D"scinm">0</span><span class=3D"scinm">.</span><span c=
+lass=3D"sciop">EXP</span><span class=3D"sciop">/</span><span class=3D"sciop=
+">M-</span></div>
+			<div><span class=3D"sciop">=C2=B1</span><span class=3D"sciop">RND</span>=
+<span class=3D"scieq">AC</span><span class=3D"scieq">=3D</span><span class=
+=3D"sciop" id=3D"scimrc">MR</span></div>
+		</div>
+	</td></tr>
+	<tr><td colspan=3D"2"><div id=3D"scihistory"></div></td></tr>
+	</tbody></table>
+</td><td valign=3D"top" id=3D"homesch">
+<h1>Free Online Calculators</h1>
+
+<form name=3D"calcSearchForm" autocomplete=3D"off"><table><tbody><tr><td><i=
+nput type=3D"text" name=3D"calcSearchTerm" id=3D"calcSearchTerm" class=3D"i=
+nlongest"></td><td><span id=3D"bluebtn">Search</span></td></tr><tr><td cols=
+pan=3D"2"><div id=3D"calcSearchOut"></div></td></tr></tbody></table></form>
+</td></tr></tbody></table>
+</div>
+</div>
+
+<div id=3D"homelistdiv"><div id=3D"contentout">
+<div id=3D"homelistwrap">
+<div class=3D"homelisttile">
+<div class=3D"hicon"><a href=3D"https://www.calculator.net/financial-calcul=
+ator.html"><img src=3D"https://d26tpo4cm8sb6k.cloudfront.net/img/financial-=
+calculator.jpg" width=3D"135" height=3D"135" alt=3D"Financial Calculators">=
+</a></div>
+<div class=3D"hh"><a href=3D"https://www.calculator.net/financial-calculato=
+r.html">Financial Calculators</a></div>
+<ul class=3D"hl" id=3D"hl1">
+	<li><a href=3D"https://www.calculator.net/mortgage-calculator.html">Mortga=
+ge Calculator</a></li>
+	<li><a href=3D"https://www.calculator.net/loan-calculator.html">Loan Calcu=
+lator</a></li>
+	<li><a href=3D"https://www.calculator.net/auto-loan-calculator.html">Auto =
+Loan Calculator</a></li>
+	<li><a href=3D"https://www.calculator.net/interest-calculator.html">Intere=
+st Calculator</a></li>
+	<li><a href=3D"https://www.calculator.net/payment-calculator.html">Payment=
+ Calculator</a></li>
+	<li><a href=3D"https://www.calculator.net/retirement-calculator.html">Reti=
+rement Calculator</a></li>
+	<li><a href=3D"https://www.calculator.net/amortization-calculator.html">Am=
+ortization Calculator</a></li>
+	<li><a href=3D"https://www.calculator.net/investment-calculator.html">Inve=
+stment Calculator</a></li>
+	<li><a href=3D"https://www.calculator.net/inflation-calculator.html">Infla=
+tion Calculator</a></li>
+	<li><a href=3D"https://www.calculator.net/finance-calculator.html">Finance=
+ Calculator</a></li>
+	<li><a href=3D"https://www.calculator.net/tax-calculator.html">Income Tax =
+Calculator</a></li>
+	<li><a href=3D"https://www.calculator.net/compound-interest-calculator.htm=
+l">Compound Interest Calculator</a></li>
+	<li><a href=3D"https://www.calculator.net/salary-calculator.html">Salary C=
+alculator</a></li>
+	<li><a href=3D"https://www.calculator.net/interest-rate-calculator.html">I=
+nterest Rate Calculator</a></li>
+	<li><a href=3D"https://www.calculator.net/sales-tax-calculator.html">Sales=
+ Tax Calculator</a></li>
+</ul>
+</div>
+<div class=3D"homelisttile">
+<div class=3D"hicon"><a href=3D"https://www.calculator.net/fitness-and-heal=
+th-calculator.html"><img src=3D"https://d26tpo4cm8sb6k.cloudfront.net/img/f=
+itness-calculator.jpg" width=3D"135" height=3D"135" alt=3D"Fitness &amp; He=
+alth Calculators"></a></div>
+<div class=3D"hh"><a href=3D"https://www.calculator.net/fitness-and-health-=
+calculator.html">Fitness &amp; Health Calculators</a></div>
+<ul class=3D"hl" id=3D"hl2">
+	<li><a href=3D"https://www.calculator.net/bmi-calculator.html">BMI Calcula=
+tor</a></li>
+	<li><a href=3D"https://www.calculator.net/calorie-calculator.html">Calorie=
+ Calculator</a></li>
+	<li><a href=3D"https://www.calculator.net/body-fat-calculator.html">Body F=
+at Calculator</a></li>
+	<li><a href=3D"https://www.calculator.net/bmr-calculator.html">BMR Calcula=
+tor</a></li>
+	<li><a href=3D"https://www.calculator.net/ideal-weight-calculator.html">Id=
+eal Weight Calculator</a></li>
+	<li><a href=3D"https://www.calculator.net/pace-calculator.html">Pace Calcu=
+lator</a></li>
+	<li><a href=3D"https://www.calculator.net/pregnancy-calculator.html">Pregn=
+ancy Calculator</a></li>
+	<li><a href=3D"https://www.calculator.net/pregnancy-conception-calculator.=
+html">Pregnancy Conception Calculator</a></li>
+	<li><a href=3D"https://www.calculator.net/due-date-calculator.html">Due Da=
+te Calculator</a></li>
+</ul>
+</div>
+<div class=3D"homelisttile">
+<div class=3D"hicon"><a href=3D"https://www.calculator.net/math-calculator.=
+html"><img src=3D"https://d26tpo4cm8sb6k.cloudfront.net/img/math-calculator=
+.jpg" width=3D"135" height=3D"135" alt=3D"Math Calculators"></a></div>
+<div class=3D"hh"><a href=3D"https://www.calculator.net/math-calculator.htm=
+l">Math Calculators</a></div>
+<ul class=3D"hl" id=3D"hl3">
+	<li><a href=3D"https://www.calculator.net/scientific-calculator.html">Scie=
+ntific Calculator</a></li>
+	<li><a href=3D"https://www.calculator.net/fraction-calculator.html">Fracti=
+on Calculator</a></li>
+	<li><a href=3D"https://www.calculator.net/percent-calculator.html">Percent=
+age Calculator</a></li>
+	<li><a href=3D"https://www.calculator.net/random-number-generator.html">Ra=
+ndom Number Generator</a></li>
+	<li><a href=3D"https://www.calculator.net/triangle-calculator.html">Triang=
+le Calculator</a></li>
+	<li><a href=3D"https://www.calculator.net/standard-deviation-calculator.ht=
+ml">Standard Deviation Calculator</a></li>
+</ul>
+</div>
+<div class=3D"homelisttile">
+<div class=3D"hicon"><a href=3D"https://www.calculator.net/other-calculator=
+.html"><img src=3D"https://d26tpo4cm8sb6k.cloudfront.net/img/other-calculat=
+or.jpg" width=3D"135" height=3D"135" alt=3D"Other Calculators"></a></div>
+<div class=3D"hh"><a href=3D"https://www.calculator.net/other-calculator.ht=
+ml">Other Calculators</a></div>
+<ul class=3D"hl" id=3D"hl5">
+	<li><a href=3D"https://www.calculator.net/age-calculator.html">Age Calcula=
+tor</a></li>
+	<li><a href=3D"https://www.calculator.net/date-calculator.html">Date Calcu=
+lator</a></li>
+	<li><a href=3D"https://www.calculator.net/time-calculator.html">Time Calcu=
+lator</a></li>
+	<li><a href=3D"https://www.calculator.net/hours-calculator.html">Hours Cal=
+culator</a></li>
+	<li><a href=3D"https://www.calculator.net/gpa-calculator.html">GPA Calcula=
+tor</a></li>
+	<li><a href=3D"https://www.calculator.net/grade-calculator.html">Grade Cal=
+culator</a></li>
+	<li><a href=3D"https://www.calculator.net/concrete-calculator.html">Concre=
+te Calculator</a></li>
+	<li><a href=3D"https://www.calculator.net/ip-subnet-calculator.html">Subne=
+t Calculator</a></li>
+	<li><a href=3D"https://www.calculator.net/password-generator.html">Passwor=
+d Generator</a></li>
+	<li><a href=3D"https://www.calculator.net/conversion-calculator.html">Conv=
+ersion Calculator</a></li>
+</ul>
+</div>
+</div>
+
+<div style=3D"text-align:center;padding-top:30px;"><a href=3D"https://www.c=
+alculator.net/sitemap.html"><img src=3D"https://d26tpo4cm8sb6k.cloudfront.n=
+et/img/svg/all-calculators.svg" width=3D"248" height=3D"45" alt=3D"All Calc=
+ulators"></a></div>
+<br>
+</div>
+
+</div>
+<div id=3D"footer"><div id=3D"footerin">Calculator.net's sole focus is to p=
+rovide fast, comprehensive, convenient, free online calculators in a pletho=
+ra of areas. Currently, we have around 200 calculators to help you "do the =
+math" quickly in areas such as finance, fitness, health, math, and others, =
+and we are still developing more. Our goal is to become the one-stop, go-to=
+ site for people who need to make quick calculations. Additionally, we beli=
+eve the internet should be a source of free information. Therefore, all of =
+our tools and services are completely free, with no registration required.<=
+br><br>We coded and developed each calculator individually and put each one=
+ through strict, comprehensive testing. However, please inform us if you no=
+tice even the slightest error =E2=80=93 your input is extremely valuable to=
+ us. While most calculators on Calculator.net are designed to be universall=
+y applicable for worldwide usage, some are for specific countries only. For=
+ example, the <i>Income Tax Calculator</i> is for United States residents o=
+nly.<br><br><div id=3D"footernav"><a href=3D"https://www.calculator.net/abo=
+ut-us.html">about us</a> | <a href=3D"https://www.calculator.net/sitemap.ht=
+ml">sitemap</a> | <a href=3D"https://www.calculator.net/about-us.html#terms=
+">terms of use</a> | <a href=3D"https://www.calculator.net/about-us.html#pr=
+ivacy">privacy policy</a> &nbsp;  =C2=A9 2008 - 2025 <a href=3D"https://www=
+.calculator.net/">calculator.net</a></div></div></div>
+
+</body></html>
+------MultipartBoundary--bFuI68kkqKOWx3AK0U5eZSxYJP0MrqGbX6DUoHTs0L----
+Content-Type: image/svg+xml
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://d26tpo4cm8sb6k.cloudfront.net/img/svg/all-calculators.svg
+
+<?xml version=3D"1.0" encoding=3D"UTF-8"?>
+<svg width=3D"248" height=3D"45" viewBox=3D"0 0 248 45" xmlns=3D"http://www=
+.w3.org/2000/svg"><defs><linearGradient id=3D"lgrad" x1=3D"0%" y1=3D"0%" x2=
+=3D"0%" y2=3D"100%"><stop stop-color=3D"#518427" offset=3D"0%" /><stop stop=
+-color=3D"#477223" offset=3D"100%" /></linearGradient></defs><rect width=3D=
+"248" height=3D"45" fill=3D"url(#lgrad)"/><circle cx=3D"202" cy=3D"23" r=3D=
+"15" fill=3D"#adc39f" /><path d=3D"M199 13 L211 23 L199 33 Z" fill=3D"#f6f8=
+f5" /><text x=3D"36" y=3D"30" fill=3D"#ffffff" font-family=3D"Arial" font-s=
+ize=3D"20px">All Calculators</text></svg>
+
+------MultipartBoundary--bFuI68kkqKOWx3AK0U5eZSxYJP0MrqGbX6DUoHTs0L----
+Content-Type: image/jpeg
+Content-Transfer-Encoding: base64
+Content-Location: https://d26tpo4cm8sb6k.cloudfront.net/img/other-calculator.jpg
+
+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
+
+------MultipartBoundary--bFuI68kkqKOWx3AK0U5eZSxYJP0MrqGbX6DUoHTs0L----
+Content-Type: image/jpeg
+Content-Transfer-Encoding: base64
+Content-Location: https://d26tpo4cm8sb6k.cloudfront.net/img/math-calculator.jpg
+
+/9j/4AAQSkZJRgABAgAAZABkAAD/7AARRHVja3kAAQAEAAAAQQAA/+4ADkFkb2JlAGTAAAAAAf/b
+AIQABQQEBAQEBQQEBQcFBAUHCQcFBQcJCggICQgICg0KCwsLCwoNDAwMDQwMDA8PEREPDxcWFhYX
+GRkZGRkZGRkZGQEGBgYKCQoUDQ0UFhEOERYZGRkZGRkZGRkZGRkZGRkZGRkZGRkZGRkZGRkZGRkZ
+GRkZGRkZGRkZGRkZGRkZGRkZ/8AAEQgAhwCHAwERAAIRAQMRAf/EAHoAAAEFAQEBAAAAAAAAAAAA
+AAQAAwUGBwIBCAEBAAAAAAAAAAAAAAAAAAAAABAAAgIABQIDBgUCBQMFAQAAAQIDBAARIRIFMQZB
+IhNRYXGBMgeRoUIUFVIjscFikjPRgiThckNTkwgRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhED
+EQA/APsvALALALAcSSxwoXkYKg6k4BmS2Au6MZjwJwAs8tiaIiGQpJ1UjQZj24BmGdrEe8kiRTlI
+ufRh1GA5kswKDGx3ORkUXVvwGADgmuRsK4JiXUxPIfMV9mQPUYCuch3xzfbF9/5/i5G4B5AsPLQs
+JQoOmcqAAqMBeYuXrSVo7YYNWkUMsyeZdrdDp4YCQR1kUOjBlIzBGoywHuAWAWAWAWAWAWAFa5G2
+4QMHKkqzDUBhoRgBn3SjznPMZMMAHBMlVnqzP5VG6Fj1Knw+K4CK5XuunxF2rUtRywJbB9O9KhWq
+rZ5BXf8AST4Z4Aq20dSNuSt2AtLbutSKdsaoB9ZPsHjgAOa/jjwx5WPl243iUX1ZblRlJdT9OTZM
+Tqeg64Codqd52O5uC5ClSsxz938VPItSK2pgknSNvKzIctWXQ4DjtrubuCXl7nB/cOtHWg5syPxc
+B2ssSr5WgYjQkjUYB77c279K93F2asUlijxFnOjZlzCiGfzBMz9QX3YC/U0no2VglnbYQTXC6J7S
+hHu8MBPxWkchWO1/DPocARgFgFgFgFgALd+GImMyKntzOp+AwEMZ2gtGavE37eyQHLjYok8G1183
+TpgB+Z5WHioka/PI805K1qFNC1iZgMyqL9Ry8ToBgBKnO8JyHBnuKhN6NSvuaaWUESRPFpJHKurB
+h0IwHPb3cXA/cHi+QMES2ePinkqSxy7WEgQDNwo1CnPTPAQawRUuRP255iWd+B5aF5OJsLIUf049
+ZKrt1yy6e7AEcZ2dxdPti72Hblk5DippJGqel5JI4Wfeqhwfqib9WAlOE7J4riVqrBVSOeqXaG7J
+/etlpPrZpD1JwENy3a3N8r3NS5LlI4K/BcNc/cQSxyNJanAUBS4yCoAfqAwGiZKM2UDM9SAPMPA4
+AW8kUtdhJJ6YXzrKdNhXUN8sBjfe3f8ANLWarXJSGJgsjxNkZpB0II1RNM8BPfa/7ptzMidv9xSK
+vJNpStnJRN/ob/X7PbgNiwCwCwFX717q4/tTi0uX3kCzTx144YEaSxM8pyEcSrqXPX4DARnbXLSc
+s1hzxX8b6W300nmiktsrfqkjjLGL3bmwEL3p3Lyj9sxdwdjxxc5VrWZDyaKR6TVq+5Jl3fWHRxps
+B6YB61zfL2OyX7h4mrDP3LFUidWijMzCvKVZ2hDBWc+nmwU9WGArv2/o9y0OUu8nBaFztbnL01ia
+reT074XaAlgKigKZctUYDTAHdr/br+B5WfmbRWO5LyFiepNAzxKsVhs1SVAdr+zXxwFy5HtLjeW5
+Hi+V5RpbFrh5HlpAttjDyLtJKLo2ntwE1NXDwj0AEmiO6E9BmPA+49DgPYp0tQiQZq40dT1Vh1Bw
+HUtqGNMpmUFtNvifl44CMhktI/7WJconJatJLmvl6lcupy8PdgKB9yeTlrrFw8dpzLMPVtlPIFjz
+yVMh/UQTr4YDGOUkMYeMKNwAXLrnnr0y1A8cBS+X5WSrDKYZQlqMbopYyAVYEBSpXVSDrgPqj7H/
+AHPXv/t80+Skz7l4lVS7nlnNF0ScfHo3v+OA1nANzymGGSUKZGRSVjBALEDQAkga+/AZ/wAj2xZ7
+zqVx3flUardW7Sr8ZYkVkKoUCyzEKWOTHP0wuAodbtfiOR7xnqcPUscNwXG8fe463agSWtYuS2XC
+hUcZPKICpcSHPqNcBK/Zmvc4vh+d7c9UzycRzdqKSxZ+siQK6koP6tT164DR7NRlAtsxl9LSWIAK
+Gi8QAvs6jAH10hSJfQCiJgCpXIAg9DpgO5EjljZHXcjDJh7sALBOQsley2U0GWbnQMh+l/8Ar78B
+z++3ELXjaY+LAZJ/uOn4YBiaGeKT9zLJ6VeUgWEi6r4Byx/A5DAGpVr129SJBub6mPmY+/M64AXn
+LVWrxlm5Zl9GKrGZzKNShjGYIy6+zLxwHzp3JzUtm5Yv2znNZzkdVORAIAVR7MgPwwGbchzJG5FC
+tnmXkzyAJ6jTUj34ClcryEW1BYfIElUj+nczeCoP88Bdvs8OV7e7tpdzwhlVCY54fBq0mjofaSNf
+iMB93fu4P2n77eP23petv8Nm3dn+GAC5SeQS16sbBDNuPqMM1zUaLkMtSMyNfDACLSXMtZlebPor
+HJB8FXIYB2esHhBrosc8J3w5AAZj9PwYaYCF4Pt/j6HK8z3DSmn39wvFLZpvt9KKWBShKgDduOfm
+zOAse4ZZnQZak6YCKrWo6s0lOHOaFiWqhPNl4tHn006jXpgDD++kGuysv/6P/ko/PADWKarlZUNP
+ZhO4CQ7ty/qUDp7xp1wBizRywpLGc43AKn3HAeh0dDGy7kYZEHoQfDAAR2RTL1Lku1YhugkJ+uLP
+If8Acp0OA+ff/wChfvFH23FX7T4hGfk7arZtMfKEg3H0xqPqkYE6+AzwGKL3HYPGpJy9lP39kmeR
+cxmAf0oDnkoGmAgJuUucpKsPEwmV26zMCUzPiB+r/DAXDtn7Zz3iJ+TLSPIPMzat8vZlgNh7e4qD
+iqs9exGBZpoWZsv+RACVcfHLI+/AWr7dfc5+6PtP3byliqqch29Vvn+IRmM4rx13khWQEZhpNrAa
+YDXuSiFoSRq22QEGKT+h01U/I4DipZFmuHkASVc0nQ/okX6h/ngELsOZWHdO/iIxuAPvP0j8cAKf
+3UNg/TXhtv1P9zbLl7BkBvH5/HAFCmjMDMzWG8fUOY/2jJfywHVmuJoDHERFKhDQsBorr0Pw8D7s
+B5Vsi1Csm3bICVljPVXXRlPzwDjNkMyQFHU4CJitwwWJIIM54Zm3RBNQsp1Zd305N9XX24CBHd8a
+3f47nYrHbU7ymOq1lAYrGRyHpWl3Q+bwU5NgGu++4uN7I7V5Huy2rSPxcYli6vJLMzBI4iT0EjMF
+J6Dr4YD4g5Hgu5/uFyUvdPKxvRPJyPYu3rAIlmkcgBIYc81iiQCNM8tB44Cw8T9ulmdY40eQ6LJY
+lJeRgPaT0HuGA0rt3smhwEghmUbZPPWJGZDfqjy6+8YC9xQWIInlq09kSIzEsN0jFRnkkQ1LHwzI
+wA3DRctzNRuS5HiZ+OtRuDTq25I2eSPqRJHHmke7wBYkYC89tJx9Ovzd6lTjjfk6Uz3RHGFlllhi
+IAky+p1CldcBe2W7LIxJSBCfD+45/wAFH54AZ6sVawk0/wDdhnYJKZMiBKdEcgADX6enswEpltGQ
+yCjoo8MBxNCliF4X1DDLMdVI1BHvB1wA9Sy8sZSUZWYW9OceGY6MB7GGowHL36wl9JWMs2X/ABxg
+ufnt0HzwAcjWYLJshFrQWCsczOQ5D9FcqMgM9FOvswD89QLDLM6SX50RmjgZlG9lGYVQdqAsdBuw
+GD2+7OQ7jkXuHuvkZe1u3OJ5B63H9t8c+7k5+RrkDZKq6sVJzIOS+zrngNb7f5zhPuD20LccK2qN
+ndBepWEyKyJ5Xjkjb6TgKNDM/Adxzfbe5K1njbNRuQ4Cax/cIrKxEtV2f6/RYZof6evTAQlztxf5
+OTkDnahnO2cKPIsmYVX3nyjP6W/HASUXAyRyAu61ox1jhHm+bsP8BgIWvfcdzy9sWK1WF5YzJWSm
+Zrl1FU5pZtSFUjroQPKrEknQYC8cerTKyTgC1CdlhfDPwcf6W6jASkUQRguXwwDKEUOSEsTApcV4
+56/6g7IVWRR88m/HAaFvB958cBxNAlmKSCTWORSG+fiMALVugRGvOTLbgOxxGNxfLo+mnmHtwDwk
+vSfREsCf1Od7f7V0/PACW6oiZbVmR54iQtoHJV2/pbJctEJ8fA4Cp9o87yd3u7vngbbh6PC3K38Y
+AipshngDGPy/UA2oJ1wFm/meHu8tb7WNpG5eGqtm1QO7eK0x2rJqMiCfYdMBnPf3Kd8drXoe5eNu
+1YuA42COpzotNLKpjmnUR2v265LnGpyLo2fUEaDAT9rsXtpe6Ju/+P2TdxTVWelXkfdTe20WUdjY
+qlwzDLMj45Z4CF+1PancXZ3bEo5yJYeTsW5rF/zrINkhUB9qdduRbr0OArv3JerS+4/Z/cFvkK9z
+juKhsx8hWikWW2DMrEZVkzzR9APf1wGhQWK3McXBaihkjp24tywTxmGQIwyyZDqpwEfTiKTScdOd
+00Q3RSN1kh6A/Ffpb/1wB0dZIXYlQu7Lc+QBIHTM+7AC2Nnrpa4+N7FiIFZREM0eLqVLaLuHVcAZ
+BUsXollewIoJAGRK+eZB9sjDP8AMAbFx9aOJ4oo9odSsjAncQRrm31fngO6PdZt8tL2/ZrtxfMwv
+IqxWgSlhYjl6ldl8sgK5NlmCM9RgLEtUSEtYlec+KE7U/wBq/wCeAashajpcjULEoEdlE0Hpk6Nk
+P6D+WeAOC5DNfxwC2CRWRxuRwQR4ZHqMBj1epT4b7odwcL3Dk3Gd18ZA1SSYkRz/ALX+2Y92Y/uA
+ezXpgKzW7Q5jjfu7yVXsm7d4uL+Jhmgt3Q9iu6ggGEmxm0ke7+k5rgNp5Hj5JaTzcm0VhFhKXoFU
+LDJAR/dU7iSR4jM4CqyfcDt+k38N2Tx0nPXYEVUh4+P/AMZB9Khp8tuQ0+nPAVyTkOT7p5yHt7n+
+5HhafNLPCduwvJFActUtXNfA6+GAvPCdqdu9syvS4/jYImbOWtbZfUncZeZWlfN9yfHpgDbrQxea
+VwpboD9RPuHU4CNnq2LnpzU6xSWBi0Msx2Z6ZFdup2v01y9uAercZDdjWxYZ7O7rFJ5URhoVKDTM
+HTXPASsUCKgRFCgDIAaAZYALYKFn0xpUstmvsjmbqP8A2yeHv+OANjTdLkB+lyfkpOAZ7x7fg5dW
+gld65nZTXuRHbLWuJ/wzow6HPyt7RocAH9ve45u6e31sXtq8zx88tDlo10As122swHscZN88BbJT
+CkbCZlEZzVt2QBBwFX5fmeY4vipBwlGHkLNZhlJcsClXSsc8pndx5tnQgYAvtnk5e4eGrcg3IVbB
+cFZn40sa/qocnCPIN5APuwC7g7V4bn6Ah5GitpIW9RMywlBHUpIDvV8uhB64CIt2LXZXD0uP7c4r
+lu6prsjmnvl9VYgQGynsSaxoP05jAR6dj9ydzvHZ7+5gmqGWRe3uOzhqLl0WV8y0uAD+4HbXNUez
+b/DdhzLw7Ziwi141EstaPWxXjfTbIV8yE9dVwET2n9xeyuJp8bS4PirUPEW3jqLzBiRIpLrJuKyN
+u3MxIObdM8BqNmnduR5PItdlJaHaN7K46EsctPbkMBzQrVmi9VIttjMrNvzaRXXRgWbM4ArYoYnA
+Azr/AB9r9z0qWmCWPYkp0WT3Bvpb5YAiZ4oQZJGCoPqZtAPxwEbacclDJBDAZYpBkZXzjQewg5bi
+R1BAwD3FVbUg5BJ7LC5XrPGjAZRf3EISUeJOhzz8c8BZeVh9Wsw9NpNw2lVIBGfQ5n2HAZ3Rt9m9
+mLyIN6txU9+009+CKT1ZZLG0KWCDdt3DXyrgJvtnuLje4JbX7CheSKqFKX7kLRpOGz1iZ9Tl46DA
+SPPcVR5ei8PJ1Uu08v8Ayakg3JJFmGKke4gMPhgJCnBSqVYq/HwxwVFUejHEoRAvuAwBI095wEYs
+8dOxJWD7oZDvhRPMysdWTIfiMA6XuSHJEWAH9T+Zv9q6fngPJ+NWxE3qSvJMADG7Hyqw1BCjTAZ3
+y/28s909ycZyljk1r9ucVOLI7fihSP07ygB23KBvD5Z5tqM9OuA0ogdMBH2SalgXAT6EmSWh4DwW
+T5dD7sA5YtwQnJzukP8A8aAs5/7RrgBZP3V1XjeJYK7gqwl87sp0PlGg+ZwDFatCkrwWgZ7MIBil
+k8xaLorAdAR0OQ/xwBZKrmuXw+GAl68Ij46VyPNJGzH4bTkMAVdpwchTsUbIJr2Y2ilCkq21xkcm
+GRB+GAp1Ps7tvtaaOfjeMhjBOyeZ19WU5nyuXfM9cBas9ABoB0GAbknhiHnYA+zqT8sBH1ZZY3ap
+BHkjEvA0ua5JnqMupyOAJNV5MzZmaQf/AFr5E+YGp/HAeyVo2i9KMCNxk0bAdGXocB1WmWxHv6OD
+tkT+l10IwD/TTPTAR1nKnYFxT/YkySyM9PYr/LofdgE1syHKsjSkfrHlT5sf8sA21exOCLUuUZBB
+hi0BB9rHU/lgOKKRVGkolQJF80Un6pIz0JPUlehwBLf4dMADfgkkVJq5ytVzvi8Nw/Uh9zDTAO8c
+V5T03TP028zjxXacip9+emAs+0ZbcvLlll7sB7gBrsHrQuoQOxBG0nLMHAQ1VbEoaCzKUMJ2lE0J
+XwJbrrgD4oIYjmqDM/q6k/M4Dm5EWiEkI/vQnfH7yOo+YwHUMgsQpMvRxnkfA+zAd5gDUa4COmsR
+Vbfqo2aTDKVF1If9Lae3pgOg9yfMqogXpm3mf8BpgPTQgcET5znXWQ59fYOgwDVR/SZ6UhJkgAMb
+H9cR6H5dDgCmZctBrgIvl5oqtYXJJo67VjujklZY1PtQltPMMBzDy/HXKkN2GwksM67oijB8/aBt
+zzywEFz3c0vGtUrxUp5rl+T0qVWNPUsSkZbmVMwFVQcyzsAMBfOK41OOgYEl7EzepO5y1cjXIDQf
+LASGAWAWAAt1GMq2ofrUbZEH6l/6jAIagYDmSeKP62A93j+GAAjklimZIEKw2DuQvoofxy+OAfNa
+R9Z5S48UHlX8sB36ERiaEIAjDIqBlgGKszENXk/54Ttc+0eDfMYB85jxzzwAN+F9qW4f+evmyj+p
+f1L88BXO5zzHLQVafb141IZmz5GxCu6yIv6ImPlRj4semAzntntiPm+7ed4/nLtnleL7enii4yC5
+P64SWSMNMNcg5B8TnlgPeI5jtztP7nHgOAZ5eI5lDFPXiSSWKryURyIjIBA3g+cLoDgN/rUI42We
+QAzgHb7s8AbgFgFgFgFgGLFYTjRmjPiV0zwAyVUgOe3Nv6jqfxwDdmMzxFFOTdUb2MOmA4rzieEM
+Rk6na6+xh1wHC3K8s0taKVGsRZerEGBdc+mY6jAC3CleVLgYB18sq59UPu92A6NmxKAa0WSHpJJo
+MvaB1OAzLvnvDke1u4uPSVZeV4uxEEuVEjMaQSuwEcjS/TtbpkcBe6sgryJGQEr2gHhy6K5GZXT8
+sBnN37X8fYu/tu14bP8AOTcitvle4p5ZFFZBIJHVToru48oVQdOuA1Ttnsfg+1mlloo81qWWaX9z
+MQzp+4f1HVCANqk/PAWbALALALALALALAI5Za9PfgGGjhbUOF+BGWAjWgaOzJJVaOVWGU0YcAhvb
+gMF7kHctP7mch3FxKu8tRK8NvhqTLPYsVWHmkMUZZgV8CRgNgHI1oOI/ko6ViaT0g7UypNrI9V2H
+zbh7MBUuKsd2x/cCYRV7Nns2/TjaOSXZGtWYa7cnKtr45DAXzmaPD2uKtwc/YrRcTLHttNNIiIqn
+xLsQF16HPAEcdR4KnQp14p4p6sSotWSSVX3ADyENn5sBODLLTp4ZYBYBYBYBYD//2Q==
+
+------MultipartBoundary--bFuI68kkqKOWx3AK0U5eZSxYJP0MrqGbX6DUoHTs0L----
+Content-Type: image/jpeg
+Content-Transfer-Encoding: base64
+Content-Location: https://d26tpo4cm8sb6k.cloudfront.net/img/fitness-calculator.jpg
+
+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
+aDOgWgWgWg//2Q==
+
+------MultipartBoundary--bFuI68kkqKOWx3AK0U5eZSxYJP0MrqGbX6DUoHTs0L----
+Content-Type: image/jpeg
+Content-Transfer-Encoding: base64
+Content-Location: https://d26tpo4cm8sb6k.cloudfront.net/img/financial-calculator.jpg
+
+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
+7On9L2OPt0+HDbQWdBNBNBNB/9k=
+
+------MultipartBoundary--bFuI68kkqKOWx3AK0U5eZSxYJP0MrqGbX6DUoHTs0L----
+Content-Type: image/svg+xml
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://d26tpo4cm8sb6k.cloudfront.net/img/svg/calculator-white.svg
+
+<?xml version=3D"1.0" encoding=3D"UTF-8"?>
+<svg width=3D"208" height=3D"22" viewBox=3D"0 0 208 22" xmlns=3D"http://www=
+.w3.org/2000/svg"><defs><style>.cls-1{fill:#ffffff;}.cls-2{fill:#ccff99;}</=
+style></defs><title>Calculator.net</title><g transform=3D"matrix(2.0833 0 0=
+ 2.082 -2.3542 -19.565)"><path class=3D"cls-1" d=3D"m10.2 19.8v-1.8h-4.02a1=
+.9 1.9 0 0 1-2-1.64 7.39 7.39 0 0 1 0.09-3.47 2.06 2.06 0 0 1 2.17-1.75h3.7=
+6v-1.74h-4.41a3.83 3.83 0 0 0-3.85 2.85c-0.15 0.51-0.22 1-0.33 1.56v1.74c0 =
+0.25 0.09 0.5 0.13 0.75a4 4 0 0 0 3.83 3.47h4.63z"/><path class=3D"cls-1" d=
+=3D"m18.71 14.5a2.24 2.24 0 0 0-1.52-2.12 3.54 3.54 0 0 0-1.19-0.23h-4.57v1=
+.6h3.92a1.13 1.13 0 0 1 1.29 1.34q0 1.22 0 2.44a0.59 0.59 0 0 1-0.67 0.69h-=
+2.27a0.6 0.6 0 0 1-0.7-0.75 0.66 0.66 0 0 1 0.62-0.73 3.12 3.12 0 0 1 0.56-=
+0.05h2v-1.52c-0.65 0-2.32-0.06-3.45 0.07a1.88 1.88 0 0 0-1.82 1.92 2 2 0 0 =
+0 2 2.6 28.12 28.12 0 0 0 3.94 0 1.88 1.88 0 0 0 1.92-2.06c0-1.06-0.01-2.13=
+-0.06-3.2z"/><path class=3D"cls-1" d=3D"m26.69 13.89a6.34 6.34 0 0 1 1-0.09=
+h2.25v-1.68h-3.59a3 3 0 0 0-2.62 1.6 4.38 4.38 0 0 0-0.2 4 3 3 0 0 0 2.64 2=
+c1.19 0.09 2.38 0.05 3.57 0.06h0.18v-1.63h-2.75a1.69 1.69 0 0 1-1.8-1.45 5.=
+3 5.3 0 0 1 0-1.52 1.44 1.44 0 0 1 1.32-1.29z"/><path class=3D"cls-1" d=3D"=
+m35.85 12.14v6h-1.56c-1.15 0-1.4-0.25-1.4-1.39q0-2.1 0-4.21v-0.41h-2v5.17a2=
+.28 2.28 0 0 0 2.38 2.5c1.24 0.08 2.49 0 3.74 0.06h0.87v-7.72h-2z"/><path c=
+lass=3D"cls-1" d=3D"m54.51 18.24a1 1 0 0 1-1-1 3.75 3.75 0 0 1 0-0.43q0-1.3=
+9 0-2.77v-0.35h2.1v-1.58h-2.16v-2.69h-2.06v0.38q0 1.77 0 3.54v4.24a2.09 2.0=
+9 0 0 0 2.31 2.24h1.86v-1.57c-0.36 0-0.71 0.02-1.05-0.01z"/><path class=3D"=
+cls-1" d=3D"m48.5 12.29a3.46 3.46 0 0 0-0.92-0.15h-4.58v1.6h3.92a1.13 1.13 =
+0 0 1 1.29 1.31v2.47a0.59 0.59 0 0 1-0.67 0.69h-2.3a0.56 0.56 0 0 1-0.64-0.=
+58 0.64 0.64 0 0 1 0.56-0.81 4.56 4.56 0 0 1 0.84-0.05h1.8v-1.58c-0.8 0-2.2=
+6-0.05-3.37 0a1.77 1.77 0 0 0-1.7 1.14 4.19 4.19 0 0 0-0.24 1.67 1.78 1.78 =
+0 0 0 1.77 1.75 34.06 34.06 0 0 0 4 0 1.86 1.86 0 0 0 2-2 27 27 0 0 0 0-3.3=
+7 2.24 2.24 0 0 0-1.76-2.09z"/><path class=3D"cls-1" d=3D"m20.13 19.78h2.09=
+v-10.37h-2.09z"/><path class=3D"cls-1" d=3D"m39.33 19.79h2.08v-10.38h-2.08z=
+"/><path class=3D"cls-1" d=3D"m71.21 12.15c-1.34 0-2.67-0.08-4 0a2.39 2.39 =
+0 0 0-2.41 2.55c-0.05 1.63 0 3.27 0 4.91v0.16h2.1v-6.07h4.31z"/><path class=
+=3D"cls-1" d=3D"m61.49 12.19a4.93 4.93 0 0 0-2.18-0.19 3.62 3.62 0 0 0-3.07=
+ 2.15 4.6 4.6 0 0 0-0.32 2.41 3.61 3.61 0 0 0 2.52 3.14c0.19 0.06 0.34 0.11=
+ 0.53 0.15a4.45 4.45 0 0 0 2 0 2.85 2.85 0 0 0 0.33-0.07 3.47 3.47 0 0 0 2.=
+63-2.66 5.63 5.63 0 0 0 0.07-1.9 3.47 3.47 0 0 0-2.51-3.03zm0.37 4.41a1.84 =
+1.84 0 0 1-1.86 1.68 1.77 1.77 0 0 1-1.91-1.62 4.25 4.25 0 0 1 0-1.45 1.76 =
+1.76 0 0 1 2-1.54 1.83 1.83 0 0 1 1.79 1.73v0.61c0 0.19 0.02 0.4-0.02 0.59z=
+"/></g><g transform=3D"matrix(2.0996 0 0 2.1134 -3.605 -20.098)" fill=3D"#c=
+f9"><path class=3D"cls-2" d=3D"m91.63 12.63a4.13 4.13 0 0 0-0.89-0.11h-4a2 =
+2 0 0 0-2.06 1.89 16.29 16.29 0 0 0 0 3.16 2.4 2.4 0 0 0 2 2.1l0.56 0.12a3.=
+37 3.37 0 0 0 0.65 0.06h4.75v-1.74h-3.88a4.94 4.94 0 0 1-0.89-0.11 1.06 1.0=
+6 0 0 1-1-1.11v-2a0.55 0.55 0 0 1 0.55-0.64c0.9-0.05 1.8-0.06 2.7-0.05a0.54=
+ 0.54 0 0 1 0.52 0.55 0.57 0.57 0 0 1-0.5 0.58 1.79 1.79 0 0 1-0.4 0h-2.35v=
+1.64a23.3 23.3 0 0 0 4.19-0.16 1.79 1.79 0 0 0 1.42-1.41 4.41 4.41 0 0 0 0-=
+1.29 1.67 1.67 0 0 0-1.37-1.48z"/><path class=3D"cls-2" d=3D"m97.2 18.15a1 =
+1 0 0 1-1.1-1.1v-2.84h2.27v-1.7h-2.3v-3h-2.27v7.47a5.54 5.54 0 0 0 0.07 0.9=
+3 2.09 2.09 0 0 0 1.53 1.79 3.33 3.33 0 0 0 1 0.14h2v-1.69c-0.4 0-0.8 0.03-=
+1.2 0z"/><path class=3D"cls-2" d=3D"m70.3 19.89h2.07v-2h-2.07z"/><path clas=
+s=3D"cls-2" d=3D"m83.59 19.76v-4.68a2.31 2.31 0 0 0-1.88-2.39 4.11 4.11 0 0=
+ 0-1-0.14h-4.86v7.37h2.25v-5.5h2a1 1 0 0 1 1.21 1.22v4.26h2.29s-0.01-0.1-0.=
+01-0.14z"/></g></svg>
+
+------MultipartBoundary--bFuI68kkqKOWx3AK0U5eZSxYJP0MrqGbX6DUoHTs0L----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://www.calculator.net/css/sci.css
+
+@charset "utf-8";
+
+#calinfoout { background-color: rgb(238, 238, 238); width: 258px; }
+
+.calinfoinner { padding: 5px; border-width: 1px 2px 2px 1px; border-style: =
+solid outset outset solid; border-color: rgb(38, 38, 38); }
+
+#calinfoout input { width: 45px; height: 30px; margin: 2px; background-colo=
+r: rgb(255, 255, 255); font-family: arial, helvetica, sans-serif; font-size=
+: 17px; border: 1px solid rgb(38, 38, 38); }
+
+#calinfoout #calInfoOutPut { width: 242px; font-size: 22px; padding: 3px; c=
+ursor: text; text-align: right; background-color: rgb(184, 198, 163); color=
+: rgb(0, 0, 0); }
+
+#calinfoout .calinfonm { color: rgb(255, 255, 255); font-weight: bold; back=
+ground-color: rgb(38, 38, 38); }
+
+#calinfoout .calinfoop { color: rgb(38, 38, 38); font-weight: bold; backgro=
+und-color: rgb(204, 204, 204); }
+
+#calinfoout .calinfoeq { color: rgb(255, 0, 0); font-weight: bold; backgrou=
+nd-color: rgb(220, 173, 176); }
+
+#calinfoout .calinfofunc { color: rgb(24, 82, 144); font-weight: bold; back=
+ground-color: rgb(200, 216, 232); height: 23px; padding-bottom: 1px; }
+
+#sciout { padding: 5px; border-width: 1px 2px 2px 1px; border-style: solid =
+outset outset solid; border-color: rgb(38, 38, 38); background: rgb(255, 25=
+5, 255); }
+
+#sciOutPut { font-size: 20px; padding: 3px; margin: 2px; cursor: text; text=
+-align: right; background-color: rgb(51, 102, 153); border: 1px solid rgb(5=
+1, 102, 153); border-radius: 0px; color: rgb(255, 255, 255); }
+
+.scifunc { display: table-cell; vertical-align: middle; text-align: center;=
+ width: 50px; height: 30px; margin: 1px; border: 1px solid rgb(162, 187, 21=
+2); border-radius: 3px; font-family: arial, helvetica, sans-serif; font-siz=
+e: 16px; font-weight: bold; color: rgb(0, 0, 0); background-color: rgb(229,=
+ 236, 243); }
+
+.scifunc:active { background-color: rgb(0, 0, 0); color: rgb(255, 255, 255)=
+; }
+
+.scinm { display: table-cell; vertical-align: middle; padding: 0px; text-al=
+ign: center; width: 50px; height: 30px; margin: 1px; border: 1px solid rgb(=
+51, 102, 153); border-radius: 3px; font-family: arial, helvetica, sans-seri=
+f; font-size: 16px; font-weight: bold; color: rgb(0, 0, 0); background-colo=
+r: rgb(174, 192, 211); }
+
+.scinm:active { background-color: rgb(170, 170, 170); color: rgb(0, 0, 0); =
+}
+
+.sciop { display: table-cell; vertical-align: middle; padding: 0px; text-al=
+ign: center; width: 50px; height: 30px; margin: 1px; border: 1px solid rgb(=
+162, 187, 212); border-radius: 3px; font-family: arial, helvetica, sans-ser=
+if; font-size: 16px; font-weight: bold; color: rgb(0, 0, 0); background-col=
+or: rgb(229, 236, 243); }
+
+.sciop:active { background-color: rgb(0, 0, 0); color: rgb(255, 255, 255); =
+}
+
+.scird { display: table-cell; vertical-align: middle; text-align: center; h=
+eight: 30px; margin: 1px; border: 1px solid rgb(238, 238, 238); border-radi=
+us: 3px; font-family: arial, helvetica, sans-serif; font-size: 13px; color:=
+ rgb(38, 38, 38); }
+
+.scieq { display: table-cell; vertical-align: middle; padding: 0px; text-al=
+ign: center; width: 50px; height: 30px; margin: 1px; border: 1px solid rgb(=
+51, 102, 153); border-radius: 3px; font-family: arial, helvetica, sans-seri=
+f; font-size: 16px; font-weight: bold; color: rgb(0, 0, 0); background-colo=
+r: rgb(174, 192, 211); }
+
+.scieq:active { background-color: rgb(255, 0, 0); color: rgb(255, 255, 255)=
+; }
+
+#scihistory, #scihistory div { font-size: 13px; color: rgb(136, 136, 136); =
+text-align: right; overflow: hidden; width: 268px; }
+
+#sciInPut { font-size: 18px; color: rgb(0, 0, 0); text-align: right; overfl=
+ow: hidden; width: 268px; overflow-wrap: break-word; margin-bottom: -2px; }
+
+#sciInPut b { color: rgb(204, 204, 204); font-weight: bold; }
+------MultipartBoundary--bFuI68kkqKOWx3AK0U5eZSxYJP0MrqGbX6DUoHTs0L----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://www.calculator.net/style.css
+
+@charset "utf-8";
+
+body, p, td, div, span, input, th, li, textarea { font-family: arial, helve=
+tica, sans-serif; font-size: 16px; color: rgb(0, 0, 0); }
+
+body { background: rgb(255, 255, 255); margin: 0px; padding: 0px; border: 0=
+px; text-align: center; }
+
+p { margin: 5px 0px 8px; }
+
+img { border: 0px; }
+
+h1 { color: rgb(0, 51, 102); font-size: 26px; font-weight: bold; padding: 0=
+px; margin: 12px 0px; }
+
+h2 { font-size: 22px; font-weight: bold; color: rgb(0, 51, 102); padding: 0=
+px; margin-bottom: 2px; }
+
+h3 { font-size: 19px; font-weight: bold; }
+
+hr { border: 0px; color: rgb(170, 170, 170); background-color: rgb(170, 170=
+, 170); height: 1px; }
+
+a { color: rgb(0, 102, 153); text-decoration: underline; }
+
+a:hover { text-decoration: none; }
+
+input { padding: 5px; color: rgb(0, 0, 0); box-sizing: border-box; }
+
+select { padding: 4px; color: rgb(0, 0, 0); box-sizing: border-box; }
+
+option { font-size: 16px; }
+
+input[type=3D"text"], input[type=3D"url"], input[type=3D"tel"], input[type=
+=3D"number"], input[type=3D"color"], input[type=3D"date"], input[type=3D"em=
+ail"], select { border: 1px solid rgb(4, 66, 132); border-radius: 2px; box-=
+shadow: rgb(102, 102, 102) 1px 1px 2px; font-size: 16px; background-color: =
+rgb(255, 255, 255); }
+
+input[type=3D"submit"] { border: 0px; color: rgb(255, 255, 255); padding: 1=
+1px 50px 11px 16px; font-size: 16px; font-weight: bold; background-color: r=
+gb(76, 123, 37); background-image: url("data:image/svg+xml;utf8,<svg xmlns=
+=3D\"http://www.w3.org/2000/svg\" width=3D\"180px\" height=3D\"40px\"><circ=
+le cx=3D\"112\" cy=3D\"20\" r=3D\"11\" fill=3D\"darkseagreen\" /><path d=3D=
+\"M110 12 L120 20 L110 28 Z\" fill=3D\"white\" /></svg>"); background-repea=
+t: no-repeat; }
+
+input[type=3D"submit"]:hover { background-color: rgb(68, 68, 68); }
+
+input[type=3D"reset"], input[type=3D"button"] { border: 0px; color: rgb(255=
+, 255, 255); padding: 11px 8px; font-size: 16px; background: rgb(171, 171, =
+171); }
+
+input[type=3D"reset"]:hover, input[type=3D"button"]:hover { background: rgb=
+(68, 68, 68); }
+
+input[type=3D"image"], input[type=3D"image"]:hover { background: rgb(81, 13=
+2, 40); color: rgb(255, 255, 255); padding: 0px; margin: 0px; }
+
+.clearbtn { cursor: pointer; }
+
+.inputErrMsg { position: absolute; padding: 4px 8px; color: rgb(0, 0, 0); b=
+ackground-color: rgb(255, 204, 204); border: 1px solid rgb(255, 170, 170); =
+white-space: nowrap; display: inline-block; }
+
+.cbcontainer { display: inline-block; position: relative; padding-left: 28p=
+x; padding-top: 1px; margin: 5px 0px; cursor: pointer; font-size: 16px; use=
+r-select: none; }
+
+.cbcontainer input { position: absolute; opacity: 0; cursor: pointer; heigh=
+t: 0px; width: 0px; }
+
+.cbmark { position: absolute; top: 0px; left: 0px; height: 16px; width: 16p=
+x; background-color: rgb(255, 255, 255); border: 2px solid rgb(51, 102, 153=
+); }
+
+.rbmark { position: absolute; top: 0px; left: 0px; height: 16px; width: 16p=
+x; background-color: rgb(255, 255, 255); border: 2px solid rgb(51, 102, 153=
+); border-radius: 50%; }
+
+.cbcontainer:hover input ~ .cbmark, .cbcontainer:hover input ~ .rbmark { ba=
+ckground-color: rgb(204, 204, 204); }
+
+.cbcontainer input:checked ~ .cbmark, .cbcontainer input:checked ~ .rbmark =
+{ background-color: rgb(51, 102, 153); }
+
+.cbmark::after, .rbmark::after { content: ""; position: absolute; display: =
+none; }
+
+.cbcontainer input:checked ~ .cbmark::after, .cbcontainer input:checked ~ .=
+rbmark::after { display: block; }
+
+.cbcontainer .cbmark::after { left: 4px; top: 0px; width: 5px; height: 10px=
+; border-style: solid; border-color: white; border-image: initial; border-w=
+idth: 0px 3px 3px 0px; transform: rotate(45deg); }
+
+.cbcontainer .rbmark::after { top: 4px; left: 4px; width: 8px; height: 8px;=
+ border-radius: 50%; background: white; }
+
+.indollar { background-image: url("data:image/svg+xml;utf8,<svg xmlns=3D\"h=
+ttp://www.w3.org/2000/svg\" width=3D\"15px\" height=3D\"20px\"><text x=3D\"=
+2\" y=3D\"15\" style=3D\"font: normal 16px arial;\">$</text></svg>"); backg=
+round-position: left center; background-repeat: no-repeat; padding-left: 11=
+px !important; }
+
+.inpct { background-image: url("data:image/svg+xml;utf8,<svg xmlns=3D\"http=
+://www.w3.org/2000/svg\" width=3D\"17px\" height=3D\"20px\"><text x=3D\"1\"=
+ y=3D\"15\" style=3D\"font: normal 16px arial;\">%</text></svg>"); backgrou=
+nd-position: right center; background-repeat: no-repeat; padding-right: 18p=
+x !important; }
+
+.innormal { width: 90px; }
+
+.in4char { width: 58px; }
+
+.in3char { width: 46px; }
+
+.in2char { width: 35px; }
+
+.inlong { width: 120px; }
+
+.inlonger { width: 170px; }
+
+.inlongest { width: 230px; }
+
+.inlongesthalf { width: 112px; }
+
+.infull { width: 226px; }
+
+.inhalf { width: 110px; }
+
+.infulltxarea { width: 600px; padding: 8px; }
+
+.inshortfull { width: 170px; }
+
+.inshorthalf { width: 82px; }
+
+.inuiyear { padding-right: 50px; }
+
+.inuiyearspan { margin-left: -45px; color: rgb(136, 136, 136); }
+
+.inuipound { padding-right: 62px; }
+
+.inuipoundspan { margin-left: -58px; color: rgb(136, 136, 136); }
+
+.inuifoot { padding-right: 38px; }
+
+.inuifootspan { margin-left: -34px; color: rgb(136, 136, 136); }
+
+.inuiinch { padding-right: 57px; }
+
+.inuiinchspan { margin-left: -53px; color: rgb(136, 136, 136); }
+
+.inuick { padding-right: 32px; }
+
+.inuickspan { margin-left: -27px; color: rgb(136, 136, 136); }
+
+.inui1c { padding-right: 16px; }
+
+.inui1cspan { margin-left: -11px; color: rgb(136, 136, 136); }
+
+.scaleimg { max-width: 100%; height: auto; }
+
+#tt { position: absolute; display: block; background-color: rgb(71, 71, 71)=
+; color: rgb(255, 255, 255); padding: 8px; border: 1px solid rgb(0, 0, 0); =
+text-align: left; }
+
+.ttimg { opacity: 0.4; vertical-align: top; }
+
+.ttimg:hover { opacity: 1; }
+
+#headerout { background: rgb(0, 51, 102); text-align: center; }
+
+#header { width: 1100px; height: 60px; background: rgb(0, 51, 102); padding=
+: 0px; margin-left: auto; margin-right: auto; text-align: left; overflow: h=
+idden; }
+
+#logo { padding: 18px 0px; width: 270px; float: left; }
+
+#login { padding: 2px; float: right; color: rgb(204, 204, 204); }
+
+#login a { color: rgb(204, 204, 204); text-decoration: none; }
+
+#login a:hover { text-decoration: underline; }
+
+.topNavAbs { position: absolute; top: 21px; left: 50%; width: 520px; margin=
+-left: -80px; text-align: left; }
+
+.topNavAbs a { color: white; padding: 10px 16px; border: none; cursor: poin=
+ter; font-size: 16px; text-transform: uppercase; display: inline-block; tex=
+t-decoration: none; }
+
+.topNavAbs a:hover { background-color: rgb(81, 132, 40); }
+
+.topNavOn { background-color: rgb(81, 132, 40); }
+
+#contentout { width: 1100px; padding-top: 5px; margin-left: auto; margin-ri=
+ght: auto; text-align: left; overflow: auto; }
+
+#content { padding: 0px 0px 15px; width: 728px; float: left; }
+
+#right { width: 336px; float: right; text-align: center; }
+
+#contentbig { padding: 0px 0px 15px; width: 843px; float: right; }
+
+#footer { background: rgb(225, 225, 225); padding: 25px 0px; font-size: 13p=
+x; color: rgb(85, 85, 85); text-align: center; }
+
+#footer a { color: rgb(68, 68, 68); }
+
+#footer a:hover { text-decoration: none; }
+
+#footerin { width: 1100px; margin-left: auto; margin-right: auto; text-alig=
+n: left; overflow: auto; color: rgb(85, 85, 85); }
+
+#footernav { text-align: center; }
+
+#homecaldiv { background: rgb(209, 221, 233); padding: 10px 0px; }
+
+#homelistdiv { background: rgb(255, 255, 255); padding: 20px 0px; }
+
+#homecaldiv td { overflow: hidden; }
+
+#homelistwrap { display: grid; row-gap: 30px; justify-content: center; grid=
+-template-columns: 280px 320px 260px 220px; }
+
+#breadcrumbs, #breadcrumbs span { font-size: 13px; }
+
+#breadcrumbs a, #breadcrumbs a span { text-decoration: none; color: rgb(0, =
+102, 153); }
+
+#breadcrumbs a:hover, #breadcrumbs a span:hover { text-decoration: underlin=
+e; }
+
+#othercalc { border: 1px solid rgb(51, 102, 153); margin: auto; text-align:=
+ left; width: 332px; }
+
+#octitle { background-color: rgb(51, 102, 153); padding: 6px; color: rgb(25=
+5, 255, 255); font-size: 18px; font-weight: bold; }
+
+#octitle a { color: rgb(255, 255, 255); text-decoration: none; }
+
+#octitle a:hover { text-decoration: underline; }
+
+#occontent { padding: 3px 6px; font-size: 14px; }
+
+#occontent a { display: inline-block; width: 158px; padding: 3px 0px; }
+
+#ocother { background-color: rgb(221, 221, 221); padding: 6px; text-align: =
+center; font-size: 15px; color: rgb(187, 187, 187); }
+
+#sectitle { background-color: rgb(51, 102, 153); padding: 6px; color: rgb(2=
+55, 255, 255); font-size: 18px; font-weight: bold; }
+
+.hicon { padding: 20px 0px 20px 10px; }
+
+.hl { list-style-type: none; margin: 0px; padding: 5px 0px 5px 8px; backgro=
+und-color: rgb(255, 255, 255); font-size: 16px; }
+
+.hl li { padding: 0px 0px 8px; }
+
+.hl li a { text-decoration: none; }
+
+.hl li a:hover { text-decoration: underline; }
+
+.hh { color: rgb(35, 131, 43); padding: 8px 5px; font-size: 22px; }
+
+.hh a { color: rgb(35, 131, 43); text-decoration: none; }
+
+.hh a:hover { text-decoration: underline; }
+
+.smtb a { text-decoration: underline; }
+
+.smtb a:hover { text-decoration: none; }
+
+.smtbtop a { text-decoration: none; }
+
+.smtbtop a:hover { text-decoration: underline; }
+
+.smalltext { font-size: 13px; }
+
+.bigtext { font-size: 18px; }
+
+.verybigtext { font-size: 23px; }
+
+.morelinespace { line-height: 125%; }
+
+.inlinetable { display: inline; }
+
+table.cinfoT { border-collapse: collapse; border-spacing: 0px; margin-top: =
+0px; }
+
+table.cinfoT th, table.cinfoT td.cinfoHd, table.cinfoT td.cinfoHdL { border=
+-width: 1px; border-style: solid; border-color: rgb(17, 68, 119) rgb(17, 68=
+, 119) rgb(51, 102, 153); background-color: rgb(51, 102, 153); font-weight:=
+ bold; color: rgb(255, 255, 255); padding: 5px 3px; }
+
+table.cinfoT td { border: 1px solid rgb(204, 204, 204); color: rgb(0, 0, 0)=
+; padding: 3px; }
+
+table.cinfoT tr:nth-child(2n+1) { background-color: rgb(238, 238, 238); }
+
+table.cinfoT tr:nth-child(2n) { background-color: rgb(255, 255, 255); }
+
+table.cinfoTS td.cinfoHd { font-size: 13px; }
+
+table.cinfoTS td.cinfoHdL { font-size: 13px; }
+
+table.cinfoTS td { font-size: 13px; padding: 3px 1px; }
+
+.frac { display: inline-block; text-align: center; vertical-align: middle; =
+}
+
+.fracnum { display: block; }
+
+.fracden { display: block; border-top: 1px solid rgb(0, 0, 0); padding: 0px=
+ 3px; }
+
+#topmenu ul { color: rgb(0, 0, 0); border-bottom: 1px solid rgb(187, 187, 1=
+87); margin: 12px 0px 0px; padding: 0px 0px 8px; font-size: 15px; font-weig=
+ht: bold; }
+
+#topmenu ul li { display: inline; overflow: hidden; list-style-type: none; =
+margin-left: 0px; }
+
+#topmenu ul li a, #topmenu ul li a:visited { color: rgb(255, 255, 255); bac=
+kground: rgb(51, 102, 153); border: 1px solid rgb(51, 102, 153); padding: 8=
+px 5px; margin: 0px; text-decoration: none; }
+
+#topmenu ul li a:hover { background: rgb(238, 238, 238); color: rgb(0, 0, 0=
+); }
+
+#topmenu ul #menuon a { color: rgb(0, 0, 0); background: rgb(238, 238, 238)=
+; border-width: 1px 1px 2px; border-style: solid; border-color: rgb(187, 18=
+7, 187) rgb(187, 187, 187) rgb(238, 238, 238); border-image: initial; paddi=
+ng: 8px 5px; margin: 0px; text-decoration: none; }
+
+#topmenu ul #menuon a:hover { background: rgb(238, 238, 238); }
+
+.topmenucenter { }
+
+#insmd { background-color: rgb(51, 102, 153); margin-bottom: 3px; }
+
+#insmdc { background-color: rgb(51, 102, 153); margin-bottom: 3px; text-ali=
+gn: center; }
+
+fieldset { margin-top: 10px; padding: 0px 10px 5px; border: 0px solid rgb(1=
+89, 210, 218); background: rgb(238, 238, 238); color: rgb(238, 238, 238); }
+
+legend { font-size: 18px; font-weight: bold; padding: 5px 15px; background:=
+ rgb(238, 238, 238); color: rgb(0, 0, 0); }
+
+fieldset a { display: inline-block; white-space: nowrap; padding: 6px; font=
+-size: 16px; background: rgb(51, 102, 153); color: rgb(255, 255, 255); marg=
+in-bottom: 5px; text-decoration: none; }
+
+fieldset a:hover { background: rgb(65, 117, 22); color: rgb(255, 255, 255);=
+ }
+
+fieldset div { display: inline-block; white-space: nowrap; padding: 10px; f=
+ont-size: 18px; background: rgb(4, 66, 132); color: rgb(255, 255, 255); mar=
+gin-bottom: 5px; border-radius: 3px; text-decoration: none; }
+
+fieldset div:hover { background: rgb(196, 119, 81); color: rgb(255, 255, 25=
+5); }
+
+.arrow_box { position: relative; background: rgb(238, 238, 238); border: 1p=
+x solid rgb(170, 170, 170); padding: 3px 8px; text-align: center; }
+
+.arrow_box::after, .arrow_box::before { left: 100%; top: 50%; border: solid=
+ transparent; content: " "; height: 0px; width: 0px; position: absolute; po=
+inter-events: none; }
+
+.arrow_box::after { border-color: rgba(221, 221, 221, 0) rgba(221, 221, 221=
+, 0) rgba(221, 221, 221, 0) rgb(238, 238, 238); border-width: 12px; margin-=
+top: -12px; }
+
+.arrow_box::before { border-color: rgba(238, 238, 238, 0) rgba(238, 238, 23=
+8, 0) rgba(238, 238, 238, 0) rgb(170, 170, 170); border-width: 13px; margin=
+-top: -13px; }
+
+.result_box { background: rgb(227, 237, 218); border: 1px solid rgb(141, 18=
+0, 109); padding: 3px 8px; text-align: center; }
+
+.panel { background: rgb(238, 238, 238); border: 1px solid rgb(187, 187, 18=
+7); padding: 5px; }
+
+.panel2 { background-color: rgb(238, 238, 238); padding: 5px; border-right:=
+ 1px solid rgb(187, 187, 187); border-bottom: 1px solid rgb(187, 187, 187);=
+ border-left: 1px solid rgb(187, 187, 187); }
+
+.reference { font-size: 13px; padding-left: 1.8em; }
+
+.reference li { font-size: 13px; overflow-wrap: break-word; }
+
+#printit { width: 80px; float: right; text-align: right; }
+
+.h2result { background: rgb(81, 132, 40); color: rgb(255, 255, 255); border=
+: 1px solid rgb(81, 132, 40); padding: 5px; margin-top: 3px; font-size: 22p=
+x; font-weight: normal; }
+
+.h3head { margin-bottom: 2px; }
+
+.sectionlists { }
+
+.sectionlists div { padding-bottom: 5px; }
+
+#searchbox { padding-top: 16px; }
+
+#bluebtn { border-radius: 1px; background: rgb(51, 102, 153); padding: 5px =
+8px; font-size: 18px; color: rgb(255, 255, 255); }
+
+#bluebtn:hover { background: rgb(68, 68, 68); color: rgb(255, 255, 255); }
+
+#calcSearchOut { padding: 5px; }
+
+#calcSearchOut div { padding: 5px; text-align: left; }
+
+.leftinput { width: 325px; float: left; }
+
+.rightresult { width: 375px; float: right; }
+
+.clefthalf { width: 350px; float: left; }
+
+.crighthalf { width: 350px; float: right; }
+
+.espaceforM { display: none; }
+
+#clear { margin-left: auto; margin-right: auto; clear: both; height: 0px; }
+
+.leftchart { padding-top: 10px; width: 500px; float: left; }
+
+.rightpie { padding-top: 10px; width: 165px; float: right; }
+
+@media (max-width: 1140px) {
+  #header { width: 990px; padding-left: 8px; }
+  #contentout { width: 1000px; }
+  #content { width: 640px; float: left; padding-left: 10px; }
+  #footerin { width: 990px; }
+  #homelistwrap { display: grid; row-gap: 30px; grid-template-columns: 270p=
+x 300px 220px 210px; }
+  .leftinput, .clefthalf, .crighthalf { width: 310px; }
+  .rightresult { width: 320px; }
+  .leftchart { width: 445px; }
+  .rightpie { width: 155px; }
+}
+
+@media (max-width: 720px) {
+  #header { width: auto; padding: 0px 8px; }
+  #contentout { width: auto; padding: 8px; }
+  #content { float: none; width: auto; padding: 0px; }
+  #homelistwrap { grid-template-columns: 320px 320px; }
+  #right { width: auto; float: none; }
+  #footerin { width: auto; }
+  .topNavAbs { display: none; }
+  .espaceforM { display: block; }
+}
+
+@media (max-width: 650px) {
+  #homelistwrap { grid-template-columns: 250px 250px; }
+  .leftinput, .rightresult, .clefthalf, .crighthalf { width: auto; float: n=
+one; }
+  img { max-width: 100%; height: auto; }
+}
+
+@media (max-width: 490px) {
+  #homelistwrap { grid-template-columns: auto; }
+}
+------MultipartBoundary--bFuI68kkqKOWx3AK0U5eZSxYJP0MrqGbX6DUoHTs0L----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: cid:css-d8de425b-b5e7-41b0-a79a-ce7cc254e204@mhtml.blink
+
+@charset "utf-8";
+
+#calcSearchOut div { padding: 0px; }
+------MultipartBoundary--bFuI68kkqKOWx3AK0U5eZSxYJP0MrqGbX6DUoHTs0L----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: cid:css-7268c003-8dd1-49f3-aa5c-1e67365aae87@mhtml.blink
+
+@charset "utf-8";
+
+#sciout { padding: 5px; border-width: 1px; border-style: solid outset outse=
+t solid; border-color: rgb(255, 255, 255); background: rgb(255, 255, 255); =
+}
+
+@media (max-width: 720px) {
+  #homefunbtn { display: none; }
+}
+
+@media (max-width: 650px) {
+  #homesch { display: none; }
+}
+------MultipartBoundary--bFuI68kkqKOWx3AK0U5eZSxYJP0MrqGbX6DUoHTs0L------

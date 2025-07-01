@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Energy Efficiency Calculator</title>
+    <meta name="description" content="Analyze energy efficiency of different drying methods and systems. Optimize energy consumption and reduce operating costs.">
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/icon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/icon-16x16.png">
+</head>
+<body>
+<div id="headerout">
+    <div id="header">
+        <div id="logo">
+            <a href="index.html">
+                <img src="images/dry-calculator-logo.svg" width="208" height="22" alt="Dry Calculator">
+            </a>
+        </div>
+        <div id="login">
+            <a href="sign-in.html">sign in</a>
+        </div>
+    </div>
+</div>
+<div id="clear"></div>
+
+<div id="contentout">
+    <div id="content">
+        <div id="breadcrumbs">
+            <a href="index.html">home</a> / 
+            <a href="drying-calculators.html">drying calculators</a> / 
+            <a href="energy-efficiency-calculator.html">energy efficiency calculator</a>
+        </div>
+        
+        <h1>Energy Efficiency Calculator</h1>
+        <p>The <i>Energy Efficiency Calculator</i> analyzes energy efficiency of different drying methods and systems. Essential for optimizing energy consumption, reducing operating costs, and improving sustainability.</p>
+
+        <div id="insmdc">
+            <img src="images/insm.svg" width="630" height="35" alt="Modify the values and click the calculate button to use">
+        </div>
+        
+        <form name="calform">
+            <div class="panel">
+                <table id="calinputtable">
+                    <tbody>
+                        <tr>
+                            <td>Analysis Type</td>
+                            <td>
+                                <select name="canalysistype" id="canalysistype" class="infull">
+                                    <option value="thermal">Thermal Efficiency</option>
+                                    <option value="overall">Overall Energy Efficiency</option>
+                                    <option value="comparison">System Comparison</option>
+                                    <option value="optimization">Process Optimization</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Water Removed</td>
+                            <td>
+                                <input type="text" name="cwaterremoved" id="cwaterremoved" value="500" class="infull">
+                                <span style="margin-left: 5px; color: rgb(136, 136, 136);">kg</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Energy Input</td>
+                            <td>
+                                <input type="text" name="cenergyinput" id="cenergyinput" value="1500" class="infull">
+                                <span style="margin-left: 5px; color: rgb(136, 136, 136);">kWh or MJ</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Energy Unit</td>
+                            <td>
+                                <select name="cenergyunit" id="cenergyunit" class="infull">
+                                    <option value="kwh">kWh (Kilowatt-hours)</option>
+                                    <option value="mj">MJ (Megajoules)</option>
+                                    <option value="btu">BTU (British Thermal Units)</option>
+                                    <option value="kcal">kcal (Kilocalories)</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Drying System Type</td>
+                            <td>
+                                <select name="csystemtype" id="csystemtype" class="infull">
+                                    <option value="conventional_kiln">Conventional Kiln</option>
+                                    <option value="dehumidification_kiln">Dehumidification Kiln</option>
+                                    <option value="vacuum_kiln">Vacuum Kiln</option>
+                                    <option value="solar_kiln">Solar Kiln</option>
+                                    <option value="microwave_dryer">Microwave Dryer</option>
+                                    <option value="freeze_dryer">Freeze Dryer</option>
+                                    <option value="spray_dryer">Spray Dryer</option>
+                                    <option value="fluidized_bed">Fluidized Bed Dryer</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Operating Temperature</td>
+                            <td>
+                                <input type="text" name="coperatingtemp" id="coperatingtemp" value="60" class="infull">
+                                <span style="margin-left: 5px; color: rgb(136, 136, 136);">°C</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Ambient Temperature</td>
+                            <td>
+                                <input type="text" name="cambienttemp" id="cambienttemp" value="20" class="infull">
+                                <span style="margin-left: 5px; color: rgb(136, 136, 136);">°C</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Heat Recovery</td>
+                            <td>
+                                <label for="cheatrecovery1" class="cbcontainer">
+                                    <input type="radio" name="cheatrecovery" id="cheatrecovery1" value="none" checked="">
+                                    <span class="rbmark"></span>None
+                                </label> &nbsp;
+                                <label for="cheatrecovery2" class="cbcontainer">
+                                    <input type="radio" name="cheatrecovery" id="cheatrecovery2" value="partial">
+                                    <span class="rbmark"></span>Partial (50%)
+                                </label> &nbsp;
+                                <label for="cheatrecovery3" class="cbcontainer">
+                                    <input type="radio" name="cheatrecovery" id="cheatrecovery3" value="full">
+                                    <span class="rbmark"></span>Full (80%)
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" align="left" style="padding-top: 8px;padding-left: 70px;">
+                                <input type="submit" name="x" value="Calculate">
+                                <input type="button" value="Clear">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </form>
+
+        <div id="result-section" style="margin-top: 20px; padding: 15px; background: #f0f8ff; border: 1px solid #ccc; border-radius: 5px; display: none;">
+            <h3>Energy Efficiency Analysis</h3>
+            <div id="results-content"></div>
+        </div>
+
+        <br>
+        <p></p>
+        <fieldset>
+            <legend>Related</legend>
+            <a href="heat-requirement-calculator.html">Heat Requirement Calculator</a> | 
+            <a href="moisture-removal-calculator.html">Moisture Removal Calculator</a> | 
+            <a href="drying-time-calculator.html">Drying Time Calculator</a>
+        </fieldset>
+        <p></p>
+        
+        <h2>Understanding Energy Efficiency in Drying</h2>
+        <p>Energy efficiency in drying processes measures how effectively input energy is used to remove moisture. Improving efficiency reduces operating costs, environmental impact, and energy consumption.</p>
+        
+        <h3>Efficiency Definitions</h3>
+        
+        <h4>Thermal Efficiency</h4>
+        <div style="background: #f8f8f8; padding: 15px; border-radius: 5px; margin: 15px 0;">
+            <p><strong>η<sub>thermal</sub> = (Energy for Evaporation) / (Total Energy Input) × 100%</strong></p>
+            <p><strong>Theoretical Minimum = 2257 kJ/kg water (at 100°C)</strong></p>
+            <p><strong>Typical Range: 30-80%</strong></p>
+        </div>
+        
+        <h4>Overall Energy Efficiency</h4>
+        <div style="background: #f8f8f8; padding: 15px; border-radius: 5px; margin: 15px 0;">
+            <p><strong>η<sub>overall</sub> = (Useful Energy Output) / (Total Energy Input) × 100%</strong></p>
+            <p><strong>Includes: Heat losses, auxiliary equipment, controls</strong></p>
+            <p><strong>Typical Range: 20-70%</strong></p>
+        </div>
+        
+        <h3>Efficiency by Drying Method</h3>
+        
+        <table style="width: 100%; border-collapse: collapse; margin: 15px 0;">
+            <tr style="background: #f0f0f0;">
+                <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">Drying Method</th>
+                <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">Thermal Efficiency (%)</th>
+                <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">Overall Efficiency (%)</th>
+                <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">Energy (kJ/kg water)</th>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">Conventional Kiln</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">60-75</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">45-60</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">3000-4000</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">Dehumidification Kiln</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">75-85</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">60-75</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">2500-3200</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">Vacuum Kiln</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">70-80</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">55-70</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">2800-3500</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">Solar Kiln</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">40-60</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">30-50</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">Variable</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">Microwave Dryer</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">80-90</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">70-85</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">2400-3000</td>
+            </tr>
+        </table>
+        
+        <h3>Energy Loss Sources</h3>
+        
+        <h4>Heat Losses</h4>
+        <ul>
+            <li><strong>Wall Losses:</strong> 10-25% of total energy</li>
+            <li><strong>Exhaust Losses:</strong> 15-30% of total energy</li>
+            <li><strong>Air Leakage:</strong> 5-15% of total energy</li>
+            <li><strong>Equipment Losses:</strong> 5-10% of total energy</li>
+        </ul>
+        
+        <h4>Process Inefficiencies</h4>
+        <ul>
+            <li><strong>Overheating:</strong> Excessive temperature above requirements</li>
+            <li><strong>Over-drying:</strong> Removing more moisture than needed</li>
+            <li><strong>Poor Control:</strong> Temperature and humidity fluctuations</li>
+            <li><strong>Uneven Drying:</strong> Non-uniform moisture distribution</li>
+        </ul>
+        
+        <h3>Efficiency Improvement Strategies</h3>
+        
+        <h4>Heat Recovery Systems</h4>
+        <ul>
+            <li><strong>Exhaust Heat Recovery:</strong> 20-40% energy savings</li>
+            <li><strong>Condensate Recovery:</strong> 10-20% energy savings</li>
+            <li><strong>Heat Pumps:</strong> 30-50% energy savings</li>
+            <li><strong>Thermal Storage:</strong> 15-25% energy savings</li>
+        </ul>
+        
+        <h4>Process Optimization</h4>
+        <ul>
+            <li><strong>Temperature Control:</strong> Precise temperature management</li>
+            <li><strong>Humidity Control:</strong> Optimal moisture removal rates</li>
+            <li><strong>Air Flow Optimization:</strong> Uniform air distribution</li>
+            <li><strong>Load Management:</strong> Maximize kiln utilization</li>
+        </ul>
+        
+        <h4>Equipment Improvements</h4>
+        <ul>
+            <li><strong>Insulation:</strong> Reduce heat losses</li>
+            <li><strong>Air Sealing:</strong> Minimize infiltration</li>
+            <li><strong>Variable Speed Drives:</strong> Optimize fan operation</li>
+            <li><strong>Advanced Controls:</strong> Automated optimization</li>
+        </ul>
+        
+        <h3>Economic Benefits</h3>
+        
+        <h4>Cost Savings</h4>
+        <div style="background: #f8f8f8; padding: 15px; border-radius: 5px; margin: 15px 0;">
+            <p><strong>Annual Savings = (Energy Reduction) × (Operating Hours) × (Energy Cost)</strong></p>
+            <p><strong>Example:</strong></p>
+            <ul>
+                <li>20% efficiency improvement</li>
+                <li>1000 kW average power, 4000 hours/year</li>
+                <li>$0.10/kWh energy cost</li>
+                <li>Annual savings = 200 kW × 4000 h × $0.10 = $80,000</li>
+            </ul>
+        </div>
+        
+        <h4>Payback Analysis</h4>
+        <ul>
+            <li><strong>Simple Payback:</strong> Investment cost / Annual savings</li>
+            <li><strong>Typical Payback:</strong> 1-5 years for efficiency improvements</li>
+            <li><strong>ROI:</strong> 20-100% return on investment</li>
+            <li><strong>NPV:</strong> Net present value over equipment life</li>
+        </ul>
+        
+        <h3>Environmental Impact</h3>
+        
+        <h4>Carbon Footprint Reduction</h4>
+        <ul>
+            <li><strong>CO₂ Emissions:</strong> Reduced fuel consumption</li>
+            <li><strong>Renewable Energy:</strong> Integration with solar, biomass</li>
+            <li><strong>Waste Heat Utilization:</strong> Use for other processes</li>
+            <li><strong>Sustainability:</strong> Improved environmental performance</li>
+        </ul>
+        
+        <h4>Regulatory Compliance</h4>
+        <ul>
+            <li><strong>Energy Standards:</strong> Meet efficiency requirements</li>
+            <li><strong>Emissions Limits:</strong> Reduce pollutant emissions</li>
+            <li><strong>Carbon Trading:</strong> Generate carbon credits</li>
+            <li><strong>Green Certification:</strong> LEED, ENERGY STAR ratings</li>
+        </ul>
+        
+        <h3>Measurement and Monitoring</h3>
+        
+        <h4>Key Performance Indicators</h4>
+        <ul>
+            <li><strong>Specific Energy Consumption:</strong> kJ/kg water removed</li>
+            <li><strong>Thermal Efficiency:</strong> Percentage of theoretical minimum</li>
+            <li><strong>Overall Equipment Effectiveness:</strong> Combined efficiency metric</li>
+            <li><strong>Energy Intensity:</strong> Energy per unit of product</li>
+        </ul>
+        
+        <h4>Monitoring Systems</h4>
+        <ul>
+            <li><strong>Energy Meters:</strong> Real-time energy consumption</li>
+            <li><strong>Temperature Sensors:</strong> Process temperature monitoring</li>
+            <li><strong>Moisture Sensors:</strong> Product moisture tracking</li>
+            <li><strong>Data Logging:</strong> Historical performance analysis</li>
+        </ul>
+        
+        <h3>Best Practices</h3>
+        
+        <h4>Design Considerations</h4>
+        <ul>
+            <li><strong>Right-sizing:</strong> Match equipment to load requirements</li>
+            <li><strong>Heat Integration:</strong> Utilize waste heat sources</li>
+            <li><strong>Control Strategy:</strong> Implement advanced control systems</li>
+            <li><strong>Maintenance Access:</strong> Design for easy maintenance</li>
+        </ul>
+        
+        <h4>Operational Excellence</h4>
+        <ul>
+            <li><strong>Regular Maintenance:</strong> Keep equipment in optimal condition</li>
+            <li><strong>Operator Training:</strong> Ensure proper operation</li>
+            <li><strong>Performance Monitoring:</strong> Track and analyze efficiency</li>
+            <li><strong>Continuous Improvement:</strong> Ongoing optimization efforts</li>
+        </ul>
+        
+        <p><strong>Note:</strong> Energy efficiency calculations provide estimates based on typical performance data. Actual efficiency depends on specific equipment, operating conditions, maintenance, and control strategies. Regular monitoring and optimization are essential for maintaining high efficiency.</p>
+    </div>
+    
+    <div id="right">
+        <div style="padding-top:10px; min-height:280px; text-align:center;">
+            <!-- Advertisement space -->
+        </div>
+        
+        <form name="calcSearchForm" autocomplete="off">
+            <table align="center" id="searchbox">
+                <tbody>
+                    <tr>
+                        <td>
+                            <input type="text" name="calcSearchTerm" id="calcSearchTerm" class="inlongest" placeholder="Search calculators...">
+                        </td>
+                        <td>
+                            <span id="bluebtn">Search</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div id="calcSearchOut"></div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+        
+        <div id="othercalc">
+            <div id="octitle">
+                <a href="drying-calculators.html">Drying Calculators</a>
+            </div>
+            <div id="occontent">
+                <a href="drying-time-calculator.html">Drying Time</a>
+                <a href="evaporation-rate-calculator.html">Evaporation Rate</a>
+                <a href="heat-requirement-calculator.html">Heat Requirement</a>
+                <a href="energy-efficiency-calculator.html">Energy Efficiency</a>
+                <a href="moisture-removal-calculator.html">Moisture Removal</a>
+            </div>
+            <div id="ocother">
+                <a href="moisture-calculators.html">Moisture</a> | 
+                <a href="humidity-calculators.html">Humidity</a> | 
+                <a href="drying-calculators.html">Drying</a> | 
+                <a href="other-calculators.html">Other</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="clear"></div>
+
+<div id="footer">
+    <div id="footerin">
+        <div id="footernav">
+            <a href="about-us.html">about us</a> | 
+            <a href="sitemap.html">sitemap</a> | 
+            <a href="terms.html">terms of use</a> | 
+            <a href="privacy.html">privacy policy</a> 
+            &nbsp; © 2025 <a href="index.html">drycalculator.net</a>
+        </div>
+    </div>
+</div>
+
+<script src="js/mobile-optimization.js"></script>
+<script src="js/calculator-mobile-enhancer.js"></script>
+<script src="js/mobile-calculator-fix.js"></script>
+<script src="js/energy-efficiency-calculator.js"></script>
+</body>
+</html>

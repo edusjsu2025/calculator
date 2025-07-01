@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Soil Moisture Calculator</title>
+    <meta name="description" content="Calculate soil moisture content, field capacity, and wilting point for agricultural and geotechnical applications. Essential for irrigation planning and soil management.">
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/icon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/icon-16x16.png">
+</head>
+<body>
+<div id="headerout">
+    <div id="header">
+        <div id="logo">
+            <a href="index.html">
+                <img src="images/dry-calculator-logo.svg" width="208" height="22" alt="Dry Calculator">
+            </a>
+        </div>
+        <div id="login">
+            <a href="sign-in.html">sign in</a>
+        </div>
+    </div>
+</div>
+<div id="clear"></div>
+
+<div id="contentout">
+    <div id="content">
+        <div id="breadcrumbs">
+            <a href="index.html">home</a> / 
+            <a href="moisture-calculators.html">moisture calculators</a> / 
+            <a href="soil-moisture-calculator.html">soil moisture calculator</a>
+        </div>
+        
+        <h1>Soil Moisture Calculator</h1>
+        <p>The <i>Soil Moisture Calculator</i> determines soil moisture content, field capacity, wilting point, and available water capacity for agricultural and geotechnical applications. Essential for irrigation planning, crop management, and soil analysis.</p>
+
+        <div id="insmdc">
+            <img src="images/insm.svg" width="630" height="35" alt="Modify the values and click the calculate button to use">
+        </div>
+        
+        <form name="calform">
+            <div class="panel">
+                <table id="calinputtable">
+                    <tbody>
+                        <tr>
+                            <td>Calculation Type</td>
+                            <td>
+                                <select name="ccalctype" id="ccalctype" class="infull">
+                                    <option value="gravimetric">Gravimetric Moisture Content</option>
+                                    <option value="volumetric">Volumetric Moisture Content</option>
+                                    <option value="field_capacity">Field Capacity Analysis</option>
+                                    <option value="available_water">Available Water Capacity</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr id="gravimetric-inputs">
+                            <td colspan="2">
+                                <table width="100%">
+                                    <tr>
+                                        <td>Wet Soil Weight</td>
+                                        <td>
+                                            <input type="text" name="cwetweight" id="cwetweight" value="150" class="infull">
+                                            <span>g</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Dry Soil Weight</td>
+                                        <td>
+                                            <input type="text" name="cdryweight" id="cdryweight" value="120" class="infull">
+                                            <span>g</span>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Soil Type</td>
+                            <td>
+                                <select name="csoiltype" id="csoiltype" class="infull">
+                                    <option value="sand">Sand</option>
+                                    <option value="loamy_sand">Loamy Sand</option>
+                                    <option value="sandy_loam">Sandy Loam</option>
+                                    <option value="loam">Loam</option>
+                                    <option value="silt_loam">Silt Loam</option>
+                                    <option value="silt">Silt</option>
+                                    <option value="clay_loam">Clay Loam</option>
+                                    <option value="silty_clay_loam">Silty Clay Loam</option>
+                                    <option value="sandy_clay_loam">Sandy Clay Loam</option>
+                                    <option value="sandy_clay">Sandy Clay</option>
+                                    <option value="silty_clay">Silty Clay</option>
+                                    <option value="clay">Clay</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Bulk Density</td>
+                            <td>
+                                <input type="text" name="cbulkdensity" id="cbulkdensity" value="1.3" class="infull">
+                                <span style="margin-left: 5px; color: rgb(136, 136, 136);">g/cm³</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Soil Depth</td>
+                            <td>
+                                <input type="text" name="csoildepth" id="csoildepth" value="30" class="infull">
+                                <span style="margin-left: 5px; color: rgb(136, 136, 136);">cm</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Organic Matter</td>
+                            <td>
+                                <input type="text" name="corganicmatter" id="corganicmatter" value="3" class="infull">
+                                <span style="margin-left: 5px; color: rgb(136, 136, 136);">%</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" align="left" style="padding-top: 8px;padding-left: 70px;">
+                                <input type="submit" name="x" value="Calculate">
+                                <input type="button" value="Clear">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </form>
+
+        <div id="result-section" style="margin-top: 20px; padding: 15px; background: #f0f8ff; border: 1px solid #ccc; border-radius: 5px; display: none;">
+            <h3>Soil Moisture Analysis Results</h3>
+            <div id="results-content"></div>
+        </div>
+
+        <br>
+        <p></p>
+        <fieldset>
+            <legend>Related</legend>
+            <a href="moisture-content-calculator.html">Moisture Content Calculator</a> | 
+            <a href="density-calculator.html">Density Calculator</a> | 
+            <a href="evaporation-rate-calculator.html">Evaporation Rate Calculator</a>
+        </fieldset>
+        <p></p>
+        
+        <h2>Understanding Soil Moisture</h2>
+        <p>Soil moisture is the water content in soil, expressed as either gravimetric (weight basis) or volumetric (volume basis) moisture content. It's crucial for plant growth, irrigation management, and geotechnical engineering.</p>
+        
+        <h3>Types of Soil Moisture Content</h3>
+        
+        <h4>Gravimetric Moisture Content (θg)</h4>
+        <ul>
+            <li><strong>Definition:</strong> Mass of water per unit mass of dry soil</li>
+            <li><strong>Formula:</strong> θg = (Mw - Md) / Md × 100%</li>
+            <li><strong>Units:</strong> Percentage (%) or g/g</li>
+            <li><strong>Use:</strong> Laboratory analysis, soil classification</li>
+        </ul>
+        
+        <h4>Volumetric Moisture Content (θv)</h4>
+        <ul>
+            <li><strong>Definition:</strong> Volume of water per unit volume of soil</li>
+            <li><strong>Formula:</strong> θv = θg × ρb / ρw</li>
+            <li><strong>Units:</strong> Percentage (%) or cm³/cm³</li>
+            <li><strong>Use:</strong> Irrigation scheduling, field measurements</li>
+        </ul>
+        
+        <h3>Key Soil Moisture Parameters</h3>
+        
+        <h4>Field Capacity (FC)</h4>
+        <div style="background: #f8f8f8; padding: 15px; border-radius: 5px; margin: 15px 0;">
+            <p><strong>Definition:</strong> Maximum water content soil can hold against gravity</p>
+            <p><strong>Pressure:</strong> -33 kPa (-1/3 bar) suction</p>
+            <p><strong>Time:</strong> 2-3 days after saturation</p>
+            <p><strong>Significance:</strong> Upper limit of available water</p>
+        </div>
+        
+        <h4>Permanent Wilting Point (PWP)</h4>
+        <div style="background: #f8f8f8; padding: 15px; border-radius: 5px; margin: 15px 0;">
+            <p><strong>Definition:</strong> Moisture content at which plants cannot extract water</p>
+            <p><strong>Pressure:</strong> -1500 kPa (-15 bar) suction</p>
+            <p><strong>Plant Response:</strong> Permanent wilting occurs</p>
+            <p><strong>Significance:</strong> Lower limit of available water</p>
+        </div>
+        
+        <h4>Available Water Capacity (AWC)</h4>
+        <div style="background: #f8f8f8; padding: 15px; border-radius: 5px; margin: 15px 0;">
+            <p><strong>Definition:</strong> Water available for plant uptake</p>
+            <p><strong>Formula:</strong> AWC = FC - PWP</p>
+            <p><strong>Units:</strong> mm/m of soil depth</p>
+            <p><strong>Use:</strong> Irrigation scheduling, crop planning</p>
+        </div>
+        
+        <h3>Soil Texture Effects</h3>
+        
+        <table style="width: 100%; border-collapse: collapse; margin: 15px 0;">
+            <tr style="background: #f0f0f0;">
+                <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">Soil Type</th>
+                <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">Field Capacity (%)</th>
+                <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">Wilting Point (%)</th>
+                <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">AWC (mm/m)</th>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">Sand</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">6-12</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">2-6</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">40-80</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">Sandy Loam</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">10-18</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">4-8</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">80-120</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">Loam</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">18-26</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">8-12</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">120-180</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">Clay Loam</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">23-31</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">11-15</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">140-200</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">Clay</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">27-35</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">13-20</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">160-220</td>
+            </tr>
+        </table>
+        
+        <h3>Measurement Methods</h3>
+        
+        <h4>Gravimetric Method</h4>
+        <ul>
+            <li><strong>Procedure:</strong> Weigh wet soil, dry in oven, weigh again</li>
+            <li><strong>Temperature:</strong> 105°C for 24 hours</li>
+            <li><strong>Accuracy:</strong> High (±0.1%)</li>
+            <li><strong>Time:</strong> 24+ hours for results</li>
+        </ul>
+        
+        <h4>Electronic Sensors</h4>
+        <ul>
+            <li><strong>TDR (Time Domain Reflectometry):</strong> High accuracy, expensive</li>
+            <li><strong>Capacitance Sensors:</strong> Moderate accuracy, affordable</li>
+            <li><strong>Resistance Blocks:</strong> Low cost, limited accuracy</li>
+            <li><strong>Neutron Probes:</strong> Deep measurement, requires licensing</li>
+        </ul>
+        
+        <h3>Agricultural Applications</h3>
+        
+        <h4>Irrigation Scheduling</h4>
+        <ul>
+            <li><strong>Trigger Points:</strong> Irrigate when soil moisture drops to 50-70% of AWC</li>
+            <li><strong>Application Depth:</strong> Refill to field capacity</li>
+            <li><strong>Crop Factors:</strong> Adjust for crop type and growth stage</li>
+            <li><strong>Efficiency:</strong> Optimize water use and crop yield</li>
+        </ul>
+        
+        <h4>Crop Management</h4>
+        <ul>
+            <li><strong>Planting Decisions:</strong> Optimal soil moisture for germination</li>
+            <li><strong>Fertilizer Application:</strong> Moisture affects nutrient availability</li>
+            <li><strong>Harvest Timing:</strong> Field conditions for equipment operation</li>
+            <li><strong>Yield Prediction:</strong> Water stress impact on production</li>
+        </ul>
+        
+        <h3>Environmental Factors</h3>
+        
+        <h4>Climate Effects</h4>
+        <ul>
+            <li><strong>Precipitation:</strong> Primary source of soil moisture</li>
+            <li><strong>Evapotranspiration:</strong> Major moisture loss mechanism</li>
+            <li><strong>Temperature:</strong> Affects evaporation and plant water use</li>
+            <li><strong>Wind:</strong> Increases evaporation from soil surface</li>
+        </ul>
+        
+        <h4>Soil Properties</h4>
+        <ul>
+            <li><strong>Texture:</strong> Determines water holding capacity</li>
+            <li><strong>Structure:</strong> Affects infiltration and drainage</li>
+            <li><strong>Organic Matter:</strong> Increases water retention</li>
+            <li><strong>Compaction:</strong> Reduces pore space and water storage</li>
+        </ul>
+        
+        <h3>Geotechnical Applications</h3>
+        
+        <h4>Foundation Design</h4>
+        <ul>
+            <li><strong>Bearing Capacity:</strong> Moisture affects soil strength</li>
+            <li><strong>Settlement:</strong> Consolidation under load</li>
+            <li><strong>Stability:</strong> Slope stability analysis</li>
+            <li><strong>Frost Protection:</strong> Freeze-thaw considerations</li>
+        </ul>
+        
+        <h4>Construction</h4>
+        <ul>
+            <li><strong>Compaction:</strong> Optimal moisture for maximum density</li>
+            <li><strong>Excavation:</strong> Stability of excavated slopes</li>
+            <li><strong>Drainage:</strong> Design of drainage systems</li>
+            <li><strong>Pavement:</strong> Subgrade moisture control</li>
+        </ul>
+        
+        <h3>Water Balance</h3>
+        
+        <h4>Inputs</h4>
+        <ul>
+            <li><strong>Precipitation:</strong> Rain and snow</li>
+            <li><strong>Irrigation:</strong> Applied water</li>
+            <li><strong>Capillary Rise:</strong> Groundwater contribution</li>
+            <li><strong>Lateral Flow:</strong> Subsurface water movement</li>
+        </ul>
+        
+        <h4>Outputs</h4>
+        <ul>
+            <li><strong>Evapotranspiration:</strong> Plant and soil evaporation</li>
+            <li><strong>Deep Drainage:</strong> Percolation below root zone</li>
+            <li><strong>Surface Runoff:</strong> Excess water flow</li>
+            <li><strong>Lateral Flow:</strong> Subsurface drainage</li>
+        </ul>
+        
+        <h3>Monitoring and Management</h3>
+        
+        <h4>Monitoring Systems</h4>
+        <ul>
+            <li><strong>Sensor Networks:</strong> Continuous monitoring at multiple depths</li>
+            <li><strong>Weather Stations:</strong> Meteorological data for ET calculation</li>
+            <li><strong>Satellite Data:</strong> Regional soil moisture mapping</li>
+            <li><strong>Mobile Apps:</strong> Field data collection and analysis</li>
+        </ul>
+        
+        <h4>Decision Support</h4>
+        <ul>
+            <li><strong>Irrigation Controllers:</strong> Automated irrigation based on soil moisture</li>
+            <li><strong>Crop Models:</strong> Predict water stress and yield</li>
+            <li><strong>Water Budgets:</strong> Track water use efficiency</li>
+            <li><strong>Alert Systems:</strong> Notifications for irrigation needs</li>
+        </ul>
+        
+        <p><strong>Note:</strong> Soil moisture calculations provide estimates based on soil properties and measurement methods. Actual field conditions may vary due to spatial variability, measurement errors, and environmental factors. Regular calibration and validation are recommended for accurate results.</p>
+    </div>
+    
+    <div id="right">
+        <div style="padding-top:10px; min-height:280px; text-align:center;">
+            <!-- Advertisement space -->
+        </div>
+        
+        <form name="calcSearchForm" autocomplete="off">
+            <table align="center" id="searchbox">
+                <tbody>
+                    <tr>
+                        <td>
+                            <input type="text" name="calcSearchTerm" id="calcSearchTerm" class="inlongest" placeholder="Search calculators...">
+                        </td>
+                        <td>
+                            <span id="bluebtn">Search</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div id="calcSearchOut"></div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+        
+        <div id="othercalc">
+            <div id="octitle">
+                <a href="moisture-calculators.html">Moisture Calculators</a>
+            </div>
+            <div id="occontent">
+                <a href="moisture-content-calculator.html">Moisture Content</a>
+                <a href="soil-moisture-calculator.html">Soil Moisture</a>
+                <a href="wood-moisture-calculator.html">Wood Moisture</a>
+                <a href="grain-moisture-calculator.html">Grain Moisture</a>
+                <a href="equilibrium-moisture-calculator.html">Equilibrium Moisture</a>
+            </div>
+            <div id="ocother">
+                <a href="moisture-calculators.html">Moisture</a> | 
+                <a href="humidity-calculators.html">Humidity</a> | 
+                <a href="drying-calculators.html">Drying</a> | 
+                <a href="other-calculators.html">Other</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="clear"></div>
+
+<div id="footer">
+    <div id="footerin">
+        <div id="footernav">
+            <a href="about-us.html">about us</a> | 
+            <a href="sitemap.html">sitemap</a> | 
+            <a href="terms.html">terms of use</a> | 
+            <a href="privacy.html">privacy policy</a> 
+            &nbsp; © 2025 <a href="index.html">drycalculator.net</a>
+        </div>
+    </div>
+</div>
+
+<script src="js/mobile-optimization.js"></script>
+<script src="js/calculator-mobile-enhancer.js"></script>
+<script src="js/mobile-calculator-fix.js"></script>
+<script src="js/soil-moisture-calculator.js"></script>
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator Test</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div style="padding: 20px;">
+        <h1>Calculator Test Page</h1>
+        
+        <div id="homecaldiv">
+            <div id="contentout">
+                <table align="center" width="100%" cellpadding="0" cellspacing="0" border="0">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <table align="center" id="sciout" cellpadding="0" cellspacing="2">
+                                    <tbody>
+                                        <tr>
+                                            <td colspan="2">
+                                                <div>
+                                                    <div id="sciInPut">&nbsp;</div>
+                                                    <div id="sciOutPut">0</div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div style="padding-top:3px;width:100%;" id="homefunbtn">
+                                                    <div>
+                                                        <span class="scifunc">MC%</span>
+                                                        <span class="scifunc">RH%</span>
+                                                        <span class="scifunc">EMC</span>
+                                                        <span class="scird">
+                                                            <label for="scirdsettingc">
+                                                                <input id="scirdsettingc" type="radio" name="scirdsetting" value="celsius" checked="">°C
+                                                            </label>
+                                                            <label for="scirdsettingf">
+                                                                <input id="scirdsettingf" type="radio" name="scirdsetting" value="fahrenheit">°F
+                                                            </label>
+                                                        </span>
+                                                    </div>
+                                                    <div>
+                                                        <span class="scifunc">WB</span>
+                                                        <span class="scifunc">DB</span>
+                                                        <span class="scifunc">DP</span>
+                                                        <span class="scifunc">π</span>
+                                                        <span class="scifunc">e</span>
+                                                    </div>
+                                                    <div>
+                                                        <span class="scifunc">x<sup>y</sup></span>
+                                                        <span class="scifunc">x<sup>3</sup></span>
+                                                        <span class="scifunc">x<sup>2</sup></span>
+                                                        <span class="scifunc">e<sup>x</sup></span>
+                                                        <span class="scifunc">10<sup>x</sup></span>
+                                                    </div>
+                                                    <div>
+                                                        <span class="scifunc"><sup>y</sup>√x</span>
+                                                        <span class="scifunc"><sup>3</sup>√x</span>
+                                                        <span class="scifunc">√x</span>
+                                                        <span class="scifunc">ln</span>
+                                                        <span class="scifunc">log</span>
+                                                    </div>
+                                                    <div>
+                                                        <span class="scifunc">(</span>
+                                                        <span class="scifunc">)</span>
+                                                        <span class="scifunc">1/x</span>
+                                                        <span class="scifunc">%</span>
+                                                        <span class="scifunc">n!</span>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div style="padding-top:3px;">
+                                                    <div>
+                                                        <span class="scinm">7</span>
+                                                        <span class="scinm">8</span>
+                                                        <span class="scinm">9</span>
+                                                        <span class="sciop">+</span>
+                                                        <span class="sciop">Back</span>
+                                                    </div>
+                                                    <div>
+                                                        <span class="scinm">4</span>
+                                                        <span class="scinm">5</span>
+                                                        <span class="scinm">6</span>
+                                                        <span class="sciop">−</span>
+                                                        <span class="sciop">Ans</span>
+                                                    </div>
+                                                    <div>
+                                                        <span class="scinm">1</span>
+                                                        <span class="scinm">2</span>
+                                                        <span class="scinm">3</span>
+                                                        <span class="sciop">×</span>
+                                                        <span class="sciop">M+</span>
+                                                    </div>
+                                                    <div>
+                                                        <span class="scinm">0</span>
+                                                        <span class="scinm">.</span>
+                                                        <span class="sciop">EXP</span>
+                                                        <span class="sciop">/</span>
+                                                        <span class="sciop">M-</span>
+                                                    </div>
+                                                    <div>
+                                                        <span class="sciop">±</span>
+                                                        <span class="sciop">RND</span>
+                                                        <span class="scieq">AC</span>
+                                                        <span class="scieq">=</span>
+                                                        <span class="sciop" id="scimrc">MR</span>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">
+                                                <div id="scihistory"></div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <div style="margin-top: 20px; padding: 20px; background: #f0f8ff; border-radius: 5px;">
+            <h3>Test Instructions:</h3>
+            <ol>
+                <li>Try basic calculations: 2 + 3 = 5</li>
+                <li>Test scientific functions: √x, x², ln, etc.</li>
+                <li>Test dry calculator functions: MC%, RH%, EMC</li>
+                <li>Check if buttons respond correctly</li>
+                <li>Verify display updates properly</li>
+            </ol>
+            
+            <h3>Expected Results:</h3>
+            <ul>
+                <li>Numbers should appear in display when clicked</li>
+                <li>Basic math operations should work correctly</li>
+                <li>MC%, RH%, EMC buttons should redirect to specialized calculators</li>
+                <li>Scientific functions should calculate properly</li>
+                <li>History should show recent calculations</li>
+            </ul>
+        </div>
+    </div>
+    
+    <script src="js/calculator.js"></script>
+</body>
+</html>
