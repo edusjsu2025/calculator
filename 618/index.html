@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Dry Calculator: Free Online Moisture & Humidity Calculators</title>
+    <meta name="description" content="Online dry calculator for quick moisture content, humidity, and drying calculations, along with a large collection of calculators on moisture analysis, drying processes, and more.">
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/icon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/icon-16x16.png">
+</head>
+<body>
+<div id="headerout">
+    <div id="header">
+        <div id="logo">
+            <a href="index.html">
+                <img src="images/dry-calculator-logo.svg" width="208" height="22" alt="Dry Calculator">
+            </a>
+        </div>
+        <div id="login">
+            <!-- Login removed -->
+        </div>
+    </div>
+</div>
+<div id="clear"></div>
+
+<div id="homecaldiv">
+    <div id="contentout">
+        <table align="center" width="100%" cellpadding="0" cellspacing="0" border="0">
+            <tbody>
+                <tr>
+                    <td>
+                        <table align="center" id="sciout" cellpadding="0" cellspacing="2">
+                            <tbody>
+                                <tr>
+                                    <td colspan="2">
+                                        <div>
+                                            <div id="sciInPut">&nbsp;</div>
+                                            <div id="sciOutPut">0</div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div style="padding-top:3px;width:100%;" id="homefunbtn">
+                                            <div>
+                                                <span class="scifunc">MC%</span>
+                                                <span class="scifunc">RH%</span>
+                                                <span class="scifunc">EMC</span>
+                                                <span class="scird">
+                                                    <label for="scirdsettingc">
+                                                        <input id="scirdsettingc" type="radio" name="scirdsetting" value="celsius" checked="">°C
+                                                    </label>
+                                                    <label for="scirdsettingf">
+                                                        <input id="scirdsettingf" type="radio" name="scirdsetting" value="fahrenheit">°F
+                                                    </label>
+                                                </span>
+                                            </div>
+                                            <div>
+                                                <span class="scifunc">WB</span>
+                                                <span class="scifunc">DB</span>
+                                                <span class="scifunc">DP</span>
+                                                <span class="scifunc">π</span>
+                                                <span class="scifunc">e</span>
+                                            </div>
+                                            <div>
+                                                <span class="scifunc">x<sup>y</sup></span>
+                                                <span class="scifunc">x<sup>3</sup></span>
+                                                <span class="scifunc">x<sup>2</sup></span>
+                                                <span class="scifunc">e<sup>x</sup></span>
+                                                <span class="scifunc">10<sup>x</sup></span>
+                                            </div>
+                                            <div>
+                                                <span class="scifunc"><sup>y</sup>√x</span>
+                                                <span class="scifunc"><sup>3</sup>√x</span>
+                                                <span class="scifunc">√x</span>
+                                                <span class="scifunc">ln</span>
+                                                <span class="scifunc">log</span>
+                                            </div>
+                                            <div>
+                                                <span class="scifunc">(</span>
+                                                <span class="scifunc">)</span>
+                                                <span class="scifunc">1/x</span>
+                                                <span class="scifunc">%</span>
+                                                <span class="scifunc">n!</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div style="padding-top:3px;">
+                                            <div>
+                                                <span class="scinm">7</span>
+                                                <span class="scinm">8</span>
+                                                <span class="scinm">9</span>
+                                                <span class="sciop">+</span>
+                                                <span class="sciop">Back</span>
+                                            </div>
+                                            <div>
+                                                <span class="scinm">4</span>
+                                                <span class="scinm">5</span>
+                                                <span class="scinm">6</span>
+                                                <span class="sciop">−</span>
+                                                <span class="sciop">Ans</span>
+                                            </div>
+                                            <div>
+                                                <span class="scinm">1</span>
+                                                <span class="scinm">2</span>
+                                                <span class="scinm">3</span>
+                                                <span class="sciop">×</span>
+                                                <span class="sciop">M+</span>
+                                            </div>
+                                            <div>
+                                                <span class="scinm">0</span>
+                                                <span class="scinm">.</span>
+                                                <span class="sciop">EXP</span>
+                                                <span class="sciop">/</span>
+                                                <span class="sciop">M-</span>
+                                            </div>
+                                            <div>
+                                                <span class="sciop">±</span>
+                                                <span class="sciop">RND</span>
+                                                <span class="scieq">AC</span>
+                                                <span class="scieq">=</span>
+                                                <span class="sciop" id="scimrc">MR</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <div id="scihistory"></div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                    <td valign="top" id="homesch">
+                        <h1>Free Online Dry Calculators</h1>
+                        <form name="calcSearchForm" autocomplete="off">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <input type="text" name="calcSearchTerm" id="calcSearchTerm" class="inlongest" placeholder="Search calculators...">
+                                        </td>
+                                        <td>
+                                            <span id="bluebtn">Search</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <div id="calcSearchOut"></div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </form>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div id="homelistdiv">
+    <div id="contentout">
+        <div id="homelistwrap">
+            <div class="homelisttile">
+                <div class="hicon">
+                    <a href="moisture-calculators.html">
+                        <img src="images/moisture-calculator.svg" width="135" height="135" alt="Moisture Calculators">
+                    </a>
+                </div>
+                <div class="hh">
+                    <a href="moisture-calculators.html">Moisture Calculators</a>
+                </div>
+                <ul class="hl" id="hl1">
+                    <li><a href="moisture-content-calculator.html">Moisture Content Calculator</a></li>
+                    <li><a href="dry-basis-calculator.html">Dry Basis Calculator</a></li>
+                    <li><a href="wet-basis-calculator.html">Wet Basis Calculator</a></li>
+                    <li><a href="equilibrium-moisture-calculator.html">Equilibrium Moisture Calculator</a></li>
+                    <li><a href="wood-moisture-calculator.html">Wood Moisture Calculator</a></li>
+                    <li><a href="grain-moisture-calculator.html">Grain Moisture Calculator</a></li>
+                    <li><a href="soil-moisture-calculator.html">Soil Moisture Calculator</a></li>
+                    <li><a href="concrete-moisture-calculator.html">Concrete Moisture Calculator</a></li>
+                </ul>
+            </div>
+            
+            <div class="homelisttile">
+                <div class="hicon">
+                    <a href="humidity-calculators.html">
+                        <img src="images/humidity-calculator.svg" width="135" height="135" alt="Humidity Calculators">
+                    </a>
+                </div>
+                <div class="hh">
+                    <a href="humidity-calculators.html">Humidity Calculators</a>
+                </div>
+                <ul class="hl" id="hl2">
+                    <li><a href="relative-humidity-calculator.html">Relative Humidity Calculator</a></li>
+                    <li><a href="absolute-humidity-calculator.html">Absolute Humidity Calculator</a></li>
+                    <li><a href="dew-point-calculator.html">Dew Point Calculator</a></li>
+                    <li><a href="wet-bulb-calculator.html">Wet Bulb Calculator</a></li>
+                    <li><a href="psychrometric-calculator.html">Psychrometric Calculator</a></li>
+                    <li><a href="vapor-pressure-calculator.html">Vapor Pressure Calculator</a></li>
+                    <li><a href="enthalpy-calculator.html">Enthalpy Calculator</a></li>
+                    <li><a href="mixing-ratio-calculator.html">Mixing Ratio Calculator</a></li>
+                </ul>
+            </div>
+            
+            <div class="homelisttile">
+                <div class="hicon">
+                    <a href="drying-calculators.html">
+                        <img src="images/drying-calculator.svg" width="135" height="135" alt="Drying Calculators">
+                    </a>
+                </div>
+                <div class="hh">
+                    <a href="drying-calculators.html">Drying Calculators</a>
+                </div>
+                <ul class="hl" id="hl3">
+                    <li><a href="drying-time-calculator.html">Drying Time Calculator</a></li>
+                    <li><a href="evaporation-rate-calculator.html">Evaporation Rate Calculator</a></li>
+                    <li><a href="kiln-drying-calculator.html">Kiln Drying Calculator</a></li>
+                    <li><a href="air-drying-calculator.html">Air Drying Calculator</a></li>
+                    <li><a href="heat-requirement-calculator.html">Heat Requirement Calculator</a></li>
+                    <li><a href="moisture-removal-calculator.html">Moisture Removal Calculator</a></li>
+                    <li><a href="energy-efficiency-calculator.html">Energy Efficiency Calculator</a></li>
+                </ul>
+            </div>
+            
+            <div class="homelisttile">
+                <div class="hicon">
+                    <a href="other-calculators.html">
+                        <img src="images/other-calculator.svg" width="135" height="135" alt="Other Calculators">
+                    </a>
+                </div>
+                <div class="hh">
+                    <a href="other-calculators.html">Other Calculators</a>
+                </div>
+                <ul class="hl" id="hl4">
+                    <li><a href="temperature-calculator.html">Temperature Calculator</a></li>
+                    <li><a href="pressure-calculator.html">Pressure Calculator</a></li>
+                    <li><a href="density-calculator.html">Density Calculator</a></li>
+                    <li><a href="volume-calculator.html">Volume Calculator</a></li>
+                    <li><a href="conversion-calculator.html">Unit Conversion Calculator</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div style="text-align:center;padding-top:30px;">
+            <a href="all-calculators.html">
+                <img src="images/all-calculators.svg" width="248" height="45" alt="All Calculators">
+            </a>
+        </div>
+        <br>
+    </div>
+</div>
+
+<div id="footer">
+    <div id="footerin">
+        DryCalculator.net's sole focus is to provide fast, comprehensive, convenient, free online calculators for moisture content, humidity, and drying calculations. Currently, we have around 50 specialized calculators to help you "do the math" quickly in areas such as moisture analysis, humidity control, drying processes, and material science. Our goal is to become the one-stop, go-to site for people who need to make quick moisture and drying calculations. Additionally, we believe the internet should be a source of free information. Therefore, all of our tools and services are completely free, with no registration required.
+        <br><br>
+        We coded and developed each calculator individually and put each one through strict, comprehensive testing. However, please inform us if you notice even the slightest error – your input is extremely valuable to us. While most calculators on DryCalculator.net are designed to be universally applicable for worldwide usage, some are for specific materials or conditions only.
+        <br><br>
+        <div id="footernav">
+            <a href="about-us.html">about us</a> | 
+            <a href="sitemap.html">sitemap</a> | 
+            <a href="terms.html">terms of use</a> | 
+            <a href="privacy.html">privacy policy</a> 
+            &nbsp; © 2025 <a href="index.html">drycalculator.net</a>
+        </div>
+    </div>
+</div>
+
+<script src="js/calculator.js"></script>
+</body>
+</html>

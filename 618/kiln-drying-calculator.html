@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Kiln Drying Calculator</title>
+    <meta name="description" content="Calculate kiln drying schedules and parameters for lumber and wood products. Essential for sawmill operations and wood processing facilities.">
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/icon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/icon-16x16.png">
+</head>
+<body>
+<div id="headerout">
+    <div id="header">
+        <div id="logo">
+            <a href="index.html">
+                <img src="images/dry-calculator-logo.svg" width="208" height="22" alt="Dry Calculator">
+            </a>
+        </div>
+        <div id="login">
+            <a href="sign-in.html">sign in</a>
+        </div>
+    </div>
+</div>
+<div id="clear"></div>
+
+<div id="contentout">
+    <div id="content">
+        <div id="breadcrumbs">
+            <a href="index.html">home</a> / 
+            <a href="drying-calculators.html">drying calculators</a> / 
+            <a href="kiln-drying-calculator.html">kiln drying calculator</a>
+        </div>
+        
+        <h1>Kiln Drying Calculator</h1>
+        <p>The <i>Kiln Drying Calculator</i> helps determine optimal drying schedules, time estimates, and energy requirements for lumber kiln drying operations. Essential for sawmill operations and wood processing facilities.</p>
+
+        <div id="insmdc">
+            <img src="images/insm.svg" width="630" height="35" alt="Modify the values and click the calculate button to use">
+        </div>
+        
+        <form name="calform">
+            <div class="panel">
+                <table id="calinputtable">
+                    <tbody>
+                        <tr>
+                            <td>Wood Species</td>
+                            <td>
+                                <select name="cspecies" id="cspecies" class="infull">
+                                    <option value="oak">Oak (Red/White)</option>
+                                    <option value="maple">Maple (Hard)</option>
+                                    <option value="pine">Pine (Southern Yellow)</option>
+                                    <option value="douglas_fir">Douglas Fir</option>
+                                    <option value="poplar">Poplar</option>
+                                    <option value="cherry">Cherry</option>
+                                    <option value="walnut">Walnut</option>
+                                    <option value="ash">Ash</option>
+                                    <option value="birch">Birch</option>
+                                    <option value="cedar">Cedar</option>
+                                    <option value="general_hardwood">General Hardwood</option>
+                                    <option value="general_softwood">General Softwood</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Lumber Thickness</td>
+                            <td>
+                                <select name="cthickness" id="cthickness" class="infull">
+                                    <option value="25">1 inch (25mm)</option>
+                                    <option value="38">1.5 inch (38mm)</option>
+                                    <option value="50">2 inch (50mm)</option>
+                                    <option value="75">3 inch (75mm)</option>
+                                    <option value="100">4 inch (100mm)</option>
+                                    <option value="custom">Custom thickness</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr id="custom-thickness-row" style="display: none;">
+                            <td>Custom Thickness</td>
+                            <td>
+                                <input type="text" name="ccustomthickness" id="ccustomthickness" value="25" class="infull">
+                                <span style="margin-left: 5px; color: rgb(136, 136, 136);">mm</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Initial Moisture Content</td>
+                            <td>
+                                <input type="text" name="cinitialmc" id="cinitialmc" value="50" class="infull">
+                                <span style="margin-left: 5px; color: rgb(136, 136, 136);">%</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Target Moisture Content</td>
+                            <td>
+                                <input type="text" name="ctargetmc" id="ctargetmc" value="8" class="infull">
+                                <span style="margin-left: 5px; color: rgb(136, 136, 136);">%</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Kiln Type</td>
+                            <td>
+                                <select name="ckilntype" id="ckilntype" class="infull">
+                                    <option value="conventional">Conventional Steam Kiln</option>
+                                    <option value="dehumidification">Dehumidification Kiln</option>
+                                    <option value="vacuum">Vacuum Kiln</option>
+                                    <option value="solar">Solar Kiln</option>
+                                    <option value="radio_frequency">Radio Frequency Kiln</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Drying Quality</td>
+                            <td>
+                                <select name="cquality" id="cquality" class="infull">
+                                    <option value="standard">Standard Quality</option>
+                                    <option value="high">High Quality</option>
+                                    <option value="premium">Premium Quality</option>
+                                    <option value="construction">Construction Grade</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" align="left" style="padding-top: 8px;padding-left: 70px;">
+                                <input type="submit" name="x" value="Calculate">
+                                <input type="button" value="Clear">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </form>
+
+        <div id="result-section" style="margin-top: 20px; padding: 15px; background: #f0f8ff; border: 1px solid #ccc; border-radius: 5px; display: none;">
+            <h3>Kiln Drying Schedule Results</h3>
+            <div id="results-content"></div>
+        </div>
+
+        <br>
+        <p></p>
+        <fieldset>
+            <legend>Related</legend>
+            <a href="wood-moisture-calculator.html">Wood Moisture Calculator</a> | 
+            <a href="drying-time-calculator.html">Drying Time Calculator</a> | 
+            <a href="equilibrium-moisture-calculator.html">Equilibrium Moisture Calculator</a>
+        </fieldset>
+        <p></p>
+        
+        <h2>Understanding Kiln Drying</h2>
+        <p>Kiln drying is a controlled process that removes moisture from lumber using heated air circulation. It's faster and more predictable than air drying, allowing precise control of final moisture content and reducing defects.</p>
+        
+        <h3>Kiln Drying Process</h3>
+        
+        <h4>Basic Principles</h4>
+        <ul>
+            <li><strong>Heat Transfer:</strong> Heated air raises wood temperature</li>
+            <li><strong>Mass Transfer:</strong> Moisture moves from wood interior to surface</li>
+            <li><strong>Evaporation:</strong> Surface moisture evaporates into air stream</li>
+            <li><strong>Air Circulation:</strong> Removes moisture-laden air from kiln</li>
+        </ul>
+        
+        <h4>Drying Phases</h4>
+        <ul>
+            <li><strong>Heating Phase:</strong> Raise wood temperature to drying conditions</li>
+            <li><strong>Constant Rate Phase:</strong> Surface moisture evaporates at steady rate</li>
+            <li><strong>Falling Rate Phase:</strong> Internal moisture migration becomes limiting</li>
+            <li><strong>Conditioning Phase:</strong> Equalize moisture content throughout lumber</li>
+        </ul>
+        
+        <h3>Kiln Types and Characteristics</h3>
+        
+        <h4>Conventional Steam Kilns</h4>
+        <div style="background: #f8f8f8; padding: 15px; border-radius: 5px; margin: 15px 0;">
+            <p><strong>Temperature Range:</strong> 40-90°C (100-200°F)</p>
+            <p><strong>Drying Time:</strong> 2-8 weeks depending on species and thickness</p>
+            <p><strong>Advantages:</strong> Proven technology, good quality control</p>
+            <p><strong>Applications:</strong> Most commercial lumber operations</p>
+        </div>
+        
+        <h4>Dehumidification Kilns</h4>
+        <div style="background: #f8f8f8; padding: 15px; border-radius: 5px; margin: 15px 0;">
+            <p><strong>Temperature Range:</strong> 35-65°C (95-150°F)</p>
+            <p><strong>Energy Efficiency:</strong> High due to heat recovery</p>
+            <p><strong>Advantages:</strong> Lower operating costs, precise control</p>
+            <p><strong>Applications:</strong> High-value hardwoods, energy-conscious operations</p>
+        </div>
+        
+        <h4>Vacuum Kilns</h4>
+        <div style="background: #f8f8f8; padding: 15px; border-radius: 5px; margin: 15px 0;">
+            <p><strong>Temperature Range:</strong> 50-80°C (120-175°F)</p>
+            <p><strong>Drying Time:</strong> 50-75% faster than conventional</p>
+            <p><strong>Advantages:</strong> Faster drying, reduced defects</p>
+            <p><strong>Applications:</strong> Thick lumber, refractory species</p>
+        </div>
+        
+        <h3>Drying Schedule Development</h3>
+        
+        <h4>Schedule Components</h4>
+        <ul>
+            <li><strong>Dry Bulb Temperature:</strong> Air temperature in kiln</li>
+            <li><strong>Wet Bulb Temperature:</strong> Controls relative humidity</li>
+            <li><strong>Equilibrium Moisture Content:</strong> Target EMC for each phase</li>
+            <li><strong>Time Duration:</strong> Length of each drying phase</li>
+        </ul>
+        
+        <h4>Schedule Progression</h4>
+        <table style="width: 100%; border-collapse: collapse; margin: 15px 0;">
+            <tr style="background: #f0f0f0;">
+                <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">Phase</th>
+                <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">Wood MC (%)</th>
+                <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">Dry Bulb (°C)</th>
+                <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">EMC (%)</th>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">Initial</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">50+</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">45-50</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">16-18</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">Intermediate</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">30-20</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">55-65</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">12-14</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">Final</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">15-8</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">70-80</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">6-8</td>
+            </tr>
+        </table>
+        
+        <h3>Species-Specific Considerations</h3>
+        
+        <h4>Hardwood Species</h4>
+        <ul>
+            <li><strong>Oak:</strong> Slow drying, prone to checking and honeycomb</li>
+            <li><strong>Maple:</strong> Moderate drying rate, good stability</li>
+            <li><strong>Cherry:</strong> Fast drying, minimal defects</li>
+            <li><strong>Walnut:</strong> Moderate rate, watch for color changes</li>
+        </ul>
+        
+        <h4>Softwood Species</h4>
+        <ul>
+            <li><strong>Pine:</strong> Fast drying, resin considerations</li>
+            <li><strong>Douglas Fir:</strong> Moderate rate, checking potential</li>
+            <li><strong>Cedar:</strong> Fast drying, aromatic oils</li>
+            <li><strong>Spruce:</strong> Fast drying, minimal defects</li>
+        </ul>
+        
+        <h3>Quality Control</h3>
+        
+        <h4>Common Defects</h4>
+        <ul>
+            <li><strong>Surface Checking:</strong> Cracks on lumber surface</li>
+            <li><strong>End Checking:</strong> Cracks at lumber ends</li>
+            <li><strong>Honeycomb:</strong> Internal cracks and voids</li>
+            <li><strong>Warp:</strong> Bow, crook, cup, or twist</li>
+            <li><strong>Case Hardening:</strong> Stress distribution problems</li>
+            <li><strong>Collapse:</strong> Cell wall damage in some species</li>
+        </ul>
+        
+        <h4>Prevention Strategies</h4>
+        <ul>
+            <li><strong>Proper Stacking:</strong> Use stickers for air circulation</li>
+            <li><strong>End Sealing:</strong> Prevent rapid end drying</li>
+            <li><strong>Gradual Schedules:</strong> Avoid aggressive early conditions</li>
+            <li><strong>Conditioning:</strong> Stress relief at end of cycle</li>
+        </ul>
+        
+        <h3>Energy Considerations</h3>
+        
+        <h4>Energy Requirements</h4>
+        <ul>
+            <li><strong>Sensible Heat:</strong> Heat wood and evaporate moisture</li>
+            <li><strong>Latent Heat:</strong> Energy for phase change (liquid to vapor)</li>
+            <li><strong>Heat Losses:</strong> Kiln structure, air leakage, exhaust</li>
+            <li><strong>Fan Power:</strong> Air circulation energy</li>
+        </ul>
+        
+        <h4>Energy Efficiency</h4>
+        <ul>
+            <li><strong>Heat Recovery:</strong> Capture heat from exhaust air</li>
+            <li><strong>Insulation:</strong> Reduce heat losses through walls</li>
+            <li><strong>Air Sealing:</strong> Minimize air leakage</li>
+            <li><strong>Schedule Optimization:</strong> Balance time and energy</li>
+        </ul>
+        
+        <h3>Economic Factors</h3>
+        
+        <h4>Cost Components</h4>
+        <ul>
+            <li><strong>Energy Costs:</strong> Fuel for heating, electricity for fans</li>
+            <li><strong>Labor Costs:</strong> Loading, monitoring, unloading</li>
+            <li><strong>Capital Costs:</strong> Kiln construction and equipment</li>
+            <li><strong>Maintenance:</strong> Regular upkeep and repairs</li>
+        </ul>
+        
+        <h4>Value Considerations</h4>
+        <ul>
+            <li><strong>Faster Turnover:</strong> Reduced inventory time</li>
+            <li><strong>Quality Premium:</strong> Higher prices for kiln-dried lumber</li>
+            <li><strong>Reduced Losses:</strong> Lower defect rates than air drying</li>
+            <li><strong>Market Access:</strong> Meet customer moisture requirements</li>
+        </ul>
+        
+        <h3>Monitoring and Control</h3>
+        
+        <h4>Key Parameters</h4>
+        <ul>
+            <li><strong>Temperature:</strong> Dry bulb and wet bulb monitoring</li>
+            <li><strong>Humidity:</strong> Relative humidity or EMC</li>
+            <li><strong>Moisture Content:</strong> Sample board monitoring</li>
+            <li><strong>Air Velocity:</strong> Circulation rate measurement</li>
+        </ul>
+        
+        <h4>Control Systems</h4>
+        <ul>
+            <li><strong>Manual Control:</strong> Operator adjustments based on schedule</li>
+            <li><strong>Semi-Automatic:</strong> Programmed schedules with operator oversight</li>
+            <li><strong>Fully Automatic:</strong> Computer-controlled with feedback systems</li>
+            <li><strong>Advanced Systems:</strong> Moisture content feedback control</li>
+        </ul>
+        
+        <h3>Safety Considerations</h3>
+        
+        <h4>Fire Prevention</h4>
+        <ul>
+            <li><strong>Temperature Limits:</strong> Avoid overheating lumber</li>
+            <li><strong>Dust Control:</strong> Regular cleaning of kiln interior</li>
+            <li><strong>Emergency Shutdown:</strong> Automatic safety systems</li>
+            <li><strong>Fire Suppression:</strong> Sprinkler or other systems</li>
+        </ul>
+        
+        <h4>Operational Safety</h4>
+        <ul>
+            <li><strong>Hot Surfaces:</strong> Protect workers from burns</li>
+            <li><strong>Steam Hazards:</strong> Proper venting and protection</li>
+            <li><strong>Structural Safety:</strong> Secure lumber stacking</li>
+            <li><strong>Air Quality:</strong> Ventilation for worker health</li>
+        </ul>
+        
+        <p><strong>Note:</strong> Kiln drying schedules should be developed based on specific species, lumber dimensions, and quality requirements. This calculator provides general estimates - consult drying specialists and published schedules for critical applications.</p>
+    </div>
+    
+    <div id="right">
+        <div style="padding-top:10px; min-height:280px; text-align:center;">
+            <!-- Advertisement space -->
+        </div>
+        
+        <form name="calcSearchForm" autocomplete="off">
+            <table align="center" id="searchbox">
+                <tbody>
+                    <tr>
+                        <td>
+                            <input type="text" name="calcSearchTerm" id="calcSearchTerm" class="inlongest" placeholder="Search calculators...">
+                        </td>
+                        <td>
+                            <span id="bluebtn">Search</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div id="calcSearchOut"></div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+        
+        <div id="othercalc">
+            <div id="octitle">
+                <a href="drying-calculators.html">Drying Calculators</a>
+            </div>
+            <div id="occontent">
+                <a href="drying-time-calculator.html">Drying Time</a>
+                <a href="evaporation-rate-calculator.html">Evaporation Rate</a>
+                <a href="kiln-drying-calculator.html">Kiln Drying</a>
+                <a href="air-drying-calculator.html">Air Drying</a>
+                <a href="heat-requirement-calculator.html">Heat Requirement</a>
+            </div>
+            <div id="ocother">
+                <a href="moisture-calculators.html">Moisture</a> | 
+                <a href="humidity-calculators.html">Humidity</a> | 
+                <a href="drying-calculators.html">Drying</a> | 
+                <a href="other-calculators.html">Other</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="clear"></div>
+
+<div id="footer">
+    <div id="footerin">
+        <div id="footernav">
+            <a href="about-us.html">about us</a> | 
+            <a href="sitemap.html">sitemap</a> | 
+            <a href="terms.html">terms of use</a> | 
+            <a href="privacy.html">privacy policy</a> 
+            &nbsp; © 2025 <a href="index.html">drycalculator.net</a>
+        </div>
+    </div>
+</div>
+
+<script src="js/mobile-optimization.js"></script>
+<script src="js/calculator-mobile-enhancer.js"></script>
+<script src="js/mobile-calculator-fix.js"></script>
+<script src="js/kiln-drying-calculator.js"></script>
+</body>
+</html>

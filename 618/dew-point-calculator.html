@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Dew Point Calculator</title>
+    <meta name="description" content="Calculate dew point temperature from air temperature and relative humidity. Essential for HVAC, meteorology, and condensation prevention.">
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/icon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/icon-16x16.png">
+</head>
+<body>
+<div id="headerout">
+    <div id="header">
+        <div id="logo">
+            <a href="index.html">
+                <img src="images/dry-calculator-logo.svg" width="208" height="22" alt="Dry Calculator">
+            </a>
+        </div>
+        <div id="login">
+            <!-- Login removed -->
+        </div>
+    </div>
+</div>
+<div id="clear"></div>
+
+<div id="contentout">
+    <div id="content">
+        <div id="breadcrumbs">
+            <a href="index.html">home</a> / 
+            <a href="humidity-calculators.html">humidity calculators</a> / 
+            <a href="dew-point-calculator.html">dew point calculator</a>
+        </div>
+        
+        <h1>Dew Point Calculator</h1>
+        <p>The <i>Dew Point Calculator</i> determines the dew point temperature from air temperature and relative humidity. The dew point is the temperature at which air becomes saturated and water vapor begins to condense, making it crucial for HVAC design, weather forecasting, and condensation prevention.</p>
+
+        <div id="insmdc">
+            <img src="images/insm.svg" width="630" height="35" alt="Modify the values and click the calculate button to use">
+        </div>
+        
+        <form name="calform">
+            <div class="panel">
+                <table id="calinputtable">
+                    <tbody>
+                        <tr>
+                            <td>Air Temperature</td>
+                            <td>
+                                <input type="text" name="cairtemp" id="cairtemp" value="25" class="infull">
+                                <span class="temp-unit">°C</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Relative Humidity</td>
+                            <td>
+                                <input type="text" name="crelhumidity" id="crelhumidity" value="60" class="infull">
+                                <span style="margin-left: 5px; color: rgb(136, 136, 136);">%</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Temperature Unit</td>
+                            <td>
+                                <label for="cunit1" class="cbcontainer">
+                                    <input type="radio" name="cunit" id="cunit1" value="celsius" checked="">
+                                    <span class="rbmark"></span>Celsius (°C)
+                                </label> &nbsp;
+                                <label for="cunit2" class="cbcontainer">
+                                    <input type="radio" name="cunit" id="cunit2" value="fahrenheit">
+                                    <span class="rbmark"></span>Fahrenheit (°F)
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Atmospheric Pressure</td>
+                            <td>
+                                <input type="text" name="cpressure" id="cpressure" value="101.325" class="infull">
+                                <span style="margin-left: 5px; color: rgb(136, 136, 136);">kPa</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" align="left" style="padding-top: 8px;padding-left: 70px;">
+                                <input type="submit" name="x" value="Calculate">
+                                <input type="button" value="Clear">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </form>
+
+        <div id="result-section" style="margin-top: 20px; padding: 15px; background: #f0f8ff; border: 1px solid #ccc; border-radius: 5px; display: none;">
+            <h3>Dew Point Analysis</h3>
+            <div id="results-content"></div>
+        </div>
+
+        <br>
+        <p></p>
+        <fieldset>
+            <legend>Related</legend>
+            <a href="relative-humidity-calculator.html">Relative Humidity Calculator</a> | 
+            <a href="wet-bulb-calculator.html">Wet Bulb Calculator</a> | 
+            <a href="absolute-humidity-calculator.html">Absolute Humidity Calculator</a>
+        </fieldset>
+        <p></p>
+        
+        <h2>Understanding Dew Point</h2>
+        <p>The dew point is the temperature at which air becomes saturated with water vapor. When air is cooled to its dew point temperature, condensation begins to form on surfaces. This concept is fundamental to understanding humidity, weather patterns, and moisture control in buildings.</p>
+        
+        <h3>Key Concepts</h3>
+        
+        <h4>Saturation</h4>
+        <p>At the dew point temperature, the air holds the maximum amount of water vapor possible at that temperature and pressure. Any further cooling will result in condensation.</p>
+        
+        <h4>Relationship to Relative Humidity</h4>
+        <p>The closer the air temperature is to the dew point, the higher the relative humidity. When air temperature equals dew point temperature, relative humidity is 100%.</p>
+        
+        <h3>Calculation Method</h3>
+        <p>The dew point is calculated using the Magnus formula, which provides an accurate approximation for most practical applications:</p>
+        
+        <div style="background: #f8f8f8; padding: 15px; border-radius: 5px; margin: 15px 0;">
+            <h4>Magnus Formula</h4>
+            <p><strong>α = ln(RH/100) + (a × T)/(b + T)</strong></p>
+            <p><strong>Td = (b × α)/(a - α)</strong></p>
+            <p>Where:</p>
+            <ul>
+                <li>T = Air temperature (°C)</li>
+                <li>RH = Relative humidity (%)</li>
+                <li>a = 17.27 (constant)</li>
+                <li>b = 237.7 (constant)</li>
+                <li>Td = Dew point temperature (°C)</li>
+            </ul>
+        </div>
+        
+        <h3>Practical Applications</h3>
+        
+        <h4>HVAC Systems</h4>
+        <ul>
+            <li><strong>Condensation Prevention:</strong> Ensure surface temperatures stay above dew point</li>
+            <li><strong>Dehumidification:</strong> Cool air below dew point to remove moisture</li>
+            <li><strong>Energy Efficiency:</strong> Optimize cooling and dehumidification strategies</li>
+            <li><strong>Comfort Control:</strong> Maintain appropriate humidity levels</li>
+        </ul>
+        
+        <h4>Building Science</h4>
+        <ul>
+            <li><strong>Insulation Design:</strong> Prevent condensation within wall assemblies</li>
+            <li><strong>Vapor Barriers:</strong> Control moisture migration</li>
+            <li><strong>Window Performance:</strong> Predict condensation on glass surfaces</li>
+            <li><strong>Mold Prevention:</strong> Control surface moisture conditions</li>
+        </ul>
+        
+        <h4>Weather and Climate</h4>
+        <ul>
+            <li><strong>Fog Formation:</strong> Occurs when air temperature approaches dew point</li>
+            <li><strong>Frost Prediction:</strong> When dew point is below freezing</li>
+            <li><strong>Comfort Index:</strong> High dew points indicate muggy conditions</li>
+            <li><strong>Precipitation:</strong> Related to atmospheric moisture content</li>
+        </ul>
+        
+        <h3>Dew Point Comfort Levels</h3>
+        <table style="width: 100%; border-collapse: collapse; margin: 15px 0;">
+            <tr style="background: #f0f0f0;">
+                <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">Dew Point (°C)</th>
+                <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">Dew Point (°F)</th>
+                <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">Comfort Level</th>
+                <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">Description</th>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">< 10</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">< 50</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">Very Dry</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">May feel dry, static electricity</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">10-13</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">50-55</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">Comfortable</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">Pleasant for most people</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">13-16</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">55-60</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">Slightly Humid</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">Noticeable but acceptable</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">16-18</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">60-65</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">Humid</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">Somewhat uncomfortable</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">18-21</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">65-70</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">Very Humid</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">Oppressive for most people</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">> 21</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">> 70</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">Extremely Humid</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">Dangerous, heat stress risk</td>
+            </tr>
+        </table>
+        
+        <h3>Factors Affecting Dew Point</h3>
+        
+        <h4>Atmospheric Pressure</h4>
+        <ul>
+            <li>Higher pressure allows air to hold more moisture</li>
+            <li>Altitude affects atmospheric pressure and dew point calculations</li>
+            <li>Weather systems cause pressure variations</li>
+        </ul>
+        
+        <h4>Geographic Location</h4>
+        <ul>
+            <li><strong>Coastal Areas:</strong> Higher dew points due to water bodies</li>
+            <li><strong>Desert Regions:</strong> Lower dew points due to dry air</li>
+            <li><strong>Tropical Climates:</strong> Consistently high dew points</li>
+            <li><strong>Continental Climates:</strong> Variable dew points by season</li>
+        </ul>
+        
+        <h3>Measurement and Monitoring</h3>
+        
+        <h4>Direct Measurement</h4>
+        <ul>
+            <li><strong>Chilled Mirror Hygrometer:</strong> Most accurate method</li>
+            <li><strong>Condensation Hygrometer:</strong> Observes condensation formation</li>
+            <li><strong>Dew Point Transmitters:</strong> Electronic sensors for continuous monitoring</li>
+        </ul>
+        
+        <h4>Calculated from Other Parameters</h4>
+        <ul>
+            <li>Air temperature and relative humidity (most common)</li>
+            <li>Wet bulb and dry bulb temperatures</li>
+            <li>Absolute humidity and air temperature</li>
+        </ul>
+        
+        <h3>Design Considerations</h3>
+        
+        <h4>Surface Temperature Control</h4>
+        <ul>
+            <li>Keep surfaces above dew point to prevent condensation</li>
+            <li>Use thermal breaks to prevent cold bridging</li>
+            <li>Insulate cold water pipes and ducts</li>
+            <li>Consider thermal mass effects</li>
+        </ul>
+        
+        <h4>Ventilation Strategies</h4>
+        <ul>
+            <li>Exhaust moisture at source (kitchens, bathrooms)</li>
+            <li>Provide adequate air exchange rates</li>
+            <li>Use heat recovery ventilation to maintain efficiency</li>
+            <li>Control infiltration and exfiltration</li>
+        </ul>
+        
+        <p><strong>Note:</strong> Dew point calculations assume standard atmospheric conditions. For precise applications, consider local atmospheric pressure and use calibrated instruments for critical measurements.</p>
+    </div>
+    
+    <div id="right">
+        <div style="padding-top:10px; min-height:280px; text-align:center;">
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2205593928173688"
+                 crossorigin="anonymous"></script>
+            <!-- zishiying -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-2205593928173688"
+                 data-ad-slot="8971293106"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+        
+        <form name="calcSearchForm" autocomplete="off">
+            <table align="center" id="searchbox">
+                <tbody>
+                    <tr>
+                        <td>
+                            <input type="text" name="calcSearchTerm" id="calcSearchTerm" class="inlongest" placeholder="Search calculators...">
+                        </td>
+                        <td>
+                            <span id="bluebtn">Search</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div id="calcSearchOut"></div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+        
+        <div id="othercalc">
+            <div id="octitle">
+                <a href="humidity-calculators.html">Humidity Calculators</a>
+            </div>
+            <div id="occontent">
+                <a href="relative-humidity-calculator.html">Relative Humidity</a>
+                <a href="absolute-humidity-calculator.html">Absolute Humidity</a>
+                <a href="dew-point-calculator.html">Dew Point</a>
+                <a href="wet-bulb-calculator.html">Wet Bulb</a>
+                <a href="psychrometric-calculator.html">Psychrometric</a>
+                <a href="vapor-pressure-calculator.html">Vapor Pressure</a>
+            </div>
+            <div id="ocother">
+                <a href="moisture-calculators.html">Moisture</a> | 
+                <a href="humidity-calculators.html">Humidity</a> | 
+                <a href="drying-calculators.html">Drying</a> | 
+                <a href="other-calculators.html">Other</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="clear"></div>
+
+<div id="footer">
+    <div id="footerin">
+        <div id="footernav">
+            <a href="about-us.html">about us</a> | 
+            <a href="sitemap.html">sitemap</a> | 
+            <a href="terms.html">terms of use</a> | 
+            <a href="privacy.html">privacy policy</a> 
+            &nbsp; © 2025 <a href="index.html">drycalculator.net</a>
+        </div>
+    </div>
+</div>
+
+<script src="js/mobile-optimization.js"></script>
+<script src="js/calculator-mobile-enhancer.js"></script>
+    <script src="js/mobile-calculator-fix.js"></script>
+<script src="js/dewpoint-calculator.js"></script>
+</body>
+</html>

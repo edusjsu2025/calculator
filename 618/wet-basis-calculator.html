@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Wet Basis Calculator</title>
+    <meta name="description" content="Calculate wet basis moisture content for materials. Commonly used in commercial applications and industry standards.">
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/icon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/icon-16x16.png">
+</head>
+<body>
+<div id="headerout">
+    <div id="header">
+        <div id="logo">
+            <a href="index.html">
+                <img src="images/dry-calculator-logo.svg" width="208" height="22" alt="Dry Calculator">
+            </a>
+        </div>
+        <div id="login">
+            <!-- Login removed -->
+        </div>
+    </div>
+</div>
+<div id="clear"></div>
+
+<div id="contentout">
+    <div id="content">
+        <div id="breadcrumbs">
+            <a href="index.html">home</a> / 
+            <a href="moisture-calculators.html">moisture calculators</a> / 
+            <a href="wet-basis-calculator.html">wet basis calculator</a>
+        </div>
+        
+        <h1>Wet Basis Calculator</h1>
+        <p>The <i>Wet Basis Calculator</i> determines moisture content on a wet basis, where the total weight of the material (including water) is used as the reference. This is the most common method used in commercial applications.</p>
+
+        <div id="insmdc">
+            <img src="images/insm.svg" width="630" height="35" alt="Modify the values and click the calculate button to use">
+        </div>
+        
+        <form name="calform">
+            <div class="panel">
+                <table id="calinputtable">
+                    <tbody>
+                        <tr>
+                            <td>Calculation Method</td>
+                            <td>
+                                <select name="cmethod" id="cmethod" class="infull">
+                                    <option value="weights">From Wet and Dry Weights</option>
+                                    <option value="drybasis">Convert from Dry Basis</option>
+                                    <option value="loss">From Weight Loss</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr id="weight-inputs">
+                            <td colspan="2">
+                                <table width="100%">
+                                    <tr>
+                                        <td>Wet Weight</td>
+                                        <td>
+                                            <input type="text" name="cwetweight" id="cwetweight" value="120" class="infull">
+                                            <span>g</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Dry Weight</td>
+                                        <td>
+                                            <input type="text" name="cdryweight" id="cdryweight" value="100" class="infull">
+                                            <span>g</span>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr id="drybasis-input" style="display: none;">
+                            <td>Dry Basis Moisture Content</td>
+                            <td>
+                                <input type="text" name="cdrybasismc" id="cdrybasismc" value="20" class="infull">
+                                <span style="margin-left: 5px; color: rgb(136, 136, 136);">%</span>
+                            </td>
+                        </tr>
+                        <tr id="loss-inputs" style="display: none;">
+                            <td colspan="2">
+                                <table width="100%">
+                                    <tr>
+                                        <td>Initial Weight</td>
+                                        <td>
+                                            <input type="text" name="cinitialweight" id="cinitialweight" value="120" class="infull">
+                                            <span>g</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Weight Loss</td>
+                                        <td>
+                                            <input type="text" name="cweightloss" id="cweightloss" value="20" class="infull">
+                                            <span>g</span>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Application</td>
+                            <td>
+                                <select name="capplication" id="capplication" class="infull">
+                                    <option value="general">General Commercial</option>
+                                    <option value="lumber">Lumber/Wood Products</option>
+                                    <option value="food">Food Products</option>
+                                    <option value="textile">Textiles</option>
+                                    <option value="paper">Paper Products</option>
+                                    <option value="construction">Construction Materials</option>
+                                    <option value="pharmaceutical">Pharmaceutical</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Precision</td>
+                            <td>
+                                <select name="cprecision" id="cprecision" class="infull">
+                                    <option value="1">1 decimal place</option>
+                                    <option value="2" selected>2 decimal places</option>
+                                    <option value="3">3 decimal places</option>
+                                    <option value="4">4 decimal places</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" align="left" style="padding-top: 8px;padding-left: 70px;">
+                                <input type="submit" name="x" value="Calculate">
+                                <input type="button" value="Clear">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </form>
+
+        <div id="result-section" style="margin-top: 20px; padding: 15px; background: #f0f8ff; border: 1px solid #ccc; border-radius: 5px; display: none;">
+            <h3>Wet Basis Moisture Content Results</h3>
+            <div id="results-content"></div>
+        </div>
+
+        <br>
+        <p></p>
+        <fieldset>
+            <legend>Related</legend>
+            <a href="moisture-content-calculator.html">Moisture Content Calculator</a> | 
+            <a href="dry-basis-calculator.html">Dry Basis Calculator</a> | 
+            <a href="wood-moisture-calculator.html">Wood Moisture Calculator</a>
+        </fieldset>
+        <p></p>
+        
+        <h2>Understanding Wet Basis Moisture Content</h2>
+        <p>Wet basis moisture content expresses the amount of water in a material as a percentage of the total weight (wet weight) of the material. This is the most commonly used method in commercial and industrial applications.</p>
+        
+        <h3>Wet Basis Formula</h3>
+        
+        <div style="background: #f8f8f8; padding: 15px; border-radius: 5px; margin: 15px 0;">
+            <h4>Basic Formula</h4>
+            <p><strong>MC<sub>wb</sub> = (W<sub>w</sub> - W<sub>d</sub>) / W<sub>w</sub> × 100%</strong></p>
+            <p>Where:</p>
+            <ul>
+                <li>MC<sub>wb</sub> = Moisture content on wet basis (%)</li>
+                <li>W<sub>w</sub> = Wet weight of sample</li>
+                <li>W<sub>d</sub> = Dry weight of sample</li>
+            </ul>
+        </div>
+        
+        <h3>Advantages of Wet Basis</h3>
+        
+        <h4>Commercial Applications</h4>
+        <ul>
+            <li><strong>Intuitive Understanding:</strong> Easy to understand and communicate</li>
+            <li><strong>Industry Standard:</strong> Most common method in commerce</li>
+            <li><strong>Limited Range:</strong> Always between 0% and 100%</li>
+            <li><strong>Direct Measurement:</strong> Based on actual sample weight</li>
+        </ul>
+        
+        <h4>Practical Benefits</h4>
+        <ul>
+            <li><strong>Quality Control:</strong> Simple pass/fail criteria</li>
+            <li><strong>Shipping:</strong> Relates directly to shipped weight</li>
+            <li><strong>Pricing:</strong> Easy to calculate moisture penalties</li>
+            <li><strong>Regulations:</strong> Most standards use wet basis</li>
+        </ul>
+        
+        <h3>Industry Applications</h3>
+        
+        <h4>Lumber and Wood Products</h4>
+        <ul>
+            <li><strong>Grading Standards:</strong> NHLA and other grading rules</li>
+            <li><strong>Kiln Drying:</strong> Target moisture specifications</li>
+            <li><strong>Flooring:</strong> Installation moisture requirements</li>
+            <li><strong>Furniture:</strong> Manufacturing specifications</li>
+        </ul>
+        
+        <h4>Food Industry</h4>
+        <ul>
+            <li><strong>Product Labeling:</strong> Nutritional information</li>
+            <li><strong>Quality Standards:</strong> FDA and USDA requirements</li>
+            <li><strong>Shelf Life:</strong> Moisture affects product stability</li>
+            <li><strong>Processing:</strong> Recipe formulations</li>
+        </ul>
+        
+        <h4>Textiles and Paper</h4>
+        <ul>
+            <li><strong>Fiber Processing:</strong> Spinning and weaving conditions</li>
+            <li><strong>Paper Manufacturing:</strong> Moisture control in production</li>
+            <li><strong>Quality Control:</strong> Product consistency</li>
+            <li><strong>Storage:</strong> Warehouse condition monitoring</li>
+        </ul>
+        
+        <h3>Typical Wet Basis Values</h3>
+        
+        <table style="width: 100%; border-collapse: collapse; margin: 15px 0;">
+            <tr style="background: #f0f0f0;">
+                <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">Material</th>
+                <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">Fresh/Green (%)</th>
+                <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">Air Dried (%)</th>
+                <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">Kiln Dried (%)</th>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">Hardwood Lumber</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">40-60</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">15-20</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">6-12</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">Softwood Lumber</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">30-50</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">12-18</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">6-12</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">Bread</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">-</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">35-40</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">-</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">Cotton Fabric</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">-</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">6-8</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">-</td>
+            </tr>
+        </table>
+        
+        <h3>Measurement Standards</h3>
+        
+        <h4>ASTM Standards</h4>
+        <ul>
+            <li><strong>ASTM D4442:</strong> Wood moisture content by oven-dry method</li>
+            <li><strong>ASTM D4444:</strong> Wood moisture content by electrical resistance</li>
+            <li><strong>ASTM D2016:</strong> Moisture content of wood by distillation</li>
+            <li><strong>ASTM E104:</strong> Maintaining constant relative humidity</li>
+        </ul>
+        
+        <h4>International Standards</h4>
+        <ul>
+            <li><strong>ISO 3130:</strong> Wood moisture content determination</li>
+            <li><strong>EN 13183:</strong> European standard for wood moisture</li>
+            <li><strong>JIS Z2101:</strong> Japanese industrial standard</li>
+            <li><strong>BS 373:</strong> British standard for wood testing</li>
+        </ul>
+        
+        <h3>Conversion Examples</h3>
+        
+        <table style="width: 100%; border-collapse: collapse; margin: 15px 0;">
+            <tr style="background: #f0f0f0;">
+                <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">Wet Basis (%)</th>
+                <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">Dry Basis (%)</th>
+                <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">Water Content</th>
+                <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">Dry Content</th>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">10</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">11.1</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">10g</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">90g</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">20</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">25.0</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">20g</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">80g</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">50</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">100.0</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">50g</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">50g</td>
+            </tr>
+        </table>
+        
+        <h3>Quality Control Applications</h3>
+        
+        <h4>Acceptance Criteria</h4>
+        <ul>
+            <li><strong>Maximum Limits:</strong> Upper moisture content limits</li>
+            <li><strong>Minimum Limits:</strong> Lower limits for some applications</li>
+            <li><strong>Target Ranges:</strong> Optimal moisture content ranges</li>
+            <li><strong>Tolerance Bands:</strong> Acceptable variation around targets</li>
+        </ul>
+        
+        <h4>Sampling and Testing</h4>
+        <ul>
+            <li><strong>Representative Sampling:</strong> Proper sample selection</li>
+            <li><strong>Sample Size:</strong> Adequate sample for accuracy</li>
+            <li><strong>Test Frequency:</strong> Regular monitoring schedules</li>
+            <li><strong>Documentation:</strong> Complete test records</li>
+        </ul>
+        
+        <h3>Economic Considerations</h3>
+        
+        <h4>Pricing Adjustments</h4>
+        <ul>
+            <li><strong>Moisture Penalties:</strong> Price reductions for excess moisture</li>
+            <li><strong>Dry Weight Basis:</strong> Pricing based on dry content</li>
+            <li><strong>Shipping Costs:</strong> Transportation of water weight</li>
+            <li><strong>Storage Costs:</strong> Warehouse space for wet materials</li>
+        </ul>
+        
+        <h4>Processing Efficiency</h4>
+        <ul>
+            <li><strong>Energy Costs:</strong> Drying energy requirements</li>
+            <li><strong>Throughput:</strong> Processing speed affected by moisture</li>
+            <li><strong>Yield:</strong> Final product yield calculations</li>
+            <li><strong>Quality:</strong> Moisture impact on product quality</li>
+        </ul>
+        
+        <h3>Common Mistakes and Solutions</h3>
+        
+        <h4>Measurement Errors</h4>
+        <ul>
+            <li><strong>Incomplete Drying:</strong> Ensure complete moisture removal</li>
+            <li><strong>Sample Contamination:</strong> Use clean, representative samples</li>
+            <li><strong>Scale Accuracy:</strong> Use properly calibrated scales</li>
+            <li><strong>Environmental Factors:</strong> Control testing environment</li>
+        </ul>
+        
+        <h4>Calculation Errors</h4>
+        <ul>
+            <li><strong>Formula Confusion:</strong> Use correct wet basis formula</li>
+            <li><strong>Unit Consistency:</strong> Ensure consistent weight units</li>
+            <li><strong>Rounding Errors:</strong> Maintain adequate precision</li>
+            <li><strong>Basis Confusion:</strong> Clearly specify wet or dry basis</li>
+        </ul>
+        
+        <h3>Regulatory Compliance</h3>
+        
+        <h4>Building Codes</h4>
+        <ul>
+            <li><strong>Lumber Standards:</strong> Maximum moisture for structural use</li>
+            <li><strong>Flooring Installation:</strong> Subfloor and ambient conditions</li>
+            <li><strong>Insulation:</strong> Moisture content requirements</li>
+            <li><strong>Fire Ratings:</strong> Moisture impact on fire resistance</li>
+        </ul>
+        
+        <h4>Food Safety</h4>
+        <ul>
+            <li><strong>Water Activity:</strong> Relationship to moisture content</li>
+            <li><strong>Shelf Life:</strong> Moisture impact on stability</li>
+            <li><strong>Microbial Growth:</strong> Moisture thresholds for safety</li>
+            <li><strong>Labeling Requirements:</strong> Accurate moisture declaration</li>
+        </ul>
+        
+        <p><strong>Note:</strong> Wet basis moisture content is always less than 100% since it's based on the total weight including water. This makes it intuitive for commercial applications but can be limiting for scientific calculations where dry basis may be preferred.</p>
+    </div>
+    
+    <div id="right">
+        <div style="padding-top:10px; min-height:280px; text-align:center;">
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2205593928173688"
+                 crossorigin="anonymous"></script>
+            <!-- zishiying -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-2205593928173688"
+                 data-ad-slot="8971293106"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+        
+        <form name="calcSearchForm" autocomplete="off">
+            <table align="center" id="searchbox">
+                <tbody>
+                    <tr>
+                        <td>
+                            <input type="text" name="calcSearchTerm" id="calcSearchTerm" class="inlongest" placeholder="Search calculators...">
+                        </td>
+                        <td>
+                            <span id="bluebtn">Search</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div id="calcSearchOut"></div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+        
+        <div id="othercalc">
+            <div id="octitle">
+                <a href="moisture-calculators.html">Moisture Calculators</a>
+            </div>
+            <div id="occontent">
+                <a href="moisture-content-calculator.html">Moisture Content</a>
+                <a href="dry-basis-calculator.html">Dry Basis</a>
+                <a href="wet-basis-calculator.html">Wet Basis</a>
+                <a href="wood-moisture-calculator.html">Wood Moisture</a>
+                <a href="grain-moisture-calculator.html">Grain Moisture</a>
+            </div>
+            <div id="ocother">
+                <a href="moisture-calculators.html">Moisture</a> | 
+                <a href="humidity-calculators.html">Humidity</a> | 
+                <a href="drying-calculators.html">Drying</a> | 
+                <a href="other-calculators.html">Other</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="clear"></div>
+
+<div id="footer">
+    <div id="footerin">
+        <div id="footernav">
+            <a href="about-us.html">about us</a> | 
+            <a href="sitemap.html">sitemap</a> | 
+            <a href="terms.html">terms of use</a> | 
+            <a href="privacy.html">privacy policy</a> 
+            &nbsp; © 2025 <a href="index.html">drycalculator.net</a>
+        </div>
+    </div>
+</div>
+
+<script src="js/mobile-optimization.js"></script>
+<script src="js/calculator-mobile-enhancer.js"></script>
+<script src="js/mobile-calculator-fix.js"></script>
+<script src="js/wet-basis-calculator.js"></script>
+</body>
+</html>

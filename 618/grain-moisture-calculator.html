@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Grain Moisture Calculator</title>
+    <meta name="description" content="Calculate grain moisture content for wheat, corn, rice, soybeans, and other grains. Essential for storage, processing, and quality control.">
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/icon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/icon-16x16.png">
+</head>
+<body>
+<div id="headerout">
+    <div id="header">
+        <div id="logo">
+            <a href="index.html">
+                <img src="images/dry-calculator-logo.svg" width="208" height="22" alt="Dry Calculator">
+            </a>
+        </div>
+        <div id="login">
+            <a href="sign-in.html">sign in</a>
+        </div>
+    </div>
+</div>
+<div id="clear"></div>
+
+<div id="contentout">
+    <div id="content">
+        <div id="breadcrumbs">
+            <a href="index.html">home</a> / 
+            <a href="moisture-calculators.html">moisture calculators</a> / 
+            <a href="grain-moisture-calculator.html">grain moisture calculator</a>
+        </div>
+        
+        <h1>Grain Moisture Calculator</h1>
+        <p>The <i>Grain Moisture Calculator</i> determines moisture content in various grains including wheat, corn, rice, soybeans, and other agricultural commodities. This calculator is essential for grain storage, processing, marketing, and quality control in agricultural operations.</p>
+
+        <div id="insmdc">
+            <img src="images/insm.svg" width="630" height="35" alt="Modify the values and click the calculate button to use">
+        </div>
+        
+        <form name="calform">
+            <div class="panel">
+                <table id="calinputtable">
+                    <tbody>
+                        <tr>
+                            <td>Grain Type</td>
+                            <td>
+                                <select name="cgraintype" id="cgraintype" class="infull">
+                                    <option value="wheat">Wheat</option>
+                                    <option value="corn">Corn (Maize)</option>
+                                    <option value="rice">Rice</option>
+                                    <option value="soybeans">Soybeans</option>
+                                    <option value="barley">Barley</option>
+                                    <option value="oats">Oats</option>
+                                    <option value="sorghum">Sorghum</option>
+                                    <option value="sunflower">Sunflower Seeds</option>
+                                    <option value="canola">Canola</option>
+                                    <option value="general">General Grain</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Measurement Method</td>
+                            <td>
+                                <label for="cmethod1" class="cbcontainer">
+                                    <input type="radio" name="cmethod" id="cmethod1" value="oven" checked="">
+                                    <span class="rbmark"></span>Oven Method
+                                </label> &nbsp;
+                                <label for="cmethod2" class="cbcontainer">
+                                    <input type="radio" name="cmethod" id="cmethod2" value="meter">
+                                    <span class="rbmark"></span>Moisture Meter
+                                </label>
+                            </td>
+                        </tr>
+                        <tr id="oven-inputs">
+                            <td>Wet Weight</td>
+                            <td>
+                                <input type="text" name="cwetweight" id="cwetweight" value="100" class="infull">
+                                <span style="margin-left: 5px; color: rgb(136, 136, 136);">grams</span>
+                            </td>
+                        </tr>
+                        <tr id="oven-inputs2">
+                            <td>Dry Weight</td>
+                            <td>
+                                <input type="text" name="cdryweight" id="cdryweight" value="87" class="infull">
+                                <span style="margin-left: 5px; color: rgb(136, 136, 136);">grams</span>
+                            </td>
+                        </tr>
+                        <tr id="meter-input" style="display: none;">
+                            <td>Meter Reading</td>
+                            <td>
+                                <input type="text" name="cmeterreading" id="cmeterreading" value="14" class="infull">
+                                <span style="margin-left: 5px; color: rgb(136, 136, 136);">%</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Storage Duration</td>
+                            <td>
+                                <select name="cstorage" id="cstorage" class="infull">
+                                    <option value="short">Short Term (< 6 months)</option>
+                                    <option value="medium">Medium Term (6-12 months)</option>
+                                    <option value="long">Long Term (> 12 months)</option>
+                                    <option value="immediate">Immediate Processing</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Storage Temperature</td>
+                            <td>
+                                <input type="text" name="ctemperature" id="ctemperature" value="20" class="infull">
+                                <span style="margin-left: 5px; color: rgb(136, 136, 136);">°C</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" align="left" style="padding-top: 8px;padding-left: 70px;">
+                                <input type="submit" name="x" value="Calculate">
+                                <input type="button" value="Clear">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </form>
+
+        <div id="result-section" style="margin-top: 20px; padding: 15px; background: #f0f8ff; border: 1px solid #ccc; border-radius: 5px; display: none;">
+            <h3>Grain Moisture Analysis</h3>
+            <div id="results-content"></div>
+        </div>
+
+        <br>
+        <p></p>
+        <fieldset>
+            <legend>Related</legend>
+            <a href="moisture-content-calculator.html">Moisture Content Calculator</a> | 
+            <a href="equilibrium-moisture-calculator.html">Equilibrium Moisture Calculator</a> | 
+            <a href="drying-time-calculator.html">Drying Time Calculator</a>
+        </fieldset>
+        <p></p>
+        
+        <h2>Understanding Grain Moisture Content</h2>
+        <p>Grain moisture content is crucial for safe storage, processing efficiency, and maintaining quality. Proper moisture management prevents spoilage, mold growth, and insect infestation while preserving nutritional value and market grade.</p>
+        
+        <h3>Safe Storage Moisture Levels</h3>
+        <table style="width: 100%; border-collapse: collapse; margin: 15px 0;">
+            <tr style="background: #f0f0f0;">
+                <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">Grain Type</th>
+                <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">Short Term</th>
+                <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">Long Term</th>
+                <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">Commercial Standard</th>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">Wheat</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">14.0%</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">13.0%</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">13.5%</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">Corn</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">15.5%</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">14.0%</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">15.0%</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">Rice</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">14.0%</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">13.0%</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">14.0%</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">Soybeans</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">13.0%</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">11.0%</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">13.0%</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">Barley</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">14.5%</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">13.0%</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">14.0%</td>
+            </tr>
+        </table>
+        
+        <h3>Measurement Methods</h3>
+        
+        <h4>Oven Drying Method (ASAE S352.2)</h4>
+        <ul>
+            <li>Most accurate reference method</li>
+            <li>Ground grain sample dried at 103°C for specified time</li>
+            <li>Time varies by grain type (wheat: 72 hours, corn: 72 hours)</li>
+            <li>Formula: MC = [(Wet Weight - Dry Weight) / Wet Weight] × 100%</li>
+        </ul>
+        
+        <h4>Electronic Moisture Meters</h4>
+        <ul>
+            <li>Quick, portable measurement</li>
+            <li>Uses dielectric properties or electrical conductance</li>
+            <li>Requires calibration for specific grain types</li>
+            <li>Temperature compensation needed for accuracy</li>
+        </ul>
+        
+        <h3>Factors Affecting Grain Storage</h3>
+        
+        <h4>Temperature Effects</h4>
+        <ul>
+            <li><strong>High Temperature:</strong> Accelerates deterioration and insect activity</li>
+            <li><strong>Low Temperature:</strong> Slows biological activity and preserves quality</li>
+            <li><strong>Temperature Cycling:</strong> Can cause moisture migration and condensation</li>
+        </ul>
+        
+        <h4>Moisture-Related Problems</h4>
+        <ul>
+            <li><strong>Mold Growth:</strong> Occurs above safe moisture levels</li>
+            <li><strong>Insect Activity:</strong> Increases with higher moisture content</li>
+            <li><strong>Heating:</strong> Caused by microbial activity in wet grain</li>
+            <li><strong>Caking:</strong> Grain particles stick together</li>
+            <li><strong>Rancidity:</strong> Oil degradation in oilseeds</li>
+        </ul>
+        
+        <h3>Drying Considerations</h3>
+        
+        <h4>Natural Air Drying</h4>
+        <ul>
+            <li>Uses ambient air with fans for circulation</li>
+            <li>Slow process, weather dependent</li>
+            <li>Lower energy costs but requires time</li>
+            <li>Best for small moisture reductions</li>
+        </ul>
+        
+        <h4>Heated Air Drying</h4>
+        <ul>
+            <li>Faster drying with controlled temperature</li>
+            <li>Higher energy costs but weather independent</li>
+            <li>Risk of over-drying or heat damage</li>
+            <li>Temperature limits vary by grain type</li>
+        </ul>
+        
+        <h3>Quality Considerations</h3>
+        
+        <h4>Grain Grading Factors</h4>
+        <ul>
+            <li><strong>Test Weight:</strong> Weight per unit volume</li>
+            <li><strong>Foreign Material:</strong> Non-grain materials</li>
+            <li><strong>Damaged Kernels:</strong> Heat, frost, or insect damage</li>
+            <li><strong>Protein Content:</strong> Important for wheat and soybeans</li>
+            <li><strong>Oil Content:</strong> Critical for oilseeds</li>
+        </ul>
+        
+        <h4>Processing Implications</h4>
+        <ul>
+            <li><strong>Milling:</strong> Optimal moisture for efficient processing</li>
+            <li><strong>Malting:</strong> Specific moisture requirements for barley</li>
+            <li><strong>Oil Extraction:</strong> Moisture affects extraction efficiency</li>
+            <li><strong>Feed Processing:</strong> Moisture impacts pellet quality</li>
+        </ul>
+        
+        <h3>Economic Impact</h3>
+        <ul>
+            <li><strong>Drying Costs:</strong> Energy expenses for moisture removal</li>
+            <li><strong>Storage Losses:</strong> Spoilage due to high moisture</li>
+            <li><strong>Grade Discounts:</strong> Price reductions for excess moisture</li>
+            <li><strong>Weight Loss:</strong> Reduced sellable weight after drying</li>
+        </ul>
+        
+        <p><strong>Note:</strong> Always follow local grain standards and regulations. Moisture content requirements may vary by region, intended use, and market specifications.</p>
+    </div>
+    
+    <div id="right">
+        <div style="padding-top:10px; min-height:280px; text-align:center;">
+            <!-- Advertisement space -->
+        </div>
+        
+        <form name="calcSearchForm" autocomplete="off">
+            <table align="center" id="searchbox">
+                <tbody>
+                    <tr>
+                        <td>
+                            <input type="text" name="calcSearchTerm" id="calcSearchTerm" class="inlongest" placeholder="Search calculators...">
+                        </td>
+                        <td>
+                            <span id="bluebtn">Search</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div id="calcSearchOut"></div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+        
+        <div id="othercalc">
+            <div id="octitle">
+                <a href="moisture-calculators.html">Moisture Calculators</a>
+            </div>
+            <div id="occontent">
+                <a href="moisture-content-calculator.html">Moisture Content</a>
+                <a href="wood-moisture-calculator.html">Wood Moisture</a>
+                <a href="grain-moisture-calculator.html">Grain Moisture</a>
+                <a href="soil-moisture-calculator.html">Soil Moisture</a>
+                <a href="concrete-moisture-calculator.html">Concrete Moisture</a>
+            </div>
+            <div id="ocother">
+                <a href="moisture-calculators.html">Moisture</a> | 
+                <a href="humidity-calculators.html">Humidity</a> | 
+                <a href="drying-calculators.html">Drying</a> | 
+                <a href="other-calculators.html">Other</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="clear"></div>
+
+<div id="footer">
+    <div id="footerin">
+        <div id="footernav">
+            <a href="about-us.html">about us</a> | 
+            <a href="sitemap.html">sitemap</a> | 
+            <a href="terms.html">terms of use</a> | 
+            <a href="privacy.html">privacy policy</a> 
+            &nbsp; © 2025 <a href="index.html">drycalculator.net</a>
+        </div>
+    </div>
+</div>
+
+<script src="js/mobile-calculator-fix.js"></script>
+    <script src="js/mobile-optimization.js"></script>
+<script src="js/calculator-mobile-enhancer.js"></script>
+<script src="js/grain-calculator.js"></script>
+</body>
+</html>

@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Volume Calculator</title>
+    <meta name="description" content="Convert between different volume units and calculate volumes of common shapes. Essential for engineering and construction applications.">
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/icon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/icon-16x16.png">
+</head>
+<body>
+<div id="headerout">
+    <div id="header">
+        <div id="logo">
+            <a href="index.html">
+                <img src="images/dry-calculator-logo.svg" width="208" height="22" alt="Dry Calculator">
+            </a>
+        </div>
+        <div id="login">
+            <!-- Login removed -->
+        </div>
+    </div>
+</div>
+<div id="clear"></div>
+
+<div id="contentout">
+    <div id="content">
+        <div id="breadcrumbs">
+            <a href="index.html">home</a> / 
+            <a href="other-calculators.html">other calculators</a> / 
+            <a href="volume-calculator.html">volume calculator</a>
+        </div>
+        
+        <h1>Volume Calculator</h1>
+        <p>The <i>Volume Calculator</i> converts between different volume units and calculates volumes of common geometric shapes. Essential for engineering, construction, and scientific applications.</p>
+
+        <div id="insmdc">
+            <img src="images/insm.svg" width="630" height="35" alt="Modify the values and click the calculate button to use">
+        </div>
+        
+        <form name="calform">
+            <div class="panel">
+                <table id="calinputtable">
+                    <tbody>
+                        <tr>
+                            <td>Calculation Type</td>
+                            <td>
+                                <select name="ccalctype" id="ccalctype" class="infull">
+                                    <option value="conversion">Unit Conversion</option>
+                                    <option value="rectangular">Rectangular Volume</option>
+                                    <option value="cylindrical">Cylindrical Volume</option>
+                                    <option value="spherical">Spherical Volume</option>
+                                    <option value="tank">Tank Volume</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr id="conversion-inputs">
+                            <td colspan="2">
+                                <table width="100%">
+                                    <tr>
+                                        <td>Input Volume</td>
+                                        <td>
+                                            <input type="text" name="cinputvolume" id="cinputvolume" value="1" class="infull">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>From Unit</td>
+                                        <td>
+                                            <select name="cfromunit" id="cfromunit" class="infull">
+                                                <option value="m3">m³ (Cubic meters)</option>
+                                                <option value="l">L (Liters)</option>
+                                                <option value="ml">mL (Milliliters)</option>
+                                                <option value="ft3">ft³ (Cubic feet)</option>
+                                                <option value="in3">in³ (Cubic inches)</option>
+                                                <option value="gal_us">gal (US Gallons)</option>
+                                                <option value="gal_uk">gal (UK Gallons)</option>
+                                                <option value="qt">qt (Quarts)</option>
+                                                <option value="pt">pt (Pints)</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr id="rectangular-inputs" style="display: none;">
+                            <td colspan="2">
+                                <table width="100%">
+                                    <tr>
+                                        <td>Length</td>
+                                        <td><input type="text" name="clength" id="clength" value="2" class="infull"><span>m</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Width</td>
+                                        <td><input type="text" name="cwidth" id="cwidth" value="1.5" class="infull"><span>m</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Height</td>
+                                        <td><input type="text" name="cheight" id="cheight" value="1" class="infull"><span>m</span></td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr id="cylindrical-inputs" style="display: none;">
+                            <td colspan="2">
+                                <table width="100%">
+                                    <tr>
+                                        <td>Radius</td>
+                                        <td><input type="text" name="cradius" id="cradius" value="0.5" class="infull"><span>m</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Height</td>
+                                        <td><input type="text" name="ccylheight" id="ccylheight" value="2" class="infull"><span>m</span></td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr id="spherical-inputs" style="display: none;">
+                            <td>Radius</td>
+                            <td>
+                                <input type="text" name="csphereradius" id="csphereradius" value="1" class="infull">
+                                <span>m</span>
+                            </td>
+                        </tr>
+                        <tr id="tank-inputs" style="display: none;">
+                            <td colspan="2">
+                                <table width="100%">
+                                    <tr>
+                                        <td>Tank Type</td>
+                                        <td>
+                                            <select name="ctanktype" id="ctanktype" class="infull">
+                                                <option value="horizontal_cylinder">Horizontal Cylinder</option>
+                                                <option value="vertical_cylinder">Vertical Cylinder</option>
+                                                <option value="rectangular_tank">Rectangular Tank</option>
+                                                <option value="spherical_tank">Spherical Tank</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Diameter</td>
+                                        <td><input type="text" name="ctankdiameter" id="ctankdiameter" value="2" class="infull"><span>m</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Length/Height</td>
+                                        <td><input type="text" name="ctanklength" id="ctanklength" value="5" class="infull"><span>m</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Fill Level</td>
+                                        <td><input type="text" name="cfilllevel" id="cfilllevel" value="75" class="infull"><span>%</span></td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" align="left" style="padding-top: 8px;padding-left: 70px;">
+                                <input type="submit" name="x" value="Calculate">
+                                <input type="button" value="Clear">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </form>
+
+        <div id="result-section" style="margin-top: 20px; padding: 15px; background: #f0f8ff; border: 1px solid #ccc; border-radius: 5px; display: none;">
+            <h3>Volume Calculation Results</h3>
+            <div id="results-content"></div>
+        </div>
+
+        <br>
+        <p></p>
+        <fieldset>
+            <legend>Related</legend>
+            <a href="density-calculator.html">Density Calculator</a> | 
+            <a href="pressure-calculator.html">Pressure Calculator</a> | 
+            <a href="temperature-calculator.html">Temperature Calculator</a>
+        </fieldset>
+        <p></p>
+        
+        <h2>Understanding Volume</h2>
+        <p>Volume is the amount of three-dimensional space occupied by a substance or enclosed by a surface. It's measured in cubic units and is essential for engineering calculations, material quantities, and fluid systems.</p>
+        
+        <h3>Common Volume Units</h3>
+        
+        <table style="width: 100%; border-collapse: collapse; margin: 15px 0;">
+            <tr style="background: #f0f0f0;">
+                <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">Unit</th>
+                <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">Symbol</th>
+                <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">Equivalent</th>
+                <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">Common Use</th>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">Cubic meter</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">m³</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">1000 L</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">Engineering, construction</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">Liter</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">L</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">1000 mL</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">Liquids, chemicals</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">Cubic foot</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">ft³</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">28.317 L</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">US construction</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">US Gallon</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">gal</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">3.785 L</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">Fuel, liquids (US)</td>
+            </tr>
+        </table>
+        
+        <h3>Volume Formulas</h3>
+        
+        <h4>Basic Shapes</h4>
+        <div style="background: #f8f8f8; padding: 15px; border-radius: 5px; margin: 15px 0;">
+            <p><strong>Rectangular/Cubic:</strong> V = L × W × H</p>
+            <p><strong>Cylindrical:</strong> V = π × r² × h</p>
+            <p><strong>Spherical:</strong> V = (4/3) × π × r³</p>
+            <p><strong>Conical:</strong> V = (1/3) × π × r² × h</p>
+        </div>
+        
+        <h4>Tank Volumes</h4>
+        <div style="background: #f8f8f8; padding: 15px; border-radius: 5px; margin: 15px 0;">
+            <p><strong>Horizontal Cylinder:</strong> Complex formula based on fill level</p>
+            <p><strong>Vertical Cylinder:</strong> V = π × r² × h × (fill level %)</p>
+            <p><strong>Rectangular Tank:</strong> V = L × W × H × (fill level %)</p>
+        </div>
+        
+        <h3>Applications</h3>
+        
+        <h4>Construction and Engineering</h4>
+        <ul>
+            <li><strong>Concrete Volume:</strong> Calculate material quantities</li>
+            <li><strong>Excavation:</strong> Determine earth removal volumes</li>
+            <li><strong>Storage Tanks:</strong> Size tanks for required capacity</li>
+            <li><strong>HVAC Ducts:</strong> Calculate air flow volumes</li>
+        </ul>
+        
+        <h4>Manufacturing and Processing</h4>
+        <ul>
+            <li><strong>Batch Sizing:</strong> Determine reactor volumes</li>
+            <li><strong>Material Handling:</strong> Calculate storage requirements</li>
+            <li><strong>Quality Control:</strong> Verify product volumes</li>
+            <li><strong>Packaging:</strong> Optimize container sizes</li>
+        </ul>
+        
+        <h4>Environmental and Utilities</h4>
+        <ul>
+            <li><strong>Water Treatment:</strong> Size treatment tanks</li>
+            <li><strong>Waste Management:</strong> Calculate disposal volumes</li>
+            <li><strong>Fuel Storage:</strong> Determine tank capacities</li>
+            <li><strong>Chemical Storage:</strong> Safety and regulatory compliance</li>
+        </ul>
+        
+        <h3>Conversion Factors</h3>
+        
+        <table style="width: 100%; border-collapse: collapse; margin: 15px 0;">
+            <tr style="background: #f0f0f0;">
+                <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">From</th>
+                <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">To</th>
+                <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">Multiply by</th>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">m³</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">L</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">1000</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">m³</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">ft³</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">35.314</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">L</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">US gal</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">0.2642</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">ft³</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">US gal</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">7.481</td>
+            </tr>
+        </table>
+        
+        <p><strong>Note:</strong> Volume calculations assume standard conditions and regular geometric shapes. For irregular shapes or complex geometries, consider using integration methods or specialized software. Always verify units and consider measurement accuracy for critical applications.</p>
+    </div>
+    
+    <div id="right">
+        <div style="padding-top:10px; min-height:280px; text-align:center;">
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2205593928173688"
+                 crossorigin="anonymous"></script>
+            <!-- zishiying -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-2205593928173688"
+                 data-ad-slot="8971293106"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+        
+        <form name="calcSearchForm" autocomplete="off">
+            <table align="center" id="searchbox">
+                <tbody>
+                    <tr>
+                        <td>
+                            <input type="text" name="calcSearchTerm" id="calcSearchTerm" class="inlongest" placeholder="Search calculators...">
+                        </td>
+                        <td>
+                            <span id="bluebtn">Search</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div id="calcSearchOut"></div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+        
+        <div id="othercalc">
+            <div id="octitle">
+                <a href="other-calculators.html">Other Calculators</a>
+            </div>
+            <div id="occontent">
+                <a href="temperature-calculator.html">Temperature</a>
+                <a href="pressure-calculator.html">Pressure</a>
+                <a href="density-calculator.html">Density</a>
+                <a href="volume-calculator.html">Volume</a>
+                <a href="energy-conversion-calculator.html">Energy Conversion</a>
+            </div>
+            <div id="ocother">
+                <a href="moisture-calculators.html">Moisture</a> | 
+                <a href="humidity-calculators.html">Humidity</a> | 
+                <a href="drying-calculators.html">Drying</a> | 
+                <a href="other-calculators.html">Other</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="clear"></div>
+
+<div id="footer">
+    <div id="footerin">
+        <div id="footernav">
+            <a href="about-us.html">about us</a> | 
+            <a href="sitemap.html">sitemap</a> | 
+            <a href="terms.html">terms of use</a> | 
+            <a href="privacy.html">privacy policy</a> 
+            &nbsp; © 2025 <a href="index.html">drycalculator.net</a>
+        </div>
+    </div>
+</div>
+
+<script src="js/mobile-optimization.js"></script>
+<script src="js/calculator-mobile-enhancer.js"></script>
+<script src="js/mobile-calculator-fix.js"></script>
+<script src="js/volume-calculator.js"></script>
+</body>
+</html>

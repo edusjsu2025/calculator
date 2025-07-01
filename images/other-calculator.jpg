@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="135" height="135" viewBox="0 0 135 135" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient id="otherGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop stop-color="#9575cd" offset="0%" />
+            <stop stop-color="#7e57c2" offset="100%" />
+        </linearGradient>
+    </defs>
+    <rect width="135" height="135" fill="url(#otherGrad)" rx="10"/>
+    <rect x="35" y="35" width="65" height="45" fill="#ffffff" opacity="0.9" rx="5"/>
+    <rect x="40" y="45" width="8" height="8" fill="url(#otherGrad)"/>
+    <rect x="52" y="45" width="8" height="8" fill="url(#otherGrad)"/>
+    <rect x="64" y="45" width="8" height="8" fill="url(#otherGrad)"/>
+    <rect x="76" y="45" width="8" height="8" fill="url(#otherGrad)"/>
+    <rect x="88" y="45" width="8" height="8" fill="url(#otherGrad)"/>
+    <rect x="40" y="57" width="8" height="8" fill="url(#otherGrad)"/>
+    <rect x="52" y="57" width="8" height="8" fill="url(#otherGrad)"/>
+    <rect x="64" y="57" width="8" height="8" fill="url(#otherGrad)"/>
+    <rect x="76" y="57" width="8" height="8" fill="url(#otherGrad)"/>
+    <rect x="88" y="57" width="8" height="8" fill="url(#otherGrad)"/>
+    <rect x="40" y="69" width="8" height="8" fill="url(#otherGrad)"/>
+    <rect x="52" y="69" width="8" height="8" fill="url(#otherGrad)"/>
+    <rect x="64" y="69" width="8" height="8" fill="url(#otherGrad)"/>
+    <rect x="76" y="69" width="8" height="8" fill="url(#otherGrad)"/>
+    <rect x="88" y="69" width="8" height="8" fill="url(#otherGrad)"/>
+    <text x="67.5" y="105" text-anchor="middle" fill="#ffffff" font-family="Arial" font-size="14px" font-weight="bold">CALC</text>
+    <text x="67.5" y="125" text-anchor="middle" fill="#ffffff" font-family="Arial" font-size="12px" font-weight="bold">OTHER</text>
+</svg>

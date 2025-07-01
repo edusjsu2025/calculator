@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="135" height="135" viewBox="0 0 135 135" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient id="dryingGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop stop-color="#ffb74d" offset="0%" />
+            <stop stop-color="#ff9800" offset="100%" />
+        </linearGradient>
+    </defs>
+    <rect width="135" height="135" fill="url(#dryingGrad)" rx="10"/>
+    <circle cx="67.5" cy="45" r="20" fill="#ffffff" opacity="0.2"/>
+    <circle cx="67.5" cy="45" r="15" fill="#ffffff" opacity="0.4"/>
+    <circle cx="67.5" cy="45" r="10" fill="#ffffff" opacity="0.6"/>
+    <circle cx="67.5" cy="45" r="5" fill="#ffffff" opacity="0.8"/>
+    <path d="M50 75 Q67.5 65 85 75 Q67.5 85 50 75" fill="#ffffff" opacity="0.7"/>
+    <text x="67.5" y="105" text-anchor="middle" fill="#ffffff" font-family="Arial" font-size="14px" font-weight="bold">TIME</text>
+    <text x="67.5" y="125" text-anchor="middle" fill="#ffffff" font-family="Arial" font-size="12px" font-weight="bold">DRYING</text>
+</svg>

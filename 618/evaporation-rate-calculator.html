@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Evaporation Rate Calculator</title>
+    <meta name="description" content="Calculate water evaporation rates for pools, ponds, reservoirs, and industrial applications. Essential for water management and HVAC design.">
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/icon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/icon-16x16.png">
+</head>
+<body>
+<div id="headerout">
+    <div id="header">
+        <div id="logo">
+            <a href="index.html">
+                <img src="images/dry-calculator-logo.svg" width="208" height="22" alt="Dry Calculator">
+            </a>
+        </div>
+        <div id="login">
+            <a href="sign-in.html">sign in</a>
+        </div>
+    </div>
+</div>
+<div id="clear"></div>
+
+<div id="contentout">
+    <div id="content">
+        <div id="breadcrumbs">
+            <a href="index.html">home</a> / 
+            <a href="drying-calculators.html">drying calculators</a> / 
+            <a href="evaporation-rate-calculator.html">evaporation rate calculator</a>
+        </div>
+        
+        <h1>Evaporation Rate Calculator</h1>
+        <p>The <i>Evaporation Rate Calculator</i> determines water evaporation rates for various applications including swimming pools, ponds, reservoirs, and industrial processes. This tool helps in water management, HVAC design, and process optimization.</p>
+
+        <div id="insmdc">
+            <img src="images/insm.svg" width="630" height="35" alt="Modify the values and click the calculate button to use">
+        </div>
+        
+        <form name="calform">
+            <div class="panel">
+                <table id="calinputtable">
+                    <tbody>
+                        <tr>
+                            <td>Application Type</td>
+                            <td>
+                                <select name="capplication" id="capplication" class="infull">
+                                    <option value="pool">Swimming Pool</option>
+                                    <option value="pond">Pond/Lake</option>
+                                    <option value="reservoir">Reservoir</option>
+                                    <option value="industrial">Industrial Tank</option>
+                                    <option value="cooling_tower">Cooling Tower</option>
+                                    <option value="general">General Water Surface</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Water Surface Area</td>
+                            <td>
+                                <input type="text" name="carea" id="carea" value="100" class="infull">
+                                <span style="margin-left: 5px; color: rgb(136, 136, 136);">m²</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Water Temperature</td>
+                            <td>
+                                <input type="text" name="cwatertemp" id="cwatertemp" value="25" class="infull">
+                                <span class="temp-unit">°C</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Air Temperature</td>
+                            <td>
+                                <input type="text" name="cairtemp" id="cairtemp" value="22" class="infull">
+                                <span class="temp-unit">°C</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Relative Humidity</td>
+                            <td>
+                                <input type="text" name="chumidity" id="chumidity" value="60" class="infull">
+                                <span style="margin-left: 5px; color: rgb(136, 136, 136);">%</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Wind Speed</td>
+                            <td>
+                                <input type="text" name="cwindspeed" id="cwindspeed" value="2.0" class="infull">
+                                <span style="margin-left: 5px; color: rgb(136, 136, 136);">m/s</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Temperature Unit</td>
+                            <td>
+                                <label for="cunit1" class="cbcontainer">
+                                    <input type="radio" name="cunit" id="cunit1" value="celsius" checked="">
+                                    <span class="rbmark"></span>Celsius (°C)
+                                </label> &nbsp;
+                                <label for="cunit2" class="cbcontainer">
+                                    <input type="radio" name="cunit" id="cunit2" value="fahrenheit">
+                                    <span class="rbmark"></span>Fahrenheit (°F)
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" align="left" style="padding-top: 8px;padding-left: 70px;">
+                                <input type="submit" name="x" value="Calculate">
+                                <input type="button" value="Clear">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </form>
+
+        <div id="result-section" style="margin-top: 20px; padding: 15px; background: #f0f8ff; border: 1px solid #ccc; border-radius: 5px; display: none;">
+            <h3>Evaporation Rate Results</h3>
+            <div id="results-content"></div>
+        </div>
+
+        <br>
+        <p></p>
+        <fieldset>
+            <legend>Related</legend>
+            <a href="drying-time-calculator.html">Drying Time Calculator</a> | 
+            <a href="relative-humidity-calculator.html">Relative Humidity Calculator</a> | 
+            <a href="vapor-pressure-calculator.html">Vapor Pressure Calculator</a>
+        </fieldset>
+        <p></p>
+        
+        <h2>Understanding Evaporation</h2>
+        <p>Evaporation is the process by which water changes from liquid to vapor at temperatures below the boiling point. The rate depends on temperature, humidity, air movement, and surface area.</p>
+        
+        <h3>Factors Affecting Evaporation Rate</h3>
+        
+        <h4>Primary Factors</h4>
+        <ul>
+            <li><strong>Temperature Difference:</strong> Higher water temperature increases evaporation</li>
+            <li><strong>Humidity:</strong> Lower air humidity increases evaporation rate</li>
+            <li><strong>Air Movement:</strong> Wind or air circulation removes vapor and increases rate</li>
+            <li><strong>Surface Area:</strong> Larger surface area provides more evaporation</li>
+        </ul>
+        
+        <h4>Secondary Factors</h4>
+        <ul>
+            <li><strong>Atmospheric Pressure:</strong> Lower pressure increases evaporation</li>
+            <li><strong>Water Quality:</strong> Dissolved substances affect evaporation rate</li>
+            <li><strong>Surface Conditions:</strong> Roughness and contamination effects</li>
+            <li><strong>Solar Radiation:</strong> Direct heating increases water temperature</li>
+        </ul>
+        
+        <h3>Calculation Methods</h3>
+        
+        <h4>Dalton's Law Method</h4>
+        <div style="background: #f8f8f8; padding: 15px; border-radius: 5px; margin: 15px 0;">
+            <p><strong>Formula:</strong> E = A × K × (es - ea)</p>
+            <p><strong>Where:</strong></p>
+            <ul>
+                <li>E = Evaporation rate (kg/h)</li>
+                <li>A = Surface area (m²)</li>
+                <li>K = Mass transfer coefficient</li>
+                <li>es = Saturated vapor pressure at water temperature</li>
+                <li>ea = Actual vapor pressure of air</li>
+            </ul>
+        </div>
+        
+        <h4>Penman Equation</h4>
+        <div style="background: #f8f8f8; padding: 15px; border-radius: 5px; margin: 15px 0;">
+            <p><strong>Application:</strong> Meteorological and agricultural use</p>
+            <p><strong>Considers:</strong> Solar radiation, wind speed, temperature, humidity</p>
+            <p><strong>Accuracy:</strong> High for outdoor applications</p>
+        </div>
+        
+        <h4>Pool-Specific Methods</h4>
+        <div style="background: #f8f8f8; padding: 15px; border-radius: 5px; margin: 15px 0;">
+            <p><strong>ASHRAE Method:</strong> E = A × (pw - pa) × (0.1 + 0.046 × V)</p>
+            <p><strong>Where:</strong> V = air velocity over water surface</p>
+            <p><strong>Units:</strong> E in kg/h, pressures in kPa, V in m/s</p>
+        </div>
+        
+        <h3>Applications</h3>
+        
+        <h4>Swimming Pools</h4>
+        <ul>
+            <li><strong>HVAC Design:</strong> Size dehumidification equipment</li>
+            <li><strong>Energy Calculations:</strong> Determine heating and cooling loads</li>
+            <li><strong>Water Management:</strong> Plan water replacement schedules</li>
+            <li><strong>Indoor Air Quality:</strong> Control humidity levels</li>
+        </ul>
+        
+        <h4>Industrial Applications</h4>
+        <ul>
+            <li><strong>Cooling Towers:</strong> Calculate water loss and makeup requirements</li>
+            <li><strong>Process Tanks:</strong> Monitor water levels and concentrations</li>
+            <li><strong>Waste Treatment:</strong> Design evaporation ponds</li>
+            <li><strong>Chemical Processing:</strong> Control solution concentrations</li>
+        </ul>
+        
+        <h4>Environmental and Agricultural</h4>
+        <ul>
+            <li><strong>Water Resources:</strong> Estimate reservoir losses</li>
+            <li><strong>Irrigation:</strong> Calculate water requirements</li>
+            <li><strong>Climate Studies:</strong> Assess regional water balance</li>
+            <li><strong>Wetland Management:</strong> Monitor water levels</li>
+        </ul>
+        
+        <h3>Typical Evaporation Rates</h3>
+        
+        <table style="width: 100%; border-collapse: collapse; margin: 15px 0;">
+            <tr style="background: #f0f0f0;">
+                <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">Application</th>
+                <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">Conditions</th>
+                <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">Rate (mm/day)</th>
+                <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">Rate (kg/m²/day)</th>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">Indoor Pool</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">26°C water, 24°C air, 60% RH</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">3-5</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">3-5</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">Outdoor Pool</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">Summer conditions</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">5-8</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">5-8</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">Lake/Reservoir</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">Temperate climate</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">2-6</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">2-6</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">Cooling Tower</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">Industrial operation</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">10-20</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">10-20</td>
+            </tr>
+        </table>
+        
+        <h3>Control and Reduction Methods</h3>
+        
+        <h4>Reducing Evaporation</h4>
+        <ul>
+            <li><strong>Pool Covers:</strong> Can reduce evaporation by 90-95%</li>
+            <li><strong>Windbreaks:</strong> Reduce air movement over water surface</li>
+            <li><strong>Lower Water Temperature:</strong> Reduce driving force for evaporation</li>
+            <li><strong>Increase Humidity:</strong> Reduce vapor pressure difference</li>
+        </ul>
+        
+        <h4>Managing Evaporation</h4>
+        <ul>
+            <li><strong>Automatic Water Levelers:</strong> Maintain constant water levels</li>
+            <li><strong>Humidity Control:</strong> Manage indoor air conditions</li>
+            <li><strong>Ventilation Design:</strong> Control air movement patterns</li>
+            <li><strong>Energy Recovery:</strong> Capture latent heat from evaporation</li>
+        </ul>
+        
+        <h3>Energy Considerations</h3>
+        
+        <h4>Latent Heat of Vaporization</h4>
+        <ul>
+            <li><strong>Energy Required:</strong> 2.45 MJ/kg at 20°C</li>
+            <li><strong>Cooling Effect:</strong> Evaporation cools remaining water</li>
+            <li><strong>HVAC Impact:</strong> Adds latent load to air conditioning</li>
+            <li><strong>Heat Recovery:</strong> Potential for energy recovery systems</li>
+        </ul>
+        
+        <h4>Economic Impact</h4>
+        <ul>
+            <li><strong>Water Costs:</strong> Replacement water and treatment</li>
+            <li><strong>Energy Costs:</strong> Heating replacement water</li>
+            <li><strong>Chemical Costs:</strong> Rebalancing water chemistry</li>
+            <li><strong>Equipment Sizing:</strong> Larger HVAC systems needed</li>
+        </ul>
+        
+        <h3>Measurement and Monitoring</h3>
+        
+        <h4>Direct Measurement</h4>
+        <ul>
+            <li><strong>Water Level Monitoring:</strong> Track water loss over time</li>
+            <li><strong>Flow Meters:</strong> Measure makeup water requirements</li>
+            <li><strong>Evaporation Pans:</strong> Standard meteorological method</li>
+            <li><strong>Lysimeters:</strong> Precise measurement for research</li>
+        </ul>
+        
+        <h4>Calculation Verification</h4>
+        <ul>
+            <li><strong>Mass Balance:</strong> Account for all water inputs and outputs</li>
+            <li><strong>Energy Balance:</strong> Verify with heat transfer calculations</li>
+            <li><strong>Comparative Methods:</strong> Use multiple calculation approaches</li>
+            <li><strong>Calibration:</strong> Adjust coefficients based on measurements</li>
+        </ul>
+        
+        <h3>Design Considerations</h3>
+        
+        <h4>HVAC System Design</h4>
+        <ul>
+            <li>Size dehumidification equipment for peak evaporation</li>
+            <li>Consider seasonal variations in evaporation rate</li>
+            <li>Design for both sensible and latent loads</li>
+            <li>Plan for humidity control strategies</li>
+        </ul>
+        
+        <h4>Water Management</h4>
+        <ul>
+            <li>Size water storage and treatment systems</li>
+            <li>Plan for peak makeup water demands</li>
+            <li>Consider water quality changes due to evaporation</li>
+            <li>Design overflow and drainage systems</li>
+        </ul>
+        
+        <p><strong>Note:</strong> Evaporation rate calculations provide estimates based on simplified models. Actual rates may vary due to local conditions, water quality, and other factors. For critical applications, verify calculations with measurements and consider safety factors in design.</p>
+    </div>
+    
+    <div id="right">
+        <div style="padding-top:10px; min-height:280px; text-align:center;">
+            <!-- Advertisement space -->
+        </div>
+        
+        <form name="calcSearchForm" autocomplete="off">
+            <table align="center" id="searchbox">
+                <tbody>
+                    <tr>
+                        <td>
+                            <input type="text" name="calcSearchTerm" id="calcSearchTerm" class="inlongest" placeholder="Search calculators...">
+                        </td>
+                        <td>
+                            <span id="bluebtn">Search</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div id="calcSearchOut"></div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+        
+        <div id="othercalc">
+            <div id="octitle">
+                <a href="drying-calculators.html">Drying Calculators</a>
+            </div>
+            <div id="occontent">
+                <a href="drying-time-calculator.html">Drying Time</a>
+                <a href="evaporation-rate-calculator.html">Evaporation Rate</a>
+                <a href="kiln-drying-calculator.html">Kiln Drying</a>
+                <a href="air-drying-calculator.html">Air Drying</a>
+                <a href="heat-requirement-calculator.html">Heat Requirement</a>
+            </div>
+            <div id="ocother">
+                <a href="moisture-calculators.html">Moisture</a> | 
+                <a href="humidity-calculators.html">Humidity</a> | 
+                <a href="drying-calculators.html">Drying</a> | 
+                <a href="other-calculators.html">Other</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="clear"></div>
+
+<div id="footer">
+    <div id="footerin">
+        <div id="footernav">
+            <a href="about-us.html">about us</a> | 
+            <a href="sitemap.html">sitemap</a> | 
+            <a href="terms.html">terms of use</a> | 
+            <a href="privacy.html">privacy policy</a> 
+            &nbsp; © 2025 <a href="index.html">drycalculator.net</a>
+        </div>
+    </div>
+</div>
+
+<script src="js/mobile-optimization.js"></script>
+<script src="js/calculator-mobile-enhancer.js"></script>
+<script src="js/mobile-calculator-fix.js"></script>
+<script src="js/evaporation-rate-calculator.js"></script>
+</body>
+</html>

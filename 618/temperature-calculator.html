@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Temperature Calculator</title>
+    <meta name="description" content="Convert between Celsius, Fahrenheit, Kelvin, and Rankine temperature scales. Essential for scientific calculations and international applications.">
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/icon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/icon-16x16.png">
+</head>
+<body>
+<div id="headerout">
+    <div id="header">
+        <div id="logo">
+            <a href="index.html">
+                <img src="images/dry-calculator-logo.svg" width="208" height="22" alt="Dry Calculator">
+            </a>
+        </div>
+        <div id="login">
+            <!-- Login removed -->
+        </div>
+    </div>
+</div>
+<div id="clear"></div>
+
+<div id="contentout">
+    <div id="content">
+        <div id="breadcrumbs">
+            <a href="index.html">home</a> / 
+            <a href="other-calculators.html">other calculators</a> / 
+            <a href="temperature-calculator.html">temperature calculator</a>
+        </div>
+        
+        <h1>Temperature Calculator</h1>
+        <p>The <i>Temperature Calculator</i> converts between different temperature scales including Celsius, Fahrenheit, Kelvin, and Rankine. Essential for scientific calculations, international applications, and engineering work.</p>
+
+        <div id="insmdc">
+            <img src="images/insm.svg" width="630" height="35" alt="Modify the values and click the calculate button to use">
+        </div>
+        
+        <form name="calform">
+            <div class="panel">
+                <table id="calinputtable">
+                    <tbody>
+                        <tr>
+                            <td>Input Temperature</td>
+                            <td>
+                                <input type="text" name="cinputtemp" id="cinputtemp" value="25" class="infull">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>From Scale</td>
+                            <td>
+                                <select name="cfromscale" id="cfromscale" class="infull">
+                                    <option value="celsius">Celsius (°C)</option>
+                                    <option value="fahrenheit">Fahrenheit (°F)</option>
+                                    <option value="kelvin">Kelvin (K)</option>
+                                    <option value="rankine">Rankine (°R)</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Convert To</td>
+                            <td>
+                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                                    <label class="cbcontainer">
+                                        <input type="checkbox" name="ctocelsius" id="ctocelsius" checked>
+                                        <span class="checkmark"></span>Celsius (°C)
+                                    </label>
+                                    <label class="cbcontainer">
+                                        <input type="checkbox" name="ctofahrenheit" id="ctofahrenheit" checked>
+                                        <span class="checkmark"></span>Fahrenheit (°F)
+                                    </label>
+                                    <label class="cbcontainer">
+                                        <input type="checkbox" name="ctokelvin" id="ctokelvin" checked>
+                                        <span class="checkmark"></span>Kelvin (K)
+                                    </label>
+                                    <label class="cbcontainer">
+                                        <input type="checkbox" name="ctorankine" id="ctorankine">
+                                        <span class="checkmark"></span>Rankine (°R)
+                                    </label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Precision</td>
+                            <td>
+                                <select name="cprecision" id="cprecision" class="infull">
+                                    <option value="1">1 decimal place</option>
+                                    <option value="2" selected>2 decimal places</option>
+                                    <option value="3">3 decimal places</option>
+                                    <option value="4">4 decimal places</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" align="left" style="padding-top: 8px;padding-left: 70px;">
+                                <input type="submit" name="x" value="Calculate">
+                                <input type="button" value="Clear">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </form>
+
+        <div id="result-section" style="margin-top: 20px; padding: 15px; background: #f0f8ff; border: 1px solid #ccc; border-radius: 5px; display: none;">
+            <h3>Temperature Conversion Results</h3>
+            <div id="results-content"></div>
+        </div>
+
+        <br>
+        <p></p>
+        <fieldset>
+            <legend>Related</legend>
+            <a href="pressure-calculator.html">Pressure Calculator</a> | 
+            <a href="density-calculator.html">Density Calculator</a> | 
+            <a href="psychrometric-calculator.html">Psychrometric Calculator</a>
+        </fieldset>
+        <p></p>
+        
+        <h2>Understanding Temperature Scales</h2>
+        <p>Temperature scales are systems for measuring thermal energy. Different scales are used in various fields and regions, making conversion between them essential for scientific and engineering applications.</p>
+        
+        <h3>Common Temperature Scales</h3>
+        
+        <h4>Celsius (°C)</h4>
+        <ul>
+            <li><strong>Zero Point:</strong> Freezing point of water (0°C)</li>
+            <li><strong>Scale:</strong> 100 degrees between freezing and boiling of water</li>
+            <li><strong>Usage:</strong> Scientific standard, most countries worldwide</li>
+            <li><strong>Named After:</strong> Anders Celsius (Swedish astronomer)</li>
+        </ul>
+        
+        <h4>Fahrenheit (°F)</h4>
+        <ul>
+            <li><strong>Zero Point:</strong> Mixture of ice, water, and ammonium chloride</li>
+            <li><strong>Scale:</strong> 180 degrees between freezing (32°F) and boiling (212°F) of water</li>
+            <li><strong>Usage:</strong> United States, some Caribbean countries</li>
+            <li><strong>Named After:</strong> Daniel Gabriel Fahrenheit (German physicist)</li>
+        </ul>
+        
+        <h4>Kelvin (K)</h4>
+        <ul>
+            <li><strong>Zero Point:</strong> Absolute zero (-273.15°C)</li>
+            <li><strong>Scale:</strong> Same increment as Celsius</li>
+            <li><strong>Usage:</strong> Scientific calculations, thermodynamics</li>
+            <li><strong>Named After:</strong> Lord Kelvin (William Thomson)</li>
+        </ul>
+        
+        <h4>Rankine (°R)</h4>
+        <ul>
+            <li><strong>Zero Point:</strong> Absolute zero (same as Kelvin)</li>
+            <li><strong>Scale:</strong> Same increment as Fahrenheit</li>
+            <li><strong>Usage:</strong> Engineering applications in US</li>
+            <li><strong>Named After:</strong> William John Macquorn Rankine</li>
+        </ul>
+        
+        <h3>Conversion Formulas</h3>
+        
+        <div style="background: #f8f8f8; padding: 15px; border-radius: 5px; margin: 15px 0;">
+            <h4>From Celsius (°C)</h4>
+            <p><strong>To Fahrenheit:</strong> °F = (°C × 9/5) + 32</p>
+            <p><strong>To Kelvin:</strong> K = °C + 273.15</p>
+            <p><strong>To Rankine:</strong> °R = (°C + 273.15) × 9/5</p>
+            
+            <h4>From Fahrenheit (°F)</h4>
+            <p><strong>To Celsius:</strong> °C = (°F - 32) × 5/9</p>
+            <p><strong>To Kelvin:</strong> K = (°F - 32) × 5/9 + 273.15</p>
+            <p><strong>To Rankine:</strong> °R = °F + 459.67</p>
+            
+            <h4>From Kelvin (K)</h4>
+            <p><strong>To Celsius:</strong> °C = K - 273.15</p>
+            <p><strong>To Fahrenheit:</strong> °F = (K - 273.15) × 9/5 + 32</p>
+            <p><strong>To Rankine:</strong> °R = K × 9/5</p>
+        </div>
+        
+        <h3>Reference Points</h3>
+        
+        <table style="width: 100%; border-collapse: collapse; margin: 15px 0;">
+            <tr style="background: #f0f0f0;">
+                <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">Reference Point</th>
+                <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">Celsius (°C)</th>
+                <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">Fahrenheit (°F)</th>
+                <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">Kelvin (K)</th>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">Absolute Zero</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">-273.15</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">-459.67</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">0</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">Water Freezing</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">0</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">32</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">273.15</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">Room Temperature</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">20</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">68</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">293.15</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">Human Body</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">37</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">98.6</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">310.15</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">Water Boiling</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">100</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">212</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">373.15</td>
+            </tr>
+        </table>
+        
+        <h3>Applications by Field</h3>
+        
+        <h4>Scientific Research</h4>
+        <ul>
+            <li><strong>Physics:</strong> Kelvin for thermodynamics and quantum mechanics</li>
+            <li><strong>Chemistry:</strong> Celsius and Kelvin for reactions and phase changes</li>
+            <li><strong>Biology:</strong> Celsius for biological processes</li>
+            <li><strong>Astronomy:</strong> Kelvin for stellar temperatures</li>
+        </ul>
+        
+        <h4>Engineering</h4>
+        <ul>
+            <li><strong>HVAC:</strong> Celsius or Fahrenheit depending on region</li>
+            <li><strong>Chemical Engineering:</strong> Kelvin for process calculations</li>
+            <li><strong>Mechanical Engineering:</strong> Various scales for different applications</li>
+            <li><strong>Materials Science:</strong> Kelvin for high-temperature processes</li>
+        </ul>
+        
+        <h4>Everyday Applications</h4>
+        <ul>
+            <li><strong>Weather:</strong> Celsius (most countries) or Fahrenheit (US)</li>
+            <li><strong>Cooking:</strong> Celsius or Fahrenheit depending on region</li>
+            <li><strong>Medical:</strong> Celsius for body temperature (most countries)</li>
+            <li><strong>Industrial:</strong> Various scales depending on application</li>
+        </ul>
+        
+        <h3>Conversion Tips</h3>
+        
+        <h4>Quick Mental Conversions</h4>
+        <ul>
+            <li><strong>C to F:</strong> Double and add 30 (approximate)</li>
+            <li><strong>F to C:</strong> Subtract 30 and halve (approximate)</li>
+            <li><strong>C to K:</strong> Add 273 (close approximation)</li>
+            <li><strong>Common Temps:</strong> 0°C = 32°F, 20°C = 68°F, 100°C = 212°F</li>
+        </ul>
+        
+        <h4>Precision Considerations</h4>
+        <ul>
+            <li><strong>Scientific Work:</strong> Use full precision (273.15 for K conversion)</li>
+            <li><strong>Engineering:</strong> 2-3 decimal places usually sufficient</li>
+            <li><strong>General Use:</strong> 1 decimal place often adequate</li>
+            <li><strong>Measurement Uncertainty:</strong> Don't exceed instrument precision</li>
+        </ul>
+        
+        <h3>Historical Context</h3>
+        
+        <h4>Development Timeline</h4>
+        <ul>
+            <li><strong>1724:</strong> Fahrenheit scale introduced</li>
+            <li><strong>1742:</strong> Celsius scale developed</li>
+            <li><strong>1848:</strong> Kelvin (absolute) scale proposed</li>
+            <li><strong>1859:</strong> Rankine scale introduced</li>
+        </ul>
+        
+        <h4>Standardization</h4>
+        <ul>
+            <li><strong>SI System:</strong> Kelvin is the base unit</li>
+            <li><strong>ITS-90:</strong> International Temperature Scale of 1990</li>
+            <li><strong>Fixed Points:</strong> Defined reference temperatures</li>
+            <li><strong>Traceability:</strong> All measurements traceable to standards</li>
+        </ul>
+        
+        <h3>Special Considerations</h3>
+        
+        <h4>Absolute Zero</h4>
+        <ul>
+            <li><strong>Definition:</strong> Temperature at which molecular motion ceases</li>
+            <li><strong>Value:</strong> 0 K = -273.15°C = -459.67°F</li>
+            <li><strong>Significance:</strong> Theoretical lower limit of temperature</li>
+            <li><strong>Applications:</strong> Cryogenics, quantum physics</li>
+        </ul>
+        
+        <h4>Temperature Differences</h4>
+        <ul>
+            <li><strong>Celsius/Kelvin:</strong> 1°C = 1 K (same increment)</li>
+            <li><strong>Fahrenheit/Rankine:</strong> 1°F = 1°R (same increment)</li>
+            <li><strong>Cross-Scale:</strong> 1°C = 1.8°F (different increments)</li>
+            <li><strong>Calculations:</strong> Use appropriate scale for the application</li>
+        </ul>
+        
+        <h3>Common Mistakes</h3>
+        
+        <h4>Conversion Errors</h4>
+        <ul>
+            <li><strong>Forgetting Offset:</strong> Not adding/subtracting constants</li>
+            <li><strong>Wrong Direction:</strong> Using inverse formula</li>
+            <li><strong>Precision Loss:</strong> Rounding too early in calculations</li>
+            <li><strong>Unit Confusion:</strong> Mixing temperature scales</li>
+        </ul>
+        
+        <h4>Best Practices</h4>
+        <ul>
+            <li><strong>Check Units:</strong> Always verify input and output units</li>
+            <li><strong>Sanity Check:</strong> Verify results make physical sense</li>
+            <li><strong>Document Scale:</strong> Always specify temperature scale</li>
+            <li><strong>Use Standards:</strong> Follow industry or regional conventions</li>
+        </ul>
+        
+        <p><strong>Note:</strong> Temperature conversions are exact mathematical relationships. However, measurement accuracy depends on instrument precision and calibration. For critical applications, consider measurement uncertainty and use appropriate significant figures.</p>
+    </div>
+    
+    <div id="right">
+        <div style="padding-top:10px; min-height:280px; text-align:center;">
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2205593928173688"
+                 crossorigin="anonymous"></script>
+            <!-- zishiying -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-2205593928173688"
+                 data-ad-slot="8971293106"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+        
+        <form name="calcSearchForm" autocomplete="off">
+            <table align="center" id="searchbox">
+                <tbody>
+                    <tr>
+                        <td>
+                            <input type="text" name="calcSearchTerm" id="calcSearchTerm" class="inlongest" placeholder="Search calculators...">
+                        </td>
+                        <td>
+                            <span id="bluebtn">Search</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div id="calcSearchOut"></div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+        
+        <div id="othercalc">
+            <div id="octitle">
+                <a href="other-calculators.html">Other Calculators</a>
+            </div>
+            <div id="occontent">
+                <a href="temperature-calculator.html">Temperature</a>
+                <a href="pressure-calculator.html">Pressure</a>
+                <a href="density-calculator.html">Density</a>
+                <a href="volume-calculator.html">Volume</a>
+                <a href="energy-conversion-calculator.html">Energy Conversion</a>
+            </div>
+            <div id="ocother">
+                <a href="moisture-calculators.html">Moisture</a> | 
+                <a href="humidity-calculators.html">Humidity</a> | 
+                <a href="drying-calculators.html">Drying</a> | 
+                <a href="other-calculators.html">Other</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="clear"></div>
+
+<div id="footer">
+    <div id="footerin">
+        <div id="footernav">
+            <a href="about-us.html">about us</a> | 
+            <a href="sitemap.html">sitemap</a> | 
+            <a href="terms.html">terms of use</a> | 
+            <a href="privacy.html">privacy policy</a> 
+            &nbsp; © 2025 <a href="index.html">drycalculator.net</a>
+        </div>
+    </div>
+</div>
+
+<script src="js/mobile-optimization.js"></script>
+<script src="js/mobile-calculator-fix.js"></script>
+    <script src="js/calculator-mobile-enhancer.js"></script>
+<script src="js/temperature-calculator.js"></script>
+</body>
+</html>

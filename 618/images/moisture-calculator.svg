@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="135" height="135" viewBox="0 0 135 135" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient id="moistureGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop stop-color="#4fc3f7" offset="0%" />
+            <stop stop-color="#29b6f6" offset="100%" />
+        </linearGradient>
+    </defs>
+    <rect width="135" height="135" fill="url(#moistureGrad)" rx="10"/>
+    <circle cx="67.5" cy="45" r="15" fill="#ffffff" opacity="0.9"/>
+    <circle cx="67.5" cy="75" r="12" fill="#ffffff" opacity="0.7"/>
+    <circle cx="67.5" cy="100" r="8" fill="#ffffff" opacity="0.5"/>
+    <text x="67.5" y="125" text-anchor="middle" fill="#ffffff" font-family="Arial" font-size="12px" font-weight="bold">MOISTURE</text>
+</svg>

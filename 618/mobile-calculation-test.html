@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Mobile Calculation Test - Dry Calculator</title>
+    <meta name="description" content="Test page for mobile calculation and result scrolling functionality.">
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/icon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/icon-16x16.png">
+</head>
+<body>
+<div id="headerout">
+    <div id="header">
+        <div id="logo">
+            <a href="index.html">
+                <img src="images/dry-calculator-logo.svg" width="208" height="22" alt="Dry Calculator">
+            </a>
+        </div>
+        <div id="login">
+            <!-- Login removed -->
+        </div>
+    </div>
+</div>
+<div id="clear"></div>
+
+<div id="contentout">
+    <div id="content">
+        <div id="breadcrumbs">
+            <a href="index.html">home</a> / 
+            <a href="mobile-calculation-test.html">mobile calculation test</a>
+        </div>
+        
+        <h1>Mobile Calculation Test</h1>
+        <p>This page tests the mobile calculation experience with automatic scrolling to results.</p>
+
+        <div id="insmdc">
+            <img src="images/insm.svg" width="630" height="35" alt="Modify the values and click the calculate button to use">
+        </div>
+        
+        <!-- Add some content to make scrolling necessary -->
+        <div style="margin: 20px 0;">
+            <h2>About This Test</h2>
+            <p>This test page simulates a typical calculator experience on mobile devices. When you calculate results on a mobile device, the page should automatically scroll to show the results section.</p>
+            
+            <h3>Features Being Tested:</h3>
+            <ul>
+                <li>✅ Auto-scroll to results after calculation</li>
+                <li>✅ Loading state with spinner</li>
+                <li>✅ Visual feedback and highlighting</li>
+                <li>✅ Touch-optimized form inputs</li>
+                <li>✅ Mobile-friendly validation</li>
+                <li>✅ Haptic feedback (where supported)</li>
+            </ul>
+            
+            <h3>How to Test:</h3>
+            <ol>
+                <li>Open this page on a mobile device</li>
+                <li>Fill in the form below</li>
+                <li>Tap the "Calculate" button</li>
+                <li>Observe the automatic scroll to results</li>
+                <li>Notice the visual feedback and animations</li>
+            </ol>
+        </div>
+        
+        <form name="calform">
+            <div class="panel">
+                <table id="calinputtable">
+                    <tbody>
+                        <tr>
+                            <td>Input Temperature</td>
+                            <td>
+                                <input type="text" name="cinputtemp" id="cinputtemp" value="25" class="infull">
+                                <span style="margin-left: 5px; color: rgb(136, 136, 136);">°C</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Input Humidity</td>
+                            <td>
+                                <input type="text" name="cinputhumidity" id="cinputhumidity" value="60" class="infull">
+                                <span style="margin-left: 5px; color: rgb(136, 136, 136);">%</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Calculation Type</td>
+                            <td>
+                                <select name="ccalctype" id="ccalctype" class="infull">
+                                    <option value="basic">Basic Calculation</option>
+                                    <option value="advanced">Advanced Calculation</option>
+                                    <option value="detailed">Detailed Analysis</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Precision</td>
+                            <td>
+                                <select name="cprecision" id="cprecision" class="infull">
+                                    <option value="1">1 decimal place</option>
+                                    <option value="2" selected>2 decimal places</option>
+                                    <option value="3">3 decimal places</option>
+                                    <option value="4">4 decimal places</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Output Options</td>
+                            <td>
+                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                                    <label class="cbcontainer">
+                                        <input type="checkbox" name="cshowgraph" id="cshowgraph" checked>
+                                        <span class="checkmark"></span>Show Graph
+                                    </label>
+                                    <label class="cbcontainer">
+                                        <input type="checkbox" name="cshowdetails" id="cshowdetails" checked>
+                                        <span class="checkmark"></span>Show Details
+                                    </label>
+                                    <label class="cbcontainer">
+                                        <input type="checkbox" name="cshowformulas" id="cshowformulas">
+                                        <span class="checkmark"></span>Show Formulas
+                                    </label>
+                                    <label class="cbcontainer">
+                                        <input type="checkbox" name="cshowreferences" id="cshowreferences">
+                                        <span class="checkmark"></span>Show References
+                                    </label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" align="left" style="padding-top: 8px;padding-left: 70px;">
+                                <input type="submit" name="x" value="Calculate">
+                                <input type="button" value="Clear">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </form>
+
+        <!-- Add more content to ensure scrolling is needed -->
+        <div style="margin: 30px 0;">
+            <h2>Additional Information</h2>
+            <p>This section adds content to ensure that the results section will be below the fold on most mobile devices, making the auto-scroll functionality necessary and visible.</p>
+            
+            <h3>Mobile UX Improvements</h3>
+            <p>The mobile optimization includes several user experience improvements:</p>
+            <ul>
+                <li><strong>Automatic Scrolling:</strong> After calculation, the page automatically scrolls to show results</li>
+                <li><strong>Visual Feedback:</strong> Loading states, animations, and success indicators</li>
+                <li><strong>Touch Optimization:</strong> Larger touch targets and better spacing</li>
+                <li><strong>Input Enhancement:</strong> Appropriate keyboards and validation</li>
+                <li><strong>Performance:</strong> Smooth animations and responsive interactions</li>
+            </ul>
+            
+            <h3>Technical Details</h3>
+            <p>The implementation uses modern web APIs and techniques:</p>
+            <ul>
+                <li>MutationObserver for detecting result changes</li>
+                <li>Smooth scrolling with optimal positioning</li>
+                <li>CSS transitions for visual feedback</li>
+                <li>Touch event handling for better interactions</li>
+                <li>Responsive design principles</li>
+            </ul>
+        </div>
+
+        <div id="result-section" style="display: none; margin-top: 20px; padding: 15px; background: #f0f8ff; border: 1px solid #ccc; border-radius: 5px;">
+            <h3>Calculation Results</h3>
+            <div id="results-content">
+                <!-- Results will be populated here -->
+            </div>
+        </div>
+
+        <br>
+        <p></p>
+        <fieldset>
+            <legend>Related Calculators</legend>
+            <a href="temperature-calculator.html">Temperature Calculator</a> | 
+            <a href="humidity-calculators.html">Humidity Calculators</a> | 
+            <a href="moisture-calculators.html">Moisture Calculators</a>
+        </fieldset>
+        <p></p>
+        
+        <!-- Add even more content to test scrolling -->
+        <div style="margin: 30px 0;">
+            <h2>Testing Instructions</h2>
+            <div style="background: #f8f9fa; padding: 15px; border-radius: 5px; margin: 15px 0;">
+                <h4>For Mobile Testing:</h4>
+                <ol>
+                    <li>Open this page on your mobile device</li>
+                    <li>Scroll to the top of the form</li>
+                    <li>Fill in some values (or use the defaults)</li>
+                    <li>Tap the "Calculate" button</li>
+                    <li>Watch as the page automatically scrolls to show the results</li>
+                    <li>Notice the loading animation and success feedback</li>
+                </ol>
+            </div>
+            
+            <div style="background: #e7f3ff; padding: 15px; border-radius: 5px; margin: 15px 0;">
+                <h4>Expected Behavior:</h4>
+                <ul>
+                    <li>✅ Button shows loading state with spinner</li>
+                    <li>✅ Page smoothly scrolls to results section</li>
+                    <li>✅ Results section highlights briefly</li>
+                    <li>✅ Success indicator appears temporarily</li>
+                    <li>✅ All animations are smooth and responsive</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div id="right">
+        <div style="padding-top:10px; min-height:280px; text-align:center;">
+            <script src="js/mobile-optimization.js"></script>
+<script src="js/calculator-mobile-enhancer.js"></script>
+<script src="js/mobile-calculator-fix.js"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2205593928173688"
+                 crossorigin="anonymous"></script>
+            <!-- zishiying -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-2205593928173688"
+                 data-ad-slot="8971293106"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+        
+        <form name="calcSearchForm" autocomplete="off">
+            <table align="center" id="searchbox">
+                <tbody>
+                    <tr>
+                        <td>
+                            <input type="text" name="calcSearchTerm" id="calcSearchTerm" class="inlongest" placeholder="Search calculators...">
+                        </td>
+                        <td>
+                            <span id="bluebtn">Search</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div id="calcSearchOut"></div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+        
+        <div id="othercalc">
+            <div id="octitle">
+                <a href="other-calculators.html">Other Calculators</a>
+            </div>
+            <div id="occontent">
+                <a href="temperature-calculator.html">Temperature</a>
+                <a href="pressure-calculator.html">Pressure</a>
+                <a href="density-calculator.html">Density</a>
+                <a href="volume-calculator.html">Volume</a>
+            </div>
+            <div id="ocother">
+                <a href="moisture-calculators.html">Moisture</a> | 
+                <a href="humidity-calculators.html">Humidity</a> | 
+                <a href="drying-calculators.html">Drying</a> | 
+                <a href="other-calculators.html">Other</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="clear"></div>
+
+<div id="footer">
+    <div id="footerin">
+        <div id="footernav">
+            <a href="about-us.html">about us</a> | 
+            <a href="sitemap.html">sitemap</a> | 
+            <a href="terms.html">terms of use</a> | 
+            <a href="privacy.html">privacy policy</a> 
+            &nbsp; © 2025 <a href="index.html">drycalculator.net</a>
+        </div>
+    </div>
+</div>
+
+<script src="js/mobile-optimization.js"></script>
+<script src="js/calculator-mobile-enhancer.js"></script>
+<script>
+// Test calculator functionality
+class TestCalculator {
+    constructor() {
+        this.form = document.querySelector('form[name="calform"]');
+        this.resultSection = document.getElementById('result-section');
+        this.resultsContent = document.getElementById('results-content');
+        
+        this.initializeForm();
+    }
+    
+    initializeForm() {
+        if (!this.form) return;
+        
+        this.form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            this.calculateTest();
+        });
+        
+        const clearBtn = this.form.querySelector('input[type="button"]');
+        if (clearBtn) {
+            clearBtn.addEventListener('click', () => {
+                this.clearForm();
+            });
+        }
+    }
+    
+    calculateTest() {
+        const inputTemp = parseFloat(document.getElementById('cinputtemp').value);
+        const inputHumidity = parseFloat(document.getElementById('cinputhumidity').value);
+        const calcType = document.getElementById('ccalctype').value;
+        const precision = parseInt(document.getElementById('cprecision').value);
+        
+        if (isNaN(inputTemp) || isNaN(inputHumidity)) {
+            this.hideResults();
+            return;
+        }
+        
+        // Simulate calculation
+        this.showResults({
+            inputTemp: inputTemp,
+            inputHumidity: inputHumidity,
+            calcType: calcType,
+            precision: precision
+        });
+    }
+    
+    showResults(data) {
+        if (!this.resultSection || !this.resultsContent) return;
+        
+        // Simulate some calculations
+        const dewPoint = data.inputTemp - ((100 - data.inputHumidity) / 5);
+        const absoluteHumidity = (6.112 * Math.exp((17.67 * data.inputTemp) / (data.inputTemp + 243.5)) * data.inputHumidity * 2.1674) / (273.15 + data.inputTemp);
+        
+        let resultsHTML = `
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
+                <div>
+                    <h4 style="margin: 0 0 10px 0; color: #003366;">Input Values</h4>
+                    <p><strong>Temperature:</strong> ${data.inputTemp}°C</p>
+                    <p><strong>Humidity:</strong> ${data.inputHumidity}%</p>
+                    <p><strong>Calculation Type:</strong> ${data.calcType}</p>
+                </div>
+                <div>
+                    <h4 style="margin: 0 0 10px 0; color: #003366;">Calculated Results</h4>
+                    <p><strong>Dew Point:</strong> ${dewPoint.toFixed(data.precision)}°C</p>
+                    <p><strong>Absolute Humidity:</strong> ${absoluteHumidity.toFixed(data.precision)} g/m³</p>
+                </div>
+            </div>
+        `;
+        
+        resultsHTML += `
+            <div style="margin-bottom: 15px;">
+                <h4 style="margin: 0 0 10px 0; color: #003366;">Mobile Test Results</h4>
+                <div style="background: #d4edda; padding: 10px; border-radius: 5px; border: 1px solid #c3e6cb;">
+                    <p style="color: #155724; margin: 5px 0;"><strong>✅ Calculation completed successfully!</strong></p>
+                    <p style="color: #155724; margin: 5px 0;">📱 Mobile optimization features activated</p>
+                    <p style="color: #155724; margin: 5px 0;">🎯 Auto-scroll to results: ${window.innerWidth <= 768 ? 'ACTIVE' : 'INACTIVE (Desktop)'}</p>
+                    <p style="color: #155724; margin: 5px 0;">⚡ Loading animation: COMPLETED</p>
+                    <p style="color: #155724; margin: 5px 0;">🎨 Visual feedback: ACTIVE</p>
+                </div>
+            </div>
+        `;
+        
+        if (data.calcType === 'detailed') {
+            resultsHTML += `
+                <div style="margin-bottom: 15px;">
+                    <h4 style="margin: 0 0 10px 0; color: #003366;">Detailed Analysis</h4>
+                    <div style="background: #f8f8f8; padding: 10px; border-radius: 5px;">
+                        <p><strong>Relative Humidity:</strong> ${data.inputHumidity}% (Input)</p>
+                        <p><strong>Saturation Pressure:</strong> ${(6.112 * Math.exp((17.67 * data.inputTemp) / (data.inputTemp + 243.5))).toFixed(data.precision)} hPa</p>
+                        <p><strong>Vapor Pressure:</strong> ${(6.112 * Math.exp((17.67 * data.inputTemp) / (data.inputTemp + 243.5)) * data.inputHumidity / 100).toFixed(data.precision)} hPa</p>
+                    </div>
+                </div>
+            `;
+        }
+        
+        resultsHTML += `
+            <div style="margin-bottom: 15px;">
+                <h4 style="margin: 0 0 10px 0; color: #003366;">Mobile UX Test Status</h4>
+                <div style="background: #f0f8ff; padding: 15px; border-radius: 5px; font-size: 14px;">
+                    <p><strong>Device Type:</strong> ${window.innerWidth <= 768 ? 'Mobile/Tablet' : 'Desktop'}</p>
+                    <p><strong>Screen Width:</strong> ${window.innerWidth}px</p>
+                    <p><strong>Touch Support:</strong> ${'ontouchstart' in window ? 'Yes' : 'No'}</p>
+                    <p><strong>Scroll Position:</strong> ${window.scrollY}px</p>
+                    <p><strong>Result Position:</strong> ${this.resultSection.offsetTop}px</p>
+                </div>
+            </div>
+        `;
+        
+        this.resultsContent.innerHTML = resultsHTML;
+        this.resultSection.style.display = 'block';
+    }
+    
+    hideResults() {
+        if (this.resultSection) {
+            this.resultSection.style.display = 'none';
+        }
+    }
+    
+    clearForm() {
+        document.getElementById('cinputtemp').value = '25';
+        document.getElementById('cinputhumidity').value = '60';
+        document.getElementById('ccalctype').value = 'basic';
+        document.getElementById('cprecision').value = '2';
+        
+        // Reset checkboxes
+        document.getElementById('cshowgraph').checked = true;
+        document.getElementById('cshowdetails').checked = true;
+        document.getElementById('cshowformulas').checked = false;
+        document.getElementById('cshowreferences').checked = false;
+        
+        this.hideResults();
+    }
+}
+
+// Initialize test calculator when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    new TestCalculator();
+});
+</script>
+</body>
+</html>

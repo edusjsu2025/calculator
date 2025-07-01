@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Absolute Humidity Calculator</title>
+    <meta name="description" content="Calculate absolute humidity from temperature and relative humidity. Essential for HVAC design, industrial processes, and moisture control applications.">
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/icon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/icon-16x16.png">
+</head>
+<body>
+<div id="headerout">
+    <div id="header">
+        <div id="logo">
+            <a href="index.html">
+                <img src="images/dry-calculator-logo.svg" width="208" height="22" alt="Dry Calculator">
+            </a>
+        </div>
+        <div id="login">
+            <!-- Login removed -->
+        </div>
+    </div>
+</div>
+<div id="clear"></div>
+
+<div id="contentout">
+    <div id="content">
+        <div id="breadcrumbs">
+            <a href="index.html">home</a> / 
+            <a href="humidity-calculators.html">humidity calculators</a> / 
+            <a href="absolute-humidity-calculator.html">absolute humidity calculator</a>
+        </div>
+        
+        <h1>Absolute Humidity Calculator</h1>
+        <p>The <i>Absolute Humidity Calculator</i> determines the actual amount of water vapor present in air, expressed in grams per cubic meter (g/m³). Unlike relative humidity, absolute humidity is independent of temperature and provides a direct measure of moisture content in air.</p>
+
+        <div id="insmdc">
+            <img src="images/insm.svg" width="630" height="35" alt="Modify the values and click the calculate button to use">
+        </div>
+        
+        <form name="calform">
+            <div class="panel">
+                <table id="calinputtable">
+                    <tbody>
+                        <tr>
+                            <td>Air Temperature</td>
+                            <td>
+                                <input type="text" name="cairtemp" id="cairtemp" value="25" class="infull">
+                                <span class="temp-unit">°C</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Relative Humidity</td>
+                            <td>
+                                <input type="text" name="crelhumidity" id="crelhumidity" value="60" class="infull">
+                                <span style="margin-left: 5px; color: rgb(136, 136, 136);">%</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Temperature Unit</td>
+                            <td>
+                                <label for="cunit1" class="cbcontainer">
+                                    <input type="radio" name="cunit" id="cunit1" value="celsius" checked="">
+                                    <span class="rbmark"></span>Celsius (°C)
+                                </label> &nbsp;
+                                <label for="cunit2" class="cbcontainer">
+                                    <input type="radio" name="cunit" id="cunit2" value="fahrenheit">
+                                    <span class="rbmark"></span>Fahrenheit (°F)
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Atmospheric Pressure</td>
+                            <td>
+                                <input type="text" name="cpressure" id="cpressure" value="101.325" class="infull">
+                                <span style="margin-left: 5px; color: rgb(136, 136, 136);">kPa</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" align="left" style="padding-top: 8px;padding-left: 70px;">
+                                <input type="submit" name="x" value="Calculate">
+                                <input type="button" value="Clear">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </form>
+
+        <div id="result-section" style="margin-top: 20px; padding: 15px; background: #f0f8ff; border: 1px solid #ccc; border-radius: 5px; display: none;">
+            <h3>Absolute Humidity Results</h3>
+            <div id="results-content"></div>
+        </div>
+
+        <br>
+        <p></p>
+        <fieldset>
+            <legend>Related</legend>
+            <a href="relative-humidity-calculator.html">Relative Humidity Calculator</a> | 
+            <a href="dew-point-calculator.html">Dew Point Calculator</a> | 
+            <a href="mixing-ratio-calculator.html">Mixing Ratio Calculator</a>
+        </fieldset>
+        <p></p>
+        
+        <h2>Understanding Absolute Humidity</h2>
+        <p>Absolute humidity is the mass of water vapor present in a unit volume of air, typically expressed in grams per cubic meter (g/m³). It provides a direct measurement of the actual amount of moisture in air, regardless of temperature.</p>
+        
+        <h3>Key Characteristics</h3>
+        
+        <h4>Temperature Independence</h4>
+        <p>Unlike relative humidity, absolute humidity does not change with temperature variations. This makes it particularly useful for:</p>
+        <ul>
+            <li>Comparing moisture content at different temperatures</li>
+            <li>Mass balance calculations in industrial processes</li>
+            <li>Tracking moisture addition or removal</li>
+        </ul>
+        
+        <h4>Direct Measurement</h4>
+        <p>Absolute humidity provides a direct measure of water vapor mass, making it ideal for:</p>
+        <ul>
+            <li>Process control applications</li>
+            <li>Material balance calculations</li>
+            <li>Energy calculations involving latent heat</li>
+        </ul>
+        
+        <h3>Calculation Methods</h3>
+        
+        <div style="background: #f8f8f8; padding: 15px; border-radius: 5px; margin: 15px 0;">
+            <h4>From Temperature and Relative Humidity</h4>
+            <p><strong>Step 1:</strong> Calculate saturated vapor pressure using Magnus formula</p>
+            <p><strong>Step 2:</strong> Calculate actual vapor pressure: e = (RH/100) × e_sat</p>
+            <p><strong>Step 3:</strong> Apply ideal gas law: AH = (e × 1000) / (R_v × T)</p>
+            <p>Where R_v = 461.5 J/(kg·K) is the specific gas constant for water vapor</p>
+        </div>
+        
+        <h3>Applications</h3>
+        
+        <h4>HVAC and Building Systems</h4>
+        <ul>
+            <li><strong>Load Calculations:</strong> Determine latent cooling loads</li>
+            <li><strong>Ventilation Design:</strong> Calculate outdoor air moisture loads</li>
+            <li><strong>Dehumidification:</strong> Size dehumidification equipment</li>
+            <li><strong>Energy Analysis:</strong> Calculate energy required for moisture removal</li>
+        </ul>
+        
+        <h4>Industrial Processes</h4>
+        <ul>
+            <li><strong>Drying Operations:</strong> Monitor moisture removal rates</li>
+            <li><strong>Chemical Processes:</strong> Control reaction conditions</li>
+            <li><strong>Food Processing:</strong> Maintain product quality</li>
+            <li><strong>Pharmaceutical:</strong> Control manufacturing environments</li>
+        </ul>
+        
+        <h4>Agricultural Applications</h4>
+        <ul>
+            <li><strong>Greenhouse Control:</strong> Optimize growing conditions</li>
+            <li><strong>Crop Storage:</strong> Prevent spoilage and mold</li>
+            <li><strong>Livestock Housing:</strong> Maintain animal comfort</li>
+            <li><strong>Irrigation:</strong> Assess evapotranspiration rates</li>
+        </ul>
+        
+        <h3>Typical Values</h3>
+        <table style="width: 100%; border-collapse: collapse; margin: 15px 0;">
+            <tr style="background: #f0f0f0;">
+                <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">Condition</th>
+                <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">Temperature</th>
+                <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">RH</th>
+                <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">Absolute Humidity</th>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">Desert Air</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">35°C</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">20%</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">7.1 g/m³</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">Comfortable Indoor</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">22°C</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">50%</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">9.7 g/m³</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">Tropical Climate</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">30°C</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">80%</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">24.3 g/m³</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">Saturated Air</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">25°C</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">100%</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">23.0 g/m³</td>
+            </tr>
+        </table>
+        
+        <h3>Related Humidity Parameters</h3>
+        
+        <h4>Specific Humidity</h4>
+        <p>Mass of water vapor per unit mass of moist air (g/kg). Related to absolute humidity but accounts for air density changes.</p>
+        
+        <h4>Mixing Ratio</h4>
+        <p>Mass of water vapor per unit mass of dry air (g/kg). Useful in meteorological applications.</p>
+        
+        <h4>Vapor Pressure</h4>
+        <p>Partial pressure exerted by water vapor in air (kPa). Directly related to absolute humidity through the ideal gas law.</p>
+        
+        <h3>Measurement Considerations</h3>
+        
+        <h4>Accuracy Factors</h4>
+        <ul>
+            <li><strong>Temperature Measurement:</strong> ±0.1°C accuracy recommended</li>
+            <li><strong>Humidity Sensor:</strong> ±2% RH accuracy typical</li>
+            <li><strong>Pressure Effects:</strong> Consider altitude and weather variations</li>
+            <li><strong>Air Movement:</strong> Ensure representative sampling</li>
+        </ul>
+        
+        <h4>Calibration</h4>
+        <ul>
+            <li>Regular calibration of humidity sensors</li>
+            <li>Use of reference standards</li>
+            <li>Temperature compensation</li>
+            <li>Environmental condition documentation</li>
+        </ul>
+        
+        <h3>Practical Applications</h3>
+        
+        <h4>Process Control</h4>
+        <ul>
+            <li>Set absolute humidity limits for manufacturing</li>
+            <li>Monitor moisture addition/removal rates</li>
+            <li>Calculate material moisture uptake</li>
+            <li>Optimize drying processes</li>
+        </ul>
+        
+        <h4>Energy Calculations</h4>
+        <ul>
+            <li>Determine latent heat loads</li>
+            <li>Size dehumidification equipment</li>
+            <li>Calculate energy for moisture removal</li>
+            <li>Optimize HVAC system operation</li>
+        </ul>
+        
+        <p><strong>Note:</strong> Absolute humidity calculations assume ideal gas behavior for water vapor, which is accurate for most practical applications at normal atmospheric conditions.</p>
+    </div>
+    
+    <div id="right">
+        <div style="padding-top:10px; min-height:280px; text-align:center;">
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2205593928173688"
+                 crossorigin="anonymous"></script>
+            <!-- zishiying -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-2205593928173688"
+                 data-ad-slot="8971293106"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+        
+        <form name="calcSearchForm" autocomplete="off">
+            <table align="center" id="searchbox">
+                <tbody>
+                    <tr>
+                        <td>
+                            <input type="text" name="calcSearchTerm" id="calcSearchTerm" class="inlongest" placeholder="Search calculators...">
+                        </td>
+                        <td>
+                            <span id="bluebtn">Search</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div id="calcSearchOut"></div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+        
+        <div id="othercalc">
+            <div id="octitle">
+                <a href="humidity-calculators.html">Humidity Calculators</a>
+            </div>
+            <div id="occontent">
+                <a href="relative-humidity-calculator.html">Relative Humidity</a>
+                <a href="absolute-humidity-calculator.html">Absolute Humidity</a>
+                <a href="dew-point-calculator.html">Dew Point</a>
+                <a href="wet-bulb-calculator.html">Wet Bulb</a>
+                <a href="psychrometric-calculator.html">Psychrometric</a>
+                <a href="vapor-pressure-calculator.html">Vapor Pressure</a>
+            </div>
+            <div id="ocother">
+                <a href="moisture-calculators.html">Moisture</a> | 
+                <a href="humidity-calculators.html">Humidity</a> | 
+                <a href="drying-calculators.html">Drying</a> | 
+                <a href="other-calculators.html">Other</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="clear"></div>
+
+<div id="footer">
+    <div id="footerin">
+        <div id="footernav">
+            <a href="about-us.html">about us</a> | 
+            <a href="sitemap.html">sitemap</a> | 
+            <a href="terms.html">terms of use</a> | 
+            <a href="privacy.html">privacy policy</a> 
+            &nbsp; © 2025 <a href="index.html">drycalculator.net</a>
+        </div>
+    </div>
+</div>
+
+<script src="js/mobile-optimization.js"></script>
+<script src="js/calculator-mobile-enhancer.js"></script>
+    <script src="js/mobile-calculator-fix.js"></script>
+<script src="js/absolute-humidity-calculator.js"></script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="135" height="135" viewBox="0 0 135 135" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient id="humidityGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop stop-color="#81c784" offset="0%" />
+            <stop stop-color="#66bb6a" offset="100%" />
+        </linearGradient>
+    </defs>
+    <rect width="135" height="135" fill="url(#humidityGrad)" rx="10"/>
+    <path d="M67.5 25 Q55 40 55 55 Q55 70 67.5 70 Q80 70 80 55 Q80 40 67.5 25 Z" fill="#ffffff" opacity="0.9"/>
+    <circle cx="67.5" cy="55" r="8" fill="url(#humidityGrad)"/>
+    <text x="67.5" y="95" text-anchor="middle" fill="#ffffff" font-family="Arial" font-size="14px" font-weight="bold">RH%</text>
+    <text x="67.5" y="125" text-anchor="middle" fill="#ffffff" font-family="Arial" font-size="12px" font-weight="bold">HUMIDITY</text>
+</svg>

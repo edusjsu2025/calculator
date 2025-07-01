@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Moisture Content Calculator</title>
+    <meta name="description" content="This calculator computes moisture content percentage using wet basis and dry basis methods for various materials including wood, grain, soil, and concrete.">
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/icon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/icon-16x16.png">
+</head>
+<body>
+<div id="headerout">
+    <div id="header">
+        <div id="logo">
+            <a href="index.html">
+                <img src="images/dry-calculator-logo.svg" width="208" height="22" alt="Dry Calculator">
+            </a>
+        </div>
+        <div id="login">
+            <!-- Login removed -->
+        </div>
+    </div>
+</div>
+<div id="clear"></div>
+
+<div id="contentout">
+    <div id="content">
+        <div id="breadcrumbs">
+            <a href="index.html">home</a> / 
+            <a href="moisture-calculators.html">moisture calculators</a> / 
+            <a href="moisture-content-calculator.html">moisture content calculator</a>
+        </div>
+        
+        <h1>Moisture Content Calculator</h1>
+        <p>The <i>Moisture Content Calculator</i> determines the moisture content percentage of materials using both wet basis and dry basis calculation methods. This calculator is essential for quality control in industries dealing with wood, grain, concrete, soil, and other materials where moisture content affects performance and durability.</p>
+
+        <div id="insmdc">
+            <img src="images/insm.svg" width="630" height="35" alt="Modify the values and click the calculate button to use">
+        </div>
+        
+        <form name="calform">
+            <div class="panel">
+                <table id="calinputtable">
+                    <tbody>
+                        <tr>
+                            <td>Calculation Method</td>
+                            <td>
+                                <label for="cmethod1" class="cbcontainer">
+                                    <input type="radio" name="cmethod" id="cmethod1" value="wet" checked="">
+                                    <span class="rbmark"></span>Wet Basis
+                                </label> &nbsp;
+                                <label for="cmethod2" class="cbcontainer">
+                                    <input type="radio" name="cmethod" id="cmethod2" value="dry">
+                                    <span class="rbmark"></span>Dry Basis
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Material Type</td>
+                            <td>
+                                <select name="cmaterial" id="cmaterial" class="infull">
+                                    <option value="general">General Material</option>
+                                    <option value="wood">Wood</option>
+                                    <option value="grain">Grain</option>
+                                    <option value="soil">Soil</option>
+                                    <option value="concrete">Concrete</option>
+                                    <option value="paper">Paper</option>
+                                    <option value="textile">Textile</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Wet Weight</td>
+                            <td>
+                                <input type="text" name="cwetweight" id="cwetweight" value="100" class="infull inuipound">
+                                <span class="inuipoundspan">grams</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Dry Weight</td>
+                            <td>
+                                <input type="text" name="cdryweight" id="cdryweight" value="85" class="infull inuipound">
+                                <span class="inuipoundspan">grams</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" align="left" style="padding-top: 8px;padding-left: 70px;">
+                                <input type="submit" name="x" value="Calculate">
+                                <input type="button" value="Clear">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </form>
+
+        <div id="result-section" style="margin-top: 20px; padding: 15px; background: #f0f8ff; border: 1px solid #ccc; border-radius: 5px; display: none;">
+            <h3>Calculation Results</h3>
+            <div id="results-content"></div>
+        </div>
+
+        <br>
+        <p></p>
+        <fieldset>
+            <legend>Related</legend>
+            <a href="dry-basis-calculator.html">Dry Basis Calculator</a> | 
+            <a href="wet-basis-calculator.html">Wet Basis Calculator</a> | 
+            <a href="equilibrium-moisture-calculator.html">Equilibrium Moisture Calculator</a>
+        </fieldset>
+        <p></p>
+        
+        <h2>Understanding Moisture Content</h2>
+        <p>Moisture content is a critical parameter in many industries and applications. It represents the amount of water present in a material, typically expressed as a percentage. There are two primary methods for calculating moisture content:</p>
+        
+        <h3>Wet Basis (Wet Weight Basis)</h3>
+        <p>The wet basis method calculates moisture content as a percentage of the total wet weight of the material:</p>
+        <p><strong>MC (wet basis) = [(Wet Weight - Dry Weight) / Wet Weight] × 100%</strong></p>
+        
+        <h3>Dry Basis (Dry Weight Basis)</h3>
+        <p>The dry basis method calculates moisture content as a percentage of the dry weight of the material:</p>
+        <p><strong>MC (dry basis) = [(Wet Weight - Dry Weight) / Dry Weight] × 100%</strong></p>
+        
+        <h3>Applications by Material Type</h3>
+        <ul>
+            <li><strong>Wood:</strong> Critical for lumber grading, kiln drying, and construction applications</li>
+            <li><strong>Grain:</strong> Essential for storage, processing, and quality control in agriculture</li>
+            <li><strong>Soil:</strong> Important for agriculture, construction, and environmental monitoring</li>
+            <li><strong>Concrete:</strong> Affects curing, strength development, and durability</li>
+            <li><strong>Paper:</strong> Influences print quality, dimensional stability, and processing</li>
+            <li><strong>Textiles:</strong> Affects comfort, processing, and quality characteristics</li>
+        </ul>
+        
+        <h3>Measurement Procedures</h3>
+        <p>To obtain accurate moisture content measurements:</p>
+        <ol>
+            <li>Weigh the sample in its original state (wet weight)</li>
+            <li>Dry the sample completely using appropriate methods (oven drying, desiccation, etc.)</li>
+            <li>Weigh the completely dried sample (dry weight)</li>
+            <li>Apply the appropriate calculation method based on your requirements</li>
+        </ol>
+        
+        <p>The choice between wet basis and dry basis depends on industry standards and specific applications. Many industries have established protocols for moisture content measurement and reporting.</p>
+    </div>
+    
+    <div id="right">
+        <div style="padding-top:10px; min-height:280px; text-align:center;">
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2205593928173688"
+                 crossorigin="anonymous"></script>
+            <!-- zishiying -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-2205593928173688"
+                 data-ad-slot="8971293106"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+        
+        <form name="calcSearchForm" autocomplete="off">
+            <table align="center" id="searchbox">
+                <tbody>
+                    <tr>
+                        <td>
+                            <input type="text" name="calcSearchTerm" id="calcSearchTerm" class="inlongest" placeholder="Search calculators...">
+                        </td>
+                        <td>
+                            <span id="bluebtn">Search</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div id="calcSearchOut"></div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+        
+        <div id="othercalc">
+            <div id="octitle">
+                <a href="moisture-calculators.html">Moisture Calculators</a>
+            </div>
+            <div id="occontent">
+                <a href="moisture-content-calculator.html">Moisture Content</a>
+                <a href="dry-basis-calculator.html">Dry Basis</a>
+                <a href="wet-basis-calculator.html">Wet Basis</a>
+                <a href="equilibrium-moisture-calculator.html">Equilibrium Moisture</a>
+                <a href="wood-moisture-calculator.html">Wood Moisture</a>
+                <a href="grain-moisture-calculator.html">Grain Moisture</a>
+                <a href="soil-moisture-calculator.html">Soil Moisture</a>
+                <a href="concrete-moisture-calculator.html">Concrete Moisture</a>
+            </div>
+            <div id="ocother">
+                <a href="moisture-calculators.html">Moisture</a> | 
+                <a href="humidity-calculators.html">Humidity</a> | 
+                <a href="drying-calculators.html">Drying</a> | 
+                <a href="other-calculators.html">Other</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="clear"></div>
+
+<div id="footer">
+    <div id="footerin">
+        <div id="footernav">
+            <a href="about-us.html">about us</a> | 
+            <a href="sitemap.html">sitemap</a> | 
+            <a href="terms.html">terms of use</a> | 
+            <a href="privacy.html">privacy policy</a> 
+            &nbsp; © 2025 <a href="index.html">drycalculator.net</a>
+        </div>
+    </div>
+</div>
+
+<script src="js/mobile-optimization.js"></script>
+<script src="js/calculator-mobile-enhancer.js"></script>
+<script src="js/mobile-calculator-fix.js"></script>
+<script src="js/moisture-calculator.js"></script>
+</body>
+</html>

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Relative Humidity Calculator</title>
+    <meta name="description" content="Calculate relative humidity from dry bulb and wet bulb temperatures, or from dew point and air temperature. Essential for HVAC, meteorology, and moisture control applications.">
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/icon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/icon-16x16.png">
+</head>
+<body>
+<div id="headerout">
+    <div id="header">
+        <div id="logo">
+            <a href="index.html">
+                <img src="images/dry-calculator-logo.svg" width="208" height="22" alt="Dry Calculator">
+            </a>
+        </div>
+        <div id="login">
+            <!-- Login removed -->
+        </div>
+    </div>
+</div>
+<div id="clear"></div>
+
+<div id="contentout">
+    <div id="content">
+        <div id="breadcrumbs">
+            <a href="index.html">home</a> / 
+            <a href="humidity-calculators.html">humidity calculators</a> / 
+            <a href="relative-humidity-calculator.html">relative humidity calculator</a>
+        </div>
+        
+        <h1>Relative Humidity Calculator</h1>
+        <p>The <i>Relative Humidity Calculator</i> determines the relative humidity percentage from various input parameters including dry bulb temperature, wet bulb temperature, or dew point temperature. This calculator is essential for HVAC design, meteorology, agriculture, and industrial process control.</p>
+
+        <div id="insmdc">
+            <img src="images/insm.svg" width="630" height="35" alt="Modify the values and click the calculate button to use">
+        </div>
+        
+        <form name="calform">
+            <div class="panel">
+                <table id="calinputtable">
+                    <tbody>
+                        <tr>
+                            <td>Calculation Method</td>
+                            <td>
+                                <label for="cmethod1" class="cbcontainer">
+                                    <input type="radio" name="cmethod" id="cmethod1" value="wetbulb" checked="">
+                                    <span class="rbmark"></span>Wet Bulb Method
+                                </label> &nbsp;
+                                <label for="cmethod2" class="cbcontainer">
+                                    <input type="radio" name="cmethod" id="cmethod2" value="dewpoint">
+                                    <span class="rbmark"></span>Dew Point Method
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Temperature Unit</td>
+                            <td>
+                                <label for="cunit1" class="cbcontainer">
+                                    <input type="radio" name="cunit" id="cunit1" value="celsius" checked="">
+                                    <span class="rbmark"></span>Celsius (°C)
+                                </label> &nbsp;
+                                <label for="cunit2" class="cbcontainer">
+                                    <input type="radio" name="cunit" id="cunit2" value="fahrenheit">
+                                    <span class="rbmark"></span>Fahrenheit (°F)
+                                </label>
+                            </td>
+                        </tr>
+                        <tr id="drybulb-row">
+                            <td>Dry Bulb Temperature</td>
+                            <td>
+                                <input type="text" name="cdrybulb" id="cdrybulb" value="25" class="infull">
+                                <span class="temp-unit">°C</span>
+                            </td>
+                        </tr>
+                        <tr id="wetbulb-row">
+                            <td>Wet Bulb Temperature</td>
+                            <td>
+                                <input type="text" name="cwetbulb" id="cwetbulb" value="20" class="infull">
+                                <span class="temp-unit">°C</span>
+                            </td>
+                        </tr>
+                        <tr id="dewpoint-row" style="display: none;">
+                            <td>Dew Point Temperature</td>
+                            <td>
+                                <input type="text" name="cdewpoint" id="cdewpoint" value="15" class="infull">
+                                <span class="temp-unit">°C</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Atmospheric Pressure</td>
+                            <td>
+                                <input type="text" name="cpressure" id="cpressure" value="101.325" class="infull">
+                                <span style="margin-left: 5px; color: rgb(136, 136, 136);">kPa</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" align="left" style="padding-top: 8px;padding-left: 70px;">
+                                <input type="submit" name="x" value="Calculate">
+                                <input type="button" value="Clear">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </form>
+
+        <div id="result-section" style="margin-top: 20px; padding: 15px; background: #f0f8ff; border: 1px solid #ccc; border-radius: 5px; display: none;">
+            <h3>Calculation Results</h3>
+            <div id="results-content"></div>
+        </div>
+
+        <br>
+        <p></p>
+        <fieldset>
+            <legend>Related</legend>
+            <a href="absolute-humidity-calculator.html">Absolute Humidity Calculator</a> | 
+            <a href="dew-point-calculator.html">Dew Point Calculator</a> | 
+            <a href="wet-bulb-calculator.html">Wet Bulb Calculator</a>
+        </fieldset>
+        <p></p>
+        
+        <h2>Understanding Relative Humidity</h2>
+        <p>Relative humidity (RH) is the ratio of the current absolute humidity to the highest possible absolute humidity at a given temperature. It is expressed as a percentage and indicates how much moisture the air contains relative to its maximum capacity at that temperature.</p>
+        
+        <h3>Calculation Methods</h3>
+        
+        <h4>Wet Bulb Method</h4>
+        <p>This method uses dry bulb and wet bulb temperatures measured with a psychrometer:</p>
+        <ul>
+            <li><strong>Dry Bulb Temperature:</strong> The actual air temperature measured by a regular thermometer</li>
+            <li><strong>Wet Bulb Temperature:</strong> The temperature measured by a thermometer with a wet wick around the bulb</li>
+        </ul>
+        
+        <h4>Dew Point Method</h4>
+        <p>This method uses the dew point temperature and dry bulb temperature:</p>
+        <ul>
+            <li><strong>Dew Point Temperature:</strong> The temperature at which air becomes saturated and water vapor begins to condense</li>
+        </ul>
+        
+        <h3>Applications</h3>
+        <ul>
+            <li><strong>HVAC Systems:</strong> Design and control of heating, ventilation, and air conditioning systems</li>
+            <li><strong>Agriculture:</strong> Crop management, greenhouse control, and storage conditions</li>
+            <li><strong>Manufacturing:</strong> Process control in textiles, pharmaceuticals, and food processing</li>
+            <li><strong>Weather Forecasting:</strong> Meteorological observations and predictions</li>
+            <li><strong>Building Science:</strong> Moisture control and condensation prevention</li>
+            <li><strong>Health and Comfort:</strong> Indoor air quality and human comfort assessment</li>
+        </ul>
+        
+        <h3>Relative Humidity Ranges</h3>
+        <ul>
+            <li><strong>0-30%:</strong> Very dry air - may cause discomfort, static electricity, and respiratory issues</li>
+            <li><strong>30-50%:</strong> Comfortable range for most applications and human comfort</li>
+            <li><strong>50-70%:</strong> Moderate humidity - acceptable for many applications</li>
+            <li><strong>70-100%:</strong> High humidity - may promote mold growth and condensation problems</li>
+        </ul>
+        
+        <h3>Factors Affecting Relative Humidity</h3>
+        <ul>
+            <li><strong>Temperature:</strong> As temperature increases, relative humidity decreases (if absolute humidity remains constant)</li>
+            <li><strong>Atmospheric Pressure:</strong> Higher pressure can hold more moisture</li>
+            <li><strong>Air Movement:</strong> Ventilation affects moisture distribution</li>
+            <li><strong>Moisture Sources:</strong> Evaporation, respiration, and industrial processes</li>
+        </ul>
+    </div>
+    
+    <div id="right">
+        <div style="padding-top:10px; min-height:280px; text-align:center;">
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2205593928173688"
+                 crossorigin="anonymous"></script>
+            <!-- zishiying -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-2205593928173688"
+                 data-ad-slot="8971293106"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+        
+        <form name="calcSearchForm" autocomplete="off">
+            <table align="center" id="searchbox">
+                <tbody>
+                    <tr>
+                        <td>
+                            <input type="text" name="calcSearchTerm" id="calcSearchTerm" class="inlongest" placeholder="Search calculators...">
+                        </td>
+                        <td>
+                            <span id="bluebtn">Search</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div id="calcSearchOut"></div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+        
+        <div id="othercalc">
+            <div id="octitle">
+                <a href="humidity-calculators.html">Humidity Calculators</a>
+            </div>
+            <div id="occontent">
+                <a href="relative-humidity-calculator.html">Relative Humidity</a>
+                <a href="absolute-humidity-calculator.html">Absolute Humidity</a>
+                <a href="dew-point-calculator.html">Dew Point</a>
+                <a href="wet-bulb-calculator.html">Wet Bulb</a>
+                <a href="psychrometric-calculator.html">Psychrometric</a>
+                <a href="vapor-pressure-calculator.html">Vapor Pressure</a>
+            </div>
+            <div id="ocother">
+                <a href="moisture-calculators.html">Moisture</a> | 
+                <a href="humidity-calculators.html">Humidity</a> | 
+                <a href="drying-calculators.html">Drying</a> | 
+                <a href="other-calculators.html">Other</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="clear"></div>
+
+<div id="footer">
+    <div id="footerin">
+        <div id="footernav">
+            <a href="about-us.html">about us</a> | 
+            <a href="sitemap.html">sitemap</a> | 
+            <a href="terms.html">terms of use</a> | 
+            <a href="privacy.html">privacy policy</a> 
+            &nbsp; © 2025 <a href="index.html">drycalculator.net</a>
+        </div>
+    </div>
+</div>
+
+<script src="js/mobile-optimization.js"></script>
+<script src="js/calculator-mobile-enhancer.js"></script>
+    <script src="js/mobile-calculator-fix.js"></script>
+<script src="js/humidity-calculator.js"></script>
+</body>
+</html>

@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Mixing Ratio Calculator</title>
+    <meta name="description" content="Calculate mixing ratio and specific humidity for meteorological and HVAC applications. Essential for atmospheric science and air conditioning design.">
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/icon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/icon-16x16.png">
+</head>
+<body>
+<div id="headerout">
+    <div id="header">
+        <div id="logo">
+            <a href="index.html">
+                <img src="images/dry-calculator-logo.svg" width="208" height="22" alt="Dry Calculator">
+            </a>
+        </div>
+        <div id="login">
+            <a href="sign-in.html">sign in</a>
+        </div>
+    </div>
+</div>
+<div id="clear"></div>
+
+<div id="contentout">
+    <div id="content">
+        <div id="breadcrumbs">
+            <a href="index.html">home</a> / 
+            <a href="humidity-calculators.html">humidity calculators</a> / 
+            <a href="mixing-ratio-calculator.html">mixing ratio calculator</a>
+        </div>
+        
+        <h1>Mixing Ratio Calculator</h1>
+        <p>The <i>Mixing Ratio Calculator</i> determines the mixing ratio and specific humidity from temperature and relative humidity. These parameters are essential for meteorological analysis, atmospheric science, and HVAC system design.</p>
+
+        <div id="insmdc">
+            <img src="images/insm.svg" width="630" height="35" alt="Modify the values and click the calculate button to use">
+        </div>
+        
+        <form name="calform">
+            <div class="panel">
+                <table id="calinputtable">
+                    <tbody>
+                        <tr>
+                            <td>Air Temperature</td>
+                            <td>
+                                <input type="text" name="cairtemp" id="cairtemp" value="25" class="infull">
+                                <span class="temp-unit">°C</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Relative Humidity</td>
+                            <td>
+                                <input type="text" name="crelhumidity" id="crelhumidity" value="60" class="infull">
+                                <span style="margin-left: 5px; color: rgb(136, 136, 136);">%</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Temperature Unit</td>
+                            <td>
+                                <label for="cunit1" class="cbcontainer">
+                                    <input type="radio" name="cunit" id="cunit1" value="celsius" checked="">
+                                    <span class="rbmark"></span>Celsius (°C)
+                                </label> &nbsp;
+                                <label for="cunit2" class="cbcontainer">
+                                    <input type="radio" name="cunit" id="cunit2" value="fahrenheit">
+                                    <span class="rbmark"></span>Fahrenheit (°F)
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Atmospheric Pressure</td>
+                            <td>
+                                <input type="text" name="cpressure" id="cpressure" value="101.325" class="infull">
+                                <span style="margin-left: 5px; color: rgb(136, 136, 136);">kPa</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Output Units</td>
+                            <td>
+                                <select name="coutputunit" id="coutputunit" class="infull">
+                                    <option value="gkg">g/kg (grams per kilogram)</option>
+                                    <option value="kgkg">kg/kg (kilograms per kilogram)</option>
+                                    <option value="percent">% (percentage)</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" align="left" style="padding-top: 8px;padding-left: 70px;">
+                                <input type="submit" name="x" value="Calculate">
+                                <input type="button" value="Clear">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </form>
+
+        <div id="result-section" style="margin-top: 20px; padding: 15px; background: #f0f8ff; border: 1px solid #ccc; border-radius: 5px; display: none;">
+            <h3>Mixing Ratio and Specific Humidity Results</h3>
+            <div id="results-content"></div>
+        </div>
+
+        <br>
+        <p></p>
+        <fieldset>
+            <legend>Related</legend>
+            <a href="relative-humidity-calculator.html">Relative Humidity Calculator</a> | 
+            <a href="absolute-humidity-calculator.html">Absolute Humidity Calculator</a> | 
+            <a href="psychrometric-calculator.html">Psychrometric Calculator</a>
+        </fieldset>
+        <p></p>
+        
+        <h2>Understanding Mixing Ratio and Specific Humidity</h2>
+        <p>Mixing ratio and specific humidity are fundamental parameters in atmospheric science and HVAC engineering that describe the moisture content of air in different ways.</p>
+        
+        <h3>Key Definitions</h3>
+        
+        <h4>Mixing Ratio (w)</h4>
+        <ul>
+            <li><strong>Definition:</strong> Mass of water vapor per unit mass of dry air</li>
+            <li><strong>Formula:</strong> w = mv / md</li>
+            <li><strong>Units:</strong> kg/kg or g/kg (dimensionless ratio)</li>
+            <li><strong>Range:</strong> 0 to ~40 g/kg in natural conditions</li>
+        </ul>
+        
+        <h4>Specific Humidity (q)</h4>
+        <ul>
+            <li><strong>Definition:</strong> Mass of water vapor per unit mass of moist air</li>
+            <li><strong>Formula:</strong> q = mv / (mv + md)</li>
+            <li><strong>Units:</strong> kg/kg or g/kg (dimensionless ratio)</li>
+            <li><strong>Relationship:</strong> q = w / (1 + w)</li>
+        </ul>
+        
+        <h3>Calculation Methods</h3>
+        
+        <div style="background: #f8f8f8; padding: 15px; border-radius: 5px; margin: 15px 0;">
+            <h4>From Temperature and Relative Humidity</h4>
+            <p><strong>Step 1:</strong> Calculate saturated vapor pressure: es = 6.112 × exp[(17.67×T)/(T+243.5)]</p>
+            <p><strong>Step 2:</strong> Calculate actual vapor pressure: e = (RH/100) × es</p>
+            <p><strong>Step 3:</strong> Calculate mixing ratio: w = 0.622 × e / (P - e)</p>
+            <p><strong>Step 4:</strong> Calculate specific humidity: q = w / (1 + w)</p>
+            <p>Where P is atmospheric pressure in kPa</p>
+        </div>
+        
+        <h3>Applications</h3>
+        
+        <h4>Meteorology and Climate Science</h4>
+        <ul>
+            <li><strong>Weather Analysis:</strong> Track moisture transport in atmosphere</li>
+            <li><strong>Climate Modeling:</strong> Quantify atmospheric moisture content</li>
+            <li><strong>Precipitation Forecasting:</strong> Assess moisture availability</li>
+            <li><strong>Atmospheric Research:</strong> Study water cycle processes</li>
+        </ul>
+        
+        <h4>HVAC and Building Systems</h4>
+        <ul>
+            <li><strong>Load Calculations:</strong> Determine latent cooling loads</li>
+            <li><strong>Air Mixing:</strong> Calculate properties of mixed air streams</li>
+            <li><strong>Ventilation Design:</strong> Assess outdoor air moisture loads</li>
+            <li><strong>Energy Analysis:</strong> Optimize system performance</li>
+        </ul>
+        
+        <h4>Industrial Applications</h4>
+        <ul>
+            <li><strong>Process Control:</strong> Monitor moisture in manufacturing</li>
+            <li><strong>Drying Operations:</strong> Calculate moisture removal rates</li>
+            <li><strong>Material Storage:</strong> Control environmental conditions</li>
+            <li><strong>Quality Assurance:</strong> Maintain product specifications</li>
+        </ul>
+        
+        <h3>Typical Values</h3>
+        
+        <table style="width: 100%; border-collapse: collapse; margin: 15px 0;">
+            <tr style="background: #f0f0f0;">
+                <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">Environment</th>
+                <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">Temperature</th>
+                <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">RH</th>
+                <th style="border: 1px solid #ccc; padding: 8px; text-align: left;">Mixing Ratio</th>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">Arctic Winter</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">-20°C</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">80%</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">0.8 g/kg</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">Temperate Climate</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">20°C</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">60%</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">8.7 g/kg</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">Tropical Climate</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">30°C</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">80%</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">21.6 g/kg</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid #ccc; padding: 8px;">Desert Air</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">40°C</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">20%</td>
+                <td style="border: 1px solid #ccc; padding: 8px;">9.4 g/kg</td>
+            </tr>
+        </table>
+        
+        <h3>Advantages of Each Parameter</h3>
+        
+        <h4>Mixing Ratio Advantages</h4>
+        <ul>
+            <li><strong>Conservative Property:</strong> Remains constant during adiabatic processes</li>
+            <li><strong>Air Mass Tracking:</strong> Ideal for following air masses</li>
+            <li><strong>Meteorological Standard:</strong> Widely used in weather analysis</li>
+            <li><strong>Simple Calculations:</strong> Direct relationship with vapor pressure</li>
+        </ul>
+        
+        <h4>Specific Humidity Advantages</h4>
+        <ul>
+            <li><strong>Mass Balance:</strong> Useful for mass conservation calculations</li>
+            <li><strong>Engineering Applications:</strong> Preferred in HVAC calculations</li>
+            <li><strong>Energy Calculations:</strong> Direct use in enthalpy equations</li>
+            <li><strong>Mixing Processes:</strong> Simpler for air mixing calculations</li>
+        </ul>
+        
+        <h3>Relationship to Other Parameters</h3>
+        
+        <h4>Conversion Formulas</h4>
+        <div style="background: #f8f8f8; padding: 15px; border-radius: 5px; margin: 15px 0;">
+            <p><strong>Mixing Ratio to Specific Humidity:</strong> q = w / (1 + w)</p>
+            <p><strong>Specific Humidity to Mixing Ratio:</strong> w = q / (1 - q)</p>
+            <p><strong>Mixing Ratio to Relative Humidity:</strong> RH = (w × P) / [0.622 × es(T)] × 100%</p>
+            <p><strong>Mixing Ratio to Absolute Humidity:</strong> AH = w × ρd</p>
+        </div>
+        
+        <h3>Measurement and Instrumentation</h3>
+        
+        <h4>Direct Measurement</h4>
+        <ul>
+            <li><strong>Gravimetric Method:</strong> Weigh air samples before and after drying</li>
+            <li><strong>Chilled Mirror:</strong> Measure dew point, calculate from vapor pressure</li>
+            <li><strong>Infrared Absorption:</strong> Measure water vapor concentration</li>
+        </ul>
+        
+        <h4>Indirect Calculation</h4>
+        <ul>
+            <li><strong>Psychrometer:</strong> Measure wet and dry bulb temperatures</li>
+            <li><strong>Humidity Sensors:</strong> Measure RH, calculate from temperature</li>
+            <li><strong>Radiosonde:</strong> Atmospheric profiling for meteorology</li>
+        </ul>
+        
+        <h3>Accuracy Considerations</h3>
+        
+        <h4>Error Sources</h4>
+        <ul>
+            <li><strong>Temperature Measurement:</strong> ±0.1°C can cause ±1% error</li>
+            <li><strong>Humidity Sensor:</strong> ±2% RH typical accuracy</li>
+            <li><strong>Pressure Variations:</strong> Altitude and weather effects</li>
+            <li><strong>Calibration Drift:</strong> Regular sensor calibration needed</li>
+        </ul>
+        
+        <h4>Best Practices</h4>
+        <ul>
+            <li>Use calibrated instruments</li>
+            <li>Account for pressure variations</li>
+            <li>Consider measurement uncertainty</li>
+            <li>Validate with multiple methods</li>
+        </ul>
+        
+        <h3>Practical Applications</h3>
+        
+        <h4>Weather Forecasting</h4>
+        <ul>
+            <li>Track moisture transport</li>
+            <li>Predict precipitation potential</li>
+            <li>Analyze atmospheric stability</li>
+            <li>Monitor drought conditions</li>
+        </ul>
+        
+        <h4>HVAC Design</h4>
+        <ul>
+            <li>Calculate latent loads</li>
+            <li>Size dehumidification equipment</li>
+            <li>Optimize energy consumption</li>
+            <li>Design control strategies</li>
+        </ul>
+        
+        <p><strong>Note:</strong> Mixing ratio and specific humidity calculations assume ideal gas behavior and standard atmospheric composition. For high-precision applications, consider corrections for real gas effects and atmospheric composition variations.</p>
+    </div>
+    
+    <div id="right">
+        <div style="padding-top:10px; min-height:280px; text-align:center;">
+            <!-- Advertisement space -->
+        </div>
+        
+        <form name="calcSearchForm" autocomplete="off">
+            <table align="center" id="searchbox">
+                <tbody>
+                    <tr>
+                        <td>
+                            <input type="text" name="calcSearchTerm" id="calcSearchTerm" class="inlongest" placeholder="Search calculators...">
+                        </td>
+                        <td>
+                            <span id="bluebtn">Search</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div id="calcSearchOut"></div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+        
+        <div id="othercalc">
+            <div id="octitle">
+                <a href="humidity-calculators.html">Humidity Calculators</a>
+            </div>
+            <div id="occontent">
+                <a href="relative-humidity-calculator.html">Relative Humidity</a>
+                <a href="absolute-humidity-calculator.html">Absolute Humidity</a>
+                <a href="dew-point-calculator.html">Dew Point</a>
+                <a href="wet-bulb-calculator.html">Wet Bulb</a>
+                <a href="psychrometric-calculator.html">Psychrometric</a>
+                <a href="vapor-pressure-calculator.html">Vapor Pressure</a>
+            </div>
+            <div id="ocother">
+                <a href="moisture-calculators.html">Moisture</a> | 
+                <a href="humidity-calculators.html">Humidity</a> | 
+                <a href="drying-calculators.html">Drying</a> | 
+                <a href="other-calculators.html">Other</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="clear"></div>
+
+<div id="footer">
+    <div id="footerin">
+        <div id="footernav">
+            <a href="about-us.html">about us</a> | 
+            <a href="sitemap.html">sitemap</a> | 
+            <a href="terms.html">terms of use</a> | 
+            <a href="privacy.html">privacy policy</a> 
+            &nbsp; © 2025 <a href="index.html">drycalculator.net</a>
+        </div>
+    </div>
+</div>
+
+<script src="js/mobile-optimization.js"></script>
+<script src="js/calculator-mobile-enhancer.js"></script>
+<script src="js/mobile-calculator-fix.js"></script>
+<script src="js/mixing-ratio-calculator.js"></script>
+</body>
+</html>

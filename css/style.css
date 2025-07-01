@@ -1,0 +1,1952 @@
+/* Calculator.net Style - Dry Calculator Theme */
+@charset "utf-8";
+
+body, p, td, div, span, input, th, li, textarea { 
+    font-family: arial, helvetica, sans-serif; 
+    font-size: 16px; 
+    color: rgb(0, 0, 0); 
+}
+
+body { 
+    background: rgb(255, 255, 255); 
+    margin: 0px; 
+    padding: 0px; 
+    border: 0px; 
+    text-align: center; 
+}
+
+p { 
+    margin: 5px 0px 8px; 
+}
+
+img { 
+    border: 0px; 
+}
+
+h1 { 
+    color: rgb(0, 51, 102); 
+    font-size: 26px; 
+    font-weight: bold; 
+    padding: 0px; 
+    margin: 12px 0px; 
+}
+
+h2 { 
+    font-size: 22px; 
+    font-weight: bold; 
+    color: rgb(0, 51, 102); 
+    padding: 0px; 
+    margin-bottom: 2px; 
+}
+
+h3 { 
+    font-size: 19px; 
+    font-weight: bold; 
+}
+
+hr { 
+    border: 0px; 
+    color: rgb(170, 170, 170); 
+    background-color: rgb(170, 170, 170); 
+    height: 1px; 
+}
+
+a { 
+    color: rgb(0, 102, 153); 
+    text-decoration: underline; 
+}
+
+a:hover { 
+    text-decoration: none; 
+}
+
+/* Header Styles */
+#headerout {
+    background: rgb(0, 51, 102);
+    height: 50px;
+    width: 100%;
+}
+
+#header {
+    width: 1000px;
+    margin: 0 auto;
+    position: relative;
+    height: 50px;
+}
+
+#logo {
+    float: left;
+    padding-top: 14px;
+}
+
+#login {
+    float: right;
+    padding-top: 16px;
+}
+
+#login a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+#clear {
+    clear: both;
+}
+
+/* Calculator Styles */
+#homecaldiv {
+    background: rgb(240, 248, 255);
+    padding: 15px 0;
+}
+
+#contentout {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+#sciout {
+    background: white;
+    border: 2px solid rgb(0, 51, 102);
+    border-radius: 5px;
+    margin: 10px;
+    width: 400px;
+}
+
+#sciInPut {
+    background: rgb(240, 240, 240);
+    padding: 10px;
+    min-height: 20px;
+    font-family: monospace;
+    font-size: 14px;
+}
+
+#sciOutPut {
+    background: white;
+    padding: 15px;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: right;
+    border-bottom: 1px solid rgb(200, 200, 200);
+}
+
+/* Scientific Calculator Button Styles */
+.scifunc, .scinm, .sciop, .scieq {
+    display: inline-block;
+    width: 45px;
+    height: 32px;
+    margin: 1px;
+    text-align: center;
+    line-height: 32px;
+    cursor: pointer;
+    border-radius: 3px;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.scifunc {
+    background: rgb(200, 220, 255);
+    border: 1px solid rgb(150, 180, 220);
+}
+
+.scinm {
+    background: rgb(240, 240, 240);
+    border: 1px solid rgb(180, 180, 180);
+}
+
+.sciop {
+    background: rgb(255, 220, 200);
+    border: 1px solid rgb(220, 180, 150);
+}
+
+.scieq {
+    background: rgb(76, 123, 37);
+    color: white;
+    border: 1px solid rgb(60, 100, 30);
+}
+
+.scifunc:hover, .scinm:hover, .sciop:hover, .scieq:hover {
+    opacity: 0.8;
+}
+
+/* Home Search */
+#homesch {
+    padding: 20px;
+}
+
+#homesch h1 {
+    margin-bottom: 20px;
+}
+
+/* Input Styles */
+input[type="text"], input[type="url"], input[type="tel"], input[type="number"], 
+input[type="color"], input[type="date"], input[type="email"], select { 
+    border: 1px solid rgb(4, 66, 132); 
+    border-radius: 2px; 
+    box-shadow: rgb(102, 102, 102) 1px 1px 2px; 
+    font-size: 16px; 
+    background-color: rgb(255, 255, 255); 
+    padding: 5px;
+    color: rgb(0, 0, 0);
+    box-sizing: border-box;
+}
+
+input[type="submit"] { 
+    border: 0px; 
+    color: rgb(255, 255, 255); 
+    padding: 11px 50px 11px 16px; 
+    font-size: 16px; 
+    font-weight: bold; 
+    background-color: rgb(76, 123, 37); 
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180px' height='40px'><circle cx='112' cy='20' r='11' fill='darkseagreen' /><path d='M110 12 L120 20 L110 28 Z' fill='white' /></svg>"); 
+    background-repeat: no-repeat; 
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover { 
+    background-color: rgb(68, 68, 68); 
+}
+
+input[type="reset"], input[type="button"] { 
+    border: 0px; 
+    color: rgb(255, 255, 255); 
+    padding: 11px 8px; 
+    font-size: 16px; 
+    background: rgb(171, 171, 171); 
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+input[type="reset"]:hover, input[type="button"]:hover { 
+    background: rgb(68, 68, 68); 
+}
+
+.inlongest { 
+    width: 230px; 
+}
+
+#bluebtn {
+    background: rgb(0, 102, 153);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 3px;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: bold;
+}
+
+#bluebtn:hover {
+    background: rgb(0, 80, 120);
+}
+
+/* Home List Styles */
+#homelistdiv {
+    background: white;
+    padding: 30px 0;
+}
+
+#homelistwrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.homelisttile {
+    width: 240px;
+    text-align: center;
+}
+
+.hicon {
+    margin-bottom: 15px;
+}
+
+.hicon img {
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.hh {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.hh a {
+    color: rgb(0, 51, 102);
+    text-decoration: none;
+}
+
+.hh a:hover {
+    text-decoration: underline;
+}
+
+.hl {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+.hl li {
+    margin-bottom: 5px;
+    padding-left: 15px;
+    position: relative;
+}
+
+.hl li:before {
+    content: "▶";
+    position: absolute;
+    left: 0;
+    color: rgb(0, 102, 153);
+    font-size: 10px;
+    top: 2px;
+}
+
+.hl a {
+    font-size: 14px;
+    color: rgb(0, 102, 153);
+}
+
+/* Footer */
+#footer {
+    background: rgb(240, 240, 240);
+    padding: 30px 0;
+    border-top: 1px solid rgb(200, 200, 200);
+}
+
+#footerin {
+    width: 1000px;
+    margin: 0 auto;
+    text-align: left;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+#footernav {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid rgb(200, 200, 200);
+}
+
+#footernav a {
+    color: rgb(0, 102, 153);
+    margin-right: 10px;
+}
+
+/* Sub-page Styles */
+#content {
+    width: 700px;
+    float: left;
+    padding: 20px;
+    text-align: left;
+}
+
+#right {
+    width: 280px;
+    float: right;
+    padding: 20px;
+}
+
+#breadcrumbs {
+    font-size: 14px;
+    margin-bottom: 15px;
+    color: rgb(100, 100, 100);
+}
+
+#breadcrumbs a {
+    color: rgb(0, 102, 153);
+    text-decoration: none;
+}
+
+#breadcrumbs a:hover {
+    text-decoration: underline;
+}
+
+.panel {
+    background: rgb(250, 250, 250);
+    border: 1px solid rgb(200, 200, 200);
+    border-radius: 5px;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+#calinputtable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#calinputtable td {
+    padding: 8px;
+    vertical-align: middle;
+}
+
+#calinputtable td:first-child {
+    width: 150px;
+    font-weight: bold;
+    text-align: right;
+    padding-right: 15px;
+}
+
+.cbcontainer {
+    display: inline-block;
+    position: relative;
+    padding-left: 28px;
+    padding-top: 1px;
+    margin: 5px 0px;
+    cursor: pointer;
+    font-size: 16px;
+    user-select: none;
+}
+
+.cbcontainer input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0px;
+    width: 0px;
+}
+
+.rbmark {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 16px;
+    width: 16px;
+    background-color: rgb(255, 255, 255);
+    border: 2px solid rgb(51, 102, 153);
+    border-radius: 50%;
+}
+
+.cbcontainer:hover input ~ .rbmark {
+    background-color: rgb(204, 204, 204);
+}
+
+.cbcontainer input:checked ~ .rbmark {
+    background-color: rgb(51, 102, 153);
+}
+
+.rbmark::after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.cbcontainer input:checked ~ .rbmark::after {
+    display: block;
+}
+
+.cbcontainer .rbmark::after {
+    top: 4px;
+    left: 4px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: white;
+}
+
+.infull {
+    width: 226px;
+}
+
+.inuipound {
+    padding-right: 62px;
+}
+
+.inuipoundspan {
+    margin-left: -58px;
+    color: rgb(136, 136, 136);
+}
+
+fieldset {
+    border: 1px solid rgb(200, 200, 200);
+    border-radius: 5px;
+    padding: 15px;
+    margin: 20px 0;
+}
+
+fieldset legend {
+    font-weight: bold;
+    padding: 0 10px;
+    color: rgb(0, 51, 102);
+}
+
+#searchbox {
+    width: 100%;
+    margin: 20px 0;
+}
+
+#othercalc {
+    background: rgb(250, 250, 250);
+    border: 1px solid rgb(200, 200, 200);
+    border-radius: 5px;
+    padding: 15px;
+    margin: 20px 0;
+}
+
+#octitle {
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid rgb(200, 200, 200);
+    padding-bottom: 5px;
+}
+
+#octitle a {
+    color: rgb(0, 51, 102);
+    text-decoration: none;
+}
+
+#occontent {
+    margin: 10px 0;
+}
+
+#occontent a {
+    display: block;
+    padding: 3px 0;
+    font-size: 14px;
+    color: rgb(0, 102, 153);
+    text-decoration: none;
+}
+
+#occontent a:hover {
+    text-decoration: underline;
+}
+
+#ocother {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid rgb(200, 200, 200);
+    font-size: 14px;
+}
+
+#ocother a {
+    color: rgb(0, 102, 153);
+}
+
+#insmdc {
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* Category Page Styles */
+.calc-category {
+    background: rgb(250, 250, 250);
+    border: 1px solid rgb(200, 200, 200);
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.calc-category h3 {
+    color: rgb(0, 51, 102);
+    margin-top: 0;
+    margin-bottom: 15px;
+    border-bottom: 2px solid rgb(0, 102, 153);
+    padding-bottom: 5px;
+}
+
+.calc-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.calc-list li {
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgb(230, 230, 230);
+}
+
+.calc-list li:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.calc-list li a {
+    font-size: 16px;
+    font-weight: bold;
+    color: rgb(0, 102, 153);
+    text-decoration: none;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.calc-list li a:hover {
+    text-decoration: underline;
+}
+
+.calc-list li p {
+    margin: 0;
+    font-size: 14px;
+    color: rgb(100, 100, 100);
+    line-height: 1.4;
+}
+
+.temp-unit {
+    margin-left: 5px;
+    color: rgb(136, 136, 136);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    #header, #contentout, #footerin {
+        width: 95%;
+        padding: 0 2.5%;
+    }
+
+    #content {
+        width: 65%;
+        float: left;
+        margin-right: 3%;
+    }
+
+    #right {
+        width: 32%;
+        float: right;
+    }
+}
+
+@media (max-width: 1020px) {
+    #header, #contentout, #footerin {
+        width: 95%;
+        padding: 0 2.5%;
+    }
+
+    #content {
+        width: 100%;
+        float: none;
+        margin-right: 0;
+    }
+
+    #right {
+        width: 100%;
+        float: none;
+        margin-top: 30px;
+    }
+
+    #homelistwrap {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .homelisttile {
+        width: 45%;
+        margin: 10px;
+        margin-bottom: 30px;
+    }
+
+    /* Header adjustments */
+    #header {
+        padding: 15px 2.5%;
+    }
+
+    #logo img {
+        max-width: 180px;
+        height: auto;
+    }
+
+    /* Navigation improvements */
+    #breadcrumbs {
+        font-size: 13px;
+        margin-bottom: 15px;
+    }
+
+    /* Form improvements */
+    .panel {
+        padding: 15px;
+    }
+
+    #calinputtable {
+        width: 100%;
+    }
+
+    #calinputtable td {
+        padding: 8px 5px;
+    }
+
+    .infull, .inlongest {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* Search box */
+    #searchbox {
+        width: 100%;
+    }
+
+    #searchbox td {
+        display: block;
+        width: 100%;
+        padding: 5px 0;
+    }
+
+    #calcSearchTerm {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    #bluebtn {
+        width: 100%;
+        text-align: center;
+        display: block;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    #header, #contentout, #footerin {
+        width: 95%;
+        padding: 0 2.5%;
+    }
+
+    #content {
+        width: 100%;
+        float: none;
+        margin-right: 0;
+        padding: 20px;
+    }
+
+    #header {
+        padding: 10px 2.5%;
+        text-align: center;
+    }
+
+    #logo {
+        float: none;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    #login {
+        float: none;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 24px;
+        margin-bottom: 15px;
+    }
+
+    h2 {
+        font-size: 20px;
+        margin: 20px 0 10px 0;
+    }
+
+    h3 {
+        font-size: 18px;
+        margin: 15px 0 8px 0;
+    }
+
+    h4 {
+        font-size: 16px;
+        margin: 12px 0 6px 0;
+    }
+
+    .homelisttile {
+        width: 100%;
+        margin: 5px 0 20px 0;
+        padding: 15px;
+    }
+
+    .homelisttile h3 {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    /* Table improvements */
+    table {
+        width: 100%;
+        font-size: 13px;
+    }
+
+    table th, table td {
+        padding: 8px 4px;
+        word-wrap: break-word;
+    }
+
+    /* Grid layouts for mobile */
+    div[style*="grid-template-columns"] {
+        display: block !important;
+    }
+
+    div[style*="grid-template-columns"] > div {
+        margin-bottom: 15px;
+    }
+
+    /* Fieldset improvements */
+    fieldset {
+        margin: 15px 0;
+        padding: 10px;
+    }
+
+    fieldset legend {
+        font-size: 14px;
+        font-weight: bold;
+    }
+
+    /* Footer */
+    #footer {
+        margin-top: 30px;
+    }
+
+    #footernav {
+        text-align: center;
+        font-size: 12px;
+        line-height: 1.6;
+    }
+
+    #footernav a {
+        display: inline-block;
+        margin: 2px 5px;
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        font-size: 13px;
+    }
+
+    #header, #contentout, #footerin {
+        width: 95%;
+        padding: 0 2.5%;
+    }
+
+    #content {
+        width: 100%;
+        float: none;
+        margin-right: 0;
+        padding: 15px;
+    }
+
+    #header {
+        padding: 8px 2.5%;
+    }
+
+    #logo img {
+        max-width: 150px;
+    }
+
+    h1 {
+        font-size: 22px;
+        line-height: 1.3;
+    }
+
+    .homelisttile {
+        width: 100%;
+        margin: 5px 0 15px 0;
+        padding: 12px;
+    }
+
+    .homelisttile h3 {
+        font-size: 16px;
+    }
+
+    .homelisttile p {
+        font-size: 13px;
+        margin-bottom: 8px;
+    }
+
+    #sciout {
+        margin: 5px;
+        width: 100%;
+        max-width: 350px;
+    }
+
+    .scifunc, .scinm, .sciop, .scieq {
+        width: 35px;
+        height: 28px;
+        line-height: 28px;
+        font-size: 11px;
+        margin: 1px;
+    }
+
+    #homecaldiv table {
+        width: 100%;
+    }
+
+    #homesch {
+        padding: 10px;
+    }
+
+    #calinputtable td:first-child {
+        width: auto;
+        text-align: left;
+        display: block;
+        padding: 0 0 8px 0;
+        margin: 0;
+        font-weight: bold;
+    }
+
+    #calinputtable td {
+        display: block;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    #calinputtable input, #calinputtable select {
+        width: 100%;
+        padding: 8px;
+        font-size: 14px;
+        box-sizing: border-box;
+    }
+
+    /* Checkbox and radio improvements */
+    .cbcontainer, label {
+        display: block;
+        margin: 8px 0;
+        font-size: 14px;
+    }
+
+    /* Button improvements - keep original styling */
+    input[type="submit"] {
+        background-color: rgb(76, 123, 37) !important;
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180px' height='40px'><circle cx='112' cy='20' r='11' fill='darkseagreen' /><path d='M110 12 L120 20 L110 28 Z' fill='white' /></svg>") !important;
+        background-repeat: no-repeat !important;
+        color: white !important;
+        padding: 11px 50px 11px 16px !important;
+        border-radius: 3px !important;
+        font-size: 16px;
+        font-weight: bold;
+        border: none;
+        cursor: pointer;
+        width: auto !important;
+        margin: 0 8px 0 0 !important;
+        display: inline-block;
+    }
+
+    input[type="button"] {
+        background: rgb(171, 171, 171) !important;
+        color: white !important;
+        padding: 11px 8px !important;
+        border-radius: 3px !important;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+        width: auto !important;
+        margin: 0 8px 0 0 !important;
+        display: inline-block;
+    }
+
+    /* Results section improvements */
+    #result-section {
+        margin: 20px 0;
+        padding: 15px;
+        background: #f8f9fa !important;
+        border: 1px solid #dee2e6 !important;
+        border-radius: 8px !important;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        transition: none !important;
+        transform: none !important;
+    }
+
+    #result-section h3 {
+        font-size: 18px;
+        margin-bottom: 15px;
+        color: #333;
+        text-align: center;
+    }
+
+    #results-content {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    #results-content h4 {
+        font-size: 16px;
+        margin: 15px 0 8px 0;
+        color: #007bff;
+    }
+
+    #results-content p {
+        margin-bottom: 10px;
+    }
+
+    #results-content strong {
+        color: #333;
+    }
+
+    /* Table improvements for results */
+    #results-content table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 15px 0;
+        font-size: 13px;
+    }
+
+    #results-content table th,
+    #results-content table td {
+        padding: 8px 6px;
+        border: 1px solid #ddd;
+        text-align: left;
+        vertical-align: top;
+    }
+
+    #results-content table th {
+        background: #f8f9fa;
+        font-weight: bold;
+        color: #333;
+    }
+
+    /* Responsive table for mobile */
+    @media (max-width: 480px) {
+        #results-content table {
+            font-size: 11px;
+        }
+
+        #results-content table th,
+        #results-content table td {
+            padding: 6px 4px;
+        }
+    }
+
+    /* Sidebar improvements */
+    #othercalc {
+        margin-top: 20px;
+    }
+
+    #octitle {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    #occontent a {
+        display: block;
+        padding: 8px 0;
+        border-bottom: 1px solid #eee;
+    }
+
+    #ocother {
+        margin-top: 15px;
+        text-align: center;
+    }
+
+    #ocother a {
+        display: inline-block;
+        margin: 5px;
+        padding: 5px 10px;
+        background: #f0f0f0;
+        border-radius: 3px;
+        text-decoration: none;
+    }
+
+    /* AdSense container */
+    .adsbygoogle {
+        margin: 15px 0;
+    }
+
+    /* Breadcrumbs */
+    #breadcrumbs {
+        font-size: 12px;
+        margin-bottom: 10px;
+        word-wrap: break-word;
+    }
+
+    #breadcrumbs a {
+        margin-right: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 12px;
+    }
+
+    #header, #contentout, #footerin {
+        width: 95%;
+        padding: 0 2.5%;
+    }
+
+    #content {
+        width: 100%;
+        float: none;
+        margin-right: 0;
+        padding: 10px;
+    }
+
+    #header {
+        padding: 5px 2.5%;
+    }
+
+    #logo img {
+        max-width: 120px;
+    }
+
+    h1 {
+        font-size: 18px;
+    }
+
+    /* Homepage specific optimizations for small screens */
+    #homesch h1 {
+        font-size: 18px !important;
+        margin-bottom: 10px !important;
+    }
+
+    #sciout {
+        max-width: 320px !important;
+    }
+
+    /* Force calculator to stack vertically on very small screens */
+    #sciout table tr:nth-child(2) td {
+        display: block !important;
+        width: 100% !important;
+        margin-bottom: 10px !important;
+    }
+
+    #sciout table tr:nth-child(2) td:first-child {
+        padding-right: 0 !important;
+        margin-bottom: 15px !important;
+    }
+
+    #sciout table tr:nth-child(2) td:last-child {
+        padding-left: 0 !important;
+    }
+
+    /* Smaller calculator buttons for very small screens */
+    .scifunc, .scinm, .sciop, .scieq {
+        width: 36px !important;
+        height: 32px !important;
+        line-height: 32px !important;
+        font-size: 10px !important;
+        margin: 1px !important;
+    }
+
+    #sciInPut, #sciOutPut {
+        padding: 6px !important;
+        font-size: 12px !important;
+    }
+
+    #sciOutPut {
+        font-size: 16px !important;
+    }
+
+    #calcSearchTerm {
+        padding: 10px !important;
+        font-size: 14px !important;
+    }
+
+    #bluebtn {
+        padding: 10px !important;
+        font-size: 14px !important;
+    }
+
+    .homelisttile {
+        padding: 10px;
+    }
+
+    .homelisttile h3 {
+        font-size: 15px;
+    }
+
+    .homelisttile p {
+        font-size: 12px;
+    }
+
+    #calinputtable input, #calinputtable select {
+        padding: 6px;
+        font-size: 13px;
+    }
+
+    input[type="submit"] {
+        background-color: rgb(76, 123, 37) !important;
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180px' height='40px'><circle cx='112' cy='20' r='11' fill='darkseagreen' /><path d='M110 12 L120 20 L110 28 Z' fill='white' /></svg>") !important;
+        background-repeat: no-repeat !important;
+        color: white !important;
+        padding: 11px 50px 11px 16px !important;
+        border-radius: 3px !important;
+        font-size: 16px !important;
+        width: auto !important;
+        margin: 0 8px 0 0 !important;
+    }
+
+    input[type="button"] {
+        background: rgb(171, 171, 171) !important;
+        color: white !important;
+        padding: 11px 8px !important;
+        border-radius: 3px !important;
+        font-size: 16px !important;
+        width: auto !important;
+        margin: 0 8px 0 0 !important;
+    }
+
+    table {
+        font-size: 11px;
+    }
+
+    table th, table td {
+        padding: 6px 3px;
+    }
+
+    #footernav {
+        font-size: 11px;
+    }
+}
+
+/* Homepage Mobile Layout Fixes */
+@media (max-width: 768px) {
+    /* Fix homepage main container */
+    #homecaldiv {
+        padding: 10px;
+        overflow-x: hidden;
+    }
+
+    #homecaldiv #contentout {
+        width: 100%;
+        padding: 0;
+        overflow-x: hidden;
+    }
+
+    /* Fix the main homepage table layout */
+    #homecaldiv table[width="100%"] {
+        width: 100% !important;
+        display: block !important;
+        margin: 0 !important;
+        border-collapse: separate !important;
+        border-spacing: 0 !important;
+    }
+
+    #homecaldiv table[width="100%"] tbody,
+    #homecaldiv table[width="100%"] tr {
+        display: block !important;
+        width: 100% !important;
+    }
+
+    #homecaldiv table[width="100%"] > tbody > tr > td {
+        display: block !important;
+        width: 100% !important;
+        padding: 15px 0 !important;
+        text-align: center !important;
+        vertical-align: top !important;
+    }
+
+    /* Calculator section - first td containing the calculator table */
+    #homecaldiv table[width="100%"] > tbody > tr > td:first-child {
+        margin-bottom: 30px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #eee;
+    }
+
+    /* Search section - second td containing #homesch */
+    #homecaldiv table[width="100%"] > tbody > tr > td:last-child {
+        margin-top: 0;
+        padding-top: 20px;
+    }
+
+    /* Scientific calculator container */
+    #sciout {
+        margin: 0 auto !important;
+        max-width: 380px !important;
+        width: 100% !important;
+        display: block !important;
+        overflow: hidden !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Calculator main table */
+    #sciout > table {
+        width: 100% !important;
+        max-width: 380px !important;
+        margin: 0 auto !important;
+        display: table !important;
+        border-collapse: separate !important;
+        border-spacing: 2px !important;
+    }
+
+    /* Calculator table rows and cells */
+    #sciout table tbody,
+    #sciout table tr {
+        display: table-row !important;
+        width: 100% !important;
+    }
+
+    #sciout table td {
+        display: table-cell !important;
+        vertical-align: top !important;
+        padding: 2px !important;
+    }
+
+    /* Calculator display area container */
+    #sciout table tr:first-child td {
+        width: 100% !important;
+        text-align: center !important;
+    }
+
+    /* Calculator buttons area */
+    #sciout table tr:nth-child(2) td {
+        width: 50% !important;
+        vertical-align: top !important;
+    }
+
+    /* Left side - function buttons */
+    #sciout table tr:nth-child(2) td:first-child {
+        padding-right: 5px !important;
+    }
+
+    /* Right side - number buttons */
+    #sciout table tr:nth-child(2) td:last-child {
+        padding-left: 5px !important;
+    }
+
+    /* Calculator display area */
+    #sciInPut, #sciOutPut {
+        padding: 8px !important;
+        font-size: 14px !important;
+        text-align: right !important;
+    }
+
+    #sciOutPut {
+        font-size: 18px !important;
+        font-weight: bold !important;
+    }
+
+    /* Search section */
+    #homesch {
+        padding: 15px 10px !important;
+        text-align: center !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    #homesch h1 {
+        font-size: 22px !important;
+        margin-bottom: 15px !important;
+        text-align: center !important;
+        line-height: 1.3 !important;
+    }
+
+    #homesch table {
+        width: 100% !important;
+        margin: 0 auto !important;
+        display: block !important;
+    }
+
+    #homesch table tbody,
+    #homesch table tr {
+        display: block !important;
+        width: 100% !important;
+    }
+
+    #homesch table td {
+        display: block !important;
+        width: 100% !important;
+        padding: 5px 0 !important;
+    }
+
+    #calcSearchTerm {
+        width: 100% !important;
+        padding: 12px !important;
+        font-size: 16px !important;
+        border: 1px solid #ccc !important;
+        border-radius: 6px !important;
+        box-sizing: border-box !important;
+        margin-bottom: 10px !important;
+    }
+
+    #bluebtn {
+        width: 100% !important;
+        padding: 12px !important;
+        background: #007bff !important;
+        color: white !important;
+        border: none !important;
+        border-radius: 6px !important;
+        cursor: pointer !important;
+        font-size: 16px !important;
+        text-align: center !important;
+        display: block !important;
+        font-weight: bold !important;
+    }
+
+    #bluebtn:hover {
+        background: #0056b3 !important;
+    }
+
+    #bluebtn:active {
+        transform: scale(0.98);
+    }
+}
+
+/* Additional Mobile Optimizations */
+@media (max-width: 600px) {
+    /* Improve touch targets */
+    a, button, input[type="submit"], input[type="button"] {
+        min-height: 44px;
+        min-width: 44px;
+    }
+
+    /* Calculator button improvements for mobile */
+    .scifunc, .scinm, .sciop, .scieq {
+        width: 42px !important;
+        height: 36px !important;
+        line-height: 36px !important;
+        font-size: 11px !important;
+        margin: 1px !important;
+        border-radius: 4px !important;
+        cursor: pointer !important;
+        user-select: none !important;
+        -webkit-user-select: none !important;
+        -moz-user-select: none !important;
+        -ms-user-select: none !important;
+        display: inline-block !important;
+        text-align: center !important;
+        vertical-align: top !important;
+        box-sizing: border-box !important;
+        border: 1px solid #ccc !important;
+        background: #f8f9fa !important;
+        color: #333 !important;
+        font-weight: normal !important;
+    }
+
+    .scifunc:active, .scinm:active, .sciop:active, .scieq:active {
+        transform: scale(0.95) !important;
+        background-color: #e0e0e0 !important;
+    }
+
+    .scifunc:hover, .scinm:hover, .sciop:hover, .scieq:hover {
+        background-color: #e9ecef !important;
+    }
+
+    /* Special styling for different button types */
+    .scinm {
+        background: #fff !important;
+        font-weight: bold !important;
+    }
+
+    .sciop {
+        background: #007bff !important;
+        color: white !important;
+    }
+
+    .scieq {
+        background: #28a745 !important;
+        color: white !important;
+    }
+
+    /* Calculator button container improvements */
+    #homefunbtn div {
+        text-align: center !important;
+        margin-bottom: 2px !important;
+        white-space: nowrap !important;
+    }
+
+    /* Radio button styling in calculator */
+    .scird {
+        display: inline-block !important;
+        vertical-align: top !important;
+        margin: 1px !important;
+        padding: 2px 4px !important;
+        background: #f8f9fa !important;
+        border: 1px solid #ccc !important;
+        border-radius: 4px !important;
+        font-size: 10px !important;
+    }
+
+    .scird label {
+        margin: 0 2px !important;
+        font-size: 10px !important;
+        cursor: pointer !important;
+    }
+
+    .scird input[type="radio"] {
+        margin-right: 2px !important;
+        transform: scale(0.8) !important;
+    }
+
+    /* Scientific calculator display */
+    #sciInPut, #sciOutPut {
+        padding: 8px !important;
+        font-size: 14px !important;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+
+    #sciOutPut {
+        font-size: 18px !important;
+        font-weight: bold;
+    }
+
+    /* Homepage tiles mobile optimization */
+    .homelisttile {
+        background: #fff;
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        transition: box-shadow 0.3s ease;
+    }
+
+    .homelisttile:hover {
+        box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    }
+
+    .hicon img {
+        max-width: 80px;
+        height: auto;
+        margin: 10px auto;
+        display: block;
+    }
+
+    .hh {
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    .hh a {
+        font-size: 18px;
+        font-weight: bold;
+        color: #333;
+        text-decoration: none;
+    }
+
+    .hh a:hover {
+        color: #007bff;
+    }
+
+    .hl {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .hl li {
+        margin-bottom: 8px;
+        padding: 0;
+    }
+
+    .hl li a {
+        display: block;
+        padding: 8px 12px;
+        color: #555;
+        text-decoration: none;
+        border-radius: 4px;
+        font-size: 14px;
+        transition: background-color 0.3s ease;
+    }
+
+    .hl li a:hover {
+        background-color: #f8f9fa;
+        color: #007bff;
+    }
+
+    /* Better spacing for mobile */
+    p {
+        margin-bottom: 12px;
+        line-height: 1.6;
+    }
+
+    ul, ol {
+        padding-left: 20px;
+    }
+
+    li {
+        margin-bottom: 5px;
+    }
+
+    /* Improve form layout */
+    .panel {
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        margin: 15px 0;
+    }
+
+    /* Mobile form improvements */
+    #calinputtable {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0;
+    }
+
+    #calinputtable tr {
+        display: block;
+        margin: 0 0 20px 0;
+        border-bottom: 1px solid #f0f0f0;
+        padding: 0 0 15px 0;
+    }
+
+    #calinputtable tr:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+
+    #calinputtable tr:last-child td {
+        padding-top: 8px !important;
+        padding-left: 70px !important;
+        text-align: left !important;
+    }
+
+    #calinputtable td:first-child {
+        display: block;
+        width: 100%;
+        font-weight: bold;
+        color: #333;
+        margin: 0 0 8px 0;
+        padding: 0;
+        text-align: left;
+    }
+
+    #calinputtable td:last-child {
+        display: block;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    #calinputtable input[type="text"],
+    #calinputtable input[type="number"],
+    #calinputtable select {
+        width: 100%;
+        padding: 12px;
+        font-size: 16px;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        box-sizing: border-box;
+        background: #fff;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+    }
+
+    #calinputtable select {
+        background-image: url("data:image/svg+xml;charset=US-ASCII,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'><path fill='%23666' d='M2 0L0 2h4zm0 5L0 3h4z'/></svg>");
+        background-repeat: no-repeat;
+        background-position: right 12px center;
+        background-size: 12px;
+        padding-right: 40px;
+    }
+
+    #calinputtable input:focus,
+    #calinputtable select:focus {
+        outline: none;
+        border-color: #007bff;
+        box-shadow: 0 0 0 2px rgba(0,123,255,0.25);
+    }
+
+    /* Radio button and checkbox improvements */
+    #calinputtable input[type="radio"],
+    #calinputtable input[type="checkbox"] {
+        width: auto;
+        margin-right: 8px;
+        transform: scale(1.2);
+    }
+
+    #calinputtable label {
+        display: inline-block;
+        margin: 8px 15px 8px 0;
+        font-size: 14px;
+        cursor: pointer;
+        user-select: none;
+    }
+
+    /* Button improvements */
+    #calinputtable input[type="submit"],
+    #calinputtable input[type="button"] {
+        width: auto !important;
+        font-size: 16px;
+        font-weight: bold;
+        border: none;
+        cursor: pointer;
+        margin: 0 8px 0 0;
+        transition: all 0.3s ease;
+        box-sizing: border-box;
+        display: inline-block;
+    }
+
+    #calinputtable input[type="submit"] {
+        background-color: rgb(76, 123, 37) !important;
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180px' height='40px'><circle cx='112' cy='20' r='11' fill='darkseagreen' /><path d='M110 12 L120 20 L110 28 Z' fill='white' /></svg>") !important;
+        background-repeat: no-repeat !important;
+        color: white !important;
+        padding: 11px 50px 11px 16px !important;
+        border-radius: 3px !important;
+    }
+
+    #calinputtable input[type="submit"]:hover {
+        background-color: rgb(68, 68, 68) !important;
+    }
+
+    #calinputtable input[type="button"] {
+        background: rgb(171, 171, 171) !important;
+        color: white !important;
+        padding: 11px 8px !important;
+        border-radius: 3px !important;
+    }
+
+    #calinputtable input[type="button"]:hover {
+        background: rgb(68, 68, 68) !important;
+    }
+
+    /* Grid layout fixes for mobile */
+    div[style*="display: grid"],
+    div[style*="grid-template-columns"] {
+        display: block !important;
+        grid-template-columns: none !important;
+    }
+
+    div[style*="display: grid"] > div,
+    div[style*="grid-template-columns"] > div,
+    div[style*="grid-template-columns"] > label {
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    /* Better table display on mobile */
+    table {
+        border-collapse: collapse;
+        margin: 10px 0;
+    }
+
+    table th {
+        background-color: #f5f5f5;
+        font-weight: bold;
+    }
+
+    table td, table th {
+        border: 1px solid #ddd;
+        text-align: left;
+        vertical-align: top;
+    }
+
+    /* Responsive images */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Better code blocks */
+    div[style*="background: #f8f8f8"] {
+        padding: 10px !important;
+        margin: 10px 0 !important;
+        border-radius: 5px;
+        overflow-x: auto;
+    }
+
+    /* Improve calculator grid layouts */
+    div[style*="display: grid"] {
+        display: block !important;
+    }
+
+    div[style*="display: grid"] > * {
+        margin-bottom: 10px;
+    }
+
+    /* Better checkbox layout */
+    div[style*="grid-template-columns"] label {
+        display: block;
+        margin: 5px 0;
+        padding: 5px 0;
+    }
+
+    /* Improve related links */
+    fieldset {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 10px;
+        margin: 15px 0;
+    }
+
+    fieldset legend {
+        padding: 0 10px;
+        font-weight: bold;
+        color: #333;
+    }
+
+    fieldset a {
+        display: inline-block;
+        margin: 2px 5px 2px 0;
+        padding: 3px 6px;
+        background: #f0f0f0;
+        border-radius: 3px;
+        text-decoration: none;
+        font-size: 12px;
+    }
+
+    fieldset a:hover {
+        background: #e0e0e0;
+    }
+}
+
+/* Landscape orientation optimizations */
+@media (max-width: 768px) and (orientation: landscape) {
+    #header {
+        padding: 5px 2.5%;
+    }
+
+    #logo img {
+        max-width: 140px;
+    }
+
+    h1 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .homelisttile {
+        width: 48%;
+        margin: 1%;
+        display: inline-block;
+        vertical-align: top;
+    }
+}
+
+/* Additional Homepage Mobile Fixes */
+@media (max-width: 600px) {
+    /* Force homepage layout to be mobile-friendly */
+    #homecaldiv {
+        overflow-x: hidden !important;
+    }
+
+    /* Ensure calculator doesn't overflow */
+    #sciout {
+        overflow: hidden !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Fix any remaining table layout issues */
+    #homecaldiv table,
+    #homecaldiv tbody,
+    #homecaldiv tr,
+    #homecaldiv td {
+        display: block !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Center everything properly */
+    #homecaldiv td {
+        text-align: center !important;
+        margin: 0 auto !important;
+    }
+
+    /* Ensure search section is properly contained */
+    #homesch {
+        overflow: hidden !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Fix calculator button layout */
+    #homefunbtn,
+    #homefunbtn div {
+        width: 100% !important;
+        text-align: center !important;
+        overflow: hidden !important;
+    }
+
+    /* Prevent horizontal scrolling */
+    body {
+        overflow-x: hidden !important;
+    }
+
+    #contentout {
+        overflow-x: hidden !important;
+    }
+}
+
+/* Final Mobile Optimizations */
+@media (max-width: 600px) {
+    /* Ensure proper mobile scaling */
+    html {
+        -webkit-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+    }
+
+    /* Improve touch scrolling */
+    body {
+        -webkit-overflow-scrolling: touch;
+        overflow-scrolling: touch;
+    }
+
+    /* Better mobile typography */
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+
+    /* Improve mobile calculator display */
+    #sciout {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* Better mobile navigation */
+    #breadcrumbs a {
+        padding: 2px 4px;
+        margin: 1px;
+        background: #f8f9fa;
+        border-radius: 3px;
+        text-decoration: none;
+    }
+
+    /* Mobile-friendly links */
+    a {
+        -webkit-tap-highlight-color: rgba(0,0,0,0.1);
+        tap-highlight-color: rgba(0,0,0,0.1);
+    }
+
+    /* Improve mobile form validation */
+    input:invalid {
+        border-color: #dc3545;
+        box-shadow: 0 0 0 2px rgba(220,53,69,0.25);
+    }
+
+    input:valid {
+        border-color: #28a745;
+    }
+
+    /* Better mobile error handling */
+    .error-message {
+        color: #dc3545;
+        font-size: 14px;
+        margin-top: 5px;
+        display: block;
+    }
+
+    /* Mobile loading states */
+    .loading {
+        opacity: 0.6;
+        pointer-events: none;
+    }
+
+    /* Improve mobile accessibility */
+    button:focus,
+    input:focus,
+    select:focus,
+    a:focus {
+        outline: 2px solid #007bff;
+        outline-offset: 2px;
+    }
+}
+
+/* Print styles */
+@media print {
+    #header, #right, #footer {
+        display: none;
+    }
+
+    #content {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-size: 12pt;
+        line-height: 1.4;
+    }
+
+    h1, h2, h3, h4 {
+        page-break-after: avoid;
+    }
+
+    table {
+        page-break-inside: avoid;
+    }
+}
